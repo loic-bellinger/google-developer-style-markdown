@@ -1,0 +1,54 @@
+[project]
+name = "google-developer-style-markdown"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Loïc Bellinger", email = "loic.bellinger.pro@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "aiohttp[speedups]>=3.14.3",
+    "selectolax>=0.4.11",
+]
+
+[project.scripts]
+google-developer-style-markdown = "google_developer_style_markdown:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "ruff>=0.16.3",
+    "rumdl>=0.2.57",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I",   # isort
+    "D",   # pydocstyle
+    "RUF022",
+]
+
+ignore = [
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in __init__
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = 'single'

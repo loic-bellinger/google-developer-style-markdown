@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# macOS-specific files
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Ruff
+.ruff_cache/
+
+# Rumdl
+.rumdl_cache
