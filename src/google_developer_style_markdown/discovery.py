@@ -7,6 +7,7 @@ Discovery is deliberately narrow. The only page fetched as HTML is
 recursive crawl, and nothing outside `GUIDE` is ever considered.
 """
 
+import logging
 from dataclasses import dataclass
 from pathlib import PurePosixPath
 
@@ -16,6 +17,8 @@ from yarl import URL
 from . import SyncError
 
 __all__ = ['GUIDE', 'Page', 'normalize', 'parse_index']
+
+_LOGGER = logging.getLogger(__name__)
 
 GUIDE = URL('https://developers.google.com/style/')
 """Entry point of the guide, and the only URL fetched as HTML.
@@ -164,6 +167,7 @@ def parse_index(markup: str) -> tuple[Page, ...]:
             continue
         text = ' '.join(link.text().split())
         if (url := normalize(href)) is None:
+            _LOGGER.info('ignoring %s: not a page of the guide', href)
             continue
         page = Page(title=text, url=url, section=section)
         if (previous := seen.get(page.filename)) is not None:
