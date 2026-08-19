@@ -139,17 +139,18 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
     seen: dict[str, str] = {}
     section = _DEFAULT_SECTION
 
-    for item in navigation.css('li.devsite-nav-item'):
-        label = item.css_first('span.devsite-nav-text')
-        if label is None:
+    for item in navigation.css('li'):
+        link = item.css_first('a')
+        if link is None:
+            # An entry with no link is one of the group headings the navigation
+            # is divided by. Reading it from the shape of the list rather than
+            # from a DevSite class name leaves the menu selector above as the
+            # only thing here that knows how the site is built.
+            section = ' '.join(item.text().split()) or section
             continue
-        text = ' '.join(label.text().split())
-        if 'devsite-nav-heading' in (item.attributes.get('class') or ''):
-            section = text or section
+        if (href := link.attributes.get('href')) is None:
             continue
-        link = item.css_first('a.devsite-nav-title')
-        if link is None or (href := link.attributes.get('href')) is None:
-            continue
+        text = ' '.join(link.text().split())
         if (url := normalize(href, base=base)) is None:
             continue
         page = Page(title=text, url=url, section=section)

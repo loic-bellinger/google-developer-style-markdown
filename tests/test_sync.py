@@ -125,6 +125,15 @@ def test_parse_index_keeps_reading_order_and_sections():
     assert pages[1].markdown_url == f'{INDEX}/commas.md.txt'
 
 
+def test_parse_index_reads_the_shape_of_the_list_not_the_class_names():
+    # The menu selector is the only thing tied to how the site is built: an
+    # entry is a heading when it has no link, whatever it is styled as.
+    pages = parse_index(
+        '<ul menu="_book"><li><span>Punctuation</span></li><li><a href="/style/commas">Commas</a></li></ul>'
+    )
+    assert [(p.filename, p.title, p.section) for p in pages] == [('commas.md', 'Commas', 'Punctuation')]
+
+
 def test_parse_index_rejects_a_page_it_cannot_name_safely():
     with pytest.raises(SyncError, match='does not name a file'):
         parse_index(nav(link('/style/%2fetc%2fpasswd', 'Sneaky')))
