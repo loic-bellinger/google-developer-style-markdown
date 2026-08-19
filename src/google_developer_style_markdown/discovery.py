@@ -92,8 +92,16 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     name has a suffix), which is what keeps assets such as images and archives
     out of the mirror.
 
+    That last rule is why this takes the address of a *page*. A ``.md.txt``
+    address is a file by the same test and would be rejected, which is
+    harmless only because the Markdown form is never discovered: it is derived
+    from a page that has already come through here, by
+    :attr:`Page.markdown_url`. Anything that starts finding pages somewhere
+    other than the table of contents -- a sitemap, a link in the prose -- has
+    to keep that separation or drop every address it is looking for.
+
     Args:
-        href: Reference to resolve, absolute or relative.
+        href: Address of a page of the guide, absolute or relative.
         base: URL that relative references are resolved against.
 
     Returns:

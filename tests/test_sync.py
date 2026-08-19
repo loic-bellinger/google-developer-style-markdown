@@ -57,6 +57,9 @@ def page(path: str, *, title: str = 'Title', section: str = 'Documentation') -> 
         ('https://example.com/style/lists', None),
         ('/style/logo.png', None),
         ('mailto:someone@example.com', None),
+        # The Markdown form is derived, never discovered, so it is a file here
+        # like any other. See the note in normalize.
+        ('/style/lists.md.txt', None),
         # Encoding is carried through rather than refused: a page may
         # legitimately have one in its name, and the scope decision is made
         # before anything is decoded.
