@@ -70,15 +70,21 @@ Each reference is resolved and then either canonicalised or dropped:
 | `/style//lists`         | `…/style/lists` | Empty path segments collapse                  |
 | `/style/lists#nested`   | `…/style/lists` | A fragment selects a position, not a document |
 | `/style/lists?hl=fr`    | `…/style/lists` | A query selects a locale, not a document      |
-| `/style`, `/style/`     | `…/style`       | The entry page, mirrored as `docs/index.md`   |
+| `/style`, `/style/`     | `…/style`       | The entry page, mirrored as `docs/style.md`   |
 | `/terms/site-policies`  | dropped         | Outside `/style`                              |
 | `https://example.com/…` | dropped         | Another host                                  |
 | `/style/logo.png`       | dropped         | A file, not a page                            |
 
-The remaining path becomes the file name, and must match
-`[a-z0-9]+(-[a-z0-9]+)*`. Anything else is refused rather than sanitized, which
-is what makes path traversal and file name collisions impossible rather than
-merely unlikely. Two pages that would claim the same file name abort the run.
+A page is mirrored under the name Google serves it as, minus the `.txt`:
+`…/style/lists.md.txt` becomes `docs/lists.md`, and the guide's entry page,
+served at `…/style.md.txt`, becomes `docs/style.md`. There is no naming scheme
+to keep in step with anything.
+
+A `Page` refuses at construction any URL that does not name a single, ordinary
+file — an empty name, a leading dot, or a separator that a percent-encoded
+segment decoded back into — so "this can be written under `docs/`" is true of
+every instance rather than checked at each call site. Two pages that would
+claim the same file name abort the run.
 
 [selectolax]: https://github.com/rushter/selectolax
 [yarl]: https://yarl.aio-libs.org/

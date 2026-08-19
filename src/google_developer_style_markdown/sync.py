@@ -137,7 +137,7 @@ def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
 
     written = {}
     for page, body in fetched:
-        path = documents / f'{page.slug}.md'
+        path = documents / page.filename
         _write(path, document(page, body))
         written[path] = (page, body)
 
@@ -148,8 +148,8 @@ def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
 
     # llms.txt follows Google's reading order; llms-full.txt follows file names.
     # Sorting the paths themselves is what makes the second claim true: sorting
-    # slugs instead would put headings before headings-targets, because '.' and
-    # '-' do not compare the way the file names do.
+    # the URLs instead would put headings before headings-targets, because '.'
+    # and '-' do not compare the way the file names do.
     ordered = tuple(sorted(written))
     _write(root / INDEX_FILE, llms_txt(page for page, _ in fetched))
     _write(root / FULL_FILE, llms_full(written[path] for path in ordered))

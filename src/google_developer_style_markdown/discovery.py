@@ -7,7 +7,6 @@ Discovery is deliberately narrow. The only page fetched as HTML is
 recursive crawl, and nothing outside :data:`GUIDE` is ever considered.
 """
 
-import re
 from dataclasses import dataclass
 
 from selectolax.lexbor import LexborHTMLParser
@@ -26,20 +25,12 @@ a page has to be served from, and the path it has to live under.
 
 _SCOPE = tuple(part for part in GUIDE.raw_parts[1:] if part)
 
-# Slugs are used as file names, so they are restricted to a shape that cannot
-# escape the output directory: lowercase words joined by single hyphens. No
-# dots, no separators, nothing to normalise away.
-_SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
-
 _DEFAULT_SECTION = 'Documentation'
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class Page:
     """One page of the guide, as advertised by the table of contents."""
-
-    slug: str
-    """File name stem under ``docs/``, derived from the URL path."""
 
     title: str
     """Navigation label Google gives the page. Not always its heading."""
@@ -50,10 +41,35 @@ class Page:
     section: str
     """Table-of-contents section the page is listed under."""
 
+    def __post_init__(self) -> None:
+        """Refuse a page that cannot be given a plain file name.
+
+        The name goes straight into a path under ``docs/``, and percent-encoded
+        segments decode into separators, so this is checked once here rather
+        than trusted at every call site.
+
+        Raises:
+            SyncError: If the URL does not name a single, ordinary file.
+        """
+        name = self.filename
+        if not name or name.startswith('.') or set(name) & set('/\\'):
+            raise SyncError(f'{self.url} does not name a file that can live in docs/')
+
     @property
     def markdown_url(self) -> str:
         """URL of the Markdown source Google publishes for this page."""
         return f'{self.url}.md.txt'
+
+    @property
+    def filename(self) -> str:
+        """Name this page is mirrored under.
+
+        Taken from the URL Google actually serves, minus its ``.txt``: the file
+        is called whatever the source is called, so there is no naming scheme
+        to keep in step with anything. The guide's entry page is served at
+        ``/style.md.txt`` and is therefore mirrored as ``style.md``.
+        """
+        return URL(self.markdown_url).name.removesuffix('.txt')
 
 
 def normalize(href: str, *, base: URL = GUIDE) -> str | None:
@@ -94,19 +110,6 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     return None if page.suffix else str(page)
 
 
-def slug_for(url: str) -> str | None:
-    """Return the ``docs/`` file name stem for ``url``, or ``None`` if unusable.
-
-    The guide's entry page has no path below ``/style``, so it becomes
-    ``index``. Nested paths are flattened with hyphens; the result must match
-    :data:`_SLUG`, which makes path traversal and surprising file names
-    impossible by construction rather than by escaping.
-    """
-    relative = URL(url).parts[1 + len(_SCOPE) :]
-    slug = '-'.join(relative) or 'index'
-    return slug if _SLUG.fullmatch(slug) else None
-
-
 def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
     """Extract the table of contents from the HTML of the entry page.
 
@@ -123,8 +126,8 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
         The pages of the guide, in table-of-contents order.
 
     Raises:
-        SyncError: If the navigation is missing, empty, or maps two pages onto
-            the same file name.
+        SyncError: If the navigation is missing, empty, lists a page that
+            cannot be named, or maps two pages onto the same file name.
     """
     navigation = LexborHTMLParser(markup).css_first('ul[menu="_book"]')
     if navigation is None:
@@ -149,14 +152,13 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
             continue
         if (url := normalize(href, base=base)) is None:
             continue
-        if (slug := slug_for(url)) is None:
-            continue
-        if (previous := seen.get(slug)) is not None:
+        page = Page(title=text, url=url, section=section)
+        if (previous := seen.get(page.filename)) is not None:
             if previous == url:
                 continue
-            raise SyncError(f'{previous} and {url} both map to docs/{slug}.md')
-        seen[slug] = url
-        pages.append(Page(slug=slug, title=text, url=url, section=section))
+            raise SyncError(f'{previous} and {url} both map to docs/{page.filename}')
+        seen[page.filename] = url
+        pages.append(page)
 
     if not pages:
         raise SyncError(f'no pages found in the table of contents of {base}')

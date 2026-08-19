@@ -7,7 +7,7 @@ dropped.
 import pytest
 
 from google_developer_style_markdown import SyncError
-from google_developer_style_markdown.discovery import Page, normalize, parse_index, slug_for
+from google_developer_style_markdown.discovery import Page, normalize, parse_index
 from google_developer_style_markdown.render import document, llms_full, llms_txt
 from google_developer_style_markdown.sync import write_mirror
 
@@ -33,9 +33,9 @@ def link(href: str, text: str) -> str:
     )
 
 
-def page(slug: str, *, title: str = 'Title', section: str = 'Documentation') -> Page:
-    url = INDEX if slug == 'index' else f'{INDEX}/{slug}'
-    return Page(slug=slug, title=title, url=url, section=section)
+def page(path: str, *, title: str = 'Title', section: str = 'Documentation') -> Page:
+    """Build a page of the guide. ``path`` is its path under /style, '' for the entry page."""
+    return Page(title=title, url=f'{INDEX}/{path}' if path else INDEX, section=section)
 
 
 @pytest.mark.parametrize(
@@ -68,20 +68,25 @@ def test_normalize(href, expected):
 
 
 @pytest.mark.parametrize(
-    ('url', 'expected'),
+    ('path', 'expected'),
     [
-        (f'{INDEX}/lists', 'lists'),
-        (INDEX, 'index'),
-        (f'{INDEX}/word-list', 'word-list'),
-        (f'{INDEX}/nested/page', 'nested-page'),
-        # Only names that read as a slug are accepted. Scope is normalize's
-        # job, so slug_for is only ever given a URL that already passed it.
-        (f'{INDEX}/Lists', None),
-        (f'{INDEX}/a_b', None),
+        ('lists', 'lists.md'),
+        ('word-list', 'word-list.md'),
+        ('', 'style.md'),
+        ('nested/page', 'page.md'),
     ],
 )
-def test_slug_for(url, expected):
-    assert slug_for(url) == expected
+def test_page_is_named_after_the_url_google_serves(path, expected):
+    assert page(path).filename == expected
+
+
+def test_page_refuses_a_name_that_would_escape_docs():
+    # normalize keeps this in scope, because the separators are still encoded
+    # there; they only reappear when the name is decoded.
+    url = normalize('/style/%2fetc%2fpasswd')
+    assert url is not None
+    with pytest.raises(SyncError, match='cannot live in docs/|does not name a file'):
+        Page(title='Bad', url=url, section='Documentation')
 
 
 @pytest.mark.parametrize(
@@ -113,16 +118,16 @@ def test_parse_index_keeps_reading_order_and_sections():
             link('/style/logo.png', 'Asset'),  # not a page
         )
     )
-    assert [(p.slug, p.title, p.section) for p in pages] == [
-        ('index', 'About this guide', 'Introduction'),
-        ('commas', 'Commas', 'Punctuation'),
+    assert [(p.filename, p.title, p.section) for p in pages] == [
+        ('style.md', 'About this guide', 'Introduction'),
+        ('commas.md', 'Commas', 'Punctuation'),
     ]
     assert pages[1].markdown_url == f'{INDEX}/commas.md.txt'
 
 
 def test_parse_index_rejects_a_page_it_cannot_name_safely():
-    with pytest.raises(SyncError, match='no pages found'):
-        parse_index(nav(link('/style/Word_List', 'Word list')))
+    with pytest.raises(SyncError, match='does not name a file'):
+        parse_index(nav(link('/style/%2fetc%2fpasswd', 'Sneaky')))
 
 
 def test_parse_index_rejects_an_unrecognisable_page():
@@ -131,8 +136,8 @@ def test_parse_index_rejects_an_unrecognisable_page():
 
 
 def test_parse_index_reports_a_file_name_collision():
-    with pytest.raises(SyncError, match='both map to docs/a-b.md'):
-        parse_index(nav(link('/style/a-b', 'One'), link('/style/a/b', 'Two')))
+    with pytest.raises(SyncError, match='both map to docs/lists.md'):
+        parse_index(nav(link('/style/a/lists', 'One'), link('/style/b/lists', 'Two')))
 
 
 def test_document_keeps_the_body_and_records_its_source():
@@ -145,13 +150,13 @@ def test_document_keeps_the_body_and_records_its_source():
 def test_llms_txt_is_an_index_grouped_the_way_google_groups_it():
     text = llms_txt(
         [
-            page('index', title='About this guide', section='Introduction'),
+            page('', title='About this guide', section='Introduction'),
             page('commas', title='Commas', section='Punctuation'),
             page('dashes', title='Dashes', section='Punctuation'),
         ]
     )
     assert text.startswith('# Google Developer Documentation Style Guide\n\n> ')
-    assert '\n## Introduction\n\n- [About this guide](docs/index.md)\n' in text
+    assert '\n## Introduction\n\n- [About this guide](docs/style.md)\n' in text
     assert '\n## Punctuation\n\n- [Commas](docs/commas.md)\n- [Dashes](docs/dashes.md)\n' in text
     assert text.endswith('- [llms-full.txt](llms-full.txt): every page above, concatenated into one file\n')
     # An index, not a copy of the content.
@@ -163,7 +168,7 @@ def test_llms_full_titles_every_document_without_rewriting_it():
         [
             (page('markdown', title='Markdown versus HTML'), '# Markdown versus HTML\n\nUse either.'),
             (page('abbreviations', title='Abbreviations'), '# Abbreviations include acronyms and\nmore.'),
-            (page('index', title='About this guide'), 'This guide provides guidelines.'),
+            (page('', title='About this guide'), 'This guide provides guidelines.'),
         ]
     )
 
@@ -187,13 +192,13 @@ def test_write_mirror_is_idempotent_and_drops_pages_the_guide_no_longer_lists(tm
     keep_note = tmp_path / 'docs' / 'README.txt'
     keep_note.write_text('not a mirrored page', encoding='utf-8')
 
-    fetched = [(page('lists', title='Lists'), '# Lists\n\nBody.'), (page('index', title='About'), 'Intro.')]
+    fetched = [(page('lists', title='Lists'), '# Lists\n\nBody.'), (page('', title='About'), 'Intro.')]
     report = write_mirror(fetched, tmp_path)
 
     assert report.removed == (stale,)
     assert not stale.exists()
     assert keep_note.exists()
-    assert [path.name for path in report.documents] == ['index.md', 'lists.md']
+    assert [path.name for path in report.documents] == ['lists.md', 'style.md']
     assert (tmp_path / 'llms.txt').exists()
 
     snapshot = {path: path.read_bytes() for path in tmp_path.rglob('*') if path.is_file()}

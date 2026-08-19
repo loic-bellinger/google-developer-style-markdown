@@ -57,7 +57,7 @@ def _quote(value: str) -> str:
 
 
 def document(page: Page, body: str) -> str:
-    """Return the contents of ``docs/<slug>.md`` for ``page``.
+    """Return the contents of the mirrored document for ``page``.
 
     The body is Google's Markdown unchanged. It is preceded by a YAML front
     matter block recording where the page came from, which is what lets the
@@ -94,7 +94,7 @@ def llms_txt(pages: Iterable[Page]) -> str:
 
     blocks = [f'# {TITLE}', _SUMMARY, _ATTRIBUTION]
     for section, listed in sections.items():
-        entries = '\n'.join(f'- [{page.title}](docs/{page.slug}.md)' for page in listed)
+        entries = '\n'.join(f'- [{page.title}](docs/{page.filename})' for page in listed)
         blocks.append(f'## {section}\n\n{entries}')
     blocks.append(
         '## Full documentation\n\n- [llms-full.txt](llms-full.txt): every page above, concatenated into one file'

@@ -15,7 +15,7 @@ URL it was reproduced from.
 
 ## Introduction
 
-- [About this guide](docs/index.md)
+- [About this guide](docs/style.md)
 - [Highlights](docs/highlights.md)
 - [What's new](docs/whats-new.md)
 - [Philosophy of this guide](docs/philosophy.md)
