@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  # github.workflow is the caller's name when this workflow is reused, so a
+  # scheduled sync and a push to main do not cancel each other.
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+
+      # --locked fails rather than silently resolving something new, so CI runs
+      # the exact versions in uv.lock.
+      - name: Install
+        run: uv sync --locked
+
+      - name: Lint Python
+        run: uv run ruff check --output-format=github
+
+      - name: Check Python formatting
+        run: uv run ruff format --check --diff
+
+      # Only the hand-written Markdown; docs/ and llms-full.md are excluded in
+      # .rumdl.toml because they are reproductions of Google's Markdown.
+      - name: Lint Markdown
+        run: uv run rumdl check
+
+      - name: Test
+        run: uv run pytest
+
+  # pre-commit is deliberately not run here. It would install a second copy of
+  # ruff and rumdl, pinned separately from uv.lock, and the two would drift.
+  commits:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+
+      - name: Install
+        run: uv sync --locked
+
+      - name: Check commit messages
+        run: >
+          uv run cz check
+          --rev-range ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}

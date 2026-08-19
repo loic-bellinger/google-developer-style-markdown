@@ -1,0 +1,70 @@
+name: Sync
+
+on:
+  schedule:
+    # Weekly, on a minute nobody else picks. The guide changes a few times a
+    # year; anything more frequent is load on Google for no benefit.
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  # Nothing reaches the mirror until the code that writes it passes its own
+  # tests and linters.
+  checks:
+    uses: ./.github/workflows/ci.yml
+
+  sync:
+    needs: checks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+
+      - name: Install
+        run: uv sync --locked
+
+      # Fails on the first unreachable page, and writes nothing in that case.
+      - name: Fetch the guide and regenerate the mirror
+        run: uv run gdsm
+
+      # A table of contents that renders short would otherwise be indistinguishable
+      # from Google deleting most of the guide. Deleting a few pages is normal;
+      # deleting a quarter of them is a bug somewhere, and needs a human.
+      - name: Refuse a suspicious deletion
+        run: |
+          removed=$(git diff --name-only --diff-filter=D -- docs | wc -l)
+          tracked=$(git ls-files -- docs | wc -l)
+          if [ "$removed" -gt "$((tracked / 4))" ]; then
+            echo "::error::sync would delete $removed of $tracked documents, refusing to push"
+            exit 1
+          fi
+          echo "$removed of $tracked documents would be deleted"
+
+      - name: Look for changes
+        id: diff
+        run: |
+          git status --porcelain -- docs llms.txt llms-full.txt
+          if [ -n "$(git status --porcelain -- docs llms.txt llms-full.txt)" ]; then
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- docs llms.txt llms-full.txt
+          git commit -m 'docs: sync the Google developer documentation style guide'
+          git push
