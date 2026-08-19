@@ -94,20 +94,12 @@ followed, so the program cannot wander into the rest of
 `developers.google.com`, and new pages are still picked up automatically as
 soon as Google lists them.
 
-Each reference is resolved and then either canonicalized or dropped:
-
-| Reference               | Result          | Why                                           |
-| ----------------------- | --------------- | --------------------------------------------- |
-| `lists`, `/style/lists` | `…/style/lists` | Resolved against the entry page               |
-| `/style/lists/`         | `…/style/lists` | Trailing slash removed so `.md.txt` resolves  |
-| `/style//lists`         | `…/style/lists` | Empty path segments collapse                  |
-| `/style/lists#nested`   | `…/style/lists` | A fragment selects a position, not a document |
-| `/style/lists?hl=fr`    | `…/style/lists` | A query selects a locale, not a document      |
-| `/style/caf%C3%A9`      | `…/style/caf%C3%A9` | Encoding is carried through, not refused  |
-| `/style`, `/style/`     | `…/style`       | The entry page, mirrored as `docs/style.md`   |
-| `/terms/site-policies`  | dropped         | Outside `/style`                              |
-| `https://example.com/…` | dropped         | Another host                                  |
-| `/style/logo.png`       | dropped         | A file, not a page                            |
+Each reference is resolved against the entry page and then either canonicalized
+or dropped. It is kept when the same host serves it, it lives under `/style`,
+and it does not name a file. Trailing slashes, empty segments, fragments, and
+query strings collapse, so `/style/lists/`, `/style//lists`, and
+`/style/lists#nested` all arrive as one entry. The exhaustive table is
+`test_normalize`, which CI keeps honest.
 
 A page is mirrored under the name Google serves it as, minus the `.txt`:
 `…/style/lists.md.txt` becomes `docs/lists.md`, and the guide's entry page,
