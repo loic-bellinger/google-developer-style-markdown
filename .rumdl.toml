@@ -1,20 +1,30 @@
-# Google Markdown Style Guide Configuration
-# https://google.github.io/styleguide/docguide/style.html
+# Markdown style for the files this project writes by hand, following Google's
+# own Markdown style guide: https://google.github.io/styleguide/docguide/style.html
 #
-# This config enforces Google's Markdown conventions. Use alongside any flavor:
-#
-#   [global]
-#   flavor = "mkdocs"  # Flavor handles parsing, this config handles style
-#
+# The mirrored guide is deliberately out of scope. docs/ is a reproduction of
+# Google's Markdown and must stay byte-identical to the source. Linting it
+# reports 4465 violations, and `rumdl fmt` rewrites 67 of the 70 files -- it
+# reads the front matter `title:` as a top-level heading and demotes each page's
+# real H1 to an H2. Exclusions are used rather than an include list, so a new
+# hand-written file is linted by default. llms.txt and llms-full.txt need no
+# entry: rumdl only discovers .md and .markdown files.
 
 [global]
+exclude = ["docs"]
 line_length = 80  # Google: "Wrap to 80 characters"
+
+# Line length: the 80-column rule is about prose. Ruff owns the Python code
+# blocks in our Markdown and formats them to 120, so checking them here would be
+# a conflict neither tool can resolve. Tables are already exempt by default.
+[MD013]
+code_blocks = false
 
 # Headings: ATX-style only (# Heading), not Setext (underlines)
 [MD003]
 style = "atx"
 
-# Lists: Google uses asterisk (*) for unordered lists
+# Lists: the docguide doesn't prescribe a bullet character, but its examples
+# use asterisks. Pinning one keeps our own files consistent.
 [MD004]
 style = "asterisk"
 

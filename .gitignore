@@ -1,23 +1,23 @@
-# Python-generated files
+# Nothing is ignored by default in git, not even dotfiles, so caches and local
+# state have to be listed explicitly.
+
+# Python
 __pycache__/
 *.py[oc]
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
 
 # Virtual environments
-.venv
+.venv/
 
-# macOS-specific files
-.DS_Store
+# Tool caches
+.ruff_cache/
+.rumdl_cache/
+.pytest_cache/
 
-# IDE
+# Editors and operating systems
 .idea/
 .vscode/
-
-# Ruff
-.ruff_cache/
-
-# Rumdl
-.rumdl_cache
+.DS_Store

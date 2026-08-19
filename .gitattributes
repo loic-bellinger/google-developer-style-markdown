@@ -1,1 +1,3 @@
+# The mirror is written with LF endings on every platform; normalising on
+# checkin keeps the diff of a sync run limited to what Google actually changed.
 * text=auto eol=lf

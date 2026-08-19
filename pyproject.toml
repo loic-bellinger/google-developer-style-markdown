@@ -1,10 +1,12 @@
 [project]
 name = "google-developer-style-markdown"
 version = "0.1.0"
-description = "Add your description here"
+description = "Deterministic Markdown mirror of Google's developer documentation style guide, with llms.txt"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
-    { name = "Loïc Bellinger", email = "loic.bellinger.pro@gmail.com" }
+    { name = "Loïc Bellinger", email = "loic.bellinger.pro@gmail.com" },
 ]
 requires-python = ">=3.14"
 dependencies = [
@@ -12,8 +14,9 @@ dependencies = [
     "selectolax>=0.4.11",
 ]
 
-[project.scripts]
-google-developer-style-markdown = "google_developer_style_markdown:main"
+[project.urls]
+Homepage = "https://github.com/loic-bellinger/google-developer-style-markdown"
+Issues = "https://github.com/loic-bellinger/google-developer-style-markdown/issues"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
@@ -21,28 +24,28 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "commitizen>=4.10.1",
     "pre-commit>=4.6.2",
+    "pytest>=9.0.1",
     "ruff>=0.16.3",
     "rumdl>=0.2.57",
 ]
 
+# --- Linting and formatting ---------------------------------------------------
+# Ruff 0.16 enables a broad rule set by default, so only the additions are
+# listed here. `ruff format` also formats Python code blocks inside Markdown,
+# and docs/ is a verbatim reproduction: without this exclusion a plain
+# `ruff format .` rewrites Google's code samples in our own style.
+
 [tool.ruff]
 line-length = 120
+extend-exclude = ["docs"]
 
 [tool.ruff.lint]
-select = [
-    "E",   # pycodestyle
-    "F",   # pyflakes
-    "UP",  # pyupgrade
-    "B",   # flake8-bugbear
-    "SIM", # flake8-simplify
-    "I",   # isort
-    "D",   # pydocstyle
-    "RUF022",
+extend-select = [
+    "D", # pydocstyle: only D419 is on by default
 ]
-
 ignore = [
-    "D104", # Missing docstring in public package
     "D105", # Missing docstring in magic method
     "D107", # Missing docstring in __init__
 ]
@@ -50,5 +53,23 @@ ignore = [
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D100", "D103"]
+
 [tool.ruff.format]
 quote-style = 'single'
+
+# --- Tests --------------------------------------------------------------------
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config"
+
+# --- Releases -----------------------------------------------------------------
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_provider = "uv"
+update_changelog_on_bump = true
+major_version_zero = true
