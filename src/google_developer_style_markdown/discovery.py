@@ -111,11 +111,11 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
         return None
     # Scope is decided on the encoded path, and the encoding is carried through.
-    # Decoding first would let `%2F` and `%2E%2E` become separators again inside
-    # a single segment: `/style/%2e%2e%2fetc` reads as one page of the guide
-    # until the path is rebuilt, and then it is `/etc`. Encoding is not refused
-    # outright, because a page could legitimately have one in its name; a name
-    # that decodes into something unusable is caught by `Page`.
+    # join has already decoded `%2E` and resolved the dot segments, but `%2F` is
+    # reserved and survives: `/style/%2e%2e%2fetc` arrives as the single segment
+    # `..%2Fetc`, inside the guide, and is refused by `Page` once the name
+    # decodes into `../etc`. Encoding is not refused outright, because a page
+    # could legitimately have one in its name.
     path = PurePosixPath(candidate.raw_path)
     if not path.is_relative_to(_SCOPE) or path.suffix:
         return None
