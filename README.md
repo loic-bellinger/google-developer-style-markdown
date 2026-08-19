@@ -4,11 +4,12 @@ A deterministic, automatically synchronized Markdown mirror of the
 [Google developer documentation style guide][guide], published as plain
 Markdown files plus an [llms.txt][llmstxt] index.
 
-*   `docs/` — one Markdown file per page of the guide, reproduced verbatim.
-*   `llms.txt` — the index: structure and navigation, small enough to keep in
-    context, following the [llms.txt][llmstxt] v2 format.
-*   `llms-full.txt` — the substance: every page concatenated, ready to drop into
-    a context window.
+*   **[`docs/`](docs)** — one Markdown file per page of the guide, reproduced
+    verbatim.
+*   **[`llms.txt`](llms.txt)** — the index: structure and navigation, small
+    enough to keep in context, following the [llms.txt][llmstxt] v2 format.
+*   **[`llms-full.txt`](llms-full.txt)** — the substance: every page
+    concatenated, ready to drop into a context window.
 
 The mirror is refreshed weekly by GitHub Actions. Every run either reproduces
 the previous output byte for byte, or produces a diff that shows exactly what
@@ -155,15 +156,15 @@ again.
 
 ## Repository layout
 
-```text
-docs/                    the mirrored guide, one file per page (generated)
-llms.txt                 index, llms.txt v2 format (generated)
-llms-full.txt            every page concatenated (generated)
-src/…/                   the synchronizer
-tests/                   tests for URL handling, naming, rendering, deletion
-.github/workflows/       ci.yml and sync.yml
-.rumdl.toml              Markdown style for the hand-written files
-```
+| Path | Contents |
+| ---- | -------- |
+| [`docs/`](docs) | The mirrored guide, one file per page (generated) |
+| [`llms.txt`](llms.txt) | Index, llms.txt v2 format (generated) |
+| [`llms-full.txt`](llms-full.txt) | Every page concatenated (generated) |
+| [`src/`](src/google_developer_style_markdown) | The synchronizer |
+| [`tests/`](tests) | URL handling, naming, rendering, deletion |
+| [`.github/workflows/`](.github/workflows) | `ci.yml` and `sync.yml` |
+| [`.rumdl.toml`](.rumdl.toml) | Markdown style for the hand-written files |
 
 ## GitHub Actions
 
@@ -275,6 +276,15 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
 *   **Text only.** Images, diagrams, and other assets referenced by the guide
     are not mirrored — they are not covered by the content licence. Links to
     them still point at Google.
+*   **CSS-only markers are lost upstream.** The guide flags Android-specific
+    and Cloud-specific guidance with small logos, which the HTML renders as
+    empty `<span class="icon-android">` elements styled entirely in CSS. They
+    carry no text, so Google's own Markdown has nothing to convert and drops
+    them: 26 Android and 8 Cloud markers disappear from the word list, and the
+    sentences introducing them on the entry page now begin *"precedes terms
+    and guidelines specific to…"* with nothing in front. This happens before
+    the mirror sees the page, and putting the markers back would mean inventing
+    content. Check the source page when a term's scope matters.
 *   **Absolute cross-references.** Links between pages point at
     `developers.google.com`, because that is what Google's Markdown contains.
     Rewriting them to point inside `docs/` would be a change to the content.

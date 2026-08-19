@@ -9,6 +9,18 @@ authors = [
     { name = "Loïc Bellinger", email = "loic.bellinger.pro@gmail.com" },
 ]
 requires-python = ">=3.14"
+# Keywords are inert until the package is published; GitHub discovery comes
+# from the repository topics and the description. They are here so that
+# publishing does not need a second pass.
+keywords = [
+    "google",
+    "style-guide",
+    "technical-writing",
+    "documentation",
+    "markdown",
+    "llms-txt",
+    "mirror",
+]
 dependencies = [
     "aiohttp[speedups]>=3.14.3",
     "selectolax>=0.4.11",
