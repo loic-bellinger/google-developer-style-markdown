@@ -8,7 +8,7 @@ import pytest
 
 from google_developer_style_markdown import SyncError
 from google_developer_style_markdown.discovery import Page, normalize, parse_index, slug_for
-from google_developer_style_markdown.render import document, llms_full, llms_txt, parse_document
+from google_developer_style_markdown.render import document, llms_full, llms_txt
 from google_developer_style_markdown.sync import write_mirror
 
 INDEX = 'https://developers.google.com/style'
@@ -119,14 +119,6 @@ def test_document_keeps_the_body_and_records_its_source():
     assert text == (
         '---\ntitle: "Lists: \\"and\\" more"\nsource: https://developers.google.com/style/lists\n---\n\nBody\ntext\n'
     )
-    fields, body = parse_document(text)
-    assert fields == {'title': 'Lists: "and" more', 'source': f'{INDEX}/lists'}
-    assert body == 'Body\ntext\n'
-
-
-def test_parse_document_rejects_a_hand_written_file():
-    with pytest.raises(SyncError, match='no front matter'):
-        parse_document('# Not ours\n')
 
 
 def test_llms_txt_is_an_index_grouped_the_way_google_groups_it():
@@ -146,11 +138,13 @@ def test_llms_txt_is_an_index_grouped_the_way_google_groups_it():
 
 
 def test_llms_full_titles_every_document_without_rewriting_it():
-    standalone = document(page('markdown', title='Markdown versus HTML'), '# Markdown versus HTML\n\nUse either.')
-    wrapped = document(page('abbreviations', title='Abbreviations'), '# Abbreviations include acronyms and\nmore.')
-    untitled = document(page('index', title='About this guide'), 'This guide provides guidelines.')
-
-    text = llms_full([standalone, wrapped, untitled])
+    text = llms_full(
+        [
+            (page('markdown', title='Markdown versus HTML'), '# Markdown versus HTML\n\nUse either.'),
+            (page('abbreviations', title='Abbreviations'), '# Abbreviations include acronyms and\nmore.'),
+            (page('index', title='About this guide'), 'This guide provides guidelines.'),
+        ]
+    )
 
     # A standalone heading becomes the document title and is not repeated.
     assert f'\n# Markdown versus HTML\n\nSource: <{INDEX}/markdown>\n\nUse either.\n' in text
@@ -184,6 +178,20 @@ def test_write_mirror_is_idempotent_and_drops_pages_the_guide_no_longer_lists(tm
     snapshot = {path: path.read_bytes() for path in tmp_path.rglob('*') if path.is_file()}
     assert write_mirror(fetched, tmp_path).removed == ()
     assert {path: path.read_bytes() for path in tmp_path.rglob('*') if path.is_file()} == snapshot
+
+
+def test_llms_full_follows_file_name_order_not_slug_order(tmp_path):
+    # headings-targets.md sorts before headings.md, because '-' precedes '.'.
+    # Sorting the slugs instead reverses the pair, so the order is asserted on
+    # a case where the two disagree.
+    fetched = [
+        (page('headings', title='Headings'), 'About headings.'),
+        (page('headings-targets', title='Targets'), 'About targets.'),
+    ]
+    write_mirror(fetched, tmp_path)
+
+    text = (tmp_path / 'llms-full.txt').read_text(encoding='utf-8')
+    assert text.index('# Targets') < text.index('# Headings')
 
 
 def test_write_mirror_writes_lf_endings_and_a_final_newline(tmp_path):

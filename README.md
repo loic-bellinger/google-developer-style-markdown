@@ -130,13 +130,11 @@ uv run pre-commit install   # optional: run all of the above before each commit
 1.  If *any* page failed, stop. Nothing is written.
 1.  Write `docs/<page>.md` for every page.
 1.  Delete any `docs/*.md` the guide no longer lists.
-1.  Read `docs/` back from disk and regenerate `llms.txt` and `llms-full.txt`.
+1.  Regenerate `llms.txt` and `llms-full.txt` from the same downloads.
 
 Steps 3 and 5 are the interesting pair. Deleting a page is only safe because
 the run is all-or-nothing: a page that could not be downloaded aborts the sync,
-so a network failure can never be mistaken for a page Google removed. And
-`llms-full.txt` is built from the files on disk rather than from what was just
-downloaded, so it cannot drift from what `docs/` actually contains.
+so a network failure can never be mistaken for a page Google removed.
 
 The result is idempotent. Two runs against an unchanged guide produce identical
 bytes: UTF-8, LF endings, one trailing newline, stable ordering (`llms.txt`

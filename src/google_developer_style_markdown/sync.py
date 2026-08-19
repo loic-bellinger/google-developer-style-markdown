@@ -8,7 +8,7 @@ be mistaken for a page that Google removed.
 
 import asyncio
 import logging
-from collections.abc import Iterable, Iterator
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -114,21 +114,15 @@ def _write(path: Path, text: str) -> None:
     path.write_text(text, encoding='utf-8', newline='\n')
 
 
-def _read_documents(paths: Iterable[Path]) -> Iterator[str]:
-    """Yield the contents of ``paths``, with line endings normalised to LF."""
-    for path in paths:
-        yield path.read_text(encoding='utf-8')
-
-
-def write_mirror(fetched: Iterable[tuple[Page, str]], root: Path) -> Report:
+def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
     """Write ``docs/``, ``llms.txt`` and ``llms-full.txt`` under ``root``.
 
     Documents the guide no longer lists are deleted, so that ``docs/`` always
     describes the guide as it is today rather than as it has ever been. Only
     ``*.md`` files directly inside ``docs/`` are ever removed.
 
-    ``llms-full.txt`` is built by reading the documents back from disk, which
-    guarantees it can never drift from what ``docs/`` actually contains.
+    ``llms.txt`` lists the pages in the order Google presents them, and
+    ``llms-full.txt`` concatenates them in file name order.
 
     Args:
         fetched: Pages paired with their Markdown source, in reading order.
@@ -140,23 +134,24 @@ def write_mirror(fetched: Iterable[tuple[Page, str]], root: Path) -> Report:
     documents = root / DOCS_DIRECTORY
     documents.mkdir(parents=True, exist_ok=True)
 
-    pages = []
-    written = []
+    written = {}
     for page, body in fetched:
         path = documents / f'{page.slug}.md'
         _write(path, document(page, body))
-        pages.append(page)
-        written.append(path)
+        written[path] = (page, body)
 
-    current = set(written)
-    removed = tuple(path for path in sorted(documents.glob('*.md')) if path not in current)
+    removed = tuple(path for path in sorted(documents.glob('*.md')) if path not in written)
     for path in removed:
         _LOGGER.info('removing %s: no longer part of the guide', path)
         path.unlink()
 
-    ordered = tuple(sorted(current))
-    _write(root / INDEX_FILE, llms_txt(pages))
-    _write(root / FULL_FILE, llms_full(_read_documents(ordered)))
+    # llms.txt follows Google's reading order; llms-full.txt follows file names.
+    # Sorting the paths themselves is what makes the second claim true: sorting
+    # slugs instead would put headings before headings-targets, because '.' and
+    # '-' do not compare the way the file names do.
+    ordered = tuple(sorted(written))
+    _write(root / INDEX_FILE, llms_txt(page for page, _ in fetched))
+    _write(root / FULL_FILE, llms_full(written[path] for path in ordered))
     return Report(documents=ordered, removed=removed)
 
 
