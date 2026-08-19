@@ -7,9 +7,12 @@ only to discover the table of contents, then downloads the Markdown Google
 already publishes.
 """
 
+from importlib.metadata import version
+
 __all__ = ['SyncError', '__version__']
 
-__version__ = '0.1.0'
+__version__ = version(__name__)
+"""Read from the installed package, so pyproject.toml stays the only copy."""
 
 
 class SyncError(RuntimeError):
