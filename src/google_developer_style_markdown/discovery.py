@@ -1,6 +1,7 @@
 """Discover the pages of the style guide from its entry page.
 
 Discovery is deliberately narrow. The only page fetched as HTML is
+
 :data:`GUIDE`; every link is then taken from the guide's own table of contents
 (the ``_book`` navigation menu that DevSite renders on every page). There is no
 recursive crawl, and nothing outside :data:`GUIDE` is ever considered.
@@ -23,7 +24,7 @@ Everything the mirror treats as in scope is derived from this one URL: the host
 a page has to be served from, and the path it has to live under.
 """
 
-_SCOPE = tuple(part for part in GUIDE.parts[1:] if part)
+_SCOPE = tuple(part for part in GUIDE.raw_parts[1:] if part)
 
 # Slugs are used as file names, so they are restricted to a shape that cannot
 # escape the output directory: lowercase words joined by single hyphens. No
@@ -82,10 +83,14 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     candidate = base.join(URL(href.strip()))
     if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
         return None
-    segments = tuple(part for part in candidate.parts[1:] if part)
+    # raw_parts leaves the segments percent-encoded. Reading the decoded ones
+    # instead would let `%2F` and `%2E%2E` become separators again inside a
+    # single segment, which passes the scope test and then escapes it when the
+    # path is rebuilt -- `/style/%2e%2e%2fetc` would come back as `/etc`.
+    segments = tuple(part for part in candidate.raw_parts[1:] if part)
     if segments[: len(_SCOPE)] != _SCOPE:
         return None
-    page = GUIDE.origin().joinpath(*segments)
+    page = GUIDE.origin().joinpath(*segments, encoded=True)
     return None if page.suffix else str(page)
 
 

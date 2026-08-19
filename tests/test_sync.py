@@ -84,6 +84,23 @@ def test_slug_for(url, expected):
     assert slug_for(url) == expected
 
 
+@pytest.mark.parametrize(
+    'href',
+    [
+        '/style/%2e%2e%2fetc',
+        '/style/%2fetc%2fpasswd',
+        '/style/%2e%2e%2f%2e%2e%2fterms/site-policies',
+        '/style/lists%2f..%2f..%2fetc',
+    ],
+)
+def test_normalize_never_leaves_the_scope_through_percent_encoding(href):
+    # Reading the decoded path segments turns %2F and %2E%2E back into
+    # separators inside one segment. That passed the scope test and then
+    # escaped it when the URL was rebuilt, or raised out of yarl outright.
+    url = normalize(href)
+    assert url is None or url.startswith(f'{INDEX}/')
+
+
 def test_parse_index_keeps_reading_order_and_sections():
     pages = parse_index(
         nav(
