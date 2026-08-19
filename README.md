@@ -71,7 +71,7 @@ Each reference is resolved and then either canonicalised or dropped:
 | `/style//lists`         | `…/style/lists` | Empty path segments collapse                  |
 | `/style/lists#nested`   | `…/style/lists` | A fragment selects a position, not a document |
 | `/style/lists?hl=fr`    | `…/style/lists` | A query selects a locale, not a document      |
-| `/style/%2fetc%2f…`     | dropped         | A percent-encoded path is refused, not decoded |
+| `/style/caf%C3%A9`      | `…/style/caf%C3%A9` | Encoding is carried through, not refused  |
 | `/style`, `/style/`     | `…/style`       | The entry page, mirrored as `docs/style.md`   |
 | `/terms/site-policies`  | dropped         | Outside `/style`                              |
 | `https://example.com/…` | dropped         | Another host                                  |
@@ -82,11 +82,18 @@ A page is mirrored under the name Google serves it as, minus the `.txt`:
 served at `…/style.md.txt`, becomes `docs/style.md`. There is no naming scheme
 to keep in step with anything.
 
-A `Page` refuses at construction any URL that does not name a single, ordinary
-file — an empty name, a leading dot, or a separator that a percent-encoded
-segment decoded back into — so "this can be written under `docs/`" is true of
-every instance rather than checked at each call site. Two pages that would
-claim the same file name abort the run.
+Scope is decided on the *encoded* path and the encoding is carried through, so
+a page whose name legitimately contains one is kept: `/style/caf%C3%A9` would
+be mirrored as `docs/café.md`. Decoding before that decision is what lets
+`%2F` and `%2E%2E` become separators again inside a single segment, so that
+`/style/%2e%2e%2fetc` reads as a page of the guide and then turns out to be
+`/etc`.
+
+What a name decodes into is settled one step later. A `Page` refuses at
+construction any URL that does not name a single, ordinary file — an empty
+name, a leading dot, or a separator — so "this can be written under `docs/`"
+is true of every instance rather than checked at each call site. Two pages that
+would claim the same file name abort the run.
 
 [selectolax]: https://github.com/rushter/selectolax
 [yarl]: https://yarl.aio-libs.org/

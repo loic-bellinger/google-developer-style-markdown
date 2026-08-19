@@ -24,7 +24,7 @@ Everything the mirror treats as in scope is derived from this one URL: the host
 a page has to be served from, and the path it has to live under.
 """
 
-_SCOPE = PurePosixPath(GUIDE.path)
+_SCOPE = PurePosixPath(GUIDE.raw_path)
 """Path every page of the guide lives under, derived from :data:`GUIDE`."""
 
 _DEFAULT_SECTION = 'Documentation'
@@ -46,9 +46,11 @@ class Page:
     def __post_init__(self) -> None:
         """Refuse a page that cannot be given a plain file name.
 
-        The name goes straight into a path under ``docs/``, and percent-encoded
-        segments decode into separators, so this is checked once here rather
-        than trusted at every call site.
+        The name goes straight into a path under ``docs/``, and it is the
+        decoded form of a URL segment, which is where percent-encoding can turn
+        back into a separator. :func:`normalize` deliberately leaves that to be
+        settled here, so that an encoded name a page can legitimately have is
+        kept while one that cannot be written is refused.
 
         Raises:
             SyncError: If the URL does not name a single, ordinary file.
@@ -85,10 +87,10 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     and ``/style//lists`` become one entry -- and so that appending ``.md.txt``
     yields the URL Google actually serves.
 
-    A reference is rejected when it points at another host, when its path is
-    percent-encoded, when it falls outside :data:`GUIDE`, or when it looks like
-    a file rather than a page (its name has a suffix), which is what keeps
-    assets such as images and archives out of the mirror.
+    A reference is rejected when it points at another host, when it falls
+    outside :data:`GUIDE`, or when it looks like a file rather than a page (its
+    name has a suffix), which is what keeps assets such as images and archives
+    out of the mirror.
 
     Args:
         href: Reference to resolve, absolute or relative.
@@ -100,18 +102,18 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     candidate = base.join(URL(href.strip()))
     if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
         return None
-    # A percent-encoded path is refused rather than decoded. The guide has no
-    # use for one, and decoding is where `%2F` and `%2E%2E` become separators
-    # again inside a single segment: `/style/%2e%2e%2fetc` reads as a page of
-    # the guide until the path is rebuilt, and then it is `/etc`.
-    if candidate.path != candidate.raw_path:
-        return None
-    path = PurePosixPath(candidate.path)
+    # Scope is decided on the encoded path, and the encoding is carried through.
+    # Decoding first would let `%2F` and `%2E%2E` become separators again inside
+    # a single segment: `/style/%2e%2e%2fetc` reads as one page of the guide
+    # until the path is rebuilt, and then it is `/etc`. Encoding is not refused
+    # outright, because a page could legitimately have one in its name; a name
+    # that decodes into something unusable is caught by :class:`Page`.
+    path = PurePosixPath(candidate.raw_path)
     if not path.is_relative_to(_SCOPE) or path.suffix:
         return None
     # with_path drops the query and the fragment, and PurePosixPath has already
     # collapsed trailing and doubled slashes.
-    return str(GUIDE.with_path(str(path)))
+    return str(GUIDE.with_path(str(path), encoded=True))
 
 
 def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:

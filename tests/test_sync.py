@@ -57,9 +57,11 @@ def page(path: str, *, title: str = 'Title', section: str = 'Documentation') -> 
         ('https://example.com/style/lists', None),
         ('/style/logo.png', None),
         ('mailto:someone@example.com', None),
-        # A percent-encoded path is refused rather than decoded.
-        ('/style/%2fetc%2fpasswd', None),
-        ('/style/a%20b', None),
+        # Encoding is carried through rather than refused: a page may
+        # legitimately have one in its name, and the scope decision is made
+        # before anything is decoded.
+        ('/style/caf%C3%A9', f'{INDEX}/caf%C3%A9'),
+        ('/style/a%20b', f'{INDEX}/a%20b'),
         ('../../etc/passwd', None),
         ('/style/../../etc/passwd', None),
         ('//other.example.com/style/lists', None),
@@ -81,6 +83,10 @@ def test_normalize(href, expected):
 )
 def test_page_is_named_after_the_url_google_serves(path, expected):
     assert page(path).filename == expected
+
+
+def test_page_keeps_a_name_that_is_only_percent_encoded():
+    assert page('caf%C3%A9').filename == 'café.md'
 
 
 @pytest.mark.parametrize(
@@ -133,6 +139,13 @@ def test_parse_index_keeps_reading_order_and_sections():
         ('commas.md', 'Commas', 'Punctuation'),
     ]
     assert pages[1].markdown_url == f'{INDEX}/commas.md.txt'
+
+
+def test_parse_index_rejects_a_page_it_cannot_name_safely():
+    # normalize keeps this in scope, since the separators are still encoded
+    # there. They reappear when the name is decoded, and Page refuses it.
+    with pytest.raises(SyncError, match='does not name a file'):
+        parse_index(nav(link('/style/%2fetc%2fpasswd', 'Sneaky')))
 
 
 def test_parse_index_reads_the_shape_of_the_list_not_the_class_names():
