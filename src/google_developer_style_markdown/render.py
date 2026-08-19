@@ -30,25 +30,12 @@ _FRONT_MATTER_FENCE = '---'
 _HORIZONTAL_RULE = '---'
 
 _SUMMARY = (
-    "> Automatically synchronized Markdown mirror of Google's developer documentation\n"
-    '> style guide, reproduced from the Markdown sources published under\n'
-    f'> {GUIDE}'
-)
-
-_FULL_SUMMARY = (
-    '> Full text of the mirrored guide: every page under `docs/`, concatenated in file\n'
-    '> name order. Read `llms.txt` first if you only need the index.'
-)
-
-_ATTRIBUTION = (
-    'Portions of this file are reproduced from work created and\n'
-    '[shared by Google](https://developers.google.com/readme/policies) and used according to\n'
-    'terms described in the\n'
-    '[Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);\n'
-    'code samples are licensed under the\n'
-    '[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). This mirror is not\n'
-    'affiliated with, sponsored by, or endorsed by Google, and every document records the\n'
-    'URL it was reproduced from.'
+    "> Markdown mirror of Google's developer documentation style guide, reproduced\n"
+    f'> verbatim from {GUIDE} -- work\n'
+    '> [created and shared by Google](https://developers.google.com/readme/policies), used\n'
+    '> under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);\n'
+    '> code samples under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).\n'
+    '> Not affiliated with, sponsored by, or endorsed by Google.'
 )
 
 
@@ -91,7 +78,7 @@ def llms_txt(pages: Iterable[Page]) -> str:
     Returns:
         The full text of `llms.txt`, ending in a single newline.
     """
-    blocks = [f'# {TITLE}', _SUMMARY, _ATTRIBUTION]
+    blocks = [f'# {TITLE}', _SUMMARY]
     # groupby only groups neighbours, which is exactly the intent: the sections
     # are the ones the table of contents draws, in the order it draws them, and
     # a section Google split in two would be mirrored as two sections.
@@ -121,11 +108,7 @@ def llms_full(documents: Iterable[tuple[Page, str]]) -> str:
     Returns:
         The full text of `llms-full.txt`, ending in a single newline.
     """
-    blocks = [
-        f'# {TITLE}',
-        _FULL_SUMMARY,
-        _ATTRIBUTION,
-    ]
+    blocks = [f'# {TITLE}', _SUMMARY]
     for page, markdown in documents:
         heading, _, rest = markdown.rstrip().partition('\n')
         if heading.startswith('# ') and not rest.partition('\n')[0].strip():

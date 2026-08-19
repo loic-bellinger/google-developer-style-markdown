@@ -1,17 +1,11 @@
 # Google Developer Documentation Style Guide
 
-> Automatically synchronized Markdown mirror of Google's developer documentation
-> style guide, reproduced from the Markdown sources published under
-> https://developers.google.com/style/
-
-Portions of this file are reproduced from work created and
-[shared by Google](https://developers.google.com/readme/policies) and used according to
-terms described in the
-[Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);
-code samples are licensed under the
-[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). This mirror is not
-affiliated with, sponsored by, or endorsed by Google, and every document records the
-URL it was reproduced from.
+> Markdown mirror of Google's developer documentation style guide, reproduced
+> verbatim from https://developers.google.com/style/ -- work
+> [created and shared by Google](https://developers.google.com/readme/policies), used
+> under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);
+> code samples under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+> Not affiliated with, sponsored by, or endorsed by Google.
 
 ## Introduction
 
