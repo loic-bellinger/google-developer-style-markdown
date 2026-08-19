@@ -1,0 +1,118 @@
+# Google Developer Documentation Style Guide
+
+> Automatically synchronized Markdown mirror of Google's developer documentation
+> style guide, reproduced from the Markdown sources published under
+> https://developers.google.com/style/
+
+Portions of this file are reproduced from work created and
+[shared by Google](https://developers.google.com/readme/policies) and used according to
+terms described in the
+[Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);
+code samples are licensed under the
+[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). This mirror is not
+affiliated with, sponsored by, or endorsed by Google, and every document records the
+URL it was reproduced from.
+
+## Introduction
+
+- [About this guide](docs/index.md)
+- [Highlights](docs/highlights.md)
+- [What's new](docs/whats-new.md)
+- [Philosophy of this guide](docs/philosophy.md)
+
+## Key resources
+
+- [Word list](docs/word-list.md)
+- [Product names](docs/product-names.md)
+- [Text-formatting summary](docs/text-formatting.md)
+
+## General principles
+
+- [Accessibility](docs/accessibility.md)
+- [Excessive claims](docs/excessive-claims.md)
+- [Future features](docs/future.md)
+- [Global audience](docs/translation.md)
+- [Inclusive language](docs/inclusive-documentation.md)
+- [Jargon](docs/jargon.md)
+- [Prescriptive documentation](docs/prescriptive-documentation.md)
+- [Third-party content](docs/other-sources.md)
+- [Timeless documentation](docs/timeless-documentation.md)
+- [Voice and tone](docs/tone.md)
+
+## Language and grammar
+
+- [Abbreviations](docs/abbreviations.md)
+- [Active voice](docs/voice.md)
+- [Anthropomorphism](docs/anthropomorphism.md)
+- [Articles (a, an, the)](docs/articles.md)
+- [Capitalization](docs/capitalization.md)
+- [Contractions](docs/contractions.md)
+- [Pluralization](docs/pluralization.md)
+- [Possessives](docs/possessives.md)
+- [Prepositions](docs/prepositions.md)
+- [Present tense](docs/tense.md)
+- [Pronouns](docs/pronouns.md)
+- [Second person](docs/person.md)
+- [Sentence structure](docs/sentence-structure.md)
+- [Verbs in reference documents](docs/reference-verbs.md)
+
+## Punctuation
+
+- [Colons](docs/colons.md)
+- [Commas](docs/commas.md)
+- [Dashes](docs/dashes.md)
+- [Ellipses](docs/ellipses.md)
+- [Hyphens](docs/hyphens.md)
+- [Parentheses](docs/parentheses.md)
+- [Periods and end punctuation](docs/periods.md)
+- [Quotation marks](docs/quotation-marks.md)
+- [Semicolons](docs/semicolons.md)
+- [Slashes](docs/slashes.md)
+
+## Formatting and organization
+
+- [Dates and times](docs/dates-times.md)
+- [Examples](docs/format-examples.md)
+- [Figures and other images](docs/images.md)
+- [Footnotes](docs/footnotes.md)
+- [Headings and titles](docs/headings.md)
+- [Italics with terms](docs/italics-terms.md)
+- [Lists](docs/lists.md)
+- [Mathematical notation](docs/mathematical-notation.md)
+- [Notes and other notices](docs/notices.md)
+- [Numbers](docs/numbers.md)
+- [Paragraphs](docs/paragraph-structure.md)
+- [Phone numbers](docs/phone-numbers.md)
+- [Procedures](docs/procedures.md)
+- [Tables](docs/tables.md)
+- [Units of measurement](docs/units-of-measure.md)
+
+## Linking
+
+- [Cross-references and linking](docs/cross-references.md)
+- [Headings as link targets](docs/headings-targets.md)
+
+## Computer interfaces
+
+- [API reference code comments](docs/api-reference-comments.md)
+- [Code in text](docs/code-in-text.md)
+- [Code samples](docs/code-samples.md)
+- [Command-line syntax](docs/code-syntax.md)
+- [Placeholder formatting](docs/placeholders.md)
+- [UI elements and interaction](docs/ui-elements.md)
+
+## HTML and CSS
+
+- [HTML and semantic tagging](docs/semantic-tagging.md)
+- [HTML formatting](docs/html-formatting.md)
+- [Markdown versus HTML](docs/markdown.md)
+
+## Names and naming
+
+- [Example domains and names](docs/examples.md)
+- [Filenames](docs/filenames.md)
+- [Trademarks](docs/trademarks.md)
+
+## Full documentation
+
+- [llms-full.txt](llms-full.txt): every page above, concatenated into one file
