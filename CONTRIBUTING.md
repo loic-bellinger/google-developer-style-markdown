@@ -33,8 +33,8 @@ uv run gdsm
 git diff
 ```
 
-Please do not include a full re-sync in a pull request that is about the code —
-it buries the change under hundreds of lines. The scheduled workflow will pick
+Please do not include a full re-sync in a pull request that is about the
+code—it buries the change under hundreds of lines. The scheduled workflow picks
 the content up on its own.
 
 ## Commit messages
