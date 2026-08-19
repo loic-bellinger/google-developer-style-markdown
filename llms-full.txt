@@ -1,7 +1,7 @@
 # Google Developer Documentation Style Guide
 
 > Markdown mirror of Google's developer documentation style guide, reproduced
-> verbatim from https://developers.google.com/style/ -- work
+> verbatim from <https://developers.google.com/style/> -- work
 > [created and shared by Google](https://developers.google.com/readme/policies), used
 > under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);
 > code samples under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).

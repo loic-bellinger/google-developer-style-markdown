@@ -31,7 +31,7 @@ _HORIZONTAL_RULE = '---'
 
 _SUMMARY = (
     "> Markdown mirror of Google's developer documentation style guide, reproduced\n"
-    f'> verbatim from {GUIDE} -- work\n'
+    f'> verbatim from <{GUIDE}> -- work\n'
     '> [created and shared by Google](https://developers.google.com/readme/policies), used\n'
     '> under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/);\n'
     '> code samples under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).\n'
