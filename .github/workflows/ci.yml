@@ -36,8 +36,9 @@ jobs:
       - name: Check Python formatting
         run: uv run ruff format --check --diff
 
-      # Only the hand-written Markdown; docs/ and llms-full.md are excluded in
-      # .rumdl.toml because they are reproductions of Google's Markdown.
+      # Only the hand-written Markdown; docs/ is excluded in .rumdl.toml because
+      # it is a reproduction of Google's Markdown. llms.txt and llms-full.txt
+      # need no entry: rumdl only discovers .md files.
       - name: Lint Markdown
         run: uv run rumdl check
 
