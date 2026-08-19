@@ -207,11 +207,11 @@ gh workflow run sync.yml
 ## Markdown quality
 
 [rumdl][rumdl] enforces [Google's own Markdown style][docguide] on the files
-this repository writes by hand. `docs/` is excluded in `.rumdl.toml`, and the
-numbers say why: linting it reports 4465 violations across the 70 files, and
-`rumdl fmt` rewrites 67 of them. Among other things it reads the front matter
-`title:` as a top-level heading, so it demotes every page's real `#` heading to
-`##`—a silent rewrite of someone else's document structure.
+this repository writes by hand. `docs/` is excluded in `.rumdl.toml`, because
+`rumdl fmt` rewrites nearly every file of it: bullet characters, list spacing,
+the trailing spaces Google uses as line breaks, and the indentation inside code
+samples, where in a style guide the indentation is sometimes the point. No
+option reaches that—it is what the rules are for.
 
 Exclusions are used rather than an allowlist, so a new hand-written file is
 linted by default instead of being silently skipped. `llms.txt` and
