@@ -1,7 +1,7 @@
 """Deterministic Markdown mirror of Google's developer documentation style guide.
 
 The guide is published at https://developers.google.com/style/. Every page is
-also served as plain Markdown at the same URL with a ``.md.txt`` suffix, so this
+also served as plain Markdown at the same URL with a `.md.txt` suffix, so this
 package never has to reconstruct Markdown from HTML: it parses the entry page
 only to discover the table of contents, then downloads the Markdown Google
 already publishes.

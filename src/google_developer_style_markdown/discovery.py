@@ -2,9 +2,9 @@
 
 Discovery is deliberately narrow. The only page fetched as HTML is
 
-:data:`GUIDE`; every link is then taken from the guide's own table of contents
-(the ``_book`` navigation menu that DevSite renders on every page). There is no
-recursive crawl, and nothing outside :data:`GUIDE` is ever considered.
+`GUIDE`; every link is then taken from the guide's own table of contents
+(the `_book` navigation menu that DevSite renders on every page). There is no
+recursive crawl, and nothing outside `GUIDE` is ever considered.
 """
 
 from dataclasses import dataclass
@@ -25,7 +25,7 @@ a page has to be served from, and the path it has to live under.
 """
 
 _SCOPE = PurePosixPath(GUIDE.raw_path)
-"""Path every page of the guide lives under, derived from :data:`GUIDE`."""
+"""Path every page of the guide lives under, derived from `GUIDE`."""
 
 _DEFAULT_SECTION = 'Documentation'
 
@@ -46,9 +46,9 @@ class Page:
     def __post_init__(self) -> None:
         """Refuse a page that cannot be given a plain file name.
 
-        The name goes straight into a path under ``docs/``, and it is the
+        The name goes straight into a path under `docs/`, and it is the
         decoded form of a URL segment, which is where percent-encoding can turn
-        back into a separator. :func:`normalize` deliberately leaves that to be
+        back into a separator. `normalize` deliberately leaves that to be
         settled here, so that an encoded name a page can legitimately have is
         kept while one that cannot be written is refused.
 
@@ -68,35 +68,35 @@ class Page:
     def filename(self) -> str:
         """Name this page is mirrored under.
 
-        Taken from the URL Google actually serves, minus its ``.txt``: the file
+        Taken from the URL Google actually serves, minus its `.txt`: the file
         is called whatever the source is called, so there is no naming scheme
         to keep in step with anything. The guide's entry page is served at
-        ``/style.md.txt`` and is therefore mirrored as ``style.md``.
+        `/style.md.txt` and is therefore mirrored as `style.md`.
         """
         return URL(self.markdown_url).name.removesuffix('.txt')
 
 
 def normalize(href: str, *, base: URL = GUIDE) -> str | None:
-    """Return the canonical guide URL for ``href``, or ``None`` if out of scope.
+    """Return the canonical guide URL for `href`, or `None` if out of scope.
 
-    Relative references are resolved against ``base``, which also resolves any
-    ``..`` before the result is inspected. Fragments and query strings are
+    Relative references are resolved against `base`, which also resolves any
+    `..` before the result is inspected. Fragments and query strings are
     dropped: on DevSite they select a position or a locale, never a different
     document, so keeping them would only produce duplicates. Trailing and
-    doubled slashes are collapsed, so that ``/style/lists``, ``/style/lists/``
-    and ``/style//lists`` become one entry -- and so that appending ``.md.txt``
+    doubled slashes are collapsed, so that `/style/lists`, `/style/lists/`
+    and `/style//lists` become one entry -- and so that appending `.md.txt`
     yields the URL Google actually serves.
 
     A reference is rejected when it points at another host, when it falls
-    outside :data:`GUIDE`, or when it looks like a file rather than a page (its
+    outside `GUIDE`, or when it looks like a file rather than a page (its
     name has a suffix), which is what keeps assets such as images and archives
     out of the mirror.
 
-    That last rule is why this takes the address of a *page*. A ``.md.txt``
+    That last rule is why this takes the address of a *page*. A `.md.txt`
     address is a file by the same test and would be rejected, which is
     harmless only because the Markdown form is never discovered: it is derived
     from a page that has already come through here, by
-    :attr:`Page.markdown_url`. Anything that starts finding pages somewhere
+    `Page.markdown_url`. Anything that starts finding pages somewhere
     other than the table of contents -- a sitemap, a link in the prose -- has
     to keep that separation or drop every address it is looking for.
 
@@ -105,7 +105,7 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
         base: URL that relative references are resolved against.
 
     Returns:
-        The canonical ``https`` URL of an in-scope page, or ``None``.
+        The canonical `https` URL of an in-scope page, or `None`.
     """
     candidate = base.join(URL(href.strip()))
     if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
@@ -115,7 +115,7 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     # a single segment: `/style/%2e%2e%2fetc` reads as one page of the guide
     # until the path is rebuilt, and then it is `/etc`. Encoding is not refused
     # outright, because a page could legitimately have one in its name; a name
-    # that decodes into something unusable is caught by :class:`Page`.
+    # that decodes into something unusable is caught by `Page`.
     path = PurePosixPath(candidate.raw_path)
     if not path.is_relative_to(_SCOPE) or path.suffix:
         return None
@@ -130,7 +130,7 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
     The navigation is a flat list in which section headings and page links are
     siblings, so the pages are walked in document order and each one is
     attributed to the most recent heading. Reading order is preserved: it is
-    Google's own, and it is what ``llms.txt`` presents to a reader.
+    Google's own, and it is what `llms.txt` presents to a reader.
 
     Args:
         markup: HTML of the entry page.

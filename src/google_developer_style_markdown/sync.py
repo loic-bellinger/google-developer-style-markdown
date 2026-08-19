@@ -52,7 +52,7 @@ class Report:
 
 
 async def _fetch(session: aiohttp.ClientSession, url: URL | str) -> str:
-    """Return the body of ``url`` as text, raising on any non-2xx status."""
+    """Return the body of `url` as text, raising on any non-2xx status."""
     _LOGGER.debug('GET %s', url)
     async with session.get(url) as response:
         response.raise_for_status()
@@ -111,19 +111,19 @@ async def fetch_guide(
 
 
 def _write(path: Path, text: str) -> None:
-    """Write ``text`` to ``path`` as UTF-8 with LF line endings, on any platform."""
+    """Write `text` to `path` as UTF-8 with LF line endings, on any platform."""
     path.write_text(text, encoding='utf-8', newline='\n')
 
 
 def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
-    """Write ``docs/``, ``llms.txt`` and ``llms-full.txt`` under ``root``.
+    """Write `docs/`, `llms.txt` and `llms-full.txt` under `root`.
 
-    Documents the guide no longer lists are deleted, so that ``docs/`` always
+    Documents the guide no longer lists are deleted, so that `docs/` always
     describes the guide as it is today rather than as it has ever been. Only
-    ``*.md`` files directly inside ``docs/`` are ever removed.
+    `*.md` files directly inside `docs/` are ever removed.
 
-    ``llms.txt`` lists the pages in the order Google presents them, and
-    ``llms-full.txt`` concatenates them in file name order.
+    `llms.txt` lists the pages in the order Google presents them, and
+    `llms-full.txt` concatenates them in file name order.
 
     Args:
         fetched: Pages paired with their Markdown source, in reading order.
@@ -162,7 +162,7 @@ async def sync(
     concurrency: int = DEFAULT_CONCURRENCY,
     timeout: float = DEFAULT_TIMEOUT,
 ) -> Report:
-    """Mirror the guide into ``root``.
+    """Mirror the guide into `root`.
 
     Args:
         root: Directory the mirror is written into.

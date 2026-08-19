@@ -34,7 +34,7 @@ def link(href: str, text: str) -> str:
 
 
 def page(path: str, *, title: str = 'Title', section: str = 'Documentation') -> Page:
-    """Build a page of the guide. ``path`` is its path under /style, '' for the entry page."""
+    """Build a page of the guide. `path` is its path under /style, '' for the entry page."""
     return Page(title=title, url=f'{INDEX}/{path}' if path else INDEX, section=section)
 
 

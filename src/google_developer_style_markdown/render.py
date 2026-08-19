@@ -6,12 +6,12 @@ its diffs meaningful.
 
 Google's Markdown is reproduced verbatim. The only changes made to a page body
 are that trailing whitespace collapses into the single final newline every text
-file is expected to end with (the ``.md.txt`` sources end without one), and that
-in ``llms-full.txt`` a page's leading ``#`` heading is *moved* above the source
+file is expected to end with (the `.md.txt` sources end without one), and that
+in `llms-full.txt` a page's leading `#` heading is *moved* above the source
 line so that every document starts with a title. No line is ever rewritten,
 dropped, or invented.
 
-``docs/<name>.md`` and ``llms-full.txt`` are rendered from the same downloads
+`docs/<name>.md` and `llms-full.txt` are rendered from the same downloads
 rather than the second being parsed back out of the first, so the front matter
 is written for whoever reads a mirrored file, not for this program.
 """
@@ -53,13 +53,13 @@ _ATTRIBUTION = (
 
 
 def _quote(value: str) -> str:
-    """Return ``value`` as a double-quoted YAML scalar."""
+    """Return `value` as a double-quoted YAML scalar."""
     escaped = value.replace('\\', '\\\\').replace('"', '\\"')
     return f'"{escaped}"'
 
 
 def document(page: Page, body: str) -> str:
-    """Return the contents of the mirrored document for ``page``.
+    """Return the contents of the mirrored document for `page`.
 
     The body is Google's Markdown unchanged. It is preceded by a YAML front
     matter block recording where the page came from, which is what lets the
@@ -67,7 +67,7 @@ def document(page: Page, body: str) -> str:
 
     Args:
         page: Page the body was downloaded for.
-        body: Markdown served at :attr:`Page.markdown_url`.
+        body: Markdown served at `Page.markdown_url`.
 
     Returns:
         The full text of the mirrored document, ending in a single newline.
@@ -78,7 +78,7 @@ def document(page: Page, body: str) -> str:
 
 
 def llms_txt(pages: Iterable[Page]) -> str:
-    """Return the ``llms.txt`` index, in the llmstxt.org v2 format.
+    """Return the `llms.txt` index, in the llmstxt.org v2 format.
 
     The file stays an index: a title, a summary, and one link list per
     table-of-contents section, in the order Google presents them, grouped the
@@ -89,7 +89,7 @@ def llms_txt(pages: Iterable[Page]) -> str:
         pages: Pages of the guide, in table-of-contents order.
 
     Returns:
-        The full text of ``llms.txt``, ending in a single newline.
+        The full text of `llms.txt`, ending in a single newline.
     """
     blocks = [f'# {TITLE}', _SUMMARY, _ATTRIBUTION]
     # groupby only groups neighbours, which is exactly the intent: the sections
@@ -105,11 +105,11 @@ def llms_txt(pages: Iterable[Page]) -> str:
 
 
 def llms_full(documents: Iterable[tuple[Page, str]]) -> str:
-    """Return ``llms-full.txt``: every mirrored document, concatenated.
+    """Return `llms-full.txt`: every mirrored document, concatenated.
 
     Documents are emitted in the order given, separated by a horizontal rule,
     and each is introduced by its title and the URL it was reproduced from. A
-    page that opens with a standalone ``#`` heading keeps that heading as its
+    page that opens with a standalone `#` heading keeps that heading as its
     title. Any other page -- one with no heading, or one whose heading wraps
     onto the following line, which a few pages of the guide do -- is titled with
     its navigation label and its body is left strictly untouched, so that a
@@ -119,7 +119,7 @@ def llms_full(documents: Iterable[tuple[Page, str]]) -> str:
         documents: Pages paired with their Markdown source, in a stable order.
 
     Returns:
-        The full text of ``llms-full.txt``, ending in a single newline.
+        The full text of `llms-full.txt`, ending in a single newline.
     """
     blocks = [
         f'# {TITLE}',

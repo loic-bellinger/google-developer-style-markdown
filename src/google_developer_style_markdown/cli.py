@@ -63,10 +63,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Run a sync and report what changed.
 
     Args:
-        argv: Command line arguments, or ``None`` to read ``sys.argv``.
+        argv: Command line arguments, or `None` to read `sys.argv`.
 
     Returns:
-        ``0`` on success, ``1`` if the guide could not be mirrored.
+        `0` on success, `1` if the guide could not be mirrored.
     """
     arguments = _parser().parse_args(argv)
     logging.basicConfig(
