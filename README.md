@@ -9,7 +9,7 @@ Markdown files plus an [llms.txt][llmstxt] index.
 *   **[`llms.txt`](llms.txt)** — the index: structure and navigation, small
     enough to keep in context, following the [llms.txt][llmstxt] v2 format.
 *   **[`llms-full.txt`](llms-full.txt)** — the substance: every page
-    concatenated, ready to drop into a context window.
+    concatenated in reading order, ready to drop into a context window.
 
 The mirror is refreshed weekly by GitHub Actions. Every run either reproduces
 the previous output byte for byte, or produces a diff that shows exactly what
@@ -155,8 +155,8 @@ the run is all-or-nothing: a page that could not be downloaded aborts the sync,
 so a network failure can never be mistaken for a page Google removed.
 
 The result is idempotent. Two runs against an unchanged guide produce identical
-bytes: UTF-8, LF endings, one trailing newline, stable ordering (`llms.txt`
-follows Google's table of contents, `llms-full.txt` follows file name order).
+bytes: UTF-8, LF endings, one trailing newline, stable ordering (both files
+follow Google's table of contents).
 
 There are no retries yet. A failed run leaves the mirror untouched; run it
 again.

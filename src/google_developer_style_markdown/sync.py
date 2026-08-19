@@ -122,8 +122,8 @@ def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
     describes the guide as it is today rather than as it has ever been. Only
     `*.md` files directly inside `docs/` are ever removed.
 
-    `llms.txt` lists the pages in the order Google presents them, and
-    `llms-full.txt` concatenates them in file name order.
+    Both `llms.txt` and `llms-full.txt` follow the order Google presents the
+    pages in.
 
     Args:
         fetched: Pages paired with their Markdown source, in reading order.
@@ -146,13 +146,12 @@ def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
         _LOGGER.info('removing %s: no longer part of the guide', path)
         path.unlink()
 
-    # llms.txt follows Google's reading order; llms-full.txt follows file names.
-    # Sorting the paths themselves is what makes the second claim true: sorting
-    # the URLs instead would put headings before headings-targets, because '.'
-    # and '-' do not compare the way the file names do.
+    # Both generated files follow Google's reading order, so that the index and
+    # the full text agree. The report lists documents by path instead, which is
+    # the order the directory itself reads in.
     ordered = tuple(sorted(written))
     _write(root / INDEX_FILE, llms_txt(page for page, _ in fetched))
-    _write(root / FULL_FILE, llms_full(written[path] for path in ordered))
+    _write(root / FULL_FILE, llms_full(fetched))
     return Report(documents=ordered, removed=removed)
 
 

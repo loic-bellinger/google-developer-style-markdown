@@ -236,10 +236,7 @@ def test_write_mirror_is_idempotent_and_drops_pages_the_guide_no_longer_lists(tm
     assert {path: path.read_bytes() for path in tmp_path.rglob('*') if path.is_file()} == snapshot
 
 
-def test_llms_full_follows_file_name_order_not_slug_order(tmp_path):
-    # headings-targets.md sorts before headings.md, because '-' precedes '.'.
-    # Sorting the slugs instead reverses the pair, so the order is asserted on
-    # a case where the two disagree.
+def test_llms_full_follows_reading_order(tmp_path):
     fetched = [
         (page('headings', title='Headings'), 'About headings.'),
         (page('headings-targets', title='Targets'), 'About targets.'),
@@ -247,7 +244,10 @@ def test_llms_full_follows_file_name_order_not_slug_order(tmp_path):
     write_mirror(fetched, tmp_path)
 
     text = (tmp_path / 'llms-full.txt').read_text(encoding='utf-8')
-    assert text.index('# Targets') < text.index('# Headings')
+    # headings-targets.md sorts before headings.md, because '-' precedes '.',
+    # so the order is asserted on a case where reading order and file name
+    # order disagree.
+    assert text.index('# Headings') < text.index('# Targets')
 
 
 def test_write_mirror_writes_lf_endings_and_a_final_newline(tmp_path):
