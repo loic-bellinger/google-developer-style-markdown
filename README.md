@@ -70,6 +70,7 @@ Each reference is resolved and then either canonicalised or dropped:
 | `/style//lists`         | `…/style/lists` | Empty path segments collapse                  |
 | `/style/lists#nested`   | `…/style/lists` | A fragment selects a position, not a document |
 | `/style/lists?hl=fr`    | `…/style/lists` | A query selects a locale, not a document      |
+| `/style/%2fetc%2f…`     | dropped         | A percent-encoded path is refused, not decoded |
 | `/style`, `/style/`     | `…/style`       | The entry page, mirrored as `docs/style.md`   |
 | `/terms/site-policies`  | dropped         | Outside `/style`                              |
 | `https://example.com/…` | dropped         | Another host                                  |

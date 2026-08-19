@@ -57,6 +57,9 @@ def page(path: str, *, title: str = 'Title', section: str = 'Documentation') -> 
         ('https://example.com/style/lists', None),
         ('/style/logo.png', None),
         ('mailto:someone@example.com', None),
+        # A percent-encoded path is refused rather than decoded.
+        ('/style/%2fetc%2fpasswd', None),
+        ('/style/a%20b', None),
         ('../../etc/passwd', None),
         ('/style/../../etc/passwd', None),
         ('//other.example.com/style/lists', None),
@@ -80,12 +83,19 @@ def test_page_is_named_after_the_url_google_serves(path, expected):
     assert page(path).filename == expected
 
 
-def test_page_refuses_a_name_that_would_escape_docs():
-    # normalize keeps this in scope, because the separators are still encoded
-    # there; they only reappear when the name is decoded.
-    url = normalize('/style/%2fetc%2fpasswd')
-    assert url is not None
-    with pytest.raises(SyncError, match='cannot live in docs/|does not name a file'):
+@pytest.mark.parametrize(
+    'url',
+    [
+        f'{INDEX}/%2fetc%2fpasswd',
+        f'{INDEX}/%2e%2e%2fetc',
+        f'{INDEX}/',
+    ],
+)
+def test_page_refuses_a_name_that_would_escape_docs(url):
+    # normalize refuses these before a Page is ever built. The invariant is
+    # kept anyway, so that "this can be written under docs/" holds for any
+    # instance rather than only for the ones discovery happens to produce.
+    with pytest.raises(SyncError, match='does not name a file'):
         Page(title='Bad', url=url, section='Documentation')
 
 
@@ -132,11 +142,6 @@ def test_parse_index_reads_the_shape_of_the_list_not_the_class_names():
         '<ul menu="_book"><li><span>Punctuation</span></li><li><a href="/style/commas">Commas</a></li></ul>'
     )
     assert [(p.filename, p.title, p.section) for p in pages] == [('commas.md', 'Commas', 'Punctuation')]
-
-
-def test_parse_index_rejects_a_page_it_cannot_name_safely():
-    with pytest.raises(SyncError, match='does not name a file'):
-        parse_index(nav(link('/style/%2fetc%2fpasswd', 'Sneaky')))
 
 
 def test_parse_index_rejects_an_unrecognisable_page():

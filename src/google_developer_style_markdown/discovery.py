@@ -8,6 +8,7 @@ recursive crawl, and nothing outside :data:`GUIDE` is ever considered.
 """
 
 from dataclasses import dataclass
+from pathlib import PurePosixPath
 
 from selectolax.lexbor import LexborHTMLParser
 from yarl import URL
@@ -23,7 +24,8 @@ Everything the mirror treats as in scope is derived from this one URL: the host
 a page has to be served from, and the path it has to live under.
 """
 
-_SCOPE = tuple(part for part in GUIDE.raw_parts[1:] if part)
+_SCOPE = PurePosixPath(GUIDE.path)
+"""Path every page of the guide lives under, derived from :data:`GUIDE`."""
 
 _DEFAULT_SECTION = 'Documentation'
 
@@ -78,16 +80,15 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     Relative references are resolved against ``base``, which also resolves any
     ``..`` before the result is inspected. Fragments and query strings are
     dropped: on DevSite they select a position or a locale, never a different
-    document, so keeping them would only produce duplicates. The path is then
-    reduced to its non-empty segments, which collapses trailing and doubled
-    slashes so that ``/style/lists``, ``/style/lists/`` and ``/style//lists``
-    become one entry -- and so that appending ``.md.txt`` yields the URL Google
-    actually serves.
+    document, so keeping them would only produce duplicates. Trailing and
+    doubled slashes are collapsed, so that ``/style/lists``, ``/style/lists/``
+    and ``/style//lists`` become one entry -- and so that appending ``.md.txt``
+    yields the URL Google actually serves.
 
-    A reference is rejected when it points at another host, at a path outside
-    :data:`GUIDE`, or at something that looks like a file rather than a page
-    (its last segment has a suffix), which is what keeps assets such as images
-    and archives out of the mirror.
+    A reference is rejected when it points at another host, when its path is
+    percent-encoded, when it falls outside :data:`GUIDE`, or when it looks like
+    a file rather than a page (its name has a suffix), which is what keeps
+    assets such as images and archives out of the mirror.
 
     Args:
         href: Reference to resolve, absolute or relative.
@@ -99,15 +100,18 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     candidate = base.join(URL(href.strip()))
     if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
         return None
-    # raw_parts leaves the segments percent-encoded. Reading the decoded ones
-    # instead would let `%2F` and `%2E%2E` become separators again inside a
-    # single segment, which passes the scope test and then escapes it when the
-    # path is rebuilt -- `/style/%2e%2e%2fetc` would come back as `/etc`.
-    segments = tuple(part for part in candidate.raw_parts[1:] if part)
-    if segments[: len(_SCOPE)] != _SCOPE:
+    # A percent-encoded path is refused rather than decoded. The guide has no
+    # use for one, and decoding is where `%2F` and `%2E%2E` become separators
+    # again inside a single segment: `/style/%2e%2e%2fetc` reads as a page of
+    # the guide until the path is rebuilt, and then it is `/etc`.
+    if candidate.path != candidate.raw_path:
         return None
-    page = GUIDE.origin().joinpath(*segments, encoded=True)
-    return None if page.suffix else str(page)
+    path = PurePosixPath(candidate.path)
+    if not path.is_relative_to(_SCOPE) or path.suffix:
+        return None
+    # with_path drops the query and the fragment, and PurePosixPath has already
+    # collapsed trailing and doubled slashes.
+    return str(GUIDE.with_path(str(path)))
 
 
 def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
