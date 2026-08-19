@@ -1,27 +1,29 @@
 """Discover the pages of the style guide from its entry page.
 
 Discovery is deliberately narrow. The only page fetched as HTML is
-:data:`INDEX_URL`; every link is then taken from the guide's own table of
-contents (the ``_book`` navigation menu that DevSite renders on every page).
-There is no recursive crawl, and nothing outside ``developers.google.com/style``
-is ever considered.
+:data:`GUIDE`; every link is then taken from the guide's own table of contents
+(the ``_book`` navigation menu that DevSite renders on every page). There is no
+recursive crawl, and nothing outside :data:`GUIDE` is ever considered.
 """
 
 import re
 from dataclasses import dataclass
-from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from selectolax.lexbor import LexborHTMLParser
+from yarl import URL
 
 from . import SyncError
 
-__all__ = ['INDEX_URL', 'Page', 'normalize', 'parse_index']
+__all__ = ['GUIDE', 'Page', 'normalize', 'parse_index']
 
-INDEX_URL = 'https://developers.google.com/style/'
-"""Entry point of the guide, and the only URL fetched as HTML."""
+GUIDE = URL('https://developers.google.com/style/')
+"""Entry point of the guide, and the only URL fetched as HTML.
 
-_HOST = 'developers.google.com'
-_SCOPE = '/style'
+Everything the mirror treats as in scope is derived from this one URL: the host
+a page has to be served from, and the path it has to live under.
+"""
+
+_SCOPE = tuple(part for part in GUIDE.parts[1:] if part)
 
 # Slugs are used as file names, so they are restricted to a shape that cannot
 # escape the output directory: lowercase words joined by single hyphens. No
@@ -53,20 +55,22 @@ class Page:
         return f'{self.url}.md.txt'
 
 
-def normalize(href: str, *, base: str = INDEX_URL) -> str | None:
+def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     """Return the canonical guide URL for ``href``, or ``None`` if out of scope.
 
-    Relative references are resolved against ``base``. Fragments and query
-    strings are dropped: on DevSite they select a position or a locale, never a
-    different document, so keeping them would only produce duplicates. Trailing
-    slashes are removed so that ``/style/lists`` and ``/style/lists/`` collapse
-    to one entry, and so that appending ``.md.txt`` yields the URL Google
-    serves.
+    Relative references are resolved against ``base``, which also resolves any
+    ``..`` before the result is inspected. Fragments and query strings are
+    dropped: on DevSite they select a position or a locale, never a different
+    document, so keeping them would only produce duplicates. The path is then
+    reduced to its non-empty segments, which collapses trailing and doubled
+    slashes so that ``/style/lists``, ``/style/lists/`` and ``/style//lists``
+    become one entry -- and so that appending ``.md.txt`` yields the URL Google
+    actually serves.
 
     A reference is rejected when it points at another host, at a path outside
-    ``/style``, or at something that looks like a file rather than a page (its
-    last segment contains a dot), which is what keeps assets such as images and
-    archives out of the mirror.
+    :data:`GUIDE`, or at something that looks like a file rather than a page
+    (its last segment has a suffix), which is what keeps assets such as images
+    and archives out of the mirror.
 
     Args:
         href: Reference to resolve, absolute or relative.
@@ -75,15 +79,14 @@ def normalize(href: str, *, base: str = INDEX_URL) -> str | None:
     Returns:
         The canonical ``https`` URL of an in-scope page, or ``None``.
     """
-    parts = urlsplit(urljoin(base, href.strip()))
-    if parts.scheme not in {'http', 'https'} or parts.hostname != _HOST:
+    candidate = base.join(URL(href.strip()))
+    if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
         return None
-    path = parts.path.rstrip('/')
-    if path != _SCOPE and not path.startswith(f'{_SCOPE}/'):
+    segments = tuple(part for part in candidate.parts[1:] if part)
+    if segments[: len(_SCOPE)] != _SCOPE:
         return None
-    if '.' in path.rpartition('/')[2]:
-        return None
-    return urlunsplit(('https', _HOST, path, '', ''))
+    page = GUIDE.origin().joinpath(*segments)
+    return None if page.suffix else str(page)
 
 
 def slug_for(url: str) -> str | None:
@@ -94,12 +97,12 @@ def slug_for(url: str) -> str | None:
     :data:`_SLUG`, which makes path traversal and surprising file names
     impossible by construction rather than by escaping.
     """
-    relative = urlsplit(url).path.removeprefix(_SCOPE).strip('/')
-    slug = relative.replace('/', '-') or 'index'
+    relative = URL(url).parts[1 + len(_SCOPE) :]
+    slug = '-'.join(relative) or 'index'
     return slug if _SLUG.fullmatch(slug) else None
 
 
-def parse_index(markup: str, *, base: str = INDEX_URL) -> tuple[Page, ...]:
+def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
     """Extract the table of contents from the HTML of the entry page.
 
     The navigation is a flat list in which section headings and page links are

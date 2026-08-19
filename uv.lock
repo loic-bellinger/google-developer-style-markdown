@@ -438,6 +438,7 @@ source = { editable = "." }
 dependencies = [
     { name = "aiohttp", extra = ["speedups"] },
     { name = "selectolax" },
+    { name = "yarl" },
 ]
 
 [package.dev-dependencies]
@@ -453,6 +454,7 @@ dev = [
 requires-dist = [
     { name = "aiohttp", extras = ["speedups"], specifier = ">=3.14.3" },
     { name = "selectolax", specifier = ">=0.4.11" },
+    { name = "yarl", specifier = ">=1.24.5" },
 ]
 
 [package.metadata.requires-dev]

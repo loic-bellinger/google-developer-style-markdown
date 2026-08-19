@@ -57,6 +57,10 @@ def page(slug: str, *, title: str = 'Title', section: str = 'Documentation') -> 
         ('https://example.com/style/lists', None),
         ('/style/logo.png', None),
         ('mailto:someone@example.com', None),
+        ('../../etc/passwd', None),
+        ('/style/../../etc/passwd', None),
+        ('//other.example.com/style/lists', None),
+        ('/style//lists', f'{INDEX}/lists'),
     ],
 )
 def test_normalize(href, expected):
@@ -70,8 +74,8 @@ def test_normalize(href, expected):
         (INDEX, 'index'),
         (f'{INDEX}/word-list', 'word-list'),
         (f'{INDEX}/nested/page', 'nested-page'),
-        # Nothing that could escape docs/ or shadow another file is accepted.
-        (f'{INDEX}/../../etc/passwd', None),
+        # Only names that read as a slug are accepted. Scope is normalize's
+        # job, so slug_for is only ever given a URL that already passed it.
         (f'{INDEX}/Lists', None),
         (f'{INDEX}/a_b', None),
     ],

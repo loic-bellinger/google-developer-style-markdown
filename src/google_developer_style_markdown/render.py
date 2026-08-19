@@ -18,7 +18,7 @@ is written for whoever reads a mirrored file, not for this program.
 
 from collections.abc import Iterable
 
-from .discovery import INDEX_URL, Page
+from .discovery import GUIDE, Page
 
 __all__ = ['document', 'llms_full', 'llms_txt']
 
@@ -30,7 +30,7 @@ _HORIZONTAL_RULE = '---'
 _SUMMARY = (
     "> Automatically synchronized Markdown mirror of Google's developer documentation\n"
     '> style guide, reproduced from the Markdown sources published under\n'
-    f'> {INDEX_URL}'
+    f'> {GUIDE}'
 )
 
 _FULL_SUMMARY = (

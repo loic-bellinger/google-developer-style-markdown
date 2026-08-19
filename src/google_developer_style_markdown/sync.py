@@ -13,9 +13,10 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import aiohttp
+from yarl import URL
 
 from . import SyncError, __version__
-from .discovery import INDEX_URL, Page, parse_index
+from .discovery import GUIDE, Page, parse_index
 from .render import document, llms_full, llms_txt
 
 __all__ = ['DEFAULT_CONCURRENCY', 'DEFAULT_TIMEOUT', 'Report', 'sync', 'write_mirror']
@@ -50,7 +51,7 @@ class Report:
     """Documents deleted because the guide no longer lists them."""
 
 
-async def _fetch(session: aiohttp.ClientSession, url: str) -> str:
+async def _fetch(session: aiohttp.ClientSession, url: URL | str) -> str:
     """Return the body of ``url`` as text, raising on any non-2xx status."""
     _LOGGER.debug('GET %s', url)
     async with session.get(url) as response:
@@ -89,9 +90,9 @@ async def fetch_guide(
     )
     async with session:
         try:
-            pages = parse_index(await _fetch(session, INDEX_URL))
+            pages = parse_index(await _fetch(session, GUIDE))
         except (TimeoutError, aiohttp.ClientError) as error:
-            raise SyncError(f'could not download {INDEX_URL}: {error}') from error
+            raise SyncError(f'could not download {GUIDE}: {error}') from error
         _LOGGER.info('discovered %d pages', len(pages))
         bodies = await asyncio.gather(
             *(_fetch(session, page.markdown_url) for page in pages),

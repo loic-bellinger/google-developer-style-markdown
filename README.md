@@ -53,7 +53,8 @@ always produces the same bytes.
 
 ### Discovery
 
-The entry page is parsed with [selectolax][selectolax] (Lexbor), and the pages
+The entry page is parsed with [selectolax][selectolax] (Lexbor), URLs are
+handled with [yarl][yarl] — the same URL type aiohttp speaks — and the pages
 are read from the guide's own table of contents — the `ul[menu="_book"]`
 navigation DevSite renders on every page. There is no crawl: links are never
 followed, so the program cannot wander into the rest of
@@ -66,6 +67,7 @@ Each reference is resolved and then either canonicalised or dropped:
 | ----------------------- | --------------- | --------------------------------------------- |
 | `lists`, `/style/lists` | `…/style/lists` | Resolved against the entry page               |
 | `/style/lists/`         | `…/style/lists` | Trailing slash removed so `.md.txt` resolves  |
+| `/style//lists`         | `…/style/lists` | Empty path segments collapse                  |
 | `/style/lists#nested`   | `…/style/lists` | A fragment selects a position, not a document |
 | `/style/lists?hl=fr`    | `…/style/lists` | A query selects a locale, not a document      |
 | `/style`, `/style/`     | `…/style`       | The entry page, mirrored as `docs/index.md`   |
@@ -79,6 +81,7 @@ is what makes path traversal and file name collisions impossible rather than
 merely unlikely. Two pages that would claim the same file name abort the run.
 
 [selectolax]: https://github.com/rushter/selectolax
+[yarl]: https://yarl.aio-libs.org/
 
 ### What the mirror changes about Google's Markdown
 

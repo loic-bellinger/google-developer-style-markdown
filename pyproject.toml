@@ -12,6 +12,10 @@ requires-python = ">=3.14"
 dependencies = [
     "aiohttp[speedups]>=3.14.3",
     "selectolax>=0.4.11",
+    # aiohttp already pulls yarl in, and passes yarl.URL objects straight
+    # through. It is declared here because discovery.py imports it directly,
+    # and a transitive dependency is free to disappear.
+    "yarl>=1.24.5",
 ]
 
 [project.urls]
