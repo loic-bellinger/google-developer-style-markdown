@@ -4,11 +4,11 @@ A deterministic, automatically synchronized Markdown mirror of the
 [Google developer documentation style guide][guide], published as plain
 Markdown files plus an [llms.txt][llmstxt] index.
 
-*   **[`docs/`](docs)** — one Markdown file per page of the guide, reproduced
+*   **[`docs/`](docs)**: one Markdown file per page of the guide, reproduced
     verbatim.
-*   **[`llms.txt`](llms.txt)** — the index: structure and navigation, small
+*   **[`llms.txt`](llms.txt)**: the index: structure and navigation, small
     enough to keep in context, following the [llms.txt][llmstxt] v2 format.
-*   **[`llms-full.txt`](llms-full.txt)** — the substance: every page
+*   **[`llms-full.txt`](llms-full.txt)**: the substance: every page
     concatenated in reading order, ready to drop into a context window. The
     *What's new* changelog is left out: a sixth of the bytes, none of it
     guidance.
@@ -57,14 +57,14 @@ always produces the same bytes.
 ### Discovery
 
 The entry page is parsed with [selectolax][selectolax] (Lexbor), URLs are
-handled with [yarl][yarl] — the same URL type aiohttp speaks — and the pages
-are read from the guide's own table of contents — the `ul[menu="_book"]`
+handled with [yarl][yarl]—the same URL type aiohttp speaks—and the pages
+are read from the guide's own table of contents—the `ul[menu="_book"]`
 navigation DevSite renders on every page. There is no crawl: links are never
 followed, so the program cannot wander into the rest of
 `developers.google.com`, and new pages are still picked up automatically as
 soon as Google lists them.
 
-Each reference is resolved and then either canonicalised or dropped:
+Each reference is resolved and then either canonicalized or dropped:
 
 | Reference               | Result          | Why                                           |
 | ----------------------- | --------------- | --------------------------------------------- |
@@ -92,8 +92,8 @@ be mirrored as `docs/café.md`. Decoding before that decision is what lets
 `/etc`.
 
 What a name decodes into is settled one step later. A `Page` refuses at
-construction any URL that does not name a single, ordinary file — an empty
-name, a leading dot, or a separator — so "this can be written under `docs/`"
+construction any URL that does not name a single, ordinary file—an empty
+name, a leading dot, or a separator—so "this can be written under `docs/`"
 is true of every instance rather than checked at each call site. Two pages that
 would claim the same file name abort the run.
 
@@ -108,14 +108,14 @@ As little as possible, and only what is deterministic:
 *   A YAML front matter block records the page title and its source URL.
 *   In `llms-full.txt` only, a page's leading `#` heading is *moved* above the
     source line so each document starts with a title. A heading that wraps onto
-    the next line — a few pages of the guide do this — is left where it is, and
+    the next line—a few pages of the guide do this—is left where it is, and
     the document is titled with its navigation label instead, so a sentence is
     never split.
 
 Nothing else is touched: no reflowing, no reformatting, no removal of trailing
 spaces (Google's Markdown uses significant ones), no stripping of notices.
 No linter or formatter in this repository ever touches them, for the same
-reason — see [Markdown quality](#markdown-quality).
+reason—see [Markdown quality](#markdown-quality).
 
 ## Installation
 
@@ -211,7 +211,7 @@ this repository writes by hand. `docs/` is excluded in `.rumdl.toml`, and the
 numbers say why: linting it reports 4465 violations across the 70 files, and
 `rumdl fmt` rewrites 67 of them. Among other things it reads the front matter
 `title:` as a top-level heading, so it demotes every page's real `#` heading to
-`##` — a silent rewrite of someone else's document structure.
+`##`—a silent rewrite of someone else's document structure.
 
 Exclusions are used rather than an allowlist, so a new hand-written file is
 linted by default instead of being silently skipped. `llms.txt` and
@@ -219,7 +219,7 @@ linted by default instead of being silently skipped. `llms.txt` and
 
 Ruff is scoped for the same reason, and it is not theoretical: `ruff format`
 formats Python code blocks inside Markdown files, so a plain `ruff format .`
-rewrites Google's code samples in *our* style — including our quote preference.
+rewrites Google's code samples in *our* style—including our quote preference.
 `docs/` is therefore listed in `extend-exclude`. (The guide happens to contain
 no Python samples today; the exclusion is what keeps that from becoming a
 problem the week it does.)
@@ -227,7 +227,7 @@ problem the week it does.)
 Inside our own Markdown the two tools have to be made to agree, because both
 have an opinion about Python code blocks. Ruff formats them to 120 columns,
 while rumdl's line-length rule checks code blocks at 80, so code blocks are
-exempted from `MD013` — which leaves the 80-column rule where the docguide means
+exempted from `MD013`—which leaves the 80-column rule where the docguide means
 it, on prose.
 
 Then rumdl is handed the blocks outright, through its `code-block-tools`
@@ -240,7 +240,7 @@ format = ["ruff:format"]
 ```
 
 This is not redundant with the Ruff hook. `ruff check` cannot see code blocks at
-all — it reports *No Python files found* for a Markdown file — so an unused
+all—it reports *No Python files found* for a Markdown file—so an unused
 import or a syntax error in a documented example would otherwise ship unnoticed.
 The formatting side runs `ruff format -`, which resolves this project's
 configuration and therefore produces exactly what `ruff format README.md` would;
@@ -258,15 +258,15 @@ Ruff, so the checks cannot quietly stop running.
 
 Two different things live in this repository, under two different terms.
 
-**The code** — everything under `src/` and `tests/`, and the configuration — is
+**The code**—everything under `src/` and `tests/`, and the configuration—is
 released under the [MIT License](LICENSE).
 
-**The mirrored guide** — everything under `docs/`, and `llms-full.txt` — is
+**The mirrored guide**—everything under `docs/`, and `llms-full.txt`—is
 Google's, not ours, and is *not* MIT. Per the
 [Google Developers Site Policies][policies], the content of those pages is
 licensed under [CC BY 4.0][ccby] and the code samples under
 [Apache 2.0][apache]. Google's trademarks and brand features are not included
-in that licence.
+in that license.
 
 Every mirrored document records the URL it was reproduced from in its front
 matter, and `llms.txt` and `llms-full.txt` carry the attribution notice Google
@@ -283,13 +283,13 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
 ## Known limitations
 
 *   **Text only.** Images, diagrams, and other assets referenced by the guide
-    are not mirrored — they are not covered by the content licence. Links to
+    are not mirrored—they are not covered by the content license. Links to
     them still point at Google.
 *   **CSS-only markers are lost upstream.** The guide flags Android-specific
     and Cloud-specific guidance with small logos, which the HTML renders as
     empty `<span class="icon-android">` elements styled entirely in CSS. They
     carry no text, so Google's own Markdown has nothing to convert and drops
-    them: 26 Android and 8 Cloud markers disappear from the word list, and the
+    them: 26 Android and eight Cloud markers disappear from the word list, and the
     sentences introducing them on the entry page now begin *"precedes terms
     and guidelines specific to…"* with nothing in front. This happens before
     the mirror sees the page, and putting the markers back would mean inventing
