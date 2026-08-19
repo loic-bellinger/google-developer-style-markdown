@@ -282,9 +282,10 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
 
 ## Known limitations
 
-*   **Text only.** Images, diagrams, and other assets referenced by the guide
-    are not mirrored—they are not covered by the content license. Links to
-    them still point at Google.
+*   **Text only.** Images, diagrams, and other assets are not mirrored: they
+    are not covered by the content license, and Google's own Markdown carries
+    almost none of them either—five image references against 56 `<img>`
+    elements in the rendered HTML. What survives points at Google.
 *   **CSS-only markers are lost upstream.** The guide flags Android-specific
     and Cloud-specific guidance with small logos, which the HTML renders as
     empty `<span class="icon-android">` elements styled entirely in CSS. They
@@ -294,6 +295,17 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
     and guidelines specific to…"* with nothing in front. This happens before
     the mirror sees the page, and putting the markers back would mean inventing
     content. Check the source page when a term's scope matters.
+*   **Definition lists do not survive.** The guide uses `<dl>` for
+    term-and-definition pairs, and the word list is one long example. Markdown
+    has no syntax for them: 31 in the rendered HTML, none in the Markdown, so
+    the terms arrive as prose. Cross-references to a term still work, because
+    they point at Google where the anchor exists; inside `docs/` there is
+    nothing for a fragment to attach to.
+*   **Titles live outside the Markdown.** 19 of the 70 pages do not open with
+    a usable heading, and 15 of them carry no `#` heading anywhere: DevSite
+    renders the title from page metadata the `.md.txt` does not include. The
+    navigation label stands in, recorded in the front matter of every document
+    and used as the heading in `llms-full.txt`.
 *   **Absolute cross-references.** Links between pages point at
     `developers.google.com`, because that is what Google's Markdown contains.
     Rewriting them to point inside `docs/` would be a change to the content.
@@ -302,9 +314,10 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
 *   **Coupled to the DevSite navigation.** Discovery reads the
     `ul[menu="_book"]` list. If Google redesigns it, the sync fails loudly
     rather than silently mirroring less. The pages the guide links to in its
-    prose are deliberately not followed: all 17 such URLs that are absent from
-    the table of contents turn out to be `301` redirects to pages already
-    mirrored, and 16 of them have no `.md.txt` at all.
+    prose are deliberately not followed, and nothing is lost by it. Of the 17
+    such URLs absent from the table of contents, 16 are `301` redirects to
+    pages already mirrored and the last is a broken link in Google's own
+    documentation. Sixteen of the 17 have no `.md.txt` at all.
 *   **No conditional requests.** Google serves the guide with
     `Cache-Control: no-cache` and no `ETag`, so every run downloads every page.
     It is about 800 KB.
