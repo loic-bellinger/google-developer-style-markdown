@@ -39,6 +39,15 @@ DOCS_DIRECTORY = 'docs'
 INDEX_FILE = 'llms.txt'
 FULL_FILE = 'llms-full.txt'
 
+EXCLUDED_FROM_FULL = frozenset({'whats-new.md'})
+"""Pages `llms-full.txt` leaves out, still mirrored and still indexed.
+
+The guide's changelog is a sixth of the text and none of it is guidance: it
+dates every wording change Google has made, which is exactly the kind of
+superseded advice a model should not be reading alongside the guidance that
+replaced it.
+"""
+
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class Report:
@@ -123,7 +132,7 @@ def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
     `*.md` files directly inside `docs/` are ever removed.
 
     Both `llms.txt` and `llms-full.txt` follow the order Google presents the
-    pages in.
+    pages in. `llms-full.txt` leaves out `EXCLUDED_FROM_FULL`.
 
     Args:
         fetched: Pages paired with their Markdown source, in reading order.
@@ -151,7 +160,8 @@ def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
     # the order the directory itself reads in.
     ordered = tuple(sorted(written))
     _write(root / INDEX_FILE, llms_txt(page for page, _ in fetched))
-    _write(root / FULL_FILE, llms_full(fetched))
+    full = ((page, body) for page, body in fetched if page.filename not in EXCLUDED_FROM_FULL)
+    _write(root / FULL_FILE, llms_full(full))
     return Report(documents=ordered, removed=removed)
 
 

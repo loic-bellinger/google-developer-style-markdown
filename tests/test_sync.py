@@ -236,9 +236,10 @@ def test_write_mirror_is_idempotent_and_drops_pages_the_guide_no_longer_lists(tm
     assert {path: path.read_bytes() for path in tmp_path.rglob('*') if path.is_file()} == snapshot
 
 
-def test_llms_full_follows_reading_order(tmp_path):
+def test_llms_full_follows_reading_order_and_leaves_the_changelog_out(tmp_path):
     fetched = [
         (page('headings', title='Headings'), 'About headings.'),
+        (page('whats-new', title="What's new"), 'Changelog.'),
         (page('headings-targets', title='Targets'), 'About targets.'),
     ]
     write_mirror(fetched, tmp_path)
@@ -248,6 +249,10 @@ def test_llms_full_follows_reading_order(tmp_path):
     # so the order is asserted on a case where reading order and file name
     # order disagree.
     assert text.index('# Headings') < text.index('# Targets')
+    # The changelog is mirrored and indexed, but kept out of the full text.
+    assert (tmp_path / 'docs' / 'whats-new.md').exists()
+    assert "What's new" in (tmp_path / 'llms.txt').read_text(encoding='utf-8')
+    assert 'Changelog.' not in text
 
 
 def test_write_mirror_writes_lf_endings_and_a_final_newline(tmp_path):

@@ -9,7 +9,9 @@ Markdown files plus an [llms.txt][llmstxt] index.
 *   **[`llms.txt`](llms.txt)** — the index: structure and navigation, small
     enough to keep in context, following the [llms.txt][llmstxt] v2 format.
 *   **[`llms-full.txt`](llms-full.txt)** — the substance: every page
-    concatenated in reading order, ready to drop into a context window.
+    concatenated in reading order, ready to drop into a context window. The
+    *What's new* changelog is left out: a sixth of the bytes, none of it
+    guidance.
 
 The mirror is refreshed weekly by GitHub Actions. Every run either reproduces
 the previous output byte for byte, or produces a diff that shows exactly what
@@ -167,7 +169,7 @@ again.
 | ---- | -------- |
 | [`docs/`](docs) | The mirrored guide, one file per page (generated) |
 | [`llms.txt`](llms.txt) | Index, llms.txt v2 format (generated) |
-| [`llms-full.txt`](llms-full.txt) | Every page concatenated (generated) |
+| [`llms-full.txt`](llms-full.txt) | Every page but the changelog, concatenated (generated) |
 | [`src/`](src/google_developer_style_markdown) | The synchronizer |
 | [`tests/`](tests) | URL handling, naming, rendering, deletion |
 | [`.github/workflows/`](.github/workflows) | `ci.yml` and `sync.yml` |
