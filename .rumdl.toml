@@ -2,11 +2,12 @@
 # own Markdown style guide: https://google.github.io/styleguide/docguide/style.html
 #
 # The mirrored guide is deliberately out of scope. docs/ is a reproduction of
-# Google's Markdown and must stay byte-identical to the source. Linting it
-# reports 4465 violations, and `rumdl fmt` rewrites 67 of the 70 files -- it
-# reads the front matter `title:` as a top-level heading and demotes each page's
-# real H1 to an H2. Exclusions are used rather than an include list, so a new
-# hand-written file is linted by default. llms.txt and llms-full.txt need no
+# Google's Markdown and must stay byte-identical to the source, and `rumdl fmt`
+# rewrites nearly every file of it: bullet characters, list spacing, the
+# trailing spaces Google uses as line breaks, and the indentation inside code
+# samples, where in a style guide the indentation is sometimes the point. No
+# option reaches that -- it is what the rules are for. Exclusions are used
+# rather than an include list, so a new hand-written file is linted by default. llms.txt and llms-full.txt need no
 # entry: rumdl only discovers .md and .markdown files.
 
 [global]
