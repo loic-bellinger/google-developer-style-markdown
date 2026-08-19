@@ -76,10 +76,10 @@ class Page:
         return URL(self.markdown_url).name.removesuffix('.txt')
 
 
-def normalize(href: str, *, base: URL = GUIDE) -> str | None:
+def normalize(href: str) -> str | None:
     """Return the canonical guide URL for `href`, or `None` if out of scope.
 
-    Relative references are resolved against `base`, which also resolves any
+    Relative references are resolved against `GUIDE`, which also resolves any
     `..` before the result is inspected. Fragments and query strings are
     dropped: on DevSite they select a position or a locale, never a different
     document, so keeping them would only produce duplicates. Trailing and
@@ -102,12 +102,11 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
 
     Args:
         href: Address of a page of the guide, absolute or relative.
-        base: URL that relative references are resolved against.
 
     Returns:
         The canonical `https` URL of an in-scope page, or `None`.
     """
-    candidate = base.join(URL(href.strip()))
+    candidate = GUIDE.join(URL(href.strip()))
     if candidate.scheme not in {'http', 'https'} or candidate.host != GUIDE.host:
         return None
     # Scope is decided on the encoded path, and the encoding is carried through.
@@ -124,7 +123,7 @@ def normalize(href: str, *, base: URL = GUIDE) -> str | None:
     return str(GUIDE.with_path(str(path), encoded=True))
 
 
-def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
+def parse_index(markup: str) -> tuple[Page, ...]:
     """Extract the table of contents from the HTML of the entry page.
 
     The navigation is a flat list in which section headings and page links are
@@ -134,7 +133,6 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
 
     Args:
         markup: HTML of the entry page.
-        base: URL that relative references are resolved against.
 
     Returns:
         The pages of the guide, in table-of-contents order.
@@ -146,7 +144,7 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
     navigation = LexborHTMLParser(markup).css_first('ul[menu="_book"]')
     if navigation is None:
         raise SyncError(
-            f'no table of contents in {base}: the page layout changed, the `ul[menu="_book"]` navigation is gone'
+            f'no table of contents in {GUIDE}: the page layout changed, the `ul[menu="_book"]` navigation is gone'
         )
 
     pages: list[Page] = []
@@ -165,7 +163,7 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
         if (href := link.attributes.get('href')) is None:
             continue
         text = ' '.join(link.text().split())
-        if (url := normalize(href, base=base)) is None:
+        if (url := normalize(href)) is None:
             continue
         page = Page(title=text, url=url, section=section)
         if (previous := seen.get(page.filename)) is not None:
@@ -176,5 +174,5 @@ def parse_index(markup: str, *, base: URL = GUIDE) -> tuple[Page, ...]:
         pages.append(page)
 
     if not pages:
-        raise SyncError(f'no pages found in the table of contents of {base}')
+        raise SyncError(f'no pages found in the table of contents of {GUIDE}')
     return tuple(pages)
