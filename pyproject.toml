@@ -9,24 +9,17 @@ authors = [
     { name = "Loïc Bellinger", email = "loic.bellinger.pro@gmail.com" },
 ]
 requires-python = ">=3.14"
-# Keywords are inert until the package is published; GitHub discovery comes
-# from the repository topics and the description. They are here so that
-# publishing does not need a second pass.
+
 keywords = [
     "google",
     "style-guide",
     "technical-writing",
     "documentation",
-    "markdown",
     "llms-txt",
-    "mirror",
 ]
 dependencies = [
     "aiohttp[speedups]>=3.14.3",
     "selectolax>=0.4.11",
-    # aiohttp already pulls yarl in, and passes yarl.URL objects straight
-    # through. It is declared here because discovery.py imports it directly,
-    # and a transitive dependency is free to disappear.
     "yarl>=1.24.5",
 ]
 
@@ -49,12 +42,6 @@ dev = [
     "ruff>=0.16.3",
     "rumdl>=0.2.57",
 ]
-
-# --- Linting and formatting ---------------------------------------------------
-# Ruff 0.16 enables a broad rule set by default, so only the additions are
-# listed here. `ruff format` also formats Python code blocks inside Markdown,
-# and docs/ is a verbatim reproduction: without this exclusion a plain
-# `ruff format .` rewrites Google's code samples in our own style.
 
 [tool.ruff]
 line-length = 120
