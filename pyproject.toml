@@ -18,6 +18,9 @@ dependencies = [
 Homepage = "https://github.com/loic-bellinger/google-developer-style-markdown"
 Issues = "https://github.com/loic-bellinger/google-developer-style-markdown/issues"
 
+[project.scripts]
+gdsm = "google_developer_style_markdown.cli:main"
+
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
 build-backend = "uv_build"
