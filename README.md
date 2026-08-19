@@ -1,26 +1,39 @@
 # google-developer-style-markdown
 
-A deterministic, automatically synchronized Markdown mirror of the
-[Google developer documentation style guide][guide], published as plain
-Markdown files plus an [llms.txt][llmstxt] index.
+The [Google developer documentation style guide][guide] as plain Markdown and
+[llms.txt][llmstxt], ready to hand to a model. Reproduced verbatim,
+resynchronized every week, byte-identical on every run that finds nothing
+changed.
 
-*   **[`docs/`](docs)**: one Markdown file per page of the guide, reproduced
-    verbatim.
-*   **[`llms.txt`](llms.txt)**: the index: structure and navigation, small
-    enough to keep in context, following the [llms.txt][llmstxt] v2 format.
-*   **[`llms-full.txt`](llms-full.txt)**: the substance: every page
-    concatenated in reading order, ready to drop into a context window. The
-    *What's new* changelog is left out: a sixth of the bytes, none of it
-    guidance.
+| File | Size | What it is for |
+| ---- | ---- | -------------- |
+| [`llms.txt`](llms.txt) | 4 KB, ~1k tokens | The index: every page as a link, grouped and ordered the way Google's own table of contents groups and orders it. Read this first. |
+| [`llms-full.txt`](llms-full.txt) | 515 KB, ~130k tokens | The substance: the whole guide in one file, ready to drop into a context window. |
+| [`docs/`](docs) | 70 files | One Markdown file per page, verbatim, each recording the URL it came from. |
 
-The mirror is refreshed weekly by GitHub Actions. Every run either reproduces
-the previous output byte for byte, or produces a diff that shows exactly what
-Google changed.
+```bash
+BASE=https://raw.githubusercontent.com/loic-bellinger/google-developer-style-markdown/main
+curl -O $BASE/llms.txt
+curl -O $BASE/llms-full.txt
+```
 
 **This project is not affiliated with, sponsored by, or endorsed by Google.**
 
 [guide]: https://developers.google.com/style/
 [llmstxt]: https://llmstxt.org/
+
+## Why you can trust what you feed the model
+
+*   **Verbatim.** Google publishes every page of the guide as Markdown, and
+    this mirror reproduces it unchanged: no reflowing, no reformatting, no
+    linting, no stripping of notices. What you read is what Google wrote.
+*   **A deterministic diff.** Two runs against an unchanged guide produce
+    identical bytes. Every diff in this repository is therefore a change Google
+    made, never noise from the mirror, so `git log` reads as the changelog the
+    guide does not publish.
+*   **Refreshed weekly.** GitHub Actions resynchronizes every Monday, only
+    after the test suite passes, and stops rather than push if a run would
+    delete more than a quarter of the pages.
 
 ## Why `.md.txt` and not scraping
 
@@ -37,6 +50,23 @@ would mean guessing at emphasis, tables, admonitions, and code fences that
 Google already got right, and every guess would show up as noise in the diff of
 the next sync. The only page fetched as HTML is the entry page, and only to
 read its table of contents.
+
+## How the sync works
+
+1.  Download the entry page and read its table of contents.
+1.  Download the `.md.txt` source of every page it lists, at most eight
+    connections at a time, 30 seconds per request.
+1.  If *any* page failed, stop. Nothing is written.
+1.  Write `docs/<page>.md` for every page.
+1.  Delete any `docs/*.md` the guide no longer lists.
+1.  Regenerate `llms.txt` and `llms-full.txt` from the same downloads.
+
+Steps 3 and 5 are the interesting pair. Deleting a page is only safe because
+the run is all-or-nothing: a page that could not be downloaded aborts the sync,
+so a network failure can never be mistaken for a page Google removed.
+
+A single failed request aborts the run, on purpose. A failed run leaves the
+mirror untouched; run it again.
 
 ## Architecture
 
@@ -106,18 +136,25 @@ As little as possible, and only what is deterministic:
 
 *   A single trailing newline is added. The `.md.txt` sources end without one.
 *   A YAML front matter block records the page title and its source URL.
-*   In `llms-full.txt` only, a page's leading `#` heading is *moved* above the
-    source line so each document starts with a title. A heading that wraps onto
-    the next line—a few pages of the guide do this—is left where it is, and
-    the document is titled with its navigation label instead, so a sentence is
-    never split.
+*   In `llms-full.txt` only, a page's leading `#` heading is *moved* ahead of
+    the source line so each document starts with a title. A heading that wraps
+    onto the next line—a few pages of the guide do this—is left where it is,
+    and the document is titled with its navigation label instead, so a sentence
+    is never split.
 
 Nothing else is touched: no reflowing, no reformatting, no removal of trailing
-spaces (Google's Markdown uses significant ones), no stripping of notices.
-No linter or formatter in this repository ever touches them, for the same
-reason—see [Markdown quality](#markdown-quality).
+spaces (Google's Markdown uses significant ones), no stripping of notices. No
+linter runs on it either: [rumdl][rumdl] enforces [Google's own Markdown
+style][docguide] on the files this repository writes by hand, and `docs/` is
+excluded in `.rumdl.toml`, because `rumdl fmt` would rewrite bullet characters,
+list spacing, the trailing spaces Google uses as line breaks, and the
+indentation inside its code samples. Ruff is scoped the same way, for the same
+reason.
 
-## Installation
+[rumdl]: https://github.com/rvben/rumdl
+[docguide]: https://google.github.io/styleguide/docguide/style.html
+
+## Run it yourself
 
 Requires [uv][uv] and Python 3.14.
 
@@ -125,43 +162,17 @@ Requires [uv][uv] and Python 3.14.
 git clone https://github.com/loic-bellinger/google-developer-style-markdown
 cd google-developer-style-markdown
 uv sync
-```
 
-[uv]: https://docs.astral.sh/uv/
-
-## Local commands
-
-```bash
 uv run gdsm                 # refresh docs/, llms.txt and llms-full.txt
 uv run gdsm --help          # options: --output-dir, --concurrency, --timeout
 uv run gdsm -v              # log every request
 uv run pytest               # tests
 uv run ruff check           # lint Python
-uv run ruff format          # format Python
 uv run rumdl check          # lint the hand-written Markdown
-uv run pre-commit install   # optional: run all of the above before each commit
+uv run pre-commit install   # optional: run every check here before each commit
 ```
 
-## How the sync works
-
-1.  Download the entry page and read its table of contents.
-1.  Download the `.md.txt` source of every page it lists, at most eight
-    connections at a time, 30 seconds per request.
-1.  If *any* page failed, stop. Nothing is written.
-1.  Write `docs/<page>.md` for every page.
-1.  Delete any `docs/*.md` the guide no longer lists.
-1.  Regenerate `llms.txt` and `llms-full.txt` from the same downloads.
-
-Steps 3 and 5 are the interesting pair. Deleting a page is only safe because
-the run is all-or-nothing: a page that could not be downloaded aborts the sync,
-so a network failure can never be mistaken for a page Google removed.
-
-The result is idempotent. Two runs against an unchanged guide produce identical
-bytes: UTF-8, LF endings, one trailing newline, stable ordering (both files
-follow Google's table of contents).
-
-There are no retries yet. A failed run leaves the mirror untouched; run it
-again.
+[uv]: https://docs.astral.sh/uv/
 
 ## Repository layout
 
@@ -177,15 +188,12 @@ again.
 
 ## GitHub Actions
 
-Two workflows:
+**CI** (`ci.yml`) runs on every push and pull request: Ruff, rumdl, and the
+tests. On pull requests it also checks that commit messages follow
+[Conventional Commits][conventional].
 
-*   **CI** (`ci.yml`) runs on every push and pull request: Ruff, rumdl, and the
-    tests. On pull requests it also checks that commit messages follow
-    [Conventional Commits][conventional].
-*   **Sync** (`sync.yml`) runs every Monday at 06:17 UTC, and on demand.
-
-Sync deliberately does the cheap, safe things first, so that a broken commit
-can never be published by a robot:
+**Sync** (`sync.yml`) runs every Monday at 06:17 UTC, and on demand. It does the
+cheap, safe things first, so that a robot can never publish a broken commit:
 
 1.  Run the full CI workflow. Broken code never gets to touch the mirror.
 1.  Fetch the guide and regenerate everything.
@@ -203,56 +211,6 @@ gh workflow run sync.yml
 ```
 
 [conventional]: https://www.conventionalcommits.org/
-
-## Markdown quality
-
-[rumdl][rumdl] enforces [Google's own Markdown style][docguide] on the files
-this repository writes by hand. `docs/` is excluded in `.rumdl.toml`, because
-`rumdl fmt` rewrites nearly every file of it: bullet characters, list spacing,
-the trailing spaces Google uses as line breaks, and the indentation inside code
-samples, where in a style guide the indentation is sometimes the point. No
-option reaches that—it is what the rules are for.
-
-Exclusions are used rather than an allowlist, so a new hand-written file is
-linted by default instead of being silently skipped. `llms.txt` and
-`llms-full.txt` need no entry: rumdl only discovers `.md` and `.markdown` files.
-
-Ruff is scoped for the same reason, and it is not theoretical: `ruff format`
-formats Python code blocks inside Markdown files, so a plain `ruff format .`
-rewrites Google's code samples in *our* style—including our quote preference.
-`docs/` is therefore listed in `extend-exclude`. (The guide happens to contain
-no Python samples today; the exclusion is what keeps that from becoming a
-problem the week it does.)
-
-Inside our own Markdown the two tools have to be made to agree, because both
-have an opinion about Python code blocks. Ruff formats them to 120 columns,
-while rumdl's line-length rule checks code blocks at 80, so code blocks are
-exempted from `MD013`—which leaves the 80-column rule where the docguide means
-it, on prose.
-
-Then rumdl is handed the blocks outright, through its `code-block-tools`
-feature:
-
-```toml
-[code-block-tools.languages.python]
-lint = ["ruff:check"]
-format = ["ruff:format"]
-```
-
-This is not redundant with the Ruff hook. `ruff check` cannot see code blocks at
-all—it reports *No Python files found* for a Markdown file—so an unused
-import or a syntax error in a documented example would otherwise ship unnoticed.
-The formatting side runs `ruff format -`, which resolves this project's
-configuration and therefore produces exactly what `ruff format README.md` would;
-the two cannot disagree.
-
-One sharp edge is worth knowing: `on-missing-tool-binary` defaults to `ignore`,
-which silently turns the whole feature off when `ruff` is not on `PATH`. It is
-set to `fail` here, and the rumdl pre-commit hook carries its own pinned copy of
-Ruff, so the checks cannot quietly stop running.
-
-[rumdl]: https://github.com/rvben/rumdl
-[docguide]: https://google.github.io/styleguide/docguide/style.html
 
 ## Licensing and attribution
 
@@ -290,8 +248,8 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
     and Cloud-specific guidance with small logos, which the HTML renders as
     empty `<span class="icon-android">` elements styled entirely in CSS. They
     carry no text, so Google's own Markdown has nothing to convert and drops
-    them: 26 Android and eight Cloud markers disappear from the word list, and the
-    sentences introducing them on the entry page now begin *"precedes terms
+    them: 26 Android and eight Cloud markers disappear from the word list, and
+    the sentences introducing them on the entry page now begin *"precedes terms
     and guidelines specific to…"* with nothing in front. This happens before
     the mirror sees the page, and putting the markers back would mean inventing
     content. Check the source page when a term's scope matters.
@@ -309,8 +267,7 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
 *   **Absolute cross-references.** Links between pages point at
     `developers.google.com`, because that is what Google's Markdown contains.
     Rewriting them to point inside `docs/` would be a change to the content.
-*   **No retries.** A single failed request aborts the run, on purpose. Retries
-    and backoff are the next thing to add.
+*   **No retries.** A single failed request aborts the run, on purpose.
 *   **Coupled to the DevSite navigation.** Discovery reads the
     `ul[menu="_book"]` list. If Google redesigns it, the sync fails loudly
     rather than silently mirroring less. The pages the guide links to in its
