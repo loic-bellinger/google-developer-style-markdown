@@ -17,6 +17,8 @@ is written for whoever reads a mirrored file, not for this program.
 """
 
 from collections.abc import Iterable
+from itertools import groupby
+from operator import attrgetter
 
 from .discovery import GUIDE, Page
 
@@ -79,8 +81,9 @@ def llms_txt(pages: Iterable[Page]) -> str:
     """Return the ``llms.txt`` index, in the llmstxt.org v2 format.
 
     The file stays an index: a title, a summary, and one link list per
-    table-of-contents section, in the order Google presents them. The content
-    itself lives behind the links, as the convention intends.
+    table-of-contents section, in the order Google presents them, grouped the
+    way the navigation groups them. The content itself lives behind the links,
+    as the convention intends.
 
     Args:
         pages: Pages of the guide, in table-of-contents order.
@@ -88,12 +91,11 @@ def llms_txt(pages: Iterable[Page]) -> str:
     Returns:
         The full text of ``llms.txt``, ending in a single newline.
     """
-    sections: dict[str, list[Page]] = {}
-    for page in pages:
-        sections.setdefault(page.section, []).append(page)
-
     blocks = [f'# {TITLE}', _SUMMARY, _ATTRIBUTION]
-    for section, listed in sections.items():
+    # groupby only groups neighbours, which is exactly the intent: the sections
+    # are the ones the table of contents draws, in the order it draws them, and
+    # a section Google split in two would be mirrored as two sections.
+    for section, listed in groupby(pages, key=attrgetter('section')):
         entries = '\n'.join(f'- [{page.title}](docs/{page.filename})' for page in listed)
         blocks.append(f'## {section}\n\n{entries}')
     blocks.append(
