@@ -206,10 +206,32 @@ rewrites Google's code samples in *our* style — including our quote preference
 no Python samples today; the exclusion is what keeps that from becoming a
 problem the week it does.)
 
-The two tools would otherwise disagree about our own Markdown: Ruff formats
-Python blocks to 120 columns, and rumdl's line-length rule checks code blocks at
-80 by default. Code blocks are exempted from `MD013` in `.rumdl.toml`, which
-leaves the 80-column rule where the docguide means it — on prose.
+Inside our own Markdown the two tools have to be made to agree, because both
+have an opinion about Python code blocks. Ruff formats them to 120 columns,
+while rumdl's line-length rule checks code blocks at 80, so code blocks are
+exempted from `MD013` — which leaves the 80-column rule where the docguide means
+it, on prose.
+
+Then rumdl is handed the blocks outright, through its `code-block-tools`
+feature:
+
+```toml
+[code-block-tools.languages.python]
+lint = ["ruff:check"]
+format = ["ruff:format"]
+```
+
+This is not redundant with the Ruff hook. `ruff check` cannot see code blocks at
+all — it reports *No Python files found* for a Markdown file — so an unused
+import or a syntax error in a documented example would otherwise ship unnoticed.
+The formatting side runs `ruff format -`, which resolves this project's
+configuration and therefore produces exactly what `ruff format README.md` would;
+the two cannot disagree.
+
+One sharp edge is worth knowing: `on-missing-tool-binary` defaults to `ignore`,
+which silently turns the whole feature off when `ruff` is not on `PATH`. It is
+set to `fail` here, and the rumdl pre-commit hook carries its own pinned copy of
+Ruff, so the checks cannot quietly stop running.
 
 [rumdl]: https://github.com/rvben/rumdl
 [docguide]: https://google.github.io/styleguide/docguide/style.html

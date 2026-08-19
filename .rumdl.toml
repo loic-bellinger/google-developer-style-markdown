@@ -19,6 +19,26 @@ line_length = 80  # Google: "Wrap to 80 characters"
 [MD013]
 code_blocks = false
 
+# Hand the Python code blocks in our Markdown to Ruff. `ruff check` cannot see
+# them on its own -- it reports "No Python files found" for a .md file -- so
+# without this a broken example in the README ships unnoticed. `ruff format -`
+# resolves this project's configuration, so it produces exactly what
+# `ruff format README.md` would; the two cannot disagree.
+#
+# on-missing-tool-binary defaults to "ignore", which turns the whole feature
+# into a silent no-op when ruff is not on PATH. "fail" says so instead. Running
+# through `uv run` covers it locally and in CI, and the pre-commit hook carries
+# its own copy of ruff.
+#
+# docs/ is excluded above, so none of this ever reaches Google's Markdown.
+[code-block-tools]
+enabled = true
+on-missing-tool-binary = "fail"
+
+[code-block-tools.languages.python]
+lint = ["ruff:check"]
+format = ["ruff:format"]
+
 # Headings: ATX-style only (# Heading), not Setext (underlines)
 [MD003]
 style = "atx"
