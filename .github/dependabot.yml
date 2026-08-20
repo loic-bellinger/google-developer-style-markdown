@@ -1,0 +1,32 @@
+# pre-commit is deliberately absent. Ruff's version lives in uv.lock, in the
+# ruff-pre-commit rev, and in the rumdl hook's additional_dependencies, which
+# no ecosystem updates. Automating two of the three would drift the pinning
+# .pre-commit-config.yaml asks to keep in step, and nothing tests it.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: ci
+      include: scope
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: chore
+      prefix-development: chore
+      include: scope
+    groups:
+      python:
+        patterns: ["*"]
