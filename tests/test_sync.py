@@ -34,7 +34,7 @@ def link(href: str, text: str) -> str:
 
 
 def page(path: str, *, title: str = 'Title', section: str = 'Documentation') -> Page:
-    """Build a page of the guide. `path` is its path under /style, '' for the entry page."""
+    """Builds a page of the guide. `path` is its path under /style, '' for the entry page."""
     return Page(title=title, url=f'{INDEX}/{path}' if path else INDEX, section=section)
 
 
@@ -160,7 +160,7 @@ def test_parse_index_reads_the_shape_of_the_list_not_the_class_names():
     assert [(p.filename, p.title, p.section) for p in pages] == [('commas.md', 'Commas', 'Punctuation')]
 
 
-def test_parse_index_rejects_an_unrecognisable_page():
+def test_parse_index_rejects_an_unrecognizable_page():
     with pytest.raises(SyncError, match='no table of contents'):
         parse_index('<html><body>redesigned</body></html>')
 
@@ -246,7 +246,7 @@ def test_llms_full_follows_reading_order_and_leaves_the_changelog_out(tmp_path):
 
     text = (tmp_path / 'llms-full.txt').read_text(encoding='utf-8')
     # headings-targets.md sorts before headings.md, because '-' precedes '.',
-    # so the order is asserted on a case where reading order and file name
+    # so the order is asserted on a case where reading order and filename
     # order disagree.
     assert text.index('# Headings') < text.index('# Targets')
     # The changelog is mirrored and indexed, but kept out of the full text.

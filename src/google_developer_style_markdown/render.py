@@ -4,11 +4,11 @@ Everything here is a pure function of its arguments: the same inputs always
 produce byte-identical output, which is what makes a sync run idempotent and
 its diffs meaningful.
 
-Google's Markdown is reproduced verbatim. The only changes made to a page body
-are that trailing whitespace collapses into the single final newline every text
-file is expected to end with (the `.md.txt` sources end without one), and that
-in `llms-full.txt` a page's leading `#` heading is *moved* above the source
-line so that every document starts with a title. No line is ever rewritten,
+Google's Markdown is reproduced verbatim. Only two things change in a page
+body. Trailing whitespace collapses into the single final newline every text
+file is expected to end with, because the `.md.txt` sources end without one.
+In `llms-full.txt`, a page's leading `#` heading *moves* above the source line,
+so that every document starts with a title. No line is ever rewritten,
 dropped, or invented.
 
 `docs/<name>.md` and `llms-full.txt` are rendered from the same downloads
@@ -40,21 +40,21 @@ _SUMMARY = (
 
 
 def _quote(value: str) -> str:
-    """Return `value` as a double-quoted YAML scalar."""
+    """Returns `value` as a double-quoted YAML scalar."""
     escaped = value.replace('\\', '\\\\').replace('"', '\\"')
     return f'"{escaped}"'
 
 
 def document(page: Page, body: str) -> str:
-    """Return the contents of the mirrored document for `page`.
+    """Returns the contents of the mirrored document for `page`.
 
-    The body is Google's Markdown unchanged. It is preceded by a YAML front
-    matter block recording where the page came from, which is what lets the
-    mirror be regenerated, audited, and attributed without a side-car index.
+    The body is Google's Markdown unchanged. A YAML front matter block ahead of
+    it records where the page came from, which is what lets anyone regenerate,
+    audit, and attribute the mirror without a sidecar index.
 
     Args:
-        page: Page the body was downloaded for.
-        body: Markdown served at `Page.markdown_url`.
+        page: The page the body was downloaded for.
+        body: The Markdown served at `Page.markdown_url`.
 
     Returns:
         The full text of the mirrored document, ending in a single newline.
@@ -65,7 +65,7 @@ def document(page: Page, body: str) -> str:
 
 
 def llms_txt(pages: Iterable[Page]) -> str:
-    """Return the `llms.txt` index, in the llmstxt.org v2 format.
+    """Returns the `llms.txt` index, in the llmstxt.org v2 format.
 
     The file stays an index: a title, a summary, and one link list per
     table-of-contents section, in the order Google presents them, grouped the
@@ -73,7 +73,7 @@ def llms_txt(pages: Iterable[Page]) -> str:
     as the convention intends.
 
     Args:
-        pages: Pages of the guide, in table-of-contents order.
+        pages: The pages of the guide, in table-of-contents order.
 
     Returns:
         The full text of `llms.txt`, ending in a single newline.
@@ -92,18 +92,19 @@ def llms_txt(pages: Iterable[Page]) -> str:
 
 
 def llms_full(documents: Iterable[tuple[Page, str]]) -> str:
-    """Return `llms-full.txt`: every mirrored document, concatenated.
+    """Returns `llms-full.txt`: every mirrored document, concatenated.
 
-    Documents are emitted in the order given, separated by a horizontal rule,
-    and each is introduced by its title and the URL it was reproduced from. A
-    page that opens with a standalone `#` heading keeps that heading as its
-    title. Any other page -- one with no heading, or one whose heading wraps
-    onto the following line, which a few pages of the guide do -- is titled with
-    its navigation label and its body is left strictly untouched, so that a
-    wrapped sentence is never split across the source line.
+    Documents come out in the order given, separated by a horizontal rule, each
+    introduced by its title and the URL it was reproduced from. A page that
+    opens with a standalone `#` heading keeps that heading as its title. Any
+    other page—one with no heading, or one whose heading wraps onto the
+    following line, as a few pages of the guide do—is titled with its
+    navigation label, and its body is left strictly untouched, so that a wrapped
+    sentence is never split across the source line.
 
     Args:
-        documents: Pages paired with their Markdown source, in a stable order.
+        documents: The pages paired with their Markdown source, in a stable
+            order.
 
     Returns:
         The full text of `llms-full.txt`, ending in a single newline.

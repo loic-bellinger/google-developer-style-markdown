@@ -2,8 +2,8 @@
 
 The run is all-or-nothing: nothing is written until every page has been
 downloaded successfully. That is what makes it safe for the mirror to delete
-documents that are no longer part of the guide -- a network failure can never
-be mistaken for a page that Google removed.
+documents that are no longer part of the guide—a network failure can never be
+mistaken for a page that Google removed.
 """
 
 import asyncio
@@ -54,14 +54,14 @@ class Report:
     """What a completed sync did to the working tree."""
 
     documents: tuple[Path, ...]
-    """Mirrored documents, in file name order."""
+    """Mirrored documents, in filename order."""
 
     removed: tuple[Path, ...]
     """Documents deleted because the guide no longer lists them."""
 
 
 async def _fetch(session: aiohttp.ClientSession, url: URL | str) -> str:
-    """Return the body of `url` as text, raising on any non-2xx status."""
+    """Returns the body of `url` as text, raising on any status outside `2xx`."""
     _LOGGER.debug('GET %s', url)
     async with session.get(url) as response:
         response.raise_for_status()
@@ -73,24 +73,24 @@ async def fetch_guide(
     concurrency: int = DEFAULT_CONCURRENCY,
     timeout: float = DEFAULT_TIMEOUT,
 ) -> tuple[tuple[Page, str], ...]:
-    """Download the entry page, then the Markdown source of every page it lists.
+    """Downloads the entry page, then the Markdown source of every page it lists.
 
-    Concurrency is bounded by the connection pool rather than by a semaphore:
-    all requests are scheduled at once and the connector releases them a few at
-    a time, which keeps the load on Google's servers modest without any extra
+    The connection pool bounds concurrency, rather than a semaphore: every
+    request is scheduled at once and the connector releases them a few at a
+    time, which keeps the load on Google's servers modest without any extra
     bookkeeping.
 
     Args:
-        concurrency: Maximum number of simultaneous connections.
-        timeout: Seconds allowed for each individual request.
+        concurrency: The maximum number of simultaneous connections.
+        timeout: The number of seconds allowed for each individual request.
 
     Returns:
-        Each page of the guide paired with its Markdown source, in
+        The pages of the guide, each paired with its Markdown source, in
         table-of-contents order.
 
     Raises:
-        SyncError: If the entry page or any Markdown source cannot be
-            downloaded, or if the table of contents cannot be read.
+        SyncError: If the entry page or any Markdown source can't be
+            downloaded, or if the table of contents can't be read.
     """
     session = aiohttp.ClientSession(
         connector=aiohttp.TCPConnector(limit=concurrency),
@@ -120,23 +120,23 @@ async def fetch_guide(
 
 
 def _write(path: Path, text: str) -> None:
-    """Write `text` to `path` as UTF-8 with LF line endings, on any platform."""
+    """Writes `text` to `path` as UTF-8 with LF line endings, on any platform."""
     path.write_text(text, encoding='utf-8', newline='\n')
 
 
 def write_mirror(fetched: Sequence[tuple[Page, str]], root: Path) -> Report:
-    """Write `docs/`, `llms.txt` and `llms-full.txt` under `root`.
+    """Writes `docs/`, `llms.txt`, and `llms-full.txt` under `root`.
 
-    Documents the guide no longer lists are deleted, so that `docs/` always
-    describes the guide as it is today rather than as it has ever been. Only
-    `*.md` files directly inside `docs/` are ever removed.
+    Documents the guide no longer lists are deleted, so that `docs/` describes
+    the guide as it stands rather than as it has ever been. Only `*.md` files
+    directly inside `docs/` are ever removed.
 
     Both `llms.txt` and `llms-full.txt` follow the order Google presents the
     pages in. `llms-full.txt` leaves out `EXCLUDED_FROM_FULL`.
 
     Args:
-        fetched: Pages paired with their Markdown source, in reading order.
-        root: Directory the mirror is written into.
+        fetched: The pages paired with their Markdown source, in reading order.
+        root: The directory the mirror is written into.
 
     Returns:
         A description of what changed on disk.
@@ -171,17 +171,17 @@ async def sync(
     concurrency: int = DEFAULT_CONCURRENCY,
     timeout: float = DEFAULT_TIMEOUT,
 ) -> Report:
-    """Mirror the guide into `root`.
+    """Mirrors the guide into `root`.
 
     Args:
-        root: Directory the mirror is written into.
-        concurrency: Maximum number of simultaneous connections.
-        timeout: Seconds allowed for each individual request.
+        root: The directory the mirror is written into.
+        concurrency: The maximum number of simultaneous connections.
+        timeout: The number of seconds allowed for each individual request.
 
     Returns:
         A description of what changed on disk.
 
     Raises:
-        SyncError: If any part of the guide could not be downloaded or read.
+        SyncError: If any part of the guide can't be downloaded or read.
     """
     return write_mirror(await fetch_guide(concurrency=concurrency, timeout=timeout), root)

@@ -1,9 +1,8 @@
 """Discover the pages of the style guide from its entry page.
 
-Discovery is deliberately narrow. The only page fetched as HTML is
-
-`GUIDE`; every link is then taken from the guide's own table of contents
-(the `_book` navigation menu that DevSite renders on every page). There is no
+Discovery is deliberately narrow. The only page this module fetches as HTML is
+`GUIDE`; every link then comes from the guide's own table of contents, the
+`_book` navigation menu that DevSite renders on every page. There is no
 recursive crawl, and nothing outside `GUIDE` is ever considered.
 """
 
@@ -35,7 +34,7 @@ _DEFAULT_SECTION = 'Documentation'
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class Page:
-    """One page of the guide, as advertised by the table of contents."""
+    """One page of the guide, as the table of contents lists it."""
 
     title: str
     """Navigation label Google gives the page. Not always its heading."""
@@ -47,16 +46,16 @@ class Page:
     """Table-of-contents section the page is listed under."""
 
     def __post_init__(self) -> None:
-        """Refuse a page that cannot be given a plain file name.
+        """Rejects a page whose URL doesn't name a plain file.
 
-        The name goes straight into a path under `docs/`, and it is the
-        decoded form of a URL segment, which is where percent-encoding can turn
-        back into a separator. `normalize` deliberately leaves that to be
-        settled here, so that an encoded name a page can legitimately have is
-        kept while one that cannot be written is refused.
+        The name goes straight into a path under `docs/`, and it is the decoded
+        form of a URL segment, which is where percent-encoding can turn back
+        into a separator. `normalize` deliberately leaves that decision here: a
+        page keeps an encoded name it can legitimately have, and loses one that
+        can't be written.
 
         Raises:
-            SyncError: If the URL does not name a single, ordinary file.
+            SyncError: If the URL doesn't name a single, ordinary file.
         """
         name = self.filename
         if not name or name.startswith('.') or set(name) & set('/\\'):
@@ -69,25 +68,25 @@ class Page:
 
     @property
     def filename(self) -> str:
-        """Name this page is mirrored under.
+        """The name this page is mirrored under.
 
         Taken from the URL Google actually serves, minus its `.txt`: the file
         is called whatever the source is called, so there is no naming scheme
-        to keep in step with anything. The guide's entry page is served at
-        `/style.md.txt` and is therefore mirrored as `style.md`.
+        to keep in step with anything. Google serves the guide's entry page at
+        `/style.md.txt`, so the mirror calls it `style.md`.
         """
         return URL(self.markdown_url).name.removesuffix('.txt')
 
 
 def normalize(href: str) -> str | None:
-    """Return the canonical guide URL for `href`, or `None` if out of scope.
+    """Returns the canonical guide URL for `href`, or `None` if out of scope.
 
     Relative references are resolved against `GUIDE`, which also resolves any
     `..` before the result is inspected. Fragments and query strings are
     dropped: on DevSite they select a position or a locale, never a different
     document, so keeping them would only produce duplicates. Trailing and
-    doubled slashes are collapsed, so that `/style/lists`, `/style/lists/`
-    and `/style//lists` become one entry -- and so that appending `.md.txt`
+    doubled slashes are collapsed, so that `/style/lists`, `/style/lists/`,
+    and `/style//lists` become one entry—and so that appending `.md.txt`
     yields the URL Google actually serves.
 
     A reference is rejected when it points at another host, when it falls
@@ -98,13 +97,13 @@ def normalize(href: str) -> str | None:
     That last rule is why this takes the address of a *page*. A `.md.txt`
     address is a file by the same test and would be rejected, which is
     harmless only because the Markdown form is never discovered: it is derived
-    from a page that has already come through here, by
-    `Page.markdown_url`. Anything that starts finding pages somewhere
-    other than the table of contents -- a sitemap, a link in the prose -- has
-    to keep that separation or drop every address it is looking for.
+    from a page that has already come through here, by `Page.markdown_url`.
+    Anything that starts finding pages somewhere other than the table of
+    contents—a sitemap, a link in the prose—has to keep that separation or
+    lose every address it looks for.
 
     Args:
-        href: Address of a page of the guide, absolute or relative.
+        href: The address of a page of the guide, absolute or relative.
 
     Returns:
         The canonical `https` URL of an in-scope page, or `None`.
@@ -127,22 +126,22 @@ def normalize(href: str) -> str | None:
 
 
 def parse_index(markup: str) -> tuple[Page, ...]:
-    """Extract the table of contents from the HTML of the entry page.
+    """Reads the table of contents out of the HTML of the entry page.
 
     The navigation is a flat list in which section headings and page links are
-    siblings, so the pages are walked in document order and each one is
-    attributed to the most recent heading. Reading order is preserved: it is
-    Google's own, and it is what `llms.txt` presents to a reader.
+    siblings, so the pages are walked in document order, each attributed to the
+    most recent heading. The order they come back in is Google's own, and it is
+    the order `llms.txt` presents to a reader.
 
     Args:
-        markup: HTML of the entry page.
+        markup: The HTML of the entry page.
 
     Returns:
         The pages of the guide, in table-of-contents order.
 
     Raises:
         SyncError: If the navigation is missing, empty, lists a page that
-            cannot be named, or maps two pages onto the same file name.
+            can't be named, or maps two pages onto the same filename.
     """
     navigation = LexborHTMLParser(markup).css_first('ul[menu="_book"]')
     if navigation is None:

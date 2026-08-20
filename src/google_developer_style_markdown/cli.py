@@ -1,4 +1,4 @@
-"""Command line entry point."""
+"""Command-line entry point."""
 
 import argparse
 import asyncio
@@ -15,14 +15,14 @@ _LOGGER = logging.getLogger(__name__)
 
 
 def _positive(text: str) -> int:
-    """Parse a strictly positive integer argument."""
+    """Parses a strictly positive integer argument."""
     if (value := int(text)) < 1:
         raise argparse.ArgumentTypeError(f'must be at least 1, got {value}')
     return value
 
 
 def _parser() -> argparse.ArgumentParser:
-    """Build the argument parser."""
+    """Builds the argument parser."""
     parser = argparse.ArgumentParser(
         prog='gdsm',
         description=(
@@ -36,7 +36,7 @@ def _parser() -> argparse.ArgumentParser:
         type=Path,
         default=Path(),
         metavar='DIR',
-        help='directory to write docs/, llms.txt and llms-full.txt into (default: .)',
+        help='directory to write docs/, llms.txt, and llms-full.txt into (default: .)',
     )
     parser.add_argument(
         '-c',
@@ -60,13 +60,14 @@ def _parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Run a sync and report what changed.
+    """Runs a sync and reports what changed.
 
     Args:
-        argv: Command line arguments, or `None` to read `sys.argv`.
+        argv: The command-line arguments, or `None` to read `sys.argv`.
 
     Returns:
-        `0` on success, `1` if the guide could not be mirrored.
+        The exit code: `0` once the mirror is written, `1` if the guide can't
+        be downloaded or read.
     """
     arguments = _parser().parse_args(argv)
     logging.basicConfig(
