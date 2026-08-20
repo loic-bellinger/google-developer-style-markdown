@@ -31,7 +31,8 @@ Spend the 130k tokens once, keep the few thousand you distill, and point the
 skill back here for the rest.
 
 Open an issue to say how you used it, and link your skill or your repository.
-When there are a few, the links get a `skills/` index of their own.
+If enough people share one, the links move out of this README and into a
+`skills/` directory.
 
 [skill]: https://code.claude.com/docs/en/skills
 
