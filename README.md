@@ -8,7 +8,7 @@ changed.
 | File | Size | What it is for |
 | ---- | ---- | -------------- |
 | [`llms.txt`](llms.txt) | 4 KB, ~1k tokens | The index: every page as a link, grouped and ordered the way Google's own table of contents groups and orders it. Read this first. |
-| [`llms-full.txt`](llms-full.txt) | 515 KB, ~130k tokens | The substance: the whole guide in one file, ready to drop into a context window. |
+| [`llms-full.txt`](llms-full.txt) | 515 KB, ~130k tokens | The substance: the whole guide in one file, ready to drop into a context window or to distill into a skill. |
 | [`docs/`](docs) | 70 files | One Markdown file per page, verbatim, each recording the URL it came from. |
 
 ```bash
@@ -21,6 +21,19 @@ curl -O $BASE/llms-full.txt
 
 [guide]: https://developers.google.com/style/
 [llmstxt]: https://llmstxt.org/
+
+## Distill it into a skill
+
+`llms-full.txt` is the file to start from when you write an [Agent
+Skill][skill]. It holds the whole guide in reading order, with the source URL
+of every page, so a distilled `SKILL.md` can cite the page behind each rule.
+Spend the 130k tokens once, keep the few thousand you distill, and point the
+skill back here for the rest.
+
+Open an issue to say how you used it, and link your skill or your repository.
+When there are a few, the links get a `skills/` index of their own.
+
+[skill]: https://code.claude.com/docs/en/skills
 
 ## Why you can trust what you feed the model
 
