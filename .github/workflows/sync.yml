@@ -63,6 +63,29 @@ jobs:
             echo 'the guide has not changed'
             exit 0
           fi
+
+          # Only docs/ is summarised. llms.txt and llms-full.txt are derived from
+          # it, so listing them would restate the summary at ten times the size.
+          # awk prints 0 for a status letter it never saw.
+          pages=$(git diff --cached --name-status -- docs)
+          counts=$(awk '{n[$1]++}
+                        END {printf "%d changed, %d added, %d removed", n["M"], n["A"], n["D"]}' <<<"$pages")
+
+          # Google keeps its own changelog, so quote the lines it gained rather
+          # than describe the diff. Nothing is written when the page is
+          # untouched, deleted, or gone: there are no added lines to quote.
+          #
+          # 40 lines is a ceiling only a first sync can reach, where the whole
+          # page arrives as one block. Of the 172 milestones the page has
+          # published, the median is 5 lines and the largest ever is 28.
+          news=$(git diff --cached -U0 -- docs/whats-new.md |
+                 grep '^+' | grep -v '^+++' | cut -c2- |
+                 awk 'NR <= 40 {print} NR == 41 {print "... and more; see the diff"; exit}' || true)
+          body="$pages"
+          if [ -n "$news" ]; then
+            body=$(printf '%s\n\nLines added to docs/whats-new.md:\n\n%s' "$body" "$news")
+          fi
+
           git diff --cached --stat
-          git commit -m 'docs: sync the Google developer documentation style guide'
+          git commit -m "docs: sync the guide ($counts)" -m "$body"
           git push
