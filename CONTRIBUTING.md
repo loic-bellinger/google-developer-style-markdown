@@ -2,16 +2,17 @@
 
 Thanks for helping. This is a small project; the whole setup is two commands.
 
-## Getting started
+## Get started
 
 ```bash
 uv sync
 uv run pre-commit install
 ```
 
-`pre-commit install` is optional but recommended: it installs both the
-`pre-commit` and `commit-msg` hooks, which run the same Ruff, rumdl, and
-commit-message checks that CI runs, from the versions pinned in `uv.lock`.
+`pre-commit install` is optional. Run it to catch locally what CI would catch
+later: it installs the `pre-commit` and `commit-msg` hooks from the versions
+pinned in `uv.lock`, and they run the same Ruff, rumdl, and commit-message
+checks.
 
 ## Before opening a pull request
 
@@ -22,7 +23,7 @@ uv run rumdl check
 uv run pytest
 ```
 
-## Do not edit the generated files
+## Don't edit the generated files
 
 `docs/`, `llms.txt`, and `llms-full.txt` are written by the synchronizer and
 overwritten on every run. Changes to them belong in `src/`. To see the effect
@@ -33,9 +34,9 @@ uv run gdsm
 git diff
 ```
 
-Please do not include a full re-sync in a pull request that is about the
-code—it buries the change under hundreds of lines. The scheduled workflow picks
-the content up on its own.
+Don't include a full resync in a pull request that is about the code—it buries
+the change under hundreds of lines. The scheduled workflow picks the content up
+on its own.
 
 ## Commit messages
 
@@ -49,8 +50,8 @@ chore(deps): bump aiohttp
 ```
 
 Commitizen checks this locally through the `commit-msg` hook, and CI checks
-every commit in a pull request. `uv run cz commit` walks you through it if you
-would rather not remember the format.
+every commit in a pull request. If you would rather not remember the format,
+`uv run cz commit` prompts for each part of the message.
 
 ## Releases
 
