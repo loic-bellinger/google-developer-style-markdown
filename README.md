@@ -1,15 +1,37 @@
-# google-developer-style-markdown
+# Google developer documentation style guide as Markdown and llms.txt
 
-The [Google developer documentation style guide][guide] as plain Markdown and
-[llms.txt][llmstxt], ready to hand to a model. Reproduced verbatim,
-resynchronized every week, byte-identical on every run that finds nothing
-changed.
+[![CI status][badge-ci]][actions-ci]
+[![Sync status][badge-sync]][actions-sync]
+[![Code license: MIT][badge-mit]](LICENSE)
+[![Content license: CC BY 4.0][badge-ccby]][ccby]
+
+This repository mirrors the [Google developer documentation style
+guide][guide] page for page, as plain Markdown and [llms.txt][llmstxt]. Every
+page is reproduced verbatim and resynchronized every week—what you read is
+what Google wrote.
+
+Hand the guide to a large language model (LLM) and style review stops being
+guesswork. The model quotes the rule it applies and the page the rule comes
+from, instead of paraphrasing the guide from training data. The following
+exchange shows the difference:
+
+```text
+You:   The guide says em dashes take spaces around them, right?
+Model: No—an em dash takes no space before or after it.
+       Source: https://developers.google.com/style/dashes
+```
+
+You can also distill the guide into a reusable technical-writing skill, or
+read and search it offline, one file per page. The following table shows the
+three forms the mirror takes:
 
 | File | Size | What it is for |
 | ---- | ---- | -------------- |
 | [`llms.txt`](llms.txt) | 4&nbsp;KB, ~1k tokens | The index: every page as a link, grouped and ordered the way Google's own table of contents groups and orders it. Read this first. |
-| [`llms-full.txt`](llms-full.txt) | 515&nbsp;KB, ~130k tokens | The substance: the whole guide in one file, ready to drop into a context window or to distill into a skill. |
+| [`llms-full.txt`](llms-full.txt) | 515&nbsp;KB, ~130k tokens | The substance: the whole guide in one file, ready to drop into an LLM's context window or to distill into a skill. |
 | [`docs/`](docs) | 70 files | One Markdown file per page, verbatim, each recording the URL it came from. |
+
+Download the files straight from `main`, without cloning:
 
 ```bash
 BASE=https://raw.githubusercontent.com/loic-bellinger/google-developer-style-markdown/main
@@ -22,7 +44,7 @@ curl -O $BASE/llms-full.txt
 [guide]: https://developers.google.com/style/
 [llmstxt]: https://llmstxt.org/
 
-## Distill it into a skill
+## Distill it into an Agent Skill
 
 `llms-full.txt` is the file to start from when you write an [Agent
 Skill][skill]. It holds the whole guide in reading order, with the source URL
@@ -36,185 +58,66 @@ If enough people share one, the links move out of this README and into a
 
 [skill]: https://code.claude.com/docs/en/skills
 
-## Why you can trust what you feed the model
+## Why you can trust this mirror
 
-*   **Verbatim.** Google publishes every page of the guide as Markdown, and
-    this mirror reproduces it unchanged: no reflowing, no reformatting, no
-    linting, no stripping of notices. What you read is what Google wrote.
+Google already publishes every page of the guide as Markdown: append
+`.md.txt` to any page URL and the server returns the source. This mirror
+downloads that source, so nothing is scraped, converted, or reconstructed
+from HTML.
+
+*   **Verbatim.** Each page is reproduced unchanged: no reflowing, no
+    reformatting, no linting, no stripping of notices. The mirror adds only a
+    front matter block recording the title and source URL of each page.
 *   **A deterministic diff.** Two runs against an unchanged guide produce
-    identical bytes. Every diff in this repository is therefore a change Google
-    made, never noise from the mirror, so `git log` reads as the changelog the
-    guide doesn't publish.
+    identical bytes. Every diff in this repository is therefore a change
+    Google made, never noise from the mirror, so `git log` reads as a
+    changelog finer-grained than the guide's own what's-new page.
 *   **Refreshed weekly.** GitHub Actions resynchronizes every Monday, only
-    after the test suite passes, and stops instead of pushing if a run would
-    delete more than a quarter of the pages.
+    after the test suite passes. The run is all-or-nothing—one failed
+    download and nothing is written—and it stops instead of pushing if it
+    would delete more than a quarter of the pages.
 
-## Why `.md.txt` and not scraping
+## What the mirror doesn't carry
 
-Google already publishes every page of the guide as Markdown. Append `.md.txt`
-to any page URL and the server returns the source:
+*   **Images and diagrams.** They aren't covered by the content license, and
+    Google's own Markdown carries almost none of them. What survives points
+    at Google.
+*   **The Android and Cloud markers.** The guide flags platform-specific
+    terms with CSS-only icons. The icons carry no text, so Google's own
+    Markdown drops them before the mirror ever downloads the page. Check the
+    source page when a term's scope matters.
+*   **Definition lists.** Markdown has no syntax for them, so the word list
+    arrives as prose. Cross-references to a term still work: they point at
+    Google, where the anchor exists.
+*   **Some page titles.** Of the 70 pages, 19 don't open with a usable
+    heading. The navigation label stands in, recorded in each document's
+    front matter.
+*   **The changelog.** The what's-new page dates superseded wording—advice a
+    model shouldn't read alongside the guidance that replaced it—so
+    `llms-full.txt` leaves that page out. The page is still mirrored in
+    `docs/` and still indexed in `llms.txt`.
+*   **Relative links.** Links between pages point at `developers.google.com`,
+    because that is what Google's Markdown contains.
 
-```text
-https://developers.google.com/style/markdown
-https://developers.google.com/style/markdown.md.txt
-```
+This is a mirror, not a fork: report problems with the _content_ to Google,
+not here.
 
-So there is nothing to scrape. Converting the rendered HTML back into Markdown
-would mean guessing at emphasis, tables, admonitions, and code fences that
-Google already got right, and every guess would show up as noise in the diff of
-the next sync. The only page fetched as HTML is the entry page, and only to
-read its table of contents.
+## Run the sync yourself
 
-## How the sync works
-
-1.  Download the entry page and read its table of contents.
-1.  Download the `.md.txt` source of every page it lists, at most eight
-    connections at a time, 30 seconds per request.
-1.  If *any* page failed, stop. Nothing is written.
-1.  Write `docs/<page>.md` for every page.
-1.  Delete any `docs/*.md` the guide no longer lists.
-1.  Regenerate `llms.txt` and `llms-full.txt` from the same downloads.
-
-Steps 3 and 5 are the pair that matters. Deleting a page is only safe because
-the run is all-or-nothing: a page that can't be downloaded stops the sync, so
-a network failure can never be mistaken for a page Google removed. A failed
-run leaves the mirror untouched. Run it again.
-
-## Architecture
-
-Four small modules, each doing one thing:
-
-```text
-src/google_developer_style_markdown/
-├── discovery.py   entry page HTML -> the pages of the guide
-├── sync.py        download every page, write the mirror, delete what is gone
-├── render.py      pure functions: a document, llms.txt, llms-full.txt
-└── cli.py         argument parsing and exit codes
-```
-
-The interesting properties live in two places. `discovery.normalize` decides
-what belongs to the guide, and `render` is pure: given the same downloads it
-always produces the same bytes.
-
-### Discovery
-
-Discovery parses the entry page with [selectolax][selectolax] (Lexbor),
-handles URLs with [yarl][yarl]—the same URL type aiohttp speaks—and reads the
-pages from the guide's own table of contents, the `ul[menu="_book"]`
-navigation DevSite renders on every page. There is no crawl: links are never
-followed, so the sync can't reach the rest of `developers.google.com`, and it
-picks up a page Google adds later as soon as the table of contents lists it.
-
-Each reference is resolved against the entry page and then either canonicalized
-or dropped. It is kept when the same host serves it, it lives under `/style`,
-and it doesn't name a file. Trailing slashes, empty segments, fragments, and
-query strings collapse, so `/style/lists/`, `/style//lists`, and
-`/style/lists#nested` all arrive as one entry. The exhaustive table is the
-`test_normalize` test, which CI runs on every push.
-
-A page is mirrored under the name Google serves it as, minus the `.txt`:
-`/style/lists.md.txt` becomes `docs/lists.md`, and the guide's entry page,
-served at `/style.md.txt`, becomes `docs/style.md`. There is no naming scheme
-to keep in step with anything.
-
-Scope is decided on the *encoded* path and the encoding is carried through, so
-a page whose name legitimately contains one is kept: `/style/caf%C3%A9` would
-be mirrored as `docs/café.md`. Decoding before that decision is what lets
-`%2F` and `%2E%2E` become separators again inside a single segment, so that
-`/style/%2e%2e%2fetc` reads as a page of the guide and then turns out to be
-`/etc`.
-
-What a name decodes into is settled one step later. A `Page` object rejects at
-construction any URL that doesn't name a single, ordinary file—an empty name,
-a leading dot, or a separator—so "this can be written under `docs/`" is true
-of every instance rather than checked at each call site. Two pages that would
-claim the same filename stop the run.
-
-[selectolax]: https://github.com/rushter/selectolax
-[yarl]: https://yarl.aio-libs.org/
-
-### What the mirror changes about Google's Markdown
-
-As little as possible, and only what is deterministic:
-
-*   A single trailing newline is added. The `.md.txt` sources end without one.
-*   A YAML front matter block records the page title and its source URL.
-*   In `llms-full.txt` only, a page's leading `#` heading is *moved* ahead of
-    the source line so each document starts with a title. A heading that wraps
-    onto the next line—a few pages of the guide do this—is left where it is,
-    and the document is titled with its navigation label instead, so a sentence
-    is never split.
-
-Nothing else is touched: no reflowing, no reformatting, no removal of trailing
-spaces (Google's Markdown uses significant ones), no stripping of notices. No
-linter runs on it either: [rumdl][rumdl] enforces [Google's own Markdown
-style][docguide] on the files this repository writes by hand, and `docs/` is
-excluded in `.rumdl.toml`, because `rumdl fmt` would rewrite bullet characters,
-list spacing, the trailing spaces Google uses as line breaks, and the
-indentation inside its code samples. Ruff is scoped the same way, for the same
-reason.
-
-[rumdl]: https://github.com/rvben/rumdl
-[docguide]: https://google.github.io/styleguide/docguide/style.html
-
-## Run it yourself
-
-Requires [uv][uv] and Python 3.14.
+The sync requires [uv][uv] and Python 3.14.
 
 ```bash
 git clone https://github.com/loic-bellinger/google-developer-style-markdown
 cd google-developer-style-markdown
 uv sync
 
-uv run gdsm                 # refresh docs/, llms.txt, and llms-full.txt
-uv run gdsm --help          # options: --output-dir, --concurrency, --timeout
-uv run gdsm -v              # log every request
-uv run pytest               # tests
-uv run ruff check           # lint Python
-uv run rumdl check          # lint the hand-written Markdown
-uv run pre-commit install   # optional: run every check here before each commit
+uv run gdsm          # refresh docs/, llms.txt, and llms-full.txt
+uv run gdsm --help   # options: --output-dir, --concurrency, --timeout
 ```
+
+A failed run leaves the mirror untouched, so you can always run it again.
 
 [uv]: https://docs.astral.sh/uv/
-
-## Repository layout
-
-| Path | Contents |
-| ---- | -------- |
-| [`docs/`](docs) | The mirrored guide, one file per page (generated) |
-| [`llms.txt`](llms.txt) | Index, llms.txt v2 format (generated) |
-| [`llms-full.txt`](llms-full.txt) | Every page but the changelog, concatenated (generated) |
-| [`src/`](src/google_developer_style_markdown) | The synchronizer |
-| [`tests/`](tests) | URL handling, naming, rendering, deletion |
-| [`.github/workflows/`](.github/workflows) | `ci.yml` and `sync.yml` |
-| [`.rumdl.toml`](.rumdl.toml) | Markdown style for the hand-written files |
-
-## GitHub Actions
-
-**CI** (`ci.yml`) runs on every push and pull request: Ruff, rumdl, and the
-tests. On pull requests it also checks that commit messages follow
-[Conventional Commits][conventional].
-
-**Sync** (`sync.yml`) runs every Monday at 06:17 UTC, and on demand. It does the
-cheap, safe things first, so that an automated run can never publish a broken
-commit:
-
-1.  Run the full CI workflow. Broken code never reaches the mirror.
-1.  Fetch the guide and regenerate everything.
-1.  Refuse to continue if the run would delete more than a quarter of the
-    documents. Losing a few pages is normal; losing a quarter of them means
-    something is wrong upstream, and a human has to look.
-1.  Commit and push **only if** something actually changed, as
-    `github-actions[bot]`, with no empty commit and no secrets beyond the
-    default `GITHUB_TOKEN`.
-
-To trigger it yourself: **Actions > Sync > Run workflow**, or
-
-```bash
-gh workflow run sync.yml
-```
-
-[conventional]: https://www.conventionalcommits.org/
 
 ## License and attribution
 
@@ -224,7 +127,7 @@ Two different things live in this repository, under two different terms.
 released under the [MIT License](LICENSE).
 
 **The mirrored guide**—everything under `docs/`, and `llms-full.txt`—is
-Google's, not ours, and is *not* MIT. Per the
+Google's, not this project's, and is _not_ MIT. Per the
 [Google Developers Site Policies][policies], the content of those pages is
 licensed under [CC BY 4.0][ccby] and the code samples under
 [Apache 2.0][apache]. Google's trademarks and brand features are not included
@@ -239,52 +142,19 @@ This project is not affiliated with, sponsored by, or endorsed by Google.
 "Google" is a trademark of Google LLC.
 
 [policies]: https://developers.google.com/terms/site-policies
-[ccby]: https://creativecommons.org/licenses/by/4.0/
 [apache]: https://www.apache.org/licenses/LICENSE-2.0
-
-## Known limitations
-
-*   **Text only.** Images, diagrams, and other assets aren't mirrored: they
-    aren't covered by the content license, and Google's own Markdown carries
-    almost none of them either—five image references against 56 `<img>`
-    elements in the rendered HTML. What survives points at Google.
-*   **CSS-only markers are lost upstream.** The guide flags Android-specific
-    and Cloud-specific guidance with small logos, which the HTML renders as
-    empty `<span class="icon-android">` elements styled entirely in CSS. They
-    carry no text, so Google's own Markdown has nothing to convert and drops
-    them: 26 Android and eight Cloud markers disappear from the word list, and
-    the sentences that introduce them on the entry page begin "precedes terms
-    and guidelines specific to Android documentation." This happens before
-    the mirror sees the page, and putting the markers back would mean inventing
-    content. Check the source page when a term's scope matters.
-*   **Definition lists don't survive.** The guide uses `<dl>` for
-    term-and-definition pairs, and the word list is one long example. Markdown
-    has no syntax for them: 31 in the rendered HTML, none in the Markdown, so
-    the terms arrive as prose. Cross-references to a term still work, because
-    they point at Google where the anchor exists; inside `docs/` there is
-    nothing for a fragment to attach to.
-*   **Titles live outside the Markdown.** 19 of the 70 pages don't open with
-    a usable heading, and 15 of them carry no `#` heading anywhere: DevSite
-    renders the title from page metadata the `.md.txt` doesn't include. The
-    navigation label stands in, recorded in the front matter of every document
-    and used as the heading in `llms-full.txt`.
-*   **Absolute cross-references.** Links between pages point at
-    `developers.google.com`, because that is what Google's Markdown contains.
-    Rewriting them to point inside `docs/` would be a change to the content.
-*   **No retries.** A single failed request stops the run, on purpose.
-*   **Coupled to the DevSite navigation.** Discovery reads the
-    `ul[menu="_book"]` list. If Google redesigns it, the sync fails loudly
-    rather than silently mirroring less. The pages the guide links to in its
-    prose are deliberately not followed, and nothing is lost by it. Of the 17
-    such URLs absent from the table of contents, 16 are `301` redirects to
-    pages already mirrored, and the last is a broken link in Google's own
-    documentation. Sixteen of the 17 have no `.md.txt` at all.
-*   **No conditional requests.** Google serves the guide with
-    `Cache-Control: no-cache` and no `ETag`, so every run downloads every page.
-    It's about 800&nbsp;KB.
-*   **Not a fork.** This is a mirror. Report problems with the *content* to
-    Google, not here.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+For the two-command setup and the internals—how the sync works, the
+architecture, what the mirror changes about Google's Markdown (almost
+nothing), and the design decisions behind its limits—see
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
+[badge-ci]: https://github.com/loic-bellinger/google-developer-style-markdown/actions/workflows/ci.yml/badge.svg
+[badge-sync]: https://github.com/loic-bellinger/google-developer-style-markdown/actions/workflows/sync.yml/badge.svg
+[badge-mit]: https://img.shields.io/badge/code-MIT-blue
+[badge-ccby]: https://img.shields.io/badge/content-CC%20BY%204.0-blue
+[actions-ci]: https://github.com/loic-bellinger/google-developer-style-markdown/actions/workflows/ci.yml
+[actions-sync]: https://github.com/loic-bellinger/google-developer-style-markdown/actions/workflows/sync.yml
+[ccby]: https://creativecommons.org/licenses/by/4.0/
