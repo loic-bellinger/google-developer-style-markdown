@@ -72,6 +72,15 @@ unambiguous.
 
 - Use [present tense](https://developers.google.com/style/tense) and avoid complex or uncommon verb forms.
 - Use active voice. The subject of the sentence is the person or thing performing the action. With passive voice, it's often hard for readers to figure out who's supposed to do something. For more information, see [Active voice](https://developers.google.com/style/voice).
+- Avoid participles and gerunds (that is, *verbing*) when possible. *Verbing* can be
+  less direct and ambiguous. Consider replacing *using* with *by using*,
+  *that use* (or *that uses*), or *you use* as appropriate. For more information, see
+  the word list entry [using](https://developers.google.com/style/word-list#using).
+
+  | Recommended | Not recommended |
+  |---|---|
+  | You must configure the VPC firewall rules before you deploy the VM instance. | Configuring the VPC firewall rules is required before deploying the VM instance. |
+  | This guide describes how to set up database replication. | This guide describes setting up database replication. |
 
 ### Use words in their primary sense
 
