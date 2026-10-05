@@ -67,6 +67,10 @@ unambiguous.
   Recommended: Request no more than one token.
 
   Not recommended: Only request one token.
+- Describe technical details in precise, technical terms. Avoid subjective modifiers such as
+  *simply*, *properly*, or *carefully*. Subjective words can be vague. For more
+  information, see [Avoid subjective
+  language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 ### Use active voice and present tense
 

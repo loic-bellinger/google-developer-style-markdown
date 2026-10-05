@@ -717,6 +717,16 @@ canary [](https://developers.google.com/style/word-list#canary)
     use or provide a link to the definition, and use it consistently
     throughout the document.
 
+careful, carefully [](https://developers.google.com/style/word-list#careful)
+:
+    Avoid telling a user to perform an action *carefully*, which can sound condescending or
+    imply that other steps don't require much attention. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
+:
+    Recommended: Enter the API key that
+    appears in the console.
+:
+    Not recommended: Make sure to enter the API key carefully.
+
 
 cell phone, cellphone
 [](https://developers.google.com/style/word-list#cell-phone)
@@ -1347,9 +1357,10 @@ earlier [](https://developers.google.com/style/word-list#earlier)
 
 easy, easily [](https://developers.google.com/style/word-list#easy)
 :
-    What might be easy for you might not be easy for others. Try eliminating
-    this word from the sentence because usually the same meaning can be conveyed
-    without it.
+    What might be easy for you might not be easy for others. Try eliminating this word from the
+    sentence because usually the same meaning can be conveyed without it. For more information, see
+    [Use precise, objective
+    language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 ecommerce [](https://developers.google.com/style/word-list#ecommerce)
 :   Not *e-commerce*.
@@ -3239,6 +3250,18 @@ project [](https://developers.google.com/style/word-list#project)
     mention and in any context in which there might be ambiguity about what
     kind of project you're referring to.
 
+proper, properly [](https://developers.google.com/style/word-list#proper)
+:
+    Avoid *proper* and *properly*, which are vague and can imply subjective judgments of
+    correctness or superiority. Instead, focus on describing the technical details. For more
+    information, see [Use precise,
+    objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
+:
+    Recommended: Verify that the port is open and accepting
+    connections.
+:
+    Not recommended: Ensure the port is properly configured.
+
 pros [](https://developers.google.com/style/word-list#pros)
 :
     Don't use. Instead, use a more precise term, such as *advantages*.
@@ -3247,9 +3270,8 @@ pros [](https://developers.google.com/style/word-list#pros)
 
 quick, quickly [](https://developers.google.com/style/word-list#quick)
 :
-    What might be quick for you might not be quick for others. Try
-    eliminating this word from the sentence because usually the same meaning
-    can be conveyed without it.
+    What might be quick for you might not be quick for others. Try eliminating this word from the
+    sentence. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 quota [](https://developers.google.com/style/word-list#quota)
 :
@@ -3554,9 +3576,10 @@ sign-out (noun or adjective), sign out (verb) [](https://developers.google.com/s
 
 simple, simply [](https://developers.google.com/style/word-list#simple)
 :
-    What might be simple for you might not be simple for others. Try
-    eliminating this word from the sentence because usually the same meaning
-    can be conveyed without it.
+    What might be simple for you might not be simple for others. Try eliminating this word from
+    the sentence because usually the same meaning can be conveyed without it. For more
+    information, see [Use precise,
+    objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 since [](https://developers.google.com/style/word-list#since)
 :

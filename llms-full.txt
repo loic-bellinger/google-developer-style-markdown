@@ -886,6 +886,16 @@ canary [](https://developers.google.com/style/word-list#canary)
     use or provide a link to the definition, and use it consistently
     throughout the document.
 
+careful, carefully [](https://developers.google.com/style/word-list#careful)
+:
+    Avoid telling a user to perform an action *carefully*, which can sound condescending or
+    imply that other steps don't require much attention. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
+:
+    Recommended: Enter the API key that
+    appears in the console.
+:
+    Not recommended: Make sure to enter the API key carefully.
+
 
 cell phone, cellphone
 [](https://developers.google.com/style/word-list#cell-phone)
@@ -1516,9 +1526,10 @@ earlier [](https://developers.google.com/style/word-list#earlier)
 
 easy, easily [](https://developers.google.com/style/word-list#easy)
 :
-    What might be easy for you might not be easy for others. Try eliminating
-    this word from the sentence because usually the same meaning can be conveyed
-    without it.
+    What might be easy for you might not be easy for others. Try eliminating this word from the
+    sentence because usually the same meaning can be conveyed without it. For more information, see
+    [Use precise, objective
+    language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 ecommerce [](https://developers.google.com/style/word-list#ecommerce)
 :   Not *e-commerce*.
@@ -3408,6 +3419,18 @@ project [](https://developers.google.com/style/word-list#project)
     mention and in any context in which there might be ambiguity about what
     kind of project you're referring to.
 
+proper, properly [](https://developers.google.com/style/word-list#proper)
+:
+    Avoid *proper* and *properly*, which are vague and can imply subjective judgments of
+    correctness or superiority. Instead, focus on describing the technical details. For more
+    information, see [Use precise,
+    objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
+:
+    Recommended: Verify that the port is open and accepting
+    connections.
+:
+    Not recommended: Ensure the port is properly configured.
+
 pros [](https://developers.google.com/style/word-list#pros)
 :
     Don't use. Instead, use a more precise term, such as *advantages*.
@@ -3416,9 +3439,8 @@ pros [](https://developers.google.com/style/word-list#pros)
 
 quick, quickly [](https://developers.google.com/style/word-list#quick)
 :
-    What might be quick for you might not be quick for others. Try
-    eliminating this word from the sentence because usually the same meaning
-    can be conveyed without it.
+    What might be quick for you might not be quick for others. Try eliminating this word from the
+    sentence. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 quota [](https://developers.google.com/style/word-list#quota)
 :
@@ -3723,9 +3745,10 @@ sign-out (noun or adjective), sign out (verb) [](https://developers.google.com/s
 
 simple, simply [](https://developers.google.com/style/word-list#simple)
 :
-    What might be simple for you might not be simple for others. Try
-    eliminating this word from the sentence because usually the same meaning
-    can be conveyed without it.
+    What might be simple for you might not be simple for others. Try eliminating this word from
+    the sentence because usually the same meaning can be conveyed without it. For more
+    information, see [Use precise,
+    objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 since [](https://developers.google.com/style/word-list#since)
 :
@@ -5051,6 +5074,10 @@ unambiguous.
   Recommended: Request no more than one token.
 
   Not recommended: Only request one token.
+- Describe technical details in precise, technical terms. Avoid subjective modifiers such as
+  *simply*, *properly*, or *carefully*. Subjective words can be vague. For more
+  information, see [Avoid subjective
+  language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
 ### Use active voice and present tense
 
@@ -5284,6 +5311,23 @@ list entries for [terminate](https://developers.google.com/style/word-list#termi
 
 For guidance about specific terms, see the
 [Word list](https://developers.google.com/style/word-list).
+
+## Use precise, objective language
+
+Use precise, objective language so that all readers can gather the same information from your
+writing. Don't use vague or subjective language. What's *simple* or *quick* for an
+experienced engineer might be complex or time consuming for someone new to the product. To prevent
+introducing subjectivity in your writing, avoid the following:
+
+- Words like [simple, simply](https://developers.google.com/style/word-list#simple), [easy, easily](https://developers.google.com/style/word-list#easy), and [quick, quickly](https://developers.google.com/style/word-list#quick), which introduce an opinion that might not reflect the user's experience.
+- Words like [careful, carefully](https://developers.google.com/style/word-list#careful) or *thorough, thoroughly*, which provide unclear instruction or imply either that not all tasks require the user's full attention or that the user is usually careless or inattentive.
+- Words like [proper, properly](https://developers.google.com/style/word-list#proper), which are unclear and can assert opinions of superiority.
+
+| Recommended | Not recommended |
+|---|---|
+| Review the audit logs for security issues. For example, ensure that the user accounts have multi-factor authentication enabled. | Make sure that you carefully and thoroughly review all of the audit logs for potential security issues. |
+| To verify that the daemon is running, run `systemctl status *DAEMON_NAME*` and confirm that the output shows `Active: active (running)`. | Ensure the daemon is properly installed and running. |
+| Open the configuration file and add your custom key. | Simply open the configuration file to quickly add your custom key. |
 
 ## Write diverse and inclusive examples
 
