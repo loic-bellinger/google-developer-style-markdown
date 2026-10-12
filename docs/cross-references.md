@@ -3,8 +3,6 @@ title: "Cross-references and linking"
 source: https://developers.google.com/style/cross-references
 ---
 
-# Cross-references and linking
-
 In general, cross-references link to nonessential information that adds to
 the reader's understanding.
 

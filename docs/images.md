@@ -3,8 +3,6 @@ title: "Figures and other images"
 source: https://developers.google.com/style/images
 ---
 
-# Diagrams, figures, and other images
-
 Use images only when they provide useful visual explanations of information
 that is otherwise difficult to express with words. For screenshots, be discreet. Only capture UIs
 that are important to the discussion.

@@ -3,8 +3,6 @@ title: "Highlights"
 source: https://developers.google.com/style/highlights
 ---
 
-# Highlights
-
 The style guide covers a lot of material, so the following page provides an overview of its most
 important points. For more information about topics on the page, follow the links.
 

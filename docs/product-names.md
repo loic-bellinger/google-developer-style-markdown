@@ -3,8 +3,6 @@ title: "Product names"
 source: https://developers.google.com/style/product-names
 ---
 
-# Product names
-
 This page describes how to use product names.
 
 ## Capitalize product names

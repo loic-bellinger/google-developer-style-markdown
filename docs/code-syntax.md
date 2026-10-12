@@ -3,8 +3,6 @@ title: "Command-line syntax"
 source: https://developers.google.com/style/code-syntax
 ---
 
-# Document command-line syntax
-
 This page shows how to document command-line commands and their arguments. For more
 information about formatting code that appears in text, placeholders, and code samples, see the
 following links:

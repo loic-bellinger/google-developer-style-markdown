@@ -3,8 +3,6 @@ title: "Third-party content"
 source: https://developers.google.com/style/other-sources
 ---
 
-# Third-party content
-
 Don't copy content from another source because it might violate copyright. Instead, paraphrase
 and link to their content.
 

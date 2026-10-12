@@ -4736,7 +4736,7 @@ Other punctuation conventions
 
 ---
 
-# Write accessible documentation
+# Accessibility
 
 Source: <https://developers.google.com/style/accessibility>
 
@@ -7819,7 +7819,7 @@ examples using *such as*, *for example*, or *like* in various ways.
 
 ---
 
-# Diagrams, figures, and other images
+# Figures and other images
 
 Source: <https://developers.google.com/style/images>
 
@@ -8883,7 +8883,7 @@ illustrating percentages.
 
 ---
 
-# Notes, cautions, warnings, and other notices
+# Notes and other notices
 
 Source: <https://developers.google.com/style/notices>
 
@@ -11008,7 +11008,7 @@ Style for Contributors](https://source.android.com/setup/contribute/code-style) 
 
 ---
 
-# Document command-line syntax
+# Command-line syntax
 
 Source: <https://developers.google.com/style/code-syntax>
 
@@ -12584,7 +12584,7 @@ identifier `deleted:serviceAccount:my-service-account@my-project.iam.gserviceacc
 
 ---
 
-# Filenames and file types
+# Filenames
 
 Source: <https://developers.google.com/style/filenames>
 

@@ -3,8 +3,6 @@ title: "Filenames"
 source: https://developers.google.com/style/filenames
 ---
 
-# Filenames and file types
-
 ## Guidelines for names
 
 Make file and directory names lowercase, with the occasional exception for consistency, to make file searches easier and search results more useful. For example, because most Unix-style operating systems are case sensitive, they can't find a file named `Impersonate-Service-Accounts.html` if you search for `impersonate-service-accounts.html`. Linux and macOS interpret these as two distinct files.

@@ -3,8 +3,6 @@ title: "Code in text"
 source: https://developers.google.com/style/code-in-text
 ---
 
-# Code in text
-
 In ordinary text sentences (as opposed to, say, [code samples](https://developers.google.com/style/code-samples)),
 use code font to mark up most things that have anything to do with code. Code
 font helps to clarify for your reader which text refers to an entity in these

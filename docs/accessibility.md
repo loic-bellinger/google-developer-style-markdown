@@ -3,8 +3,6 @@ title: "Accessibility"
 source: https://developers.google.com/style/accessibility
 ---
 
-# Write accessible documentation
-
 We write our developer documentation with accessibility in mind. This page is not an exhaustive
 reference, but describes some general guidelines and examples that illustrate best practices to
 follow. The

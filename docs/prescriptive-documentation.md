@@ -3,8 +3,6 @@ title: "Prescriptive documentation"
 source: https://developers.google.com/style/prescriptive-documentation
 ---
 
-# Prescriptive documentation
-
 Write prescriptive documentation.
 
 *Prescriptive* (or *opinionated*) documentation recommends a way to achieve tasks
