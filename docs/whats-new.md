@@ -5,6 +5,14 @@ source: https://developers.google.com/style/whats-new
 
 This page provides a summary of significant changes to the style guide.
 
+## October 16, 2026
+
+| New guidance or change | Page |
+|---|---|
+| Added generalized guidance about avoiding subjective language, including words like *simply*, *quickly*, *properly*, and *carefully*. | [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation), [Write for a global audience](https://developers.google.com/style/translation), [Word list](https://developers.google.com/style/word-list) |
+| Added guidance about limiting the use of participles and gerunds to improve clarity for a global audience. In particular, when *using* is ambiguous, consider *by using* or *that use*. | [Write for a global audience](https://developers.google.com/style/translation), [Word list](https://developers.google.com/style/word-list) |
+| Simplified guidance against using *vice versa*, and added examples. | [Word list](https://developers.google.com/style/word-list) |
+
 ## July 7, 2026
 
 | New guidance or change | Page |
