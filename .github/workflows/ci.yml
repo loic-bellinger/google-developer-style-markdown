@@ -38,17 +38,18 @@ jobs:
 
       # Only the hand-written Markdown; docs/ is excluded in .rumdl.toml because
       # it is a reproduction of Google's Markdown. llms.txt and llms-full.txt
-      # need no entry: rumdl only discovers .md files. A misspelled rule or
-      # option in .rumdl.toml is only a warning, and the rule silently does not
-      # apply; --deny-config-warnings makes it fail the step instead.
+      # need no entry: rumdl does not discover .txt files. A rule or rule option
+      # that rumdl does not recognize in .rumdl.toml is only a warning, and the
+      # setting is ignored; --deny-config-warnings fails the step instead.
       - name: Lint Markdown
         run: uv run rumdl check --deny-config-warnings
 
       - name: Test
         run: uv run pytest
 
-  # prek is deliberately not run here. Its hooks run the same ruff, rumdl, and
-  # Commitizen from uv.lock as these jobs, so it would only repeat them.
+  # prek is not run here: its Ruff, rumdl, and Commitizen hooks would repeat
+  # these jobs. Its built-in checks (trailing whitespace, final newlines, YAML
+  # syntax) therefore run only where a contributor installed the hooks.
   commits:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
