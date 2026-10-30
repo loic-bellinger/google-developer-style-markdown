@@ -31,7 +31,7 @@ Issues = "https://github.com/loic-bellinger/google-developer-style-markdown/issu
 gdsm = "google_developer_style_markdown.cli:main"
 
 [build-system]
-requires = ["uv_build>=0.12.5,<0.13.0"]
+requires = ["uv_build>=0.13.5,<0.14.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
