@@ -1,5 +1,6 @@
 # `uv run prek install` sets up both hook types below, so a contributor never
-# has to remember --hook-type. `uv run prek run --all-files` checks everything.
+# has to remember --hook-type. `uv run prek run --all-files` runs the
+# pre-commit hooks on every file, and fixes what it can.
 #
 # Ruff, rumdl, and Commitizen run through `uv run`, so the hooks use the
 # versions in uv.lock, the ones CI uses: there is no second set of pins to keep
@@ -32,26 +33,30 @@ name = "ruff check"
 language = "system"
 entry = "uv run --frozen ruff check --force-exclude"
 args = ["--fix"]
-types = ["python"]
+types_or = ["python", "pyi", "jupyter"]
 require_serial = true
 
 # Markdown too: like `ruff format` in CI, this formats the Python code blocks
-# of the hand-written Markdown.
+# of the hand-written Markdown. Ruff reads only .md files as Markdown, and
+# would parse a .markdown file as Python.
 [[repos.hooks]]
 id = "ruff-format"
 name = "ruff format"
 language = "system"
 entry = "uv run --frozen ruff format --force-exclude"
-types_or = ["python", "markdown"]
+types_or = ["python", "pyi", "jupyter", "markdown"]
+exclude = '\.markdown$'
 require_serial = true
 
 # rumdl hands the Python code blocks to the Ruff that `uv run` puts on PATH.
+# --deny-config-warnings is for CI only: with it, rumdl fails when every file
+# prek passes is one .rumdl.toml excludes, such as a .md file in a nested docs/.
 [[repos.hooks]]
 id = "rumdl"
 name = "rumdl check"
 language = "system"
 entry = "uv run --frozen rumdl check"
-args = ["--fix", "--deny-config-warnings"]
+args = ["--fix"]
 types = ["markdown"]
 require_serial = true
 
