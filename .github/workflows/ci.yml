@@ -45,8 +45,8 @@ jobs:
       - name: Test
         run: uv run pytest
 
-  # pre-commit is deliberately not run here. It would install a second copy of
-  # ruff and rumdl, pinned separately from uv.lock, and the two would drift.
+  # prek is deliberately not run here. Its hooks run the same ruff, rumdl, and
+  # Commitizen from uv.lock as these jobs, so it would only repeat them.
   commits:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest

@@ -1,7 +1,6 @@
-# pre-commit is deliberately absent. Ruff's version lives in uv.lock, in the
-# ruff-pre-commit rev, and in the rumdl hook's additional_dependencies, which
-# no ecosystem updates. Automating two of the three would drift the pinning
-# .pre-commit-config.yaml asks to keep in step, and nothing tests it.
+# No pre-commit ecosystem: the hooks in prek.toml are built into prek or run
+# their tools through `uv run`, so the uv updates below cover every version
+# they use.
 version: 2
 updates:
   - package-ecosystem: github-actions
