@@ -38,9 +38,11 @@ jobs:
 
       # Only the hand-written Markdown; docs/ is excluded in .rumdl.toml because
       # it is a reproduction of Google's Markdown. llms.txt and llms-full.txt
-      # need no entry: rumdl only discovers .md files.
+      # need no entry: rumdl only discovers .md files. A misspelled rule or
+      # option in .rumdl.toml is only a warning, and the rule silently does not
+      # apply; --deny-config-warnings makes it fail the step instead.
       - name: Lint Markdown
-        run: uv run rumdl check
+        run: uv run rumdl check --deny-config-warnings
 
       - name: Test
         run: uv run pytest

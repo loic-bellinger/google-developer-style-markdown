@@ -51,7 +51,7 @@ id = "rumdl"
 name = "rumdl check"
 language = "system"
 entry = "uv run --frozen rumdl check"
-args = ["--fix"]
+args = ["--fix", "--deny-config-warnings"]
 types = ["markdown"]
 require_serial = true
 
