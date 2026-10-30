@@ -1,0 +1,63 @@
+# `uv run prek install` sets up both hook types below, so a contributor never
+# has to remember --hook-type. `uv run prek run --all-files` checks everything.
+#
+# Ruff, rumdl, and Commitizen run through `uv run`, so the hooks use the
+# versions in uv.lock, the ones CI uses: there is no second set of pins to keep
+# in step.
+default_install_hook_types = ["pre-commit", "commit-msg"]
+
+# The mirrored guide is reproduced verbatim and must not be touched by any
+# fixer. Google's Markdown uses significant trailing spaces and ends without a
+# final newline.
+exclude = '^(docs/|llms(-full)?\.txt$)'
+
+[[repos]]
+repo = "builtin"
+hooks = [
+    { id = "trailing-whitespace" },
+    { id = "end-of-file-fixer" },
+    { id = "check-yaml" },
+    { id = "check-merge-conflict" },
+    { id = "check-added-large-files" },
+]
+
+[[repos]]
+repo = "local"
+
+# prek names the files to check, and --force-exclude keeps Ruff's own
+# exclusions in force for a file named that way.
+[[repos.hooks]]
+id = "ruff-check"
+name = "ruff check"
+language = "system"
+entry = "uv run --frozen ruff check --force-exclude"
+args = ["--fix"]
+types = ["python"]
+require_serial = true
+
+# Markdown too: like `ruff format` in CI, this formats the Python code blocks
+# of the hand-written Markdown.
+[[repos.hooks]]
+id = "ruff-format"
+name = "ruff format"
+language = "system"
+entry = "uv run --frozen ruff format --force-exclude"
+types_or = ["python", "markdown"]
+require_serial = true
+
+# rumdl hands the Python code blocks to the Ruff that `uv run` puts on PATH.
+[[repos.hooks]]
+id = "rumdl"
+name = "rumdl check"
+language = "system"
+entry = "uv run --frozen rumdl check"
+args = ["--fix"]
+types = ["markdown"]
+require_serial = true
+
+[[repos.hooks]]
+id = "commitizen"
+name = "commitizen check"
+language = "system"
+entry = "uv run --frozen cz check --allow-abort --commit-msg-file"
+stages = ["commit-msg"]

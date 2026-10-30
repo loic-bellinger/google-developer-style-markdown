@@ -28,8 +28,8 @@ code_blocks = false
 #
 # on-missing-tool-binary defaults to "warn": when ruff is not on PATH, rumdl
 # prints a warning, skips every Python block, and still passes. "fail" stops the
-# run instead. Running through `uv run` covers it locally and in CI, and the
-# pre-commit hook carries its own copy of ruff.
+# run instead. Running through `uv run` covers it locally and in CI, and the prek
+# hook runs rumdl the same way.
 #
 # docs/ is excluded above, so none of this ever reaches Google's Markdown.
 [code-block-tools]

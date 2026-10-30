@@ -9,13 +9,13 @@ mirror's limits.
 
 ```bash
 uv sync
-uv run pre-commit install
+uv run prek install
 ```
 
-`pre-commit install` is optional. Run it to catch locally what CI would catch
-later: it installs the `pre-commit` and `commit-msg` hooks from the versions
-pinned in `uv.lock`, and they run the same Ruff, rumdl, and commit-message
-checks.
+`prek install` is optional. Run it to catch locally what CI would catch later:
+it installs the `pre-commit` and `commit-msg` hooks, which run the same Ruff,
+rumdl, and commit-message checks as CI, with the versions pinned in `uv.lock`.
+[prek](https://prek.j178.dev/) reads the hooks from `prek.toml`.
 
 ## Before opening a pull request
 
