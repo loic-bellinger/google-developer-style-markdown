@@ -17,6 +17,10 @@ it installs the `pre-commit` and `commit-msg` hooks, which run the same Ruff,
 rumdl, and commit-message checks as CI, with the versions pinned in `uv.lock`.
 [prek](https://prek.j178.dev/) reads the hooks from `prek.toml`.
 
+The hooks run their tools through `uv run`, so `uv` must be on the `PATH` of
+whatever runs `git commit`, including an IDE. If you installed the hooks with
+pre-commit before, replace them once with `uv run prek install -f`.
+
 ## Before opening a pull request
 
 ```bash
