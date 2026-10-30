@@ -67,9 +67,9 @@ quote-style = 'single'
 
 # --- Tests --------------------------------------------------------------------
 
-[tool.pytest.ini_options]
+[tool.pytest]
 testpaths = ["tests"]
-addopts = "--strict-markers --strict-config"
+strict = true
 
 # --- Releases -----------------------------------------------------------------
 
