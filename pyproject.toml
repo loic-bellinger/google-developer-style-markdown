@@ -18,9 +18,9 @@ keywords = [
     "llms-txt",
 ]
 dependencies = [
-    "aiohttp[speedups]>=3.14.3",
-    "selectolax>=0.4.11",
-    "yarl>=1.24.5",
+    "aiohttp[speedups]>=3.14.5",
+    "selectolax>=1.0.2",
+    "yarl>=1.25.1",
 ]
 
 [project.urls]
@@ -36,11 +36,11 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "commitizen>=4.10.1",
-    "pre-commit>=4.6.2",
-    "pytest>=9.0.1",
-    "ruff>=0.16.3",
-    "rumdl>=0.2.57",
+    "commitizen>=4.19.3",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+    "rumdl>=0.3.2",
 ]
 
 [tool.ruff]
