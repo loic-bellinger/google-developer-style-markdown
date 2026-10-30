@@ -7,8 +7,8 @@
 # trailing spaces Google uses as line breaks, and the indentation inside code
 # samples, where in a style guide the indentation is sometimes the point. No
 # option reaches that -- it is what the rules are for. Exclusions are used
-# rather than an include list, so a new hand-written file is linted by default. llms.txt and llms-full.txt need no
-# entry: rumdl only discovers .md and .markdown files.
+# rather than an include list, so a new hand-written file is linted by default.
+# llms.txt and llms-full.txt need no entry: rumdl does not discover .txt files.
 
 [global]
 exclude = ["docs"]
@@ -22,14 +22,14 @@ code_blocks = false
 
 # Hand the Python code blocks in our Markdown to Ruff. `ruff check` cannot see
 # them on its own -- it reports "No Python files found" for a .md file -- so
-# without this a broken example in the README ships unnoticed. `ruff format -`
-# resolves this project's configuration, so it produces exactly what
-# `ruff format README.md` would; the two cannot disagree.
+# without this a broken example in the README ships unnoticed. rumdl pipes each
+# block to `ruff format`, which resolves this project's configuration, so where
+# rumdl and `ruff format README.md` both format a block, they agree.
 #
 # on-missing-tool-binary defaults to "warn": when ruff is not on PATH, rumdl
-# prints a warning, skips every Python block, and still passes. "fail" stops the
-# run instead. Running through `uv run` covers it locally and in CI, and the prek
-# hook runs rumdl the same way.
+# prints a warning, skips every Python block, and still passes. "fail" makes the
+# run fail instead. Running through `uv run` covers it locally and in CI, and
+# the prek hook runs rumdl the same way.
 #
 # docs/ is excluded above, so none of this ever reaches Google's Markdown.
 [code-block-tools]
