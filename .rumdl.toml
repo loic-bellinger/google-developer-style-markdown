@@ -53,9 +53,12 @@ style = "asterisk"
 [MD007]
 indent = 4
 
-# Trailing spaces: Google says use backslash for line breaks, not trailing spaces
+# Trailing spaces: Google says use backslash for line breaks, not trailing
+# spaces. strict alone still accepts two trailing spaces as a line break;
+# br_spaces = 0 rejects them too.
 [MD009]
 strict = true
+br_spaces = 0
 
 # Lists: Google uses lazy numbering (all 1.) for long lists
 # Use "one_or_ordered" to allow both lazy and explicit numbering
