@@ -36,23 +36,16 @@ For more information about introducing lists, see [Lists](https://developers.goo
 
 ## Single-step procedures
 
-When a procedure consists of only one step, write the step in one sentence and format it as a
-[bulleted list](https://developers.google.com/style/lists#numbered-lettered-bulleted-lists).
-Recommended:
+When a procedure consists of only one step, you can write it as a normal sentence, or you can
+format it as a single bullet with its own introductory sentence.
+Recommended: To clear (flush) the entire log, click
+**Clear logcat**.
 
-- To clear (flush) the entire log, click **Clear logcat**.
+Also recommended:
 
-Not recommended:
+To modify a chart, do the following:
 
-To clear (flush) the entire log, follow this step:
-
-1. Click **Clear logcat**.
-
-Also not recommended:
-
-To clear (flush) the entire log, follow this step:
-
-- Click **Clear logcat**.
+- Click **Edit** , and then in the **Edit visualization** pane, edit the chart.
 
 ## Sub-steps in numbered procedures
 

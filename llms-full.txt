@@ -8471,9 +8471,10 @@ items. Sometimes it's not obvious when to choose one presentation over the
 other. To decide which presentation to use, see
 [List or table?](https://developers.google.com/style/tables#list-or-table)
 
-**Note**: Don't use a list to show only one item; a single
-item isn't really a list. If you want to set a single item off from surrounding
-text, then use some other formatting.
+**Note** : Don't use a list to show only one item. If you want to set a single
+item off from surrounding text, then use some other formatting. One exception to this guideline is
+a single-step procedure. For more information, see
+[Single-step procedures](https://developers.google.com/style/procedures#single-step-procedures).
 
 ## Types of lists
 
@@ -9381,23 +9382,16 @@ For more information about introducing lists, see [Lists](https://developers.goo
 
 ## Single-step procedures
 
-When a procedure consists of only one step, write the step in one sentence and format it as a
-[bulleted list](https://developers.google.com/style/lists#numbered-lettered-bulleted-lists).
-Recommended:
+When a procedure consists of only one step, you can write it as a normal sentence, or you can
+format it as a single bullet with its own introductory sentence.
+Recommended: To clear (flush) the entire log, click
+**Clear logcat**.
 
-- To clear (flush) the entire log, click **Clear logcat**.
+Also recommended:
 
-Not recommended:
+To modify a chart, do the following:
 
-To clear (flush) the entire log, follow this step:
-
-1. Click **Clear logcat**.
-
-Also not recommended:
-
-To clear (flush) the entire log, follow this step:
-
-- Click **Clear logcat**.
+- Click **Edit** , and then in the **Edit visualization** pane, edit the chart.
 
 ## Sub-steps in numbered procedures
 

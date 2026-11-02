@@ -3,8 +3,6 @@ title: "Lists"
 source: https://developers.google.com/style/lists
 ---
 
-# Lists
-
 ## List or table?
 
 Tables and lists are both ways to present a set of similarly structured
@@ -12,9 +10,10 @@ items. Sometimes it's not obvious when to choose one presentation over the
 other. To decide which presentation to use, see
 [List or table?](https://developers.google.com/style/tables#list-or-table)
 
-**Note**: Don't use a list to show only one item; a single
-item isn't really a list. If you want to set a single item off from surrounding
-text, then use some other formatting.
+**Note** : Don't use a list to show only one item. If you want to set a single
+item off from surrounding text, then use some other formatting. One exception to this guideline is
+a single-step procedure. For more information, see
+[Single-step procedures](https://developers.google.com/style/procedures#single-step-procedures).
 
 ## Types of lists
 
