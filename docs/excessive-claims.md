@@ -3,8 +3,6 @@ title: "Excessive claims"
 source: https://developers.google.com/style/excessive-claims
 ---
 
-# Avoid excessive claims
-
 In documentation, don't make excessive claims. An *excessive claim* is an assertion
 in the documentation that does any of the following:
 

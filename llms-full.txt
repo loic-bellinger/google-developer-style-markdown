@@ -4953,7 +4953,7 @@ of communicating information.
 
 ---
 
-# Avoid excessive claims
+# Excessive claims
 
 Source: <https://developers.google.com/style/excessive-claims>
 
