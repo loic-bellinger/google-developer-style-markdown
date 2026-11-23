@@ -11,9 +11,9 @@ distinct from other text.
 For more information about formatting code, command-line syntax, and code samples, see the
 following links:
 
-- [Code in text](https://developers.google.com/style/code-in-text)
-- [Documenting command-line syntax](https://developers.google.com/style/code-syntax)
-- [Code samples](https://developers.google.com/style/code-samples)
+- [Code in text](https://developers.google.com/style/code-in-text.md.txt)
+- [Documenting command-line syntax](https://developers.google.com/style/code-syntax.md.txt)
+- [Code samples](https://developers.google.com/style/code-samples.md.txt)
 
 
 Placeholders in sample code and commands represent values that the reader must replace when they use
@@ -120,7 +120,7 @@ Not recommended:
 - `.../<var>YOUR_API_NAME</var>`
 
 > [!NOTE]
-> **Note** : You can mark up command-line syntax with [brackets](https://developers.google.com/style/code-syntax#optional-arguments), [braces](https://developers.google.com/style/code-syntax#set-of-two-arguments), and [ellipses](https://developers.google.com/style/code-syntax#arguments-that-can-repeat). Don't put the brackets, braces, or ellipses in the `var` element.
+> **Note** : You can mark up command-line syntax with [brackets](https://developers.google.com/style/code-syntax.md.txt#optional-arguments), [braces](https://developers.google.com/style/code-syntax.md.txt#set-of-two-arguments), and [ellipses](https://developers.google.com/style/code-syntax.md.txt#arguments-that-can-repeat). Don't put the brackets, braces, or ellipses in the `var` element.
 
 ## Explain placeholders
 
@@ -171,7 +171,7 @@ Use the following format for two or more placeholders:
 - List the placeholders in the order in which they appear in the command line.
 - Tag each placeholder in a code sample or command with `code` and
   `var` elements, followed by a
-  [colon and a description that starts with a lowercase letter](https://developers.google.com/style/colons).
+  [colon and a description that starts with a lowercase letter](https://developers.google.com/style/colons.md.txt).
   For
   non-code samples, remove the `code` elements---for example:
 
@@ -187,7 +187,7 @@ Use the following format for two or more placeholders:
   ```
   <li><code><var>INSTANCE_NAME</var></code>: description, such as...</li>
   ```
-- Each item in the list follows our [list style](https://developers.google.com/style/lists).
+- Each item in the list follows our [list style](https://developers.google.com/style/lists.md.txt).
 
 Recommended:
 
@@ -246,7 +246,7 @@ sample output:
   <li><code><var>INSTANCE_NAME</var></code>: description, such as...</li>
   ```
 
-For more information, see [Output from commands](https://developers.google.com/style/code-syntax#output).
+For more information, see [Output from commands](https://developers.google.com/style/code-syntax.md.txt#output).
 Recommended:
 
 #### Response
@@ -295,5 +295,5 @@ This output includes the following values:
 - `OPERATION_ID`: the ID of the import operation
 - `BUILD_ID`: the ID of the build for the import operation
 - `IMAGE_NAME`: the name of the image to be imported
-- `SOURCE_FILE`: the URI for the image in Cloud Storage---for example, `gs://my-bucket/my-image.vmdk`
+- `SOURCE_FILE`: the URI for the image in Cloud Storage---for example, `gs://bucket-1/image-1.vmdk`
 - `PROJECT_NUMBER`: the number for the import project

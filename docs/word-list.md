@@ -9,7 +9,7 @@ source: https://developers.google.com/style/word-list
 This word list covers style and usage guidelines that are specific to developer documentation.
 
 If the term that you're looking for isn't on this list, check our other
-[editorial resources](https://developers.google.com/style#editorial-resources), including our preferred
+[editorial resources](https://developers.google.com/style.md.txt#editorial-resources), including our preferred
 dictionary,
 [Merriam-Webster](https://www.merriam-webster.com/). If there are multiple spellings in
 the Merriam-Webster word entry, use the first form listed, which is the most common spelling. For
@@ -26,14 +26,14 @@ terms, often require judgments based on factors like your product area,
 your audience, and prevailing convention. Here are some other pages of this
 guide that can help you make those types of judgments:
 
-- [Jargon](https://developers.google.com/style/jargon)
-- [Inclusive language](https://developers.google.com/style/inclusive-documentation)
-- [Write for a global audience](https://developers.google.com/style/translation)
-- [Hyphens](https://developers.google.com/style/hyphens)
-- [Capitalization](https://developers.google.com/style/capitalization)
+- [Jargon](https://developers.google.com/style/jargon.md.txt)
+- [Inclusive language](https://developers.google.com/style/inclusive-documentation.md.txt)
+- [Write for a global audience](https://developers.google.com/style/translation.md.txt)
+- [Hyphens](https://developers.google.com/style/hyphens.md.txt)
+- [Capitalization](https://developers.google.com/style/capitalization.md.txt)
 
 As always, it's fine to deviate from our guidance if that serves your readers
-better. For more information, see [Break the rules](https://developers.google.com/style#rules).
+better. For more information, see [Break the rules](https://developers.google.com/style.md.txt#rules).
 
 ## Word list
 
@@ -46,20 +46,20 @@ copy the link address, or click and copy the URL from your address bar.
 Some word list entries include guidance to *avoid* or *don't use* a
 term. Apply this guidance as follows:
 
-- **Use with caution** . A recommendation to avoid using the term *when possible*, or to use the term with caution. The term might be ambiguous or obscure, so we provide alternative term suggestions or suggest that you use a more specific term. However, you can use the term if needed. Where appropriate, define the term or use it only once, as explained on the [Jargon](https://developers.google.com/style/jargon) page.
-- **Don't use** . In all cases, we prefer to *not use the term*. The term might be particularly ambiguous or it might have an offensive or non-inclusive association. If such a term appears in code, we recommend that you [replace or write around the term](https://developers.google.com/style/inclusive-documentation#replace-or-write-around-non-inclusive-terms).
+- **Use with caution** . A recommendation to avoid using the term *when possible*, or to use the term with caution. The term might be ambiguous or obscure, so we provide alternative term suggestions or suggest that you use a more specific term. However, you can use the term if needed. Where appropriate, define the term or use it only once, as explained on the [Jargon](https://developers.google.com/style/jargon.md.txt) page.
+- **Don't use** . In all cases, we prefer to *not use the term*. The term might be particularly ambiguous or it might have an offensive or non-inclusive association. If such a term appears in code, we recommend that you [replace or write around the term](https://developers.google.com/style/inclusive-documentation.md.txt#replace-or-write-around-non-inclusive-terms).
 - **Android**. Applies only to Android documentation.
 - **Google Cloud**. Applies only to Google Cloud documentation.
 - **Google Workspace**. Applies only to Google Workspace documentation.
 
 ### Numbers and Symbols
 
-+ [](https://developers.google.com/style/word-list#+)
++ [](https://developers.google.com/style/word-list.md.txt#+)
 :
     OK to use *+* with numbers in text, such as *customer records with 300+ demographic attributes*, except in formal contexts.
 
 \& (ampersand)
-[](https://developers.google.com/style/word-list#ampersand)
+[](https://developers.google.com/style/word-list.md.txt#ampersand)
 :
     Don't use *\&* instead of *and* in headings, text, navigation, or
     tables of contents.
@@ -70,7 +70,7 @@ term. Apply this guidance as follows:
 :   It's OK to use `&` for technical purposes in code.
 
 2-Step Verification
-[](https://developers.google.com/style/word-list#2-step-verification)
+[](https://developers.google.com/style/word-list.md.txt#2-step-verification)
 :
     When referring to Google's
     [2-Step Verification](https://www.google.com/landing/2step/),
@@ -82,25 +82,25 @@ term. Apply this guidance as follows:
 
 ### A
 
-a and an [](https://developers.google.com/style/word-list#a-an)
+a and an [](https://developers.google.com/style/word-list.md.txt#a-an)
 :
     Use *a* when the next word starts with a consonant *sound* ,
-    regardless of what letter it starts with. For more information, see [Articles (a, an, the)](https://developers.google.com/style/articles).
+    regardless of what letter it starts with. For more information, see [Articles (a, an, the)](https://developers.google.com/style/articles.md.txt).
 
-A/B testing [](https://developers.google.com/style/word-list#ab)
+A/B testing [](https://developers.google.com/style/word-list.md.txt#ab)
 :   Capitalize and use slash notation for *A/B*.
 
-abnormal [](https://developers.google.com/style/word-list#abnormal)
+abnormal [](https://developers.google.com/style/word-list.md.txt#abnormal)
 :   Don't use to refer to a person.
 :   OK to use to refer to a condition of a computer system.
 
-abort [](https://developers.google.com/style/word-list#abort)
+abort [](https://developers.google.com/style/word-list.md.txt#abort)
 :
     Avoid in general usage. Instead, use words like *stop*, *exit*,
     *cancel*, or *end*. In Linux, *abort* refers to a type of
     signal that terminates an abnormal process.
 
-about versus on [](https://developers.google.com/style/word-list#about-on)
+about versus on [](https://developers.google.com/style/word-list.md.txt#about-on)
 :
     When a cross-reference includes information that describes what the
     cross-reference links to, use *about* instead of *on*.
@@ -112,33 +112,33 @@ about versus on [](https://developers.google.com/style/word-list#about-on)
     on indexes, see [Managing
     indexes](https://cloud.google.com/firestore/docs/query-data/indexing).
 
-above [](https://developers.google.com/style/word-list#above)
+above [](https://developers.google.com/style/word-list.md.txt#above)
 :
     Don't use for a range of version numbers. Instead, use
-    [*later*](https://developers.google.com/style/word-list#later).
+    [*later*](https://developers.google.com/style/word-list.md.txt#later).
 :
     Don't use to refer to a position in a document. Instead, use
     *earlier* or *preceding*.
 :
     Don't use to refer to a position in the UI. Instead, write instructions
     that avoid directional language. For more information,
-    see [Writing accessible documentation](https://developers.google.com/style/accessibility).
+    see [Writing accessible documentation](https://developers.google.com/style/accessibility.md.txt).
 :
     It's OK to use *above* in a non-directional way, such as when describing a hierarchy.
 
-access (verb) [](https://developers.google.com/style/word-list#access)
+access (verb) [](https://developers.google.com/style/word-list.md.txt#access)
 :
     Avoid when you can. Instead, use friendlier words like *see*,
     *edit*, *find*, *use*, or *view*.
 
-access token [](https://developers.google.com/style/word-list#access-token)
+access token [](https://developers.google.com/style/word-list.md.txt#access-token)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-account name [](https://developers.google.com/style/word-list#account-name)
-:   Don't use. Instead, use [*username*](https://developers.google.com/style/word-list#username).
+account name [](https://developers.google.com/style/word-list.md.txt#account-name)
+:   Don't use. Instead, use [*username*](https://developers.google.com/style/word-list.md.txt#username).
 
-actionable [](https://developers.google.com/style/word-list#actionable)
+actionable [](https://developers.google.com/style/word-list.md.txt#actionable)
 :
     Avoid unless it's the clearest and simplest phrasing for your audience.
     Instead, leave it out or replace it with a phrase like *that you can act on* or *useful*.
@@ -148,23 +148,23 @@ actionable [](https://developers.google.com/style/word-list#actionable)
 
 
 action bar
-[](https://developers.google.com/style/word-list#action-bar)
+[](https://developers.google.com/style/word-list.md.txt#action-bar)
 :
     In Android documentation, don't use. Instead, use
-    [*app bar*](https://developers.google.com/style/word-list#app-bar).
+    [*app bar*](https://developers.google.com/style/word-list.md.txt#app-bar).
 
-ad tech [](https://developers.google.com/style/word-list#ad-tech)
+ad tech [](https://developers.google.com/style/word-list.md.txt#ad-tech)
 :
     Write out on first mention: *advertising technology (ad tech)*.
 :   Don't use *adtech* or *ad-tech*.
 
-address bar [](https://developers.google.com/style/word-list#address-bar)
+address bar [](https://developers.google.com/style/word-list.md.txt#address-bar)
 :
     Use to refer to the URL bar or the combined URL bar and search box in a
     browser.
 :   Don't use *omnibox*.
 
-ad hoc [](https://developers.google.com/style/word-list#ad-hoc)
+ad hoc [](https://developers.google.com/style/word-list.md.txt#ad-hoc)
 :
     OK to use in database and analytics contexts to mean "free-form" or
     "user-written" (for example, *ad hoc queries* or *an ad hoc chart*). For other contexts, try to find a more specific English
@@ -172,7 +172,7 @@ ad hoc [](https://developers.google.com/style/word-list#ad-hoc)
 :
     Don't hyphenate or italicize the term.
 
-admin [](https://developers.google.com/style/word-list#admin)
+admin [](https://developers.google.com/style/word-list.md.txt#admin)
 :
     Write out *administrator* unless it's the name of a UI label or other
     element.
@@ -182,28 +182,28 @@ admin [](https://developers.google.com/style/word-list#admin)
 
 
 administrator
-[](https://developers.google.com/style/word-list#administrator)
+[](https://developers.google.com/style/word-list.md.txt#administrator)
 :   In Android documentation, don't use. Instead, use *admin*.
 
-advertised route priority [](https://developers.google.com/style/word-list#advertised-route-priority)
+advertised route priority [](https://developers.google.com/style/word-list.md.txt#advertised-route-priority)
 :
     OK to also use *base advertised route priority* when discussing
     region-to-region costs.
 :   Don't shorten or use variations of these terms.
 
-agnostic [](https://developers.google.com/style/word-list#agnostic)
+agnostic [](https://developers.google.com/style/word-list.md.txt#agnostic)
 :
     Don't use. Instead, use a more precise term like
     *platform-independent*.
 
-AI [](https://developers.google.com/style/word-list#ai)
+AI [](https://developers.google.com/style/word-list.md.txt#ai)
 :
     In general, you can use *AI* without spelling out *artificial intelligence*.
 :
     Most readers are familiar with the abbreviation *AI*. If you think your audience isn't
     familiar with the term, spell it out on first use.
 
-aka [](https://developers.google.com/style/word-list#aka)
+aka [](https://developers.google.com/style/word-list.md.txt#aka)
 :
     Don't use. Instead, write out *also known as*, or present an
     alternative term using parentheses or the word *or*. You can also
@@ -220,22 +220,22 @@ aka [](https://developers.google.com/style/word-list#aka)
 
 
 all apps screen
-[](https://developers.google.com/style/word-list#all-apps-screen)
+[](https://developers.google.com/style/word-list.md.txt#all-apps-screen)
 :   In Android documentation: Lowercase except at the beginning of a sentence,
     heading, or list item.
 
 
 allowlist (verb), allowlisted, allowlisting
-[](https://developers.google.com/style/word-list#allowlist)
+[](https://developers.google.com/style/word-list.md.txt#allowlist)
 :   Don't use as a verb. Instead, rewrite to improve clarity.
 :   OK to use *allowlist* as a noun.
-:   For more information, see [blacklist](https://developers.google.com/style/word-list#blacklist).
+:   For more information, see [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
-allows you to [](https://developers.google.com/style/word-list#allows-you-to)
+allows you to [](https://developers.google.com/style/word-list.md.txt#allows-you-to)
 :
-    Don't use. Instead, use *lets you*. For more information, see [enable](https://developers.google.com/style/word-list#enable).
+    Don't use. Instead, use *lets you*. For more information, see [enable](https://developers.google.com/style/word-list.md.txt#enable).
 
-alpha [](https://developers.google.com/style/word-list#alpha)
+alpha [](https://developers.google.com/style/word-list.md.txt#alpha)
 :   Lowercase except when part of a product name.
 :
     Recommended: <var translate="no">PRODUCT_NAME</var>
@@ -244,17 +244,17 @@ alpha [](https://developers.google.com/style/word-list#alpha)
     Recommended: <var translate="no">PRODUCT_NAME</var>
     is in alpha.
 
-America, American [](https://developers.google.com/style/word-list#america)
+America, American [](https://developers.google.com/style/word-list.md.txt#america)
 :
     Use only to refer to the *Americas* or the *American continent*.
 :
     Don't use to refer to the United States. Instead, use a more precise term
-    like *the US* or *the United States*, and *people in the US*. For more information, see [US](https://developers.google.com/style/word-list#us).
+    like *the US* or *the United States*, and *people in the US*. For more information, see [US](https://developers.google.com/style/word-list.md.txt#us).
 
-among [](https://developers.google.com/style/word-list#among)
-:   See [between versus among](https://developers.google.com/style/word-list#between).
+among [](https://developers.google.com/style/word-list.md.txt#among)
+:   See [between versus among](https://developers.google.com/style/word-list.md.txt#between).
 
-AM, PM [](https://developers.google.com/style/word-list#am-pm)
+AM, PM [](https://developers.google.com/style/word-list.md.txt#am-pm)
 :
     To be consistent with [Material Design](https://material.io/design/communication/data-formats.html#date-and-time),
     use all caps, no periods, and a space before.
@@ -263,28 +263,28 @@ AM, PM [](https://developers.google.com/style/word-list#am-pm)
 :
     Recommended: 10:30 PM
 
-and/or [](https://developers.google.com/style/word-list#and-or)
+and/or [](https://developers.google.com/style/word-list.md.txt#and-or)
 :
     Don't use unless space is limited, such as in a table. For more
-    information, see [Slashes](https://developers.google.com/style/slashes#and-or).
+    information, see [Slashes](https://developers.google.com/style/slashes.md.txt#and-or).
 
-Android [](https://developers.google.com/style/word-list#android)
+Android [](https://developers.google.com/style/word-list.md.txt#android)
 :   When referring to the operating system, capitalize *Android*.
 
 
 Android-powered device
-[](https://developers.google.com/style/word-list#android-powered)
+[](https://developers.google.com/style/word-list.md.txt#android-powered)
 :   Not *Android device*.
 
-and so on [](https://developers.google.com/style/word-list#and-so-on)
+and so on [](https://developers.google.com/style/word-list.md.txt#and-so-on)
 :
     Avoid using *and so on* whenever possible. For more information,
-    see [etc.](https://developers.google.com/style/word-list#etc)
+    see [etc.](https://developers.google.com/style/word-list.md.txt#etc)
 
-anti\* [](https://developers.google.com/style/word-list#anti)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+anti\* [](https://developers.google.com/style/word-list.md.txt#anti)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-anti-pattern [](https://developers.google.com/style/word-list#anti-pattern)
+anti-pattern [](https://developers.google.com/style/word-list.md.txt#anti-pattern)
 :
     Avoid using *anti-pattern*, particularly as a standalone heading.
     Instead, consider using a more specific and broadly understood term.
@@ -298,7 +298,7 @@ anti-pattern [](https://developers.google.com/style/word-list#anti-pattern)
     Not recommended: Avoid these five SQL
     anti-patterns.
 
-API [](https://developers.google.com/style/word-list#api)
+API [](https://developers.google.com/style/word-list.md.txt#api)
 :
     Use *API* to refer to either a web API or a language-specific API.
 :
@@ -309,26 +309,26 @@ API [](https://developers.google.com/style/word-list#api)
 
 API Console, APIs console,
 developer console, dev console, or Google API Console
-[](https://developers.google.com/style/word-list#api-console)
+[](https://developers.google.com/style/word-list.md.txt#api-console)
 :
     Don't use. Instead, refer to the *Google APIs Explorer* or to the
     *Google Cloud console*. For more information, see
-    [console](https://developers.google.com/style/word-list#console).
+    [console](https://developers.google.com/style/word-list.md.txt#console).
 
-API Console key [](https://developers.google.com/style/word-list#api-console-key)
+API Console key [](https://developers.google.com/style/word-list.md.txt#api-console-key)
 :
     In most contexts, use *API key* instead of *API Console key*.
 :
     In Apps admin APIs, it's OK to use *API Console key* to distinguish
     from other API keys.
 
-API key [](https://developers.google.com/style/word-list#api-key)
+API key [](https://developers.google.com/style/word-list.md.txt#api-key)
 :   Not *developer key* or *dev key*.
 
-APIs Explorer [](https://developers.google.com/style/word-list#apis-explorer)
+APIs Explorer [](https://developers.google.com/style/word-list.md.txt#apis-explorer)
 :   Not *API explorer* or other variants.
 
-app [](https://developers.google.com/style/word-list#app)
+app [](https://developers.google.com/style/word-list.md.txt#app)
 :
     In general, use *app* instead of *application* when referring to
     programs for end users, especially in the context of mobile or web
@@ -339,16 +339,16 @@ app [](https://developers.google.com/style/word-list#app)
 :
     Use *application* in standard phrases such as *application programming interface*.
 
-app bar [](https://developers.google.com/style/word-list#app-bar)
+app bar [](https://developers.google.com/style/word-list.md.txt#app-bar)
 :   In Android contexts, formerly *action bar*.
 
-appendix [](https://developers.google.com/style/word-list#appendix)
+appendix [](https://developers.google.com/style/word-list.md.txt#appendix)
 :   Use the plural *appendixes*, not *appendices*.
 
-application [](https://developers.google.com/style/word-list#application)
-:   See [app](https://developers.google.com/style/word-list#app).
+application [](https://developers.google.com/style/word-list.md.txt#application)
+:   See [app](https://developers.google.com/style/word-list.md.txt#app).
 
-as [](https://developers.google.com/style/word-list#as)
+as [](https://developers.google.com/style/word-list.md.txt#as)
 :
     If you mean *because*, then use *because* instead of
     *as*. *As* is ambiguous; it can refer to the passage of time.
@@ -356,13 +356,13 @@ as [](https://developers.google.com/style/word-list#as)
 
 
 as of this writing
-[](https://developers.google.com/style/word-list#as-of-this-writing)
+[](https://developers.google.com/style/word-list.md.txt#as-of-this-writing)
 :
     Avoid because this phrase is implied. The phrase can also prematurely
     disclose product or feature strategy or inappropriately imply that a
     product or feature might change.
 :
-    See also [currently](https://developers.google.com/style/word-list#currently) and [presently](https://developers.google.com/style/word-list#presently).
+    See also [currently](https://developers.google.com/style/word-list.md.txt#currently) and [presently](https://developers.google.com/style/word-list.md.txt#presently).
 :
     Recommended: BigQuery doesn't support
     that function.
@@ -375,7 +375,7 @@ as of this writing
 
 
 authentication and authorization
-[](https://developers.google.com/style/word-list#authentication-and-authorization)
+[](https://developers.google.com/style/word-list.md.txt#authentication-and-authorization)
 
 :
     In general, use the word *authenticated* only to refer to users,
@@ -391,52 +391,52 @@ authentication and authorization
     When you want to use a preposition with *authenticate*, use
     *against*.
 
-authN, authZ [](https://developers.google.com/style/word-list#authn-authz)
+authN, authZ [](https://developers.google.com/style/word-list.md.txt#authn-authz)
 :
     Don't use. Instead, use *authentication* or *authorization*.
 
-auto\* [](https://developers.google.com/style/word-list#auto)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+auto\* [](https://developers.google.com/style/word-list.md.txt#auto)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-autohealing [](https://developers.google.com/style/word-list#autohealing)
+autohealing [](https://developers.google.com/style/word-list.md.txt#autohealing)
 :   Not *auto-healing*.
 
-auto mode VPC network [](https://developers.google.com/style/word-list#auto-mode-vpc)
+auto mode VPC network [](https://developers.google.com/style/word-list.md.txt#auto-mode-vpc)
 :   Not *auto mode network*.
 
-autopopulate [](https://developers.google.com/style/word-list#autopopulate)
+autopopulate [](https://developers.google.com/style/word-list.md.txt#autopopulate)
 :   Not *auto populate* or *auto-populate*.
 
-autoscaling [](https://developers.google.com/style/word-list#autoscaling)
+autoscaling [](https://developers.google.com/style/word-list.md.txt#autoscaling)
 :   Not *auto-scaling*.
 
-autotagging [](https://developers.google.com/style/word-list#autotagging)
+autotagging [](https://developers.google.com/style/word-list.md.txt#autotagging)
 :   Not *auto-tagging*.
 
-autoupdate [](https://developers.google.com/style/word-list#autoupdate)
+autoupdate [](https://developers.google.com/style/word-list.md.txt#autoupdate)
 :   Don't use. Instead, use *automatically update*.
 
--aware [](https://developers.google.com/style/word-list#aware)
+-aware [](https://developers.google.com/style/word-list.md.txt#aware)
 :   Avoid using as a compound modifier, as in *healthcare-aware*.
 :
     OK to use when it's part of a product name, such as *Identity-Aware Proxy*.
 
 ### B
 
-backend [](https://developers.google.com/style/word-list#backend)
+backend [](https://developers.google.com/style/word-list.md.txt#backend)
 :   Not *back-end* or *back end*.
 
-bar [](https://developers.google.com/style/word-list#bar)
+bar [](https://developers.google.com/style/word-list.md.txt#bar)
 :
-    Avoid when possible. For more information, see [foo](https://developers.google.com/style/word-list#foo).
+    Avoid when possible. For more information, see [foo](https://developers.google.com/style/word-list.md.txt#foo).
 
-bare metal [](https://developers.google.com/style/word-list#bare-metal)
+bare metal [](https://developers.google.com/style/word-list.md.txt#bare-metal)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 :
     Hyphenate when used as a compound modifier, such as *bare-metal server*.
 
-base64 [](https://developers.google.com/style/word-list#base64)
+base64 [](https://developers.google.com/style/word-list.md.txt#base64)
 :
     Lowercase except at the beginning of a sentence,
     heading, or list item. Otherwise, capitalize *Base64* only if it's part of a
@@ -445,32 +445,32 @@ base64 [](https://developers.google.com/style/word-list#base64)
     Write *base64* in code font *only* if it's a string literal or
     otherwise quoted from code.
 
-baz [](https://developers.google.com/style/word-list#baz)
+baz [](https://developers.google.com/style/word-list.md.txt#baz)
 :
-    Avoid when possible. For more information, see [foo](https://developers.google.com/style/word-list#foo).
+    Avoid when possible. For more information, see [foo](https://developers.google.com/style/word-list.md.txt#foo).
 
-below [](https://developers.google.com/style/word-list#below)
+below [](https://developers.google.com/style/word-list.md.txt#below)
 :
     Don't use for a range of version numbers. Instead, use
-    [*earlier*](https://developers.google.com/style/word-list#earlier).
+    [*earlier*](https://developers.google.com/style/word-list.md.txt#earlier).
 :
     Don't use to refer to a position in a document. Instead, use *later*
     or *following*.
 :
     Don't use to refer to a position in the UI. Instead, write instructions
     that avoid directional language. For more information, see
-    [Writing accessible documentation](https://developers.google.com/style/accessibility).
+    [Writing accessible documentation](https://developers.google.com/style/accessibility.md.txt).
 :
     It's OK to use *below* in set phrases such as *below (the) average*, *below the mean*, *below zero*.
 :
     It's OK to use *below* in a non-directional way, such as when describing a hierarchy.
 
-best effort [](https://developers.google.com/style/word-list#best-effort)
+best effort [](https://developers.google.com/style/word-list.md.txt#best-effort)
 :
     Avoid where possible. Instead, use more specific wording. After providing
     a description, you can add a phrase like "sometimes referred to as *best effort*."
 
-beta [](https://developers.google.com/style/word-list#beta)
+beta [](https://developers.google.com/style/word-list.md.txt#beta)
 :   Lowercase except when part of a product name.
 :
     Recommended: <var translate="no">PRODUCT_NAME</var>
@@ -479,7 +479,7 @@ beta [](https://developers.google.com/style/word-list#beta)
     Recommended: <var translate="no">PRODUCT_NAME</var>
     is currently in beta.
 
-between versus among [](https://developers.google.com/style/word-list#between)
+between versus among [](https://developers.google.com/style/word-list.md.txt#between)
 :
     It's fine to use *between* when talking about more than two things;
     however, *between* isn't interchangeable with *among*.
@@ -515,7 +515,7 @@ between versus among [](https://developers.google.com/style/word-list#between)
     See also [Grammar Girl's
     discussion of *between* and *among*](http://www.quickanddirtytips.com/education/grammar/between-versus-among).
 
-big-endian [](https://developers.google.com/style/word-list#big-endian)
+big-endian [](https://developers.google.com/style/word-list.md.txt#big-endian)
 :   Hyphenate. Lowercase except at the beginning of a sentence,
     heading, or list item.
 :
@@ -531,14 +531,14 @@ big-endian [](https://developers.google.com/style/word-list#big-endian)
     Not recommended: The codebase assumes big
     endian byte ordering.
 
-billing charges [](https://developers.google.com/style/word-list#billing-charges)
+billing charges [](https://developers.google.com/style/word-list.md.txt#billing-charges)
 :
     Don't use *billing charges* to mean charges that appear on a bill.
     Instead, use *billed charges*.
 :
     Use *billing charges* to describe the cost of creating the bill.
 
-black-box [](https://developers.google.com/style/word-list#black-box)
+black-box [](https://developers.google.com/style/word-list.md.txt#black-box)
 :
     Avoid using *black-box*, *blackbox*, or *black box* to
     describe monitoring and testing. Consider using a more precise term for
@@ -547,28 +547,28 @@ black-box [](https://developers.google.com/style/word-list#black-box)
     - For monitoring, use *synthetic monitoring*.
     - For testing, use *opaque-box testing*.
 
-Black Friday [](https://developers.google.com/style/word-list#black-friday)
+Black Friday [](https://developers.google.com/style/word-list.md.txt#black-friday)
 :
     Avoid unless explicitly referring to an event in the US. Instead use
     *peak scale event*.
 
 
 blackhat, black hat, black-hat
-[](https://developers.google.com/style/word-list#blackhat)
+[](https://developers.google.com/style/word-list.md.txt#blackhat)
 :
     Don't use. Instead, use precise terms for the kind of violation or
     practice, such as *illegal*, *unethical*, or *in violation of rules*.
 
 
 blackhole (verb), blackholed (adjective)
-[](https://developers.google.com/style/word-list#blackhole)
+[](https://developers.google.com/style/word-list.md.txt#blackhole)
 :
     Don't use. Instead, use a more descriptive term or phrase, such as
     *dropped without notification*.
 
 
 blacklist, black list, black-list
-[](https://developers.google.com/style/word-list#blacklist)
+[](https://developers.google.com/style/word-list.md.txt#blacklist)
 :
     Don't use *blacklist*, *whitelist*, and *graylist*.
     Instead, use more precise terms that are appropriate for your domain.
@@ -598,7 +598,7 @@ blacklist, black list, black-list
 :
     If the command or code that you're documenting uses one of these words,
     then use the words only in direct reference to the code items
-    ([formatted as code](https://developers.google.com/style/code-in-text)), and make it clear
+    ([formatted as code](https://developers.google.com/style/code-in-text.md.txt)), and make it clear
     what you're referring to.
 :
     Recommended: Add a user to the
@@ -610,24 +610,24 @@ blacklist, black list, black-list
     EMAIL_ADDRESS`.
 :
     For more information, see the
-    [inclusive documentation](https://developers.google.com/style/inclusive-documentation) page.
+    [inclusive documentation](https://developers.google.com/style/inclusive-documentation.md.txt) page.
 
 
 blacklisted, black listed, black-listed
-[](https://developers.google.com/style/word-list#blacklisted)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#blacklisted)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
 
 blacklisting, black listing, black-listing
-[](https://developers.google.com/style/word-list#blacklisting)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#blacklisting)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
-blast radius [](https://developers.google.com/style/word-list#blast-radius)
+blast radius [](https://developers.google.com/style/word-list.md.txt#blast-radius)
 :
     Don't use. Instead, use a more precise term like *affected area* or
     *spatial impact*.
 
-blind [](https://developers.google.com/style/word-list#blind)
+blind [](https://developers.google.com/style/word-list.md.txt#blind)
 :
     Avoid using *blind to* or *blind eye to*. Instead, use more
     precise terms like *ignore*, *unaware of*, *disregard*,
@@ -643,10 +643,10 @@ blind [](https://developers.google.com/style/word-list#blind)
     *screen reader user* (if applicable), *person who is visually impaired*, *person who is low-vision*, *magnification user*
     (if applicable).
 
-blue-green [](https://developers.google.com/style/word-list#blue-green)
+blue-green [](https://developers.google.com/style/word-list.md.txt#blue-green)
 :   Not *blue/green* or *blue green*.
 
-boolean [](https://developers.google.com/style/word-list#boolean)
+boolean [](https://developers.google.com/style/word-list.md.txt#boolean)
 :
     In most contexts, *boolean* refers to a specific data type in a
     specific programming language. In such cases, use code font and the exact
@@ -656,7 +656,7 @@ boolean [](https://developers.google.com/style/word-list#boolean)
     If you refer to *Boolean mathematics* or *Boolean logic*, use
     uppercase.
 
-branding information [](https://developers.google.com/style/word-list#branding-information)
+branding information [](https://developers.google.com/style/word-list.md.txt#branding-information)
 :
     In the Google Cloud console, the phrase *branding information* refers
     to the information that Google shows to users when the client asks them to
@@ -664,13 +664,13 @@ branding information [](https://developers.google.com/style/word-list#branding-i
     developer's Google Account. This information is set in the **Consent
     screen** page.
 
-break-glass [](https://developers.google.com/style/word-list#break-glass)
+break-glass [](https://developers.google.com/style/word-list.md.txt#break-glass)
 :   Don't use. Instead, use a more precise term depending on context:
 
     - To describe a general emergency or procedure that grants emergency access, use *emergency access*.
     - To describe a fallback procedure, use *manual fallback* or *preplanned procedure*.
 
-brown bag, brown-bag [](https://developers.google.com/style/word-list#brown-bag)
+brown bag, brown-bag [](https://developers.google.com/style/word-list.md.txt#brown-bag)
 :
     Don't use. Instead, use a more precise term like *learning session*,
     *lunch and learn*, *lunchtime learning session*,
@@ -678,11 +678,11 @@ brown bag, brown-bag [](https://developers.google.com/style/word-list#brown-bag)
 
 
 build cop, build sheriff
-[](https://developers.google.com/style/word-list#build-cop)
+[](https://developers.google.com/style/word-list.md.txt#build-cop)
 :
     Don't use. Instead, use a more precise term like *build monitor*.
 
-button [](https://developers.google.com/style/word-list#button)
+button [](https://developers.google.com/style/word-list.md.txt#button)
 :
     In a UI, a link isn't the same as a button; don't use the term
     *button* to refer to a link.
@@ -694,7 +694,7 @@ button [](https://developers.google.com/style/word-list#button)
 
 ### C
 
-can [](https://developers.google.com/style/word-list#can)
+can [](https://developers.google.com/style/word-list.md.txt#can)
 
 :   Use *can* in the following ways:
 
@@ -702,25 +702,25 @@ can [](https://developers.google.com/style/word-list#can)
     - To refer to an optional action (for example, "You can also view logs with the Log Viewer").
     - To describe a possible outcome (for example, "The process can take 30 minutes").
 :
-    See also [could](https://developers.google.com/style/word-list#could), [may](https://developers.google.com/style/word-list#may),
-    [might](https://developers.google.com/style/word-list#might), [must](https://developers.google.com/style/word-list#must),
-    [should](https://developers.google.com/style/word-list#should), and [would](https://developers.google.com/style/word-list#would).
+    See also [could](https://developers.google.com/style/word-list.md.txt#could), [may](https://developers.google.com/style/word-list.md.txt#may),
+    [might](https://developers.google.com/style/word-list.md.txt#might), [must](https://developers.google.com/style/word-list.md.txt#must),
+    [should](https://developers.google.com/style/word-list.md.txt#should), and [would](https://developers.google.com/style/word-list.md.txt#would).
 :
     For information about clarifying who's performing an action, see
-    [Active voice](https://developers.google.com/style/voice).
+    [Active voice](https://developers.google.com/style/voice.md.txt).
 
-canary [](https://developers.google.com/style/word-list#canary)
+canary [](https://developers.google.com/style/word-list.md.txt#canary)
 :   Don't use *canary* as a verb, and don't use *canarying*.
 :
-    When possible, avoid [jargon](https://developers.google.com/style/jargon) like *canary* and
+    When possible, avoid [jargon](https://developers.google.com/style/jargon.md.txt) like *canary* and
     *canary testing*. If you use one of these phrases, define it on first
     use or provide a link to the definition, and use it consistently
     throughout the document.
 
-careful, carefully [](https://developers.google.com/style/word-list#careful)
+careful, carefully [](https://developers.google.com/style/word-list.md.txt#careful)
 :
     Avoid telling a user to perform an action *carefully*, which can sound condescending or
-    imply that other steps don't require much attention. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
+    imply that other steps don't require much attention. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation.md.txt#subjective-language).
 :
     Recommended: Enter the API key that
     appears in the console.
@@ -729,7 +729,7 @@ careful, carefully [](https://developers.google.com/style/word-list#careful)
 
 
 cell phone, cellphone
-[](https://developers.google.com/style/word-list#cell-phone)
+[](https://developers.google.com/style/word-list.md.txt#cell-phone)
 :
     Don't use. Instead, use *mobile phone*, or if you're talking about
     more than phones, then use *mobile device*.
@@ -738,19 +738,19 @@ cell phone, cellphone
     clear.
 :
 
-cellular data [](https://developers.google.com/style/word-list#cellular-data)
+cellular data [](https://developers.google.com/style/word-list.md.txt#cellular-data)
 :   Don't use. Instead, use *mobile data*.
 
-cellular network [](https://developers.google.com/style/word-list#cellular-network)
+cellular network [](https://developers.google.com/style/word-list.md.txt#cellular-network)
 :   Don't use. Instead, use *mobile network*.
 
-chapter [](https://developers.google.com/style/word-list#chapter)
+chapter [](https://developers.google.com/style/word-list.md.txt#chapter)
 :
     When referring to documentation that isn't in the form of a book, don't
     use the term *chapter*. Instead, refer to documents, pages, or
     sections.
 
-check [](https://developers.google.com/style/word-list#check)
+check [](https://developers.google.com/style/word-list.md.txt#check)
 :
     Don't use to refer to marking a checkbox. Instead, use *select*.
 :
@@ -760,19 +760,19 @@ check [](https://developers.google.com/style/word-list#check)
     Not recommended: Check **Automatically
     check for updates**.
 
-checkbox [](https://developers.google.com/style/word-list#checkbox)
+checkbox [](https://developers.google.com/style/word-list.md.txt#checkbox)
 :   Not *check box*.
 
-choose [](https://developers.google.com/style/word-list#choose)
+choose [](https://developers.google.com/style/word-list.md.txt#choose)
 :   *Choose* is fine to use for generic contexts. For UI elements, use
-    [select](https://developers.google.com/style/word-list#select).
+    [select](https://developers.google.com/style/word-list.md.txt#select).
 
-chubby [](https://developers.google.com/style/word-list#chubby)
+chubby [](https://developers.google.com/style/word-list.md.txt#chubby)
 :
     Don't use. Instead, use a word that clearly explains what you mean, such
     as *unused* or *overextended*.
 
-clear [](https://developers.google.com/style/word-list#clear)
+clear [](https://developers.google.com/style/word-list.md.txt#clear)
 :   Use (as a verb) to refer to clearing a check mark from a checkbox.
 :
     Recommended: Clear **Automatically
@@ -784,13 +784,13 @@ clear [](https://developers.google.com/style/word-list#clear)
     Not recommended: Deselect
     **Automatically check for updates**.
 
-CLI [](https://developers.google.com/style/word-list#cli)
+CLI [](https://developers.google.com/style/word-list.md.txt#cli)
 :
     Don't use *CLI* generically to refer to a command-line interface.
     Instead, refer to the specific command-line interface, such as the
-    [Google Cloud CLI](https://developers.google.com/style/word-list#gcloud).
+    [Google Cloud CLI](https://developers.google.com/style/word-list.md.txt#gcloud).
 
-click [](https://developers.google.com/style/word-list#click)
+click [](https://developers.google.com/style/word-list.md.txt#click)
 :
     When the environment is a desktop with a mouse, use *click* for most
     targets, such as buttons, links, list items, and radio buttons. Don't use
@@ -810,32 +810,32 @@ click [](https://developers.google.com/style/word-list#click)
     a control or a link.
 :
     For Android apps, don't use
-    *click*. Instead, use [tap](https://developers.google.com/style/word-list#tap).
+    *click*. Instead, use [tap](https://developers.google.com/style/word-list.md.txt#tap).
 
-click here [](https://developers.google.com/style/word-list#click-here)
+click here [](https://developers.google.com/style/word-list.md.txt#click-here)
 :
     Don't use. For information and alternatives, see
-    [Avoid vague link text](https://developers.google.com/style/cross-references#vague-link-text).
+    [Avoid vague link text](https://developers.google.com/style/cross-references.md.txt#vague-link-text).
 
-clickthrough (noun), click through (verb) [](https://developers.google.com/style/word-list#clickthrough)
-client [](https://developers.google.com/style/word-list#client)
+clickthrough (noun), click through (verb) [](https://developers.google.com/style/word-list.md.txt#clickthrough)
+client [](https://developers.google.com/style/word-list.md.txt#client)
 :
     In REST and RPC API documentation, *client* is short for *client app*---that is, the app that the developer is writing.
 :
     Don't use *client* as an abbreviation for *client library*;
     instead, use *library*.
 
-client ID [](https://developers.google.com/style/word-list#client-id)
+client ID [](https://developers.google.com/style/word-list.md.txt#client-id)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-client secret [](https://developers.google.com/style/word-list#client-secret)
+client secret [](https://developers.google.com/style/word-list.md.txt#client-secret)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
 
 Cloud
-[](https://developers.google.com/style/word-list#cloud)
+[](https://developers.google.com/style/word-list.md.txt#cloud)
 :   Don't use as short for *Google Cloud*.
 :
     For generic references such as *the cloud* or *hybrid cloud*,
@@ -844,7 +844,7 @@ Cloud
 
 Cloud
 console
-[](https://developers.google.com/style/word-list#gcp-console)
+[](https://developers.google.com/style/word-list.md.txt#gcp-console)
 :
     Don't use. Instead, refer to the full name *Google Cloud console*.
 :
@@ -852,58 +852,58 @@ console
     console), you can abbreviate to *the console* after first mention.
 :
     Use *the* before the tool name. For more information, see
-    [console](https://developers.google.com/style/word-list#console).
+    [console](https://developers.google.com/style/word-list.md.txt#console).
 
-Cloud SDK [](https://developers.google.com/style/word-list#cloud-sdk)
+Cloud SDK [](https://developers.google.com/style/word-list.md.txt#cloud-sdk)
 :   Not *Google Cloud SDK*.
 
-co\* [](https://developers.google.com/style/word-list#co)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+co\* [](https://developers.google.com/style/word-list.md.txt#co)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-codebase [](https://developers.google.com/style/word-list#codebase)
+codebase [](https://developers.google.com/style/word-list.md.txt#codebase)
 :   Not *code base*.
 
-codelab [](https://developers.google.com/style/word-list#codelab)
+codelab [](https://developers.google.com/style/word-list.md.txt#codelab)
 :
     Not *code lab* or *code-lab*. For more information, see
-    [documentation](https://developers.google.com/style/word-list#documentation).
+    [documentation](https://developers.google.com/style/word-list.md.txt#documentation).
 
-cold [](https://developers.google.com/style/word-list#cold)
+cold [](https://developers.google.com/style/word-list.md.txt#cold)
 :
-    When possible, avoid [jargon](https://developers.google.com/style/jargon) like *cold failover*, *cold standby*, and *cold spare*. If you use one
+    When possible, avoid [jargon](https://developers.google.com/style/jargon.md.txt) like *cold failover*, *cold standby*, and *cold spare*. If you use one
     of these phrases, define it on first use and use it consistently
     throughout the document.
 
-colocate [](https://developers.google.com/style/word-list#colocate)
+colocate [](https://developers.google.com/style/word-list.md.txt#colocate)
 :   Not *co-locate* or *colo*.
 
-compliant, compliance [](https://developers.google.com/style/word-list#compliant)
+compliant, compliance [](https://developers.google.com/style/word-list.md.txt#compliant)
 :
     Use with caution. A claim that a product or its output is *compliant*
     with a standard is a strong statement.
 
-comprise [](https://developers.google.com/style/word-list#comprise)
+comprise [](https://developers.google.com/style/word-list.md.txt#comprise)
 :
     Don't use. Instead, use *consist of*, *contain*, or
     *include*.
 
-config [](https://developers.google.com/style/word-list#config)
+config [](https://developers.google.com/style/word-list.md.txt#config)
 :
     Avoid when possible. Instead, spell out the full word when it's used in a
     non-code sense: *configuration* or *configuring*. Use the
     verbatim code item name when referring to, for example, a data structure
     or a file with that name.
 
-confidential [](https://developers.google.com/style/word-list#confidential)
+confidential [](https://developers.google.com/style/word-list.md.txt#confidential)
 :
     *Confidential* data is data that is protected to prevent unauthorized access. See
-    [sensitive](https://developers.google.com/style/word-list#sensitive).
+    [sensitive](https://developers.google.com/style/word-list.md.txt#sensitive).
 
-cons [](https://developers.google.com/style/word-list#cons)
+cons [](https://developers.google.com/style/word-list.md.txt#cons)
 :
     Don't use. Instead, use a more precise term, such as *disadvantages*.
 
-console [](https://developers.google.com/style/word-list#console)
+console [](https://developers.google.com/style/word-list.md.txt#console)
 :
     Don't use in isolation. Instead, use the name of the specific console,
     such as the [Google Cloud
@@ -920,14 +920,14 @@ console [](https://developers.google.com/style/word-list#console)
     If a specific term for a browser-based interface is unavailable, use
     *web interface*.
 
-content type [](https://developers.google.com/style/word-list#content-type)
+content type [](https://developers.google.com/style/word-list.md.txt#content-type)
 :
     Be as specific as possible when writing about a content type, and use the term only when applicable.
     For example, you can use this term if you're referring to the value of the `Content-Type` HTTP header.
 
-    Also see [media type](https://developers.google.com/style/word-list#media-type).
+    Also see [media type](https://developers.google.com/style/word-list.md.txt#media-type).
 
-Control+S, Command+S, and other keyboard commands [](https://developers.google.com/style/word-list#control-keys)
+Control+S, Command+S, and other keyboard commands [](https://developers.google.com/style/word-list.md.txt#control-keys)
 :
     To refer to a <kbd>Control</kbd> character, use
     <kbd>Control</kbd>+<var translate="no">CHARACTER</var>.
@@ -942,7 +942,7 @@ Control+S, Command+S, and other keyboard commands [](https://developers.google.c
     Recommended: <kbd>Control+S</kbd>
     (<kbd>Command+S</kbd> on macOS)
 
-Copy and paste [](https://developers.google.com/style/word-list#copy-paste)
+Copy and paste [](https://developers.google.com/style/word-list.md.txt#copy-paste)
 :
     Avoid using. Instead, explain what to enter into a field and not how.
 :
@@ -952,32 +952,32 @@ Copy and paste [](https://developers.google.com/style/word-list#copy-paste)
     Not recommended: Copy the output from
     the previous step and paste into the **Query** field.
 
-could [](https://developers.google.com/style/word-list#could)
+could [](https://developers.google.com/style/word-list.md.txt#could)
 :   Avoid using. Instead, use *can* where possible.
 :
-    See also [can](https://developers.google.com/style/word-list#can), [may](https://developers.google.com/style/word-list#may),
-    [might](https://developers.google.com/style/word-list#might), [must](https://developers.google.com/style/word-list#must),
-    [should](https://developers.google.com/style/word-list#should) and [would](https://developers.google.com/style/word-list#would).
+    See also [can](https://developers.google.com/style/word-list.md.txt#can), [may](https://developers.google.com/style/word-list.md.txt#may),
+    [might](https://developers.google.com/style/word-list.md.txt#might), [must](https://developers.google.com/style/word-list.md.txt#must),
+    [should](https://developers.google.com/style/word-list.md.txt#should) and [would](https://developers.google.com/style/word-list.md.txt#would).
 :
     For information about clarifying who's performing an action, see
-    [Active voice](https://developers.google.com/style/voice).
+    [Active voice](https://developers.google.com/style/voice.md.txt).
 :
     For information about tenses, see [Present
     tense](https://developers.google.com/style/tense).
 
-CPU [](https://developers.google.com/style/word-list#cpu)
+CPU [](https://developers.google.com/style/word-list.md.txt#cpu)
 :   All caps. No need to expand the abbreviation on first mention.
 
 
 crazy, bonkers, mad, lunatic, insane,
 loony
-[](https://developers.google.com/style/word-list#crazy)
+[](https://developers.google.com/style/word-list.md.txt#crazy)
 :
     Don't use. Instead, use *complicated*, *complex*,
     *baffling*, *strange*, or *unexpected*, and only for
     inanimate objects.
 
-Create a new ... [](https://developers.google.com/style/word-list#create-new)
+Create a new ... [](https://developers.google.com/style/word-list.md.txt#create-new)
 :
     Avoid using unless you need to distinguish the item from another recently
     created item. Instead, use *Create a ...*
@@ -986,7 +986,7 @@ Create a new ... [](https://developers.google.com/style/word-list#create-new)
 :
     Not recommended: Create a new project.
 
-cripple [](https://developers.google.com/style/word-list#cripple)
+cripple [](https://developers.google.com/style/word-list.md.txt#cripple)
 :
     Don't use. Instead, use more precise language. For example, instead of
     *it crippled the server*, write *it slowed the server down*.
@@ -996,22 +996,22 @@ cripple [](https://developers.google.com/style/word-list#cripple)
     keyboard); *person who uses a wheelchair, walker, or cane*;
     *wheelchair user*; *person with restricted or limited mobility*.
 
-cross-site request forgery [](https://developers.google.com/style/word-list#cross-site-request-forgery)
+cross-site request forgery [](https://developers.google.com/style/word-list.md.txt#cross-site-request-forgery)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-curated roles [](https://developers.google.com/style/word-list#curated-roles)
+curated roles [](https://developers.google.com/style/word-list.md.txt#curated-roles)
 :   Don't use. Instead, use *predefined roles*.
 
-currently [](https://developers.google.com/style/word-list#currently)
+currently [](https://developers.google.com/style/word-list.md.txt#currently)
 :
     Avoid because this word is implied. The word can also prematurely disclose
     product or feature strategy or inappropriately imply that a product or
     feature might change.
 :
     See also
-    [as of this writing](https://developers.google.com/style/word-list#as-of-this-writing) and
-    [presently](https://developers.google.com/style/word-list#presently).
+    [as of this writing](https://developers.google.com/style/word-list.md.txt#as-of-this-writing) and
+    [presently](https://developers.google.com/style/word-list.md.txt#presently).
 :
     Recommended: Windows isn't supported.
 :
@@ -1019,37 +1019,37 @@ currently [](https://developers.google.com/style/word-list#currently)
     currently supported.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-custom mode VPC network [](https://developers.google.com/style/word-list#custom-mode-vpc-network)
+custom mode VPC network [](https://developers.google.com/style/word-list.md.txt#custom-mode-vpc-network)
 :   Not *custom mode network*.
 
-curl [](https://developers.google.com/style/word-list#curl)
+curl [](https://developers.google.com/style/word-list.md.txt#curl)
 :   Not *cURL*.
 :   For information about when to use code format, see
-    [Items that are sometimes in code font](https://developers.google.com/style/code-in-text#items-that-are-sometimes-in-code-font).
+    [Items that are sometimes in code font](https://developers.google.com/style/code-in-text.md.txt#items-that-are-sometimes-in-code-font).
 
-Cyber Monday [](https://developers.google.com/style/word-list#cyber-monday)
+Cyber Monday [](https://developers.google.com/style/word-list.md.txt#cyber-monday)
 :   Avoid unless explicitly referring to an event in the US. Instead use
     *peak scale event*.
 
 ### D
 
-dash [](https://developers.google.com/style/word-list#dash)
+dash [](https://developers.google.com/style/word-list.md.txt#dash)
 :
     A dash (`---`) isn't the same character as a hyphen
     (`-`). The characters are used for different purposes.
     Therefore, don't use the word *dash* to refer to a hyphen.
 
-dashboard [](https://developers.google.com/style/word-list#dashboard)
+dashboard [](https://developers.google.com/style/word-list.md.txt#dashboard)
 :
     Don't use to refer to the Google Cloud console. For more information, see
-    [console](https://developers.google.com/style/word-list#console).
+    [console](https://developers.google.com/style/word-list.md.txt#console).
 :
     Use *dashboard* not *Dashboard* unless it's officially part of a
     product name.
 
-data [](https://developers.google.com/style/word-list#data)
+data [](https://developers.google.com/style/word-list.md.txt#data)
 :
     Use *data* as singular, not plural; *the data is*, not
     *the data are*.
@@ -1057,18 +1057,18 @@ data [](https://developers.google.com/style/word-list#data)
     Use data as a mass noun, not a count noun; *less data*, not
     *fewer data*.
 
-data center [](https://developers.google.com/style/word-list#data-center)
+data center [](https://developers.google.com/style/word-list.md.txt#data-center)
 :   Not *datacenter*.
 
-data center campus [](https://developers.google.com/style/word-list#data-center-campus)
+data center campus [](https://developers.google.com/style/word-list.md.txt#data-center-campus)
 :
     Use when referring to an entire physical location, which can encompass one
     or more data centers.
 
-data cleaning [](https://developers.google.com/style/word-list#data-cleaning)
+data cleaning [](https://developers.google.com/style/word-list.md.txt#data-cleaning)
 :   Not *data cleansing*.
 
-data flow (noun); dataflow (noun) [](https://developers.google.com/style/word-list#dataflow)
+data flow (noun); dataflow (noun) [](https://developers.google.com/style/word-list.md.txt#dataflow)
 :
     If it's possible to replace with the phrase *flow of data*, then use
     two words: *data flow*.
@@ -1077,56 +1077,56 @@ data flow (noun); dataflow (noun) [](https://developers.google.com/style/word-li
     stream processing or reactive programming, then use one word:
     *dataflow*.
 
-data source [](https://developers.google.com/style/word-list#data-source)
+data source [](https://developers.google.com/style/word-list.md.txt#data-source)
 :   Not *datasource*.
 
-datastore [](https://developers.google.com/style/word-list#datastore)
+datastore [](https://developers.google.com/style/word-list.md.txt#datastore)
 :   Not *data store*.
 
-data type [](https://developers.google.com/style/word-list#data-type)
+data type [](https://developers.google.com/style/word-list.md.txt#data-type)
 :   Not *datatype*.
 
-dead-letter queue, dead letter [](https://developers.google.com/style/word-list#dead-letter)
+dead-letter queue, dead letter [](https://developers.google.com/style/word-list.md.txt#dead-letter)
 :
     Define on first use, for example *dead-letter queue (unprocessed messages queue)*.
 
-deep linking [](https://developers.google.com/style/word-list#deep-linking)
+deep linking [](https://developers.google.com/style/word-list.md.txt#deep-linking)
 :
     Not *deep-linking*. However, if you can replace with
     *linking*, then do so.
 
-deficient [](https://developers.google.com/style/word-list#deficient)
+deficient [](https://developers.google.com/style/word-list.md.txt#deficient)
 :   Don't use to refer to a person.
 :   OK to use to refer to a condition of a computer system.
 
-deformed [](https://developers.google.com/style/word-list#deformed)
+deformed [](https://developers.google.com/style/word-list.md.txt#deformed)
 :   Don't use to refer to a person.
 :
     OK to use to refer to a condition of a computer system or
     inanimate object.
 
-demilitarized zone (DMZ) [](https://developers.google.com/style/word-list#dmz)
+demilitarized zone (DMZ) [](https://developers.google.com/style/word-list.md.txt#dmz)
 :
     Don't use. Instead, use a more precise term like *perimeter network*.
 
-denigrate [](https://developers.google.com/style/word-list#denigrate)
+denigrate [](https://developers.google.com/style/word-list.md.txt#denigrate)
 :   Don't use. Instead, use *disparage*.
 
 
 denylist (verb), denylisted, denylisting
-[](https://developers.google.com/style/word-list#denylisted)
+[](https://developers.google.com/style/word-list.md.txt#denylisted)
 :   Don't use as a verb. Instead, rewrite to improve clarity.
 :   OK to use *denylist* as a noun.
-:   For more information, see [blacklist](https://developers.google.com/style/word-list#blacklist).
+:   For more information, see [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
-deprecate [](https://developers.google.com/style/word-list#deprecate)
+deprecate [](https://developers.google.com/style/word-list.md.txt#deprecate)
 :
     To *deprecate* an item is to recommend against the item's use,
     typically as a warning that the item will soon be unavailable or
     unsupported. Don't use *deprecated* to mean *removed*,
     *deleted*, *shut down*, or *turned down*.
 
-deselect [](https://developers.google.com/style/word-list#deselect)
+deselect [](https://developers.google.com/style/word-list.md.txt#deselect)
 :
     Don't use to refer to clearing a check mark from a checkbox. Instead, use
     *clear*.
@@ -1140,7 +1140,7 @@ deselect [](https://developers.google.com/style/word-list#deselect)
     Not recommended: Uncheck
     **Automatically check for updates**.
 
-desire, desired [](https://developers.google.com/style/word-list#desire)
+desire, desired [](https://developers.google.com/style/word-list.md.txt#desire)
 :   Don't use. Instead, use a word like *want* or *need*.
 :
     Recommended: Set the value to the
@@ -1154,29 +1154,29 @@ desire, desired [](https://developers.google.com/style/word-list#desire)
 
 
 Developers Console
-[](https://developers.google.com/style/word-list#developers-console)
+[](https://developers.google.com/style/word-list.md.txt#developers-console)
 :
-    Don't use. For more information, see [console](https://developers.google.com/style/word-list#console).
+    Don't use. For more information, see [console](https://developers.google.com/style/word-list.md.txt#console).
 
-DevOps [](https://developers.google.com/style/word-list#devops)
+DevOps [](https://developers.google.com/style/word-list.md.txt#devops)
 :
     Short for *development operations*. No need to spell out on first
     mention unless the audience requires it. For more information, see [DevOps](https://wikipedia.org/wiki/DevOps).
 
-dialog [](https://developers.google.com/style/word-list#dialog)
+dialog [](https://developers.google.com/style/word-list.md.txt#dialog)
 :
     Use *dialog* for the UI element sometimes called a [dialog box](http://wikipedia.org/wiki/Dialog_box).
 :
     Use *dialogue* only for verbal interaction between people.
 
-directory, folder [](https://developers.google.com/style/word-list#directory)
+directory, folder [](https://developers.google.com/style/word-list.md.txt#directory)
 :
     If the context that you're documenting (such as an IDE's GUI) uses one
     term or the other, use that term. If not, then use *directory* in a
     command-line context, and *folder* in a GUI context. When in doubt,
     default to *directory*.
 
-disable [](https://developers.google.com/style/word-list#disable)
+disable [](https://developers.google.com/style/word-list.md.txt#disable)
 :
     Don't use *disable* or *disabled* to describe something that's
     broken.
@@ -1186,14 +1186,14 @@ disable [](https://developers.google.com/style/word-list#disable)
     *unavailable*, *deactivate*, *turn off*, or
     *deselect*, depending on the context. Use the same term consistently throughout your
     document.
-    See also [enable](https://developers.google.com/style/word-list#enable).
+    See also [enable](https://developers.google.com/style/word-list.md.txt#enable).
 
 
 disclosure triangle, disclosure widget
-[](https://developers.google.com/style/word-list#disclosure-triangle)
+[](https://developers.google.com/style/word-list.md.txt#disclosure-triangle)
 :   Don't use. Instead, use *expander arrow*.
 
-display (verb) [](https://developers.google.com/style/word-list#display)
+display (verb) [](https://developers.google.com/style/word-list.md.txt#display)
 :
     Don't use as an intransitive verb. *Display* is a transitive verb;
     therefore, it requires an object. It is often misused in technical
@@ -1215,16 +1215,16 @@ display (verb) [](https://developers.google.com/style/word-list#display)
     Recommended: The Output Directories
     area displays the vector image.
 
-distributed denial-of-service (DDoS) [](https://developers.google.com/style/word-list#ddos)
+distributed denial-of-service (DDoS) [](https://developers.google.com/style/word-list.md.txt#ddos)
 :   Hyphenate as shown. On subsequent mention, use *DDoS*.
 
-DNS server policy [](https://developers.google.com/style/word-list#dns-server-policy)
+DNS server policy [](https://developers.google.com/style/word-list.md.txt#dns-server-policy)
 :   Lowercase *server policy*.
 
-DNSKEY [](https://developers.google.com/style/word-list#dnskey)
+DNSKEY [](https://developers.google.com/style/word-list.md.txt#dnskey)
 :   One word, all capital letters.
 
-documentation or document or documents [](https://developers.google.com/style/word-list#documentation)
+documentation or document or documents [](https://developers.google.com/style/word-list.md.txt#documentation)
 
 :   To refer specifically to the text on a page that explains a product, feature, or service,
     use *this document*, and not *this article*, *this topic*, *this doc*, or
@@ -1235,7 +1235,7 @@ documentation or document or documents [](https://developers.google.com/style/wo
     tabs and URLs.
 
     See also
-    [page](https://developers.google.com/style/word-list#page).
+    [page](https://developers.google.com/style/word-list.md.txt#page).
 :
     Recommended: You can find many
     examples in this document.
@@ -1249,10 +1249,10 @@ documentation or document or documents [](https://developers.google.com/style/wo
     Not recommended: This page provides
     guidance about creating tables.
 
-documentation set [](https://developers.google.com/style/word-list#docset)
+documentation set [](https://developers.google.com/style/word-list.md.txt#docset)
 :   Not *doc set* or *docset*.
 
-does not yet [](https://developers.google.com/style/word-list#does-not-yet)
+does not yet [](https://developers.google.com/style/word-list.md.txt#does-not-yet)
 :
     Avoid in timeless documentation because this phrase can become outdated.
     The phrase can also prematurely disclose product or feature strategy or
@@ -1265,27 +1265,27 @@ does not yet [](https://developers.google.com/style/word-list#does-not-yet)
     console does not yet support this IAM role.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-dojo [](https://developers.google.com/style/word-list#dojo)
+dojo [](https://developers.google.com/style/word-list.md.txt#dojo)
 :
     Don't use. Instead, use a precise term that is accurate for the context,
     such as *training* or *workshop*.
 
-domain name registrar [](https://developers.google.com/style/word-list#domain-name-registrar)
+domain name registrar [](https://developers.google.com/style/word-list.md.txt#domain-name-registrar)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-Domain Name System Security Extensions (DNSSEC) [](https://developers.google.com/style/word-list#dnssec)
+Domain Name System Security Extensions (DNSSEC) [](https://developers.google.com/style/word-list.md.txt#dnssec)
 :
     Write out and capitalize each word on first use. OK to abbreviate as
     *DNSSEC* after first use.
 
-double-tap [](https://developers.google.com/style/word-list#double-tap)
+double-tap [](https://developers.google.com/style/word-list.md.txt#double-tap)
 :   Hyphenate. Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-downscope [](https://developers.google.com/style/word-list#downscope)
+downscope [](https://developers.google.com/style/word-list.md.txt#downscope)
 :
     Consider using a more descriptive term like *constrain scope* or
     *reduce scope*. Because *downscope* might not be broadly
@@ -1300,7 +1300,7 @@ downscope [](https://developers.google.com/style/word-list#downscope)
     recommender helps you *downscope* (reduce) the permissions that are
     available to your users.
 
-drag [](https://developers.google.com/style/word-list#drag)
+drag [](https://developers.google.com/style/word-list.md.txt#drag)
 :
     Use *drag*, not *click and drag* and not *drag and drop*.
 :   OK to use *drag-and-drop* as an adjective.
@@ -1308,19 +1308,19 @@ drag [](https://developers.google.com/style/word-list#drag)
     Recommended: Drag the <var translate="no">USER</var>
     to the **Authorized** box.
 
-drop-down [](https://developers.google.com/style/word-list#drop-down)
+drop-down [](https://developers.google.com/style/word-list.md.txt#drop-down)
 :
     In most cases, you can omit *drop-down* from phrases like *drop-down list* or
     *drop-down menu*, and just use *list* or *menu*. Include *drop-down* as a
     modifier only if the omission would cause ambiguity. Don't use *drop-down* as a
     standalone noun.
 
-dumb down [](https://developers.google.com/style/word-list#dumb-down)
+dumb down [](https://developers.google.com/style/word-list.md.txt#dumb-down)
 :
     Don't use. Instead, use a word or phrase what's happening, such as
     *simplify* or *remove technical jargon*.
 
-dummy variable [](https://developers.google.com/style/word-list#dummy-variable)
+dummy variable [](https://developers.google.com/style/word-list.md.txt#dummy-variable)
 :
     Don't use to refer to placeholders. Instead, use *placeholder*.
 :
@@ -1332,7 +1332,7 @@ dummy variable [](https://developers.google.com/style/word-list#dummy-variable)
 
 ### E
 
-each [](https://developers.google.com/style/word-list#each)
+each [](https://developers.google.com/style/word-list.md.txt#each)
 :
     *Each* refers to every individual item taken individually, not to a
     group of items taken collectively. In other words, *each* isn't a
@@ -1340,7 +1340,7 @@ each [](https://developers.google.com/style/word-list#each)
     ambiguous; *a list of all the items* or *a list of the items* is
     generally clearer.
 
-earlier [](https://developers.google.com/style/word-list#earlier)
+earlier [](https://developers.google.com/style/word-list.md.txt#earlier)
 :   Use for a range of version numbers, not *lower*.
 :
     Recommended: Use version 2.2 or
@@ -1355,30 +1355,30 @@ earlier [](https://developers.google.com/style/word-list#earlier)
     When referring to a position in a document, use *earlier* or
     *preceding*, not *higher*.
 
-easy, easily [](https://developers.google.com/style/word-list#easy)
+easy, easily [](https://developers.google.com/style/word-list.md.txt#easy)
 :
     What might be easy for you might not be easy for others. Try eliminating this word from the
     sentence because usually the same meaning can be conveyed without it. For more information, see
     [Use precise, objective
     language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
-ecommerce [](https://developers.google.com/style/word-list#ecommerce)
+ecommerce [](https://developers.google.com/style/word-list.md.txt#ecommerce)
 :   Not *e-commerce*.
 
-edge availability domain [](https://developers.google.com/style/word-list#edge-availability-domain)
+edge availability domain [](https://developers.google.com/style/word-list.md.txt#edge-availability-domain)
 :
     Don't use *edge availability zone*, *metro availability domain*,
     or *metro availability zone*. Don't shorten to *EAD*.
 
-e.g. [](https://developers.google.com/style/word-list#eg)
+e.g. [](https://developers.google.com/style/word-list.md.txt#eg)
 :
     Don't use. Instead, use phrases like *for example* or *such as*.
     Many people confuse *e.g.* and *i.e.*
 
-egress [](https://developers.google.com/style/word-list#egress)
+egress [](https://developers.google.com/style/word-list.md.txt#egress)
 :   When referring to the networking term, use lowercase.
 
-either [](https://developers.google.com/style/word-list#either)
+either [](https://developers.google.com/style/word-list.md.txt#either)
 :   When using *either*, use parallel syntax.
 :
     Recommended: Do either option 1 or
@@ -1395,7 +1395,7 @@ either [](https://developers.google.com/style/word-list#either)
     distract some readers, but if it's the best phrasing for your situation,
     then use it.
 
-element [](https://developers.google.com/style/word-list#element)
+element [](https://developers.google.com/style/word-list.md.txt#element)
 :
     In HTML and XML, a tag is a component of an element that indicates
     the start or end of the element. (For example, the
@@ -1403,29 +1403,29 @@ element [](https://developers.google.com/style/word-list#element)
     `<i>example</i>` element.) In general, don't use
     the term *tag* to refer to an entire element.
 
-email [](https://developers.google.com/style/word-list#email)
+email [](https://developers.google.com/style/word-list.md.txt#email)
 :   Not *e-mail*, *Email*, or *E-mail*.
 :   Don't use as a verb.
 :
     Use a specific verb in front of the word. For example, *send email*.
     This construction is better for translation and a
-    [global audience](https://developers.google.com/style/translation).
+    [global audience](https://developers.google.com/style/translation.md.txt).
 
-emoji [](https://developers.google.com/style/word-list#emoji)
+emoji [](https://developers.google.com/style/word-list.md.txt#emoji)
 :
     Use *emoji* for both singular and plural forms. See [Don't
     know the difference between emoji and emoticons? Let me explain](https://www.theguardian.com/technology/2015/feb/06/difference-between-emoji-and-emoticons-explained) and [What's the Plural of Emoji?](http://www.theatlantic.com/technology/archive/2016/01/whats-the-plural-of-emoji-emojis/422763/)
 
-enable [](https://developers.google.com/style/word-list#enable)
+enable [](https://developers.google.com/style/word-list.md.txt#enable)
 :
     In procedures, use the appropriate label and action for the
-    [UI element](https://developers.google.com/style/ui-elements) that the user interacts with. When describing a
+    [UI element](https://developers.google.com/style/ui-elements.md.txt) that the user interacts with. When describing a
     user action or the state of a UI element, use a more precise term where possible. It's OK to
     use *enable* when not referring to a person.
 
 :
     For turning on or activating an option or feature, use *enable* or
-    *[turn on](https://developers.google.com/style/word-list#turn-on)* consistently:
+    *[turn on](https://developers.google.com/style/word-list.md.txt#turn-on)* consistently:
 
     - Use the same term in introductory text as described in the procedure.
     - Use the same term throughout the document unless there's a difference in the UI elements for different procedures.
@@ -1450,14 +1450,14 @@ enable [](https://developers.google.com/style/word-list#enable)
     *turn on* or *on* instead. If referring to the state of a UI element, use
     *available*.
 
-endpoint [](https://developers.google.com/style/word-list#endpoint)
+endpoint [](https://developers.google.com/style/word-list.md.txt#endpoint)
 :   Not *end point*.
 
-enter [](https://developers.google.com/style/word-list#enter)
+enter [](https://developers.google.com/style/word-list.md.txt#enter)
 :
     Use *enter* to refer to the user entering text. If it's important to
     not press <kbd>Enter</kbd>, explicitly say so. See also
-    [*type*](https://developers.google.com/style/word-list#type).
+    [*type*](https://developers.google.com/style/word-list.md.txt#type).
 :
     Recommended: In the **Owner** box,
     enter your name.
@@ -1465,16 +1465,16 @@ enter [](https://developers.google.com/style/word-list#enter)
     Recommended: In the **Size** box,
     type a font size.
 
-ephemeral external IP address [](https://developers.google.com/style/word-list#ephemeral-external-ip-address)
+ephemeral external IP address [](https://developers.google.com/style/word-list.md.txt#ephemeral-external-ip-address)
 :
     Don't use *ephemeral IP address* or *external IP address* to
     refer to ephemeral external IP addresses.
 
-error-prone (adjective) [](https://developers.google.com/style/word-list#error-prone)
+error-prone (adjective) [](https://developers.google.com/style/word-list.md.txt#error-prone)
 :   Hyphenate. Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-etc. [](https://developers.google.com/style/word-list#etc)
+etc. [](https://developers.google.com/style/word-list.md.txt#etc)
 :
     Avoid using *etc.*, *and so forth*, and *and so on*
     wherever possible. If you really need to use one, use *etc.*
@@ -1495,14 +1495,14 @@ etc. [](https://developers.google.com/style/word-list#etc)
     Not recommended: If your app
     experiences instability, high latency, etc., follow these steps:
 
-eventually [](https://developers.google.com/style/word-list#eventually)
+eventually [](https://developers.google.com/style/word-list.md.txt#eventually)
 :
     Avoid in timeless documentation because this word can become outdated. The
     word can also prematurely disclose product or feature strategy or
     inappropriately imply that a product or feature might change.
 :
     See also
-    [future](https://developers.google.com/style/word-list#future) and [soon](https://developers.google.com/style/word-list#soon).
+    [future](https://developers.google.com/style/word-list.md.txt#future) and [soon](https://developers.google.com/style/word-list.md.txt#soon).
 :
     Recommended: This version of the SDK
     is deprecated.
@@ -1511,39 +1511,39 @@ eventually [](https://developers.google.com/style/word-list#eventually)
     SDK is deprecated and eventually will be no longer supported.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-execute [](https://developers.google.com/style/word-list#execute)
+execute [](https://developers.google.com/style/word-list.md.txt#execute)
 :
     Verb commonly used to refer to function calls, SQL queries, and other processes. When the meaning
     is the same, use the simpler word *run* instead. If you need to use a more precise term
     for your context, use that term.
 
-expander arrow [](https://developers.google.com/style/word-list#expander-arrow)
+expander arrow [](https://developers.google.com/style/word-list.md.txt#expander-arrow)
 :
     The UI element used to expand or collapse a section of navigation or
     content. If you describe this element, use the terms *expander arrow*
     and *expandable section*
 :   Don't use terms like *expando* or *zippy*.
 
-exploit [](https://developers.google.com/style/word-list#exploit)
+exploit [](https://developers.google.com/style/word-list.md.txt#exploit)
 :   Don't use *exploit* to mean "use."
 :
     Only use *exploit* in the negative sense, such as to describe
     *exploiting a security vulnerability*.
 
-external VPN gateway [](https://developers.google.com/style/word-list#external-vpn-gateway)
+external VPN gateway [](https://developers.google.com/style/word-list.md.txt#external-vpn-gateway)
 :
     Write *external* and *gateway* all lowercase except at the
     beginning of a sentence, heading or list item.
 
-extract [](https://developers.google.com/style/word-list#extract)
+extract [](https://developers.google.com/style/word-list.md.txt#extract)
 :   Use instead of *unarchive*, *uncompress*, *untar*, or *unzip*.
 
 ### F
 
-fail over (verb), failover (noun, adjective) [](https://developers.google.com/style/word-list#failover)
-fat [](https://developers.google.com/style/word-list#fat)
+fail over (verb), failover (noun, adjective) [](https://developers.google.com/style/word-list.md.txt#failover)
+fat [](https://developers.google.com/style/word-list.md.txt#fat)
 :
     Don't use. Instead, use a precise modifier that conveys the appropriate
     meaning. For example, use *high-capacity network connection* instead
@@ -1554,21 +1554,21 @@ fat [](https://developers.google.com/style/word-list#fat)
 :
     OK to use as an acronym when referring to file allocation table (FAT).
 
-female adapter [](https://developers.google.com/style/word-list#female-adapter)
+female adapter [](https://developers.google.com/style/word-list.md.txt#female-adapter)
 :   Don't use. Instead, use a genderless word like *socket*.
 
-Fast Healthcare Interoperability Resources (FHIR) [](https://developers.google.com/style/word-list#fhir)
+Fast Healthcare Interoperability Resources (FHIR) [](https://developers.google.com/style/word-list.md.txt#fhir)
 :   Refer to *a FHIR* (pronounced "a fire," as in "a FHIR store"), not *an FHIR*.
     For more information, see
-    [Indefinite articles before abbreviations](https://developers.google.com/style/abbreviations#articles).
+    [Indefinite articles before abbreviations](https://developers.google.com/style/abbreviations.md.txt#articles).
 
-filename [](https://developers.google.com/style/word-list#filename)
+filename [](https://developers.google.com/style/word-list.md.txt#filename)
 :   Not *file name*
 
-file system [](https://developers.google.com/style/word-list#file-system)
+file system [](https://developers.google.com/style/word-list.md.txt#file-system)
 :   Not *filesystem*.
 
-fill in; fill out [](https://developers.google.com/style/word-list#fill-in)
+fill in; fill out [](https://developers.google.com/style/word-list.md.txt#fill-in)
 :
     Use *fill in* when referring to entering information in individual
     fields.
@@ -1578,17 +1578,17 @@ fill in; fill out [](https://developers.google.com/style/word-list#fill-in)
     Recommended: Fill out the
     questionnaire. Be sure to fill in the required fields.
 
-final solution [](https://developers.google.com/style/word-list#final-solution)
+final solution [](https://developers.google.com/style/word-list.md.txt#final-solution)
 :
     Don't use. Instead, use *solution* as a standalone term or, depending
     on the context, *definitive*, *optimal*, *best*, or *last solution*.
 
-fintech [](https://developers.google.com/style/word-list#fintech)
+fintech [](https://developers.google.com/style/word-list.md.txt#fintech)
 :
     Write out on first mention: *financial technology (fintech)*. Don't
     use *FinTech* or *fin-tech*.
 
-firewalls [](https://developers.google.com/style/word-list#firewalls)
+firewalls [](https://developers.google.com/style/word-list.md.txt#firewalls)
 :
     Don't use in Compute Engine or networking documentation. Instead, use
     *firewall rules*.
@@ -1601,7 +1601,7 @@ firewalls [](https://developers.google.com/style/word-list#firewalls)
 
 
 first class, first-class, first-class citizen
-[](https://developers.google.com/style/word-list#first-class)
+[](https://developers.google.com/style/word-list.md.txt#first-class)
 :
     Don't use *first class* or *first-class citizen*. Instead, use
     another term that's appropriate for the context, such as *higher-order*,
@@ -1618,12 +1618,12 @@ first class, first-class, first-class citizen
     Not recommended: Virtual machines are treated as first-class resources across the identity, networking, and storage services.
 :
     For more information, see
-    [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation).
+    [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation.md.txt).
 
-following [](https://developers.google.com/style/word-list#following)
+following [](https://developers.google.com/style/word-list.md.txt#following)
 :
     It's not necessary to use a noun after *following* unless it helps
-    provide clarity and enables accessibility. See [Tables](https://developers.google.com/style/tables#table-placement).
+    provide clarity and enables accessibility. See [Tables](https://developers.google.com/style/tables.md.txt#table-placement).
 :
     Recommended: ... in the following
     code sample ...
@@ -1634,12 +1634,12 @@ following [](https://developers.google.com/style/word-list#following)
     Recommended: ... do the following:
     ...
 
-foo [](https://developers.google.com/style/word-list#foo)
+foo [](https://developers.google.com/style/word-list.md.txt#foo)
 :
     Avoid when possible even though it's a common term in the developer
     community. Instead, use a clearer and more meaningful placeholder name.
 
-for example [](https://developers.google.com/style/word-list#for-example)
+for example [](https://developers.google.com/style/word-list.md.txt#for-example)
 :
     When you introduce an example using the phrase *for example*, follow the phrase by a comma. For clarity, when
     introducing an example, separate the example using dashes, commas, or parentheses from the
@@ -1652,18 +1652,18 @@ for example [](https://developers.google.com/style/word-list#for-example)
     Recommended: Enter a six-digit hex number, and then click **OK** . For example, if you want the color forest
     green, enter `228B22`.
 :
-    For more information, see [Format examples](https://developers.google.com/style/format-examples).
+    For more information, see [Format examples](https://developers.google.com/style/format-examples.md.txt).
 
-for instance [](https://developers.google.com/style/word-list#for-instance)
+for instance [](https://developers.google.com/style/word-list.md.txt#for-instance)
 :
     Don't use the phrase *for instance* to introduce examples to avoid confusion with the
     noun *instance*. Instead, use *for example*, *like*, or *such as*. For
-    more information, see [for example](https://developers.google.com/style/word-list#for-example).
+    more information, see [for example](https://developers.google.com/style/word-list.md.txt#for-example).
 
-frontend [](https://developers.google.com/style/word-list#frontend)
+frontend [](https://developers.google.com/style/word-list.md.txt#frontend)
 :   Not *front-end* or *front end*.
 
-functionality [](https://developers.google.com/style/word-list#functionality)
+functionality [](https://developers.google.com/style/word-list.md.txt#functionality)
 :
     Use with caution. With respect to hardware or software,
     *functionality* refers to a set of associated functions or
@@ -1671,28 +1671,28 @@ functionality [](https://developers.google.com/style/word-list#functionality)
     especially when the intended meaning is *capabilities* or
     *features*.
 
-future, in the future [](https://developers.google.com/style/word-list#future)
+future, in the future [](https://developers.google.com/style/word-list.md.txt#future)
 :
     Avoid in timeless documentation because this word or phrase can become
     outdated.
 :
-    See also [eventually](https://developers.google.com/style/word-list#eventually) and [soon](https://developers.google.com/style/word-list#soon). For more
+    See also [eventually](https://developers.google.com/style/word-list.md.txt#eventually) and [soon](https://developers.google.com/style/word-list.md.txt#soon). For more
     information, see [Timeless
     documentation](https://developers.google.com/style/timeless-documentation).
 
 ### G
 
-GBps [](https://developers.google.com/style/word-list#gigabytes-per-second)
+GBps [](https://developers.google.com/style/word-list.md.txt#gigabytes-per-second)
 :
     Short for *gigabytes per second*. By convention, we don't use
-    *GB/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure).
+    *GB/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure.md.txt).
 
-Gbps [](https://developers.google.com/style/word-list#gbps)
+Gbps [](https://developers.google.com/style/word-list.md.txt#gbps)
 :
     Short for *gigabits per second*. By convention, we don't use
-    *Gb/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure).
+    *Gb/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure.md.txt).
 
-`gcloud` CLI [](https://developers.google.com/style/word-list#gcloud)
+`gcloud` CLI [](https://developers.google.com/style/word-list.md.txt#gcloud)
 :
     Use the full name *Google Cloud CLI* the first time that you mention
     the product on a page.
@@ -1700,29 +1700,29 @@ Gbps [](https://developers.google.com/style/word-list#gbps)
 
 gender-neutral he, him, or his (or she or
 her)
-[](https://developers.google.com/style/word-list#gender)
+[](https://developers.google.com/style/word-list.md.txt#gender)
 :
     Don't use. Instead, use the singular *they* (see [Jane Austen and other famous authors violate what everyone learned in
     their English class](http://www.pemberley.com/janeinfo/austheir.html)). Don't use *he/she* or *(s)he* or other
     such punctuational approaches. For more information, see
-    [Pronouns](https://developers.google.com/style/pronouns).
+    [Pronouns](https://developers.google.com/style/pronouns.md.txt).
 
-generative AI [](https://developers.google.com/style/word-list#generative-ai)
+generative AI [](https://developers.google.com/style/word-list.md.txt#generative-ai)
 :
     Spell out *generative*. Use sentence case.
 :
     Don't use *gen AI* or *Gen AI*.
 :
     Don't hyphenate *generative AI* as an adjective unless you must do
-    so for clarity. See also [AI](https://developers.google.com/style/word-list#ai).
+    so for clarity. See also [AI](https://developers.google.com/style/word-list.md.txt#ai).
 
-ghetto [](https://developers.google.com/style/word-list#ghetto)
+ghetto [](https://developers.google.com/style/word-list.md.txt#ghetto)
 :
     Don't use. Instead use more precise terms like *clumsy*,
     *workaround*, or *inelegant* to refer to code that isn't in a
     production-ready state.
 
-gimp, gimpy [](https://developers.google.com/style/word-list#gimp)
+gimp, gimpy [](https://developers.google.com/style/word-list.md.txt#gimp)
 :
     Don't use. Instead, use precise, non-figurative language to refer to a
     deficiency in a component.
@@ -1730,44 +1730,44 @@ gimp, gimpy [](https://developers.google.com/style/word-list#gimp)
     OK to use in reference to companies, tools, software packages, and other
     entities that use the term in their names.
 
-GKE node [](https://developers.google.com/style/word-list#gke-node)
+GKE node [](https://developers.google.com/style/word-list.md.txt#gke-node)
 :
     Use when first introducing GKE nodes on a given page. For subsequent
     mentions, you can use *node*. A GKE node is a worker machine that
     runs containerized applications and other workloads. The machine is a
-    Compute Engine VM that GKE creates during cluster creation. See also [virtual machine (VM) instance](https://developers.google.com/style/word-list#virtual-machine-instance).
+    Compute Engine VM that GKE creates during cluster creation. See also [virtual machine (VM) instance](https://developers.google.com/style/word-list.md.txt#virtual-machine-instance).
 
-Google, Googling [](https://developers.google.com/style/word-list#google)
+Google, Googling [](https://developers.google.com/style/word-list.md.txt#google)
 :
     Don't use as a verb or gerund. Instead, use *search with Google*.
 
-Google Account, Google Accounts [](https://developers.google.com/style/word-list#google-account)
+Google Account, Google Accounts [](https://developers.google.com/style/word-list.md.txt#google-account)
 :   Capitalize *Account*.
 
 
 Google API Client Library for <var translate="no">LANGUAGE</var> (Java, .NET, etc.)
-[](https://developers.google.com/style/word-list#google-api-client-library)
+[](https://developers.google.com/style/word-list.md.txt#google-api-client-library)
 :
     On second and subsequent use, you can abbreviate to
     *<var translate="no">LANGUAGE</var> client library*.
 
 
 Google API Console, Google APIs Console
-[](https://developers.google.com/style/word-list#google-api-console)
+[](https://developers.google.com/style/word-list.md.txt#google-api-console)
 :
-    Don't use. For more information, see [console](https://developers.google.com/style/word-list#console).
+    Don't use. For more information, see [console](https://developers.google.com/style/word-list.md.txt#console).
 
-Google Cloud [](https://developers.google.com/style/word-list#gcp)
+Google Cloud [](https://developers.google.com/style/word-list.md.txt#gcp)
 :   Not *GCP*, *Cloud Platform*, or *Cloud*.
 
-Google Cloud console [](https://developers.google.com/style/word-list#google-cloud-platform-console)
+Google Cloud console [](https://developers.google.com/style/word-list.md.txt#google-cloud-platform-console)
 :
     If you're only discussing the Google Cloud console, it's OK to shorten to
     *the console* after first use on a given page.
 :
-    Use *the* before the console name. For more information, see [console](https://developers.google.com/style/word-list#console).
+    Use *the* before the console name. For more information, see [console](https://developers.google.com/style/word-list.md.txt#console).
 
-Google Cloud project ID [](https://developers.google.com/style/word-list#gcp-project-id)
+Google Cloud project ID [](https://developers.google.com/style/word-list.md.txt#gcp-project-id)
 :
     Not *Cloud project ID* or *GCP project ID*. You can also
     shorten to *project ID*, but be aware that that term is ambiguous in
@@ -1775,26 +1775,26 @@ Google Cloud project ID [](https://developers.google.com/style/word-list#gcp-pro
 
 
 Google Developers Console
-[](https://developers.google.com/style/word-list#google-developers-console)
+[](https://developers.google.com/style/word-list.md.txt#google-developers-console)
 :
-    Don't use. For more information, see [console](https://developers.google.com/style/word-list#console).
+    Don't use. For more information, see [console](https://developers.google.com/style/word-list.md.txt#console).
 
-Google I/O [](https://developers.google.com/style/word-list#google-io)
+Google I/O [](https://developers.google.com/style/word-list.md.txt#google-io)
 :   Not *I-O* or *IO*.
 
-Google Play services [](https://developers.google.com/style/word-list#google-play-services)
+Google Play services [](https://developers.google.com/style/word-list.md.txt#google-play-services)
 :   Write *services* in lowercase.
 
-Google Play services SDK [](https://developers.google.com/style/word-list#google-play-services-SDK)
+Google Play services SDK [](https://developers.google.com/style/word-list.md.txt#google-play-services-SDK)
 :   Write *services* in lowercase.
 
 
 grandfather clause, grand-father clause,
 grand father clause
-[](https://developers.google.com/style/word-list#grandfather-clause)
-:   Don't use. See [grandfathered](https://developers.google.com/style/word-list#grandfathered).
+[](https://developers.google.com/style/word-list.md.txt#grandfather-clause)
+:   Don't use. See [grandfathered](https://developers.google.com/style/word-list.md.txt#grandfathered).
 
-grandfathered [](https://developers.google.com/style/word-list#grandfathered)
+grandfathered [](https://developers.google.com/style/word-list.md.txt#grandfathered)
 :
     Don't use to refer to something that is allowed to violate a rule because
     it predates the rule. Instead, use an adjective like *legacy* or
@@ -1807,7 +1807,7 @@ grandfathered [](https://developers.google.com/style/word-list#grandfathered)
     grandfathered in because it was released before the new requirements were
     announced.
 
-gray-box, grey-box [](https://developers.google.com/style/word-list#gray-box)
+gray-box, grey-box [](https://developers.google.com/style/word-list.md.txt#gray-box)
 :
     Avoid using *gray-box*, *graybox*, or *gray box* to
     describe testing.
@@ -1820,50 +1820,50 @@ gray-box, grey-box [](https://developers.google.com/style/word-list#gray-box)
 
 
 grayed-out, greyed-out, gray out, grey out
-[](https://developers.google.com/style/word-list#grayed-out)
+[](https://developers.google.com/style/word-list.md.txt#grayed-out)
 :   Don't use. Instead, use *unavailable*.
 
 
 grayhat, greyhat, gray hat, grey hat
-[](https://developers.google.com/style/word-list#grayhat)
+[](https://developers.google.com/style/word-list.md.txt#grayhat)
 :
-    Don't use. Follow the guidance for [black hat](https://developers.google.com/style/word-list#blackhat) when
+    Don't use. Follow the guidance for [black hat](https://developers.google.com/style/word-list.md.txt#blackhat) when
     referring to someone violating rules or laws.
 
 
 graylist, greylist, gray list, grey list,
 gray-list, grey-list
-[](https://developers.google.com/style/word-list#graylist)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#graylist)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
 
 graylisted, greylisted, gray listed, grey
 listed, gray-listed, grey-listed
-[](https://developers.google.com/style/word-list#graylisted)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#graylisted)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
 
 graylisting, greylisting, gray listing,
 grey listing, gray-listing, grey-listing
-[](https://developers.google.com/style/word-list#graylisting)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#graylisting)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
-`gsutil` [](https://developers.google.com/style/word-list#gsutil)
+`gsutil` [](https://developers.google.com/style/word-list.md.txt#gsutil)
 :
     In the Google Cloud context, use code font for both the name of the
     command-line utility and the command.
 
-guru [](https://developers.google.com/style/word-list#guru)
+guru [](https://developers.google.com/style/word-list.md.txt#guru)
 :
     If possible, use a more precise term. For example, if you mean
     *expert* or *teacher*, use those terms.
 
-guys, you guys [](https://developers.google.com/style/word-list#guys)
+guys, you guys [](https://developers.google.com/style/word-list.md.txt#guys)
 :
     When referring to a group of people use non-gendered language, such as
     *everyone* or *folks*.
 
-gypsy [](https://developers.google.com/style/word-list#gypsy)
+gypsy [](https://developers.google.com/style/word-list.md.txt#gypsy)
 :
     Don't use. To refer to the people, use *Romani*, *Roma*, or
     *Traveller*, as appropriate for the specific group you're referring
@@ -1873,32 +1873,32 @@ gypsy [](https://developers.google.com/style/word-list#gypsy)
 
 
 hamburger, hamburger menu
-[](https://developers.google.com/style/word-list#hamburger)
+[](https://developers.google.com/style/word-list.md.txt#hamburger)
 :
     Don't use. Instead use the `aria-label` for that particular
     icon. For example, **Menu** .
     For more information, see
-    [Buttons and icons](https://developers.google.com/style/ui-elements#buttons).
+    [Buttons and icons](https://developers.google.com/style/ui-elements.md.txt#buttons).
 
-hands off, hands-off [](https://developers.google.com/style/word-list#hands-off)
+hands off, hands-off [](https://developers.google.com/style/word-list.md.txt#hands-off)
 :
     Use a less figurative phrase, such as *automated*. If you're
     referring to a group that doesn't do anything during a process, write a
     description.
 
-hands on, hands-on [](https://developers.google.com/style/word-list#hands-on)
+hands on, hands-on [](https://developers.google.com/style/word-list.md.txt#hands-on)
 :
     Use a less figurative phrase, such as *customizable*, or write a
     description of the activity.
 
-hang, hung [](https://developers.google.com/style/word-list#hang)
+hang, hung [](https://developers.google.com/style/word-list.md.txt#hang)
 :
     Don't use to refer to a computer or system that is not responding.
     Instead, use *stop responding* or *not responding*. For more
     information, see [Avoid figurative
     language](https://developers.google.com/style/inclusive-documentation#figurative-language).
 
-happiness and satisfaction [](https://developers.google.com/style/word-list#happiness)
+happiness and satisfaction [](https://developers.google.com/style/word-list.md.txt#happiness)
 :
     Use *happiness* when referring to a customer's perception of a
     site's reliability. Use *satisfaction* when referring to whether the
@@ -1918,19 +1918,19 @@ happiness and satisfaction [](https://developers.google.com/style/word-list#happ
 :
     For more information about SRE and measuring reliability, see [The Happiness Test](https://www.coursera.org/lecture/site-reliability-engineering-slos/the-happiness-test-ELmSr).
 
-hardcode (verb), hardcoded (adjective) [](https://developers.google.com/style/word-list#hardcode)
+hardcode (verb), hardcoded (adjective) [](https://developers.google.com/style/word-list.md.txt#hardcode)
 :
     Don't hyphenate.
 
-he, him, his [](https://developers.google.com/style/word-list#he)
+he, him, his [](https://developers.google.com/style/word-list.md.txt#he)
 :
     Don't use a gendered pronoun except for a specific individual of known
     gender. Use *they* and *their* for the general singular pronoun.
 
-healthcare [](https://developers.google.com/style/word-list#healthcare)
+healthcare [](https://developers.google.com/style/word-list.md.txt#healthcare)
 :   Not *health care* or *health-care*.
 
-health check [](https://developers.google.com/style/word-list#health-check)
+health check [](https://developers.google.com/style/word-list.md.txt#health-check)
 :
     Use with caution. When describing an action taken for a computer system,
     only use the term *health check* if this is the term that appears in
@@ -1941,28 +1941,28 @@ health check [](https://developers.google.com/style/word-list#health-check)
     referring to a node *being responsive* instead of referring to a node
     being healthy.
 
-healthy [](https://developers.google.com/style/word-list#healthy)
-:   Don't use. See [health check](https://developers.google.com/style/word-list#health-check).
+healthy [](https://developers.google.com/style/word-list.md.txt#healthy)
+:   Don't use. See [health check](https://developers.google.com/style/word-list.md.txt#health-check).
 
 
 high availability (noun), high-availability (adjective)
-[](https://developers.google.com/style/word-list#high-availability)
+[](https://developers.google.com/style/word-list.md.txt#high-availability)
 :
     Spell as *high availability* when used as a noun and as *high-availability* when
-    used as an adjective. See also [load balancing (noun), load-balancing (adjective)](https://developers.google.com/style/word-list#load-balancing).
+    used as an adjective. See also [load balancing (noun), load-balancing (adjective)](https://developers.google.com/style/word-list.md.txt#load-balancing).
 :
     Lowercase except when part of a product name, but OK to abbreviate as
     *HA* after first use.
 
-higher [](https://developers.google.com/style/word-list#higher)
+higher [](https://developers.google.com/style/word-list.md.txt#higher)
 :
-    Don't use for a range of version numbers. Instead, use [*later*](https://developers.google.com/style/word-list#later).
+    Don't use for a range of version numbers. Instead, use [*later*](https://developers.google.com/style/word-list.md.txt#later).
 :
     Don't use to refer to a position in a document. Use *earlier* or
     *preceding*.
 :
     Don't use to refer to a position in the UI. Instead, write instructions
-    that avoid directional language. For more information, see [Writing accessible documentation](https://developers.google.com/style/accessibility).
+    that avoid directional language. For more information, see [Writing accessible documentation](https://developers.google.com/style/accessibility.md.txt).
 :
     In Android documentation, use
     *higher* for a range of version numbers, not *later*.
@@ -1972,15 +1972,15 @@ higher [](https://developers.google.com/style/word-list#higher)
     update after version 3.0 has been released, then version 2.0.1 might be
     the latest version, even though its version number is lower than 3.0.
 
-high performance computing (HPC) [](https://developers.google.com/style/word-list#high-performance-computing)
+high performance computing (HPC) [](https://developers.google.com/style/word-list.md.txt#high-performance-computing)
 :   Don't hyphenate. Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-hit [](https://developers.google.com/style/word-list#hit)
+hit [](https://developers.google.com/style/word-list.md.txt#hit)
 :
     Don't use as a synonym for *click*, *press*, or *type*.
 
-hold the pointer over [](https://developers.google.com/style/word-list#hold-the-pointer-over)
+hold the pointer over [](https://developers.google.com/style/word-list.md.txt#hold-the-pointer-over)
 
 :   Only use this verb phrase in the following cases:
 
@@ -1988,7 +1988,7 @@ hold the pointer over [](https://developers.google.com/style/word-list#hold-the-
     - When the duration of time is important.
 
     The phrase *point to* is more common.
-:   See also [point to](https://developers.google.com/style/word-list#point-to).
+:   See also [point to](https://developers.google.com/style/word-list.md.txt#point-to).
 :
     Recommended: In the **Admin**
     menu, hold the pointer over **File** , and then click **New**.
@@ -1998,27 +1998,27 @@ hold the pointer over [](https://developers.google.com/style/word-list#hold-the-
 
 
 holiday, the holidays
-[](https://developers.google.com/style/word-list#holiday)
+[](https://developers.google.com/style/word-list.md.txt#holiday)
 :
     Don't use to refer to the end of the year. Instead, refer to specific
     quarters or months.
 
-home screen [](https://developers.google.com/style/word-list#home-screen)
+home screen [](https://developers.google.com/style/word-list.md.txt#home-screen)
 :
     Two words in Android contexts; not *homescreen* or
     *home-screen*.
 
-hostname [](https://developers.google.com/style/word-list#hostname)
+hostname [](https://developers.google.com/style/word-list.md.txt#hostname)
 :   Not *host name*.
 
-hot [](https://developers.google.com/style/word-list#hot)
+hot [](https://developers.google.com/style/word-list.md.txt#hot)
 :
-    When possible, avoid [jargon](https://developers.google.com/style/jargon) like *hot failover*,
+    When possible, avoid [jargon](https://developers.google.com/style/jargon.md.txt) like *hot failover*,
     *hot standby*, and *hot spare*. If you use one of these phrases,
     define it on first use and use it consistently throughout the document. However, see
-    [hotspot](https://developers.google.com/style/word-list#hotspot).
+    [hotspot](https://developers.google.com/style/word-list.md.txt#hotspot).
 
-hotspot[](https://developers.google.com/style/word-list#hotspot)
+hotspot[](https://developers.google.com/style/word-list.md.txt#hotspot)
 :
     In databases, *hotspots* occur when a small number of nearby rows are
     accessed frequently in a short period of time, causing CPU spikes and
@@ -2037,25 +2037,25 @@ hotspot[](https://developers.google.com/style/word-list#hotspot)
 
 
 housekeeping, house keeping, house-keeping
-[](https://developers.google.com/style/word-list#housekeeping)
+[](https://developers.google.com/style/word-list.md.txt#housekeeping)
 :
     Don't use. Instead, use less figurative and more precise terms, such as
     *maintenance* and *cleanup*.
 
-hover [](https://developers.google.com/style/word-list#hover)
+hover [](https://developers.google.com/style/word-list.md.txt#hover)
 :
-    Don't use. Instead use [*hold the pointer over*](https://developers.google.com/style/word-list#hold-the-pointer-over).
+    Don't use. Instead use [*hold the pointer over*](https://developers.google.com/style/word-list.md.txt#hold-the-pointer-over).
 
-HTTPS [](https://developers.google.com/style/word-list#https)
+HTTPS [](https://developers.google.com/style/word-list.md.txt#https)
 :   Not *HTTPs*.
 
 ### I
 
-IaaS [](https://developers.google.com/style/word-list#iaas)
+IaaS [](https://developers.google.com/style/word-list.md.txt#iaas)
 :
     Write out on first mention: *infrastructure as a service (IaaS)*.
 
-IAM [](https://developers.google.com/style/word-list#iam)
+IAM [](https://developers.google.com/style/word-list.md.txt#iam)
 :
     When referring to the Google Cloud product, spell it out on first use:
     *Identity and Access Management (IAM)*.
@@ -2071,32 +2071,32 @@ IAM [](https://developers.google.com/style/word-list#iam)
     granting the right individuals access to the right resources for the
     right reasons.
 
-ID [](https://developers.google.com/style/word-list#id)
+ID [](https://developers.google.com/style/word-list.md.txt#id)
 :   Not *Id* or *id,* except in string literals or enums.
 :
     In some contexts, it's best to spell out as *identifier* or
     *identification*.
 
-i.e. [](https://developers.google.com/style/word-list#ie)
+i.e. [](https://developers.google.com/style/word-list.md.txt#ie)
 :
     Don't use. Instead, use phrases like *that is*. Many people confuse
     *e.g.* and *i.e.*
 
-if [](https://developers.google.com/style/word-list#if)
+if [](https://developers.google.com/style/word-list.md.txt#if)
 :
-    Wondering whether to use *if* or *whether*? See [whether](https://developers.google.com/style/word-list#whether).
+    Wondering whether to use *if* or *whether*? See [whether](https://developers.google.com/style/word-list.md.txt#whether).
 :
     Although it is common in casual usage to omit the word *then* in *if...then*
     statements, you should include helper words like *then* in technical documentation. For
     more information, see
-    [Use clear, precise, and unambiguous language](https://developers.google.com/style/translation#clear-language).
+    [Use clear, precise, and unambiguous language](https://developers.google.com/style/translation.md.txt#clear-language).
 
-image [](https://developers.google.com/style/word-list#image)
+image [](https://developers.google.com/style/word-list.md.txt#image)
 :
     *Image* by itself doesn't localize well because of its many meanings. Consider adding
     context---for example, *disk image* or *container image*.
 
-impact [](https://developers.google.com/style/word-list#impact)
+impact [](https://developers.google.com/style/word-list.md.txt#impact)
 :
     Use only as a noun. Instead of writing that something *has an impact*, use the word *affect*.
 :
@@ -2109,23 +2109,23 @@ impact [](https://developers.google.com/style/word-list#impact)
     Not recommended: This issue impacts
     user experience.
 
-index [](https://developers.google.com/style/word-list#index)
+index [](https://developers.google.com/style/word-list.md.txt#index)
 :
     Use the plural *indexes* unless there is a domain-specific reason
     (for example, a mathematical or financial context) to use *indices*.
 
-ingest [](https://developers.google.com/style/word-list#ingest)
+ingest [](https://developers.google.com/style/word-list.md.txt#ingest)
 :
     Use *import*, *load*, or *copy* when referring to simple movement of data. Use
     *ingest* only when referring to such operations that also involve significant processing
     of the data.
 
-ingress [](https://developers.google.com/style/word-list#ingress)
+ingress [](https://developers.google.com/style/word-list.md.txt#ingress)
 :
     When referring to the networking term, use lowercase. When referring
     to the GKE term or API, capitalize *Ingress*.
 
-in order to [](https://developers.google.com/style/word-list#in-order-to)
+in order to [](https://developers.google.com/style/word-list.md.txt#in-order-to)
 :   Avoid *in order to*; instead, use *to*.
 :
     Use *in order to* when needed to clarify meaning or to make
@@ -2143,24 +2143,24 @@ in order to [](https://developers.google.com/style/word-list#in-order-to)
     Not recommended: The infrastructure
     is required to support search.
 
-inline [](https://developers.google.com/style/word-list#inline)
+inline [](https://developers.google.com/style/word-list.md.txt#inline)
 :
     One word as an adjective, *inline*, not *in line* or
     *in-line*.
 
-instance group [](https://developers.google.com/style/word-list#instance-group)
+instance group [](https://developers.google.com/style/word-list.md.txt#instance-group)
 :
     Don't abbreviate to *IG*. See also [managed instance
     group](https://developers.google.com/style/word-list#mig).
 
-intercluster [](https://developers.google.com/style/word-list#intercluster)
+intercluster [](https://developers.google.com/style/word-list.md.txt#intercluster)
 :   Use unhyphenated *intercluster*, not *inter-cluster*.
 
-interconnectAttachment [](https://developers.google.com/style/word-list#interconnect-attachment)
+interconnectAttachment [](https://developers.google.com/style/word-list.md.txt#interconnect-attachment)
 :
-    Use when referring to the API. Otherwise, use [*VLAN attachment*](https://developers.google.com/style/word-list#vlan).
+    Use when referring to the API. Otherwise, use [*VLAN attachment*](https://developers.google.com/style/word-list.md.txt#vlan).
 
-Interconnect connection [](https://developers.google.com/style/word-list#interconnect-connection)
+Interconnect connection [](https://developers.google.com/style/word-list.md.txt#interconnect-connection)
 :
     Only use *Interconnect connection* relative to a product as follows:
 
@@ -2179,7 +2179,7 @@ Interconnect connection [](https://developers.google.com/style/word-list#interco
 
 
 Interconnect connection location
-[](https://developers.google.com/style/word-list#interconnect-connection-location)
+[](https://developers.google.com/style/word-list.md.txt#interconnect-connection-location)
 :
     Only refer to an *Interconnect connection location* in context of a
     specific product, for example *CDN Interconnect*.
@@ -2187,45 +2187,45 @@ Interconnect connection location
 
 
 interconnect type
-[](https://developers.google.com/style/word-list#interconnect-type)
+[](https://developers.google.com/style/word-list.md.txt#interconnect-type)
 :
     Don't use. Instead, use *connection type*. Examples of connection
     types are a *dedicated connection* or a *connection provided by a service provider*.
 
-interface [](https://developers.google.com/style/word-list#interface)
+interface [](https://developers.google.com/style/word-list.md.txt#interface)
 :   OK to use as a noun.
 :
     Don't use as a verb. Instead, use *interact*, *talk*,
     *speak*, *communicate*, or other similar terms.
 
-internal DNS [](https://developers.google.com/style/word-list#internal-dns)
+internal DNS [](https://developers.google.com/style/word-list.md.txt#internal-dns)
 :
     Write *internal* all lowercase except at the beginning of a
     sentence, heading, or list item.
 
-Internationalized Domain Name (IDN) [](https://developers.google.com/style/word-list#idn)
+Internationalized Domain Name (IDN) [](https://developers.google.com/style/word-list.md.txt#idn)
 :
     Write out and capitalize each word on first use. OK to abbreviate as
     *IDN* after first use.
 
-internet [](https://developers.google.com/style/word-list#internet)
+internet [](https://developers.google.com/style/word-list.md.txt#internet)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-Internet Key Exchange (IKE) [](https://developers.google.com/style/word-list#ike)
+Internet Key Exchange (IKE) [](https://developers.google.com/style/word-list.md.txt#ike)
 :
     Write out and capitalize each word on first use. OK to abbreviate
     *IKE* after first use.
 
-I/O (see also [Google I/O](https://developers.google.com/style/word-list#google-io)) [](https://developers.google.com/style/word-list#io)
+I/O (see also [Google I/O](https://developers.google.com/style/word-list.md.txt#google-io)) [](https://developers.google.com/style/word-list.md.txt#io)
 :   Not *I-O* or *IO*.
 
-IoT [](https://developers.google.com/style/word-list#iot)
+IoT [](https://developers.google.com/style/word-list.md.txt#iot)
 :
     OK to use as an abbreviation for *Internet of Things*. Note
     the lowercase *o*.
 
-IPsec [](https://developers.google.com/style/word-list#ipsec)
+IPsec [](https://developers.google.com/style/word-list.md.txt#ipsec)
 :   Not *IPSec* or *IPSECShort*.
 :
     Short for *Internet Protocol Security*. No need to spell out on
@@ -2233,13 +2233,13 @@ IPsec [](https://developers.google.com/style/word-list#ipsec)
 
 ### J
 
-jank, janky [](https://developers.google.com/style/word-list#jank)
+jank, janky [](https://developers.google.com/style/word-list.md.txt#jank)
 :
     Use only to refer to a glitch or problem with graphics that is caused by a loss of data or
     inadequate refresh rate. Don't use otherwise. Use a less figurative term to refer to something
     of poor or unreliable quality.
 
-just [](https://developers.google.com/style/word-list#just)
+just [](https://developers.google.com/style/word-list.md.txt#just)
 :
     Avoid. Usually, *just* is a filler word that you can delete without
     affecting your meaning.
@@ -2272,42 +2272,42 @@ just [](https://developers.google.com/style/word-list#just)
 :
     Sometimes, *just* is useful for conveying that one approach is
     simpler than another. In those cases, use *just* instead of
-    [*simply*](https://developers.google.com/style/word-list#simple).
+    [*simply*](https://developers.google.com/style/word-list.md.txt#simple).
 :
     Recommended: Use the namespace ID
     `namespace:example-kind` or just `example-kind`.
 
 ### K
 
-k8s [](https://developers.google.com/style/word-list#k8s)
+k8s [](https://developers.google.com/style/word-list.md.txt#k8s)
 :   Don't use. Instead, use *Kubernetes*.
 
-KBps [](https://developers.google.com/style/word-list#kilobytes-per-second)
+KBps [](https://developers.google.com/style/word-list.md.txt#kilobytes-per-second)
 :
     Short for *kilobytes per second*. By convention, we don't use
-    *KB/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure).
+    *KB/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure.md.txt).
 
-Kbps [](https://developers.google.com/style/word-list#kbps)
+Kbps [](https://developers.google.com/style/word-list.md.txt#kbps)
 :
     Short for *kilobits per second*. By convention, we don't use
-    *Kb/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure).
+    *Kb/s*. For more information, see [Units of measurement](https://developers.google.com/style/units-of-measure.md.txt).
 
 
 kebab, kabob, kebab menu, kabob menu
-[](https://developers.google.com/style/word-list#kebab)
+[](https://developers.google.com/style/word-list.md.txt#kebab)
 :
     Don't use. Instead use the `aria-label` for that particular
     icon. For example,
     **More** . For more information, see
-    [Buttons and icons](https://developers.google.com/style/ui-elements#buttons).
+    [Buttons and icons](https://developers.google.com/style/ui-elements.md.txt#buttons).
 
 
 kebab case, kabob case, kebab-case,
 kabob-case
-[](https://developers.google.com/style/word-list#kebab-case)
+[](https://developers.google.com/style/word-list.md.txt#kebab-case)
 :   Don't use. Instead, use *dash-case*.
 
-key [](https://developers.google.com/style/word-list#key)
+key [](https://developers.google.com/style/word-list.md.txt#key)
 :
     Don't use as an adjective in the sense of *crucial* or
     *important*.
@@ -2316,21 +2316,21 @@ key [](https://developers.google.com/style/word-list#key)
     referring to on first mention, because there are many kinds of
     keys in technical contexts.
 
-key pair [](https://developers.google.com/style/word-list#key-pair)
+key pair [](https://developers.google.com/style/word-list.md.txt#key-pair)
 :
     A pair of keys, such as a public key and a private key. Contrast with
     *key-value pair*, which refers to a pairing that specifies a value
     for a variable (as in configuration files).
 
-key ring [](https://developers.google.com/style/word-list#key-ring)
+key ring [](https://developers.google.com/style/word-list.md.txt#key-ring)
 :
     Use instead of *keyring* (without the space) when referring to a
     grouping of Cloud KMS keys.
 
-key-value pair [](https://developers.google.com/style/word-list#key-value)
+key-value pair [](https://developers.google.com/style/word-list.md.txt#key-value)
 :   Use instead of *key/value pair* or *key value pair*.
 
-kill [](https://developers.google.com/style/word-list#kill)
+kill [](https://developers.google.com/style/word-list.md.txt#kill)
 :
     Avoid when possible. Instead, use words like *stop*, *exit*,
     *cancel*, or *end*. For exceptions to this rule, see
@@ -2339,12 +2339,12 @@ kill [](https://developers.google.com/style/word-list#kill)
 
 ### L
 
-lame [](https://developers.google.com/style/word-list#lame)
+lame [](https://developers.google.com/style/word-list.md.txt#lame)
 :
     Don't use. Instead, use precise, non-figurative language to refer to a
     deficiency in a component.
 
-later [](https://developers.google.com/style/word-list#later)
+later [](https://developers.google.com/style/word-list.md.txt#later)
 :   Use for a range of version numbers, not *higher*.
 :
     Recommended: Use version 2.2 or
@@ -2366,7 +2366,7 @@ later [](https://developers.google.com/style/word-list#later)
     When referring to a position in a document, use *later* or
     *following*, not *below*.
 
-latest [](https://developers.google.com/style/word-list#latest)
+latest [](https://developers.google.com/style/word-list.md.txt#latest)
 :
     Avoid in timeless documentation because this word can become outdated.
 :
@@ -2383,21 +2383,21 @@ latest [](https://developers.google.com/style/word-list#latest)
     the latest tools that help secure your system.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-learnings [](https://developers.google.com/style/word-list#learnings)
+learnings [](https://developers.google.com/style/word-list.md.txt#learnings)
 :
     Don't use. Instead, refer to *knowledge* or *things that you learned*.
 
-left-nav, right-nav [](https://developers.google.com/style/word-list#left-nav)
+left-nav, right-nav [](https://developers.google.com/style/word-list.md.txt#left-nav)
 :   Don't use directional language. For more information, see
-    [Writing accessible documentation](https://developers.google.com/style/accessibility).
+    [Writing accessible documentation](https://developers.google.com/style/accessibility.md.txt).
 :
-    If referring to applications, use *[navigation menu](https://developers.google.com/style/ui-elements#term-navigation-menu)*.
+    If referring to applications, use *[navigation menu](https://developers.google.com/style/ui-elements.md.txt#term-navigation-menu)*.
 :
     If referring to navigational elements for documentation, use *content navigation menu*.
 
-legacy [](https://developers.google.com/style/word-list#legacy)
+legacy [](https://developers.google.com/style/word-list.md.txt#legacy)
 :
     If possible, use a more precise term. If you do use *legacy*,
     include or point to a definition to clarify what you mean in the current
@@ -2406,7 +2406,7 @@ legacy [](https://developers.google.com/style/word-list#legacy)
 
 
 let's (as a contraction of *let us*)
-[](https://developers.google.com/style/word-list#lets)
+[](https://developers.google.com/style/word-list.md.txt#lets)
 :   Don't use if at all possible.
 :
     Not recommended: Let's click the
@@ -2414,24 +2414,24 @@ let's (as a contraction of *let us*)
 
 
 Letter of Authorization and Connecting Facility Assignment (LOA-CFA)
-[](https://developers.google.com/style/word-list#loa-cfa)
+[](https://developers.google.com/style/word-list.md.txt#loa-cfa)
 :
     Write out and capitalize each word on first use. OK to abbreviate as
     *LOA-CFA* after first use.
 
-leverage [](https://developers.google.com/style/word-list#leverage)
+leverage [](https://developers.google.com/style/word-list.md.txt#leverage)
 :
     Avoid using if you mean *use*. If possible, use a more precise term.
     For example, *use*, *build on*, or *take advantage of*.
 
-lifecycle [](https://developers.google.com/style/word-list#lifecycle)
+lifecycle [](https://developers.google.com/style/word-list.md.txt#lifecycle)
 :   Not *life cycle* or *life-cycle*.
 
-lift and shift [](https://developers.google.com/style/word-list#lift-and-shift)
+lift and shift [](https://developers.google.com/style/word-list.md.txt#lift-and-shift)
 :
-    See [rehost](https://developers.google.com/style/word-list#rehost).
+    See [rehost](https://developers.google.com/style/word-list.md.txt#rehost).
 
-like [](https://developers.google.com/style/word-list#like)
+like [](https://developers.google.com/style/word-list.md.txt#like)
 :
     It's OK to use *like* for either drawing comparisons (in the sense of *similar to*)
     or introducing examples (in the sense of *such as*).
@@ -2442,21 +2442,21 @@ like [](https://developers.google.com/style/word-list#like)
     Recommended: The new compression algorithm works like a
     dictionary encoder, replacing repeated strings with shorter codes.
 :
-    See also [such as](https://developers.google.com/style/word-list#such-as). For more information, see [Format examples](https://developers.google.com/style/format-examples).
+    See also [such as](https://developers.google.com/style/word-list.md.txt#such-as). For more information, see [Format examples](https://developers.google.com/style/format-examples.md.txt).
 
-limits [](https://developers.google.com/style/word-list#limits)
+limits [](https://developers.google.com/style/word-list.md.txt#limits)
 :
     In an API context, *limit* often refers to usage limits (number of
     queries allowed per second or per day). Where possible, specify the kind
     of limit that you mean, such as *usage limit* or *service limit*; the word *limit* can refer to many different kinds of
-    limits, including rules about acceptable use. See also [quota](https://developers.google.com/style/word-list#quota).
+    limits, including rules about acceptable use. See also [quota](https://developers.google.com/style/word-list.md.txt#quota).
 
-lint [](https://developers.google.com/style/word-list#lint)
+lint [](https://developers.google.com/style/word-list.md.txt#lint)
 :
     Write both command-line tool name and command in lowercase. Use code font
     except where inappropriate.
 
-little-endian [](https://developers.google.com/style/word-list#little-endian)
+little-endian [](https://developers.google.com/style/word-list.md.txt#little-endian)
 :   Hyphenate. Lowercase except at the beginning of a sentence,
     heading, or list item.
 :
@@ -2472,21 +2472,21 @@ little-endian [](https://developers.google.com/style/word-list#little-endian)
     Not recommended: The codebase assumes
     little endian byte ordering.
 
-livestream [](https://developers.google.com/style/word-list#livestream)
+livestream [](https://developers.google.com/style/word-list.md.txt#livestream)
 :   Not *live stream*.
 
-load balancing (noun), load-balancing (adjective) [](https://developers.google.com/style/word-list#load-balancing)
+load balancing (noun), load-balancing (adjective) [](https://developers.google.com/style/word-list.md.txt#load-balancing)
 :
     Spell as *load balancing* when used as a noun and as *load-balancing* when
     used as an adjective. See also [high availability (noun),
     high-availability (adjective)](https://developers.google.com/style/word-list#high-availability).
 
-lock screen [](https://developers.google.com/style/word-list#lock-screen)
+lock screen [](https://developers.google.com/style/word-list.md.txt#lock-screen)
 :
     Two words in Android contexts; not *lockscreen* or
     *lock-screen*.
 
-login (noun or adjective), log in (verb) [](https://developers.google.com/style/word-list#login)
+login (noun or adjective), log in (verb) [](https://developers.google.com/style/word-list.md.txt#login)
 :   For the verb form, *sign in* is generally better.
 :
     If you're documenting a tool that uses the term *log in*, then use
@@ -2494,70 +2494,70 @@ login (noun or adjective), log in (verb) [](https://developers.google.com/style/
 
 
 long press
-[](https://developers.google.com/style/word-list#long-press)
+[](https://developers.google.com/style/word-list.md.txt#long-press)
 :
     In Android documentation, don't use. Instead, use *touch \& hold*.
     (Not *touch and hold*.)
 
-long-running operation [](https://developers.google.com/style/word-list#lro)
+long-running operation [](https://developers.google.com/style/word-list.md.txt#lro)
 :   Not *long running operation*.
 :   OK to abbreviate as *LRO* after the first use.
 
-lower [](https://developers.google.com/style/word-list#lower)
+lower [](https://developers.google.com/style/word-list.md.txt#lower)
 :
-    Don't use for a range of version numbers. Instead, use [*earlier*](https://developers.google.com/style/word-list#earlier).
+    Don't use for a range of version numbers. Instead, use [*earlier*](https://developers.google.com/style/word-list.md.txt#earlier).
 :
     Don't use to refer to a position in a document. Instead, use *later*
     or *following*.
 :
     Don't use to refer to a position in the UI. Instead, write instructions
-    that avoid directional language. For more information, see [Writing accessible documentation](https://developers.google.com/style/accessibility).
+    that avoid directional language. For more information, see [Writing accessible documentation](https://developers.google.com/style/accessibility.md.txt).
 :
     In Android documentation, use
     *lower* for a range of version numbers, not *earlier*.
 
 ### M
 
-male adapter [](https://developers.google.com/style/word-list#male-adapter)
+male adapter [](https://developers.google.com/style/word-list.md.txt#male-adapter)
 :   Don't use. Instead, use a genderless word like *plug*.
 
 
 man hours, manhours, man-hours
-[](https://developers.google.com/style/word-list#man-hours)
+[](https://developers.google.com/style/word-list.md.txt#man-hours)
 :
     Avoid using gendered terms. Instead use terms like *person hours*.
 
-man-in-the-middle (MITM) [](https://developers.google.com/style/word-list#mitm)
+man-in-the-middle (MITM) [](https://developers.google.com/style/word-list.md.txt#mitm)
 :
     Avoid using gendered terms. Instead use terms like *on-path attacker* or *person-in-the-middle (PITM)*.
 
-managed instance group (MIG) [](https://developers.google.com/style/word-list#mig)
+managed instance group (MIG) [](https://developers.google.com/style/word-list.md.txt#mig)
 :
     OK to abbreviate to *MIG* on subsequent mention. See also
-    [instance group](https://developers.google.com/style/word-list#instance-group).
+    [instance group](https://developers.google.com/style/word-list.md.txt#instance-group).
 
-manmade, man made [](https://developers.google.com/style/word-list#manmade)
+manmade, man made [](https://developers.google.com/style/word-list.md.txt#manmade)
 :
     Avoid using gendered terms. Instead use a word like *artificial*,
     *manufactured*, or *synthetic*.
 
-manned [](https://developers.google.com/style/word-list#manned)
+manned [](https://developers.google.com/style/word-list.md.txt#manned)
 :
     Avoid using gendered terms. Instead use terms like *staffed* or
     *crewed*.
 
 
 manpower, man power, man-power
-[](https://developers.google.com/style/word-list#manpower)
+[](https://developers.google.com/style/word-list.md.txt#manpower)
 :
     Avoid using gendered terms. Instead use terms like *staff* or
     *workforce*.
 
-Markdown [](https://developers.google.com/style/word-list#markdown)
+Markdown [](https://developers.google.com/style/word-list.md.txt#markdown)
 :
     Always capitalized, even when you're referring to a nonstandard version.
 
-master [](https://developers.google.com/style/word-list#master)
+master [](https://developers.google.com/style/word-list.md.txt#master)
 :
     Use with caution. Never use in conjunction with *slave*. Where
     possible, replace *master* with a specific term that is accurate for
@@ -2575,19 +2575,19 @@ master [](https://developers.google.com/style/word-list#master)
 :
     If the command or code that you're documenting uses the literal word
     *master*, then use this word only in direct reference to the code
-    item ([formatted as code](https://developers.google.com/style/code-in-text)), make it clear
+    item ([formatted as code](https://developers.google.com/style/code-in-text.md.txt)), make it clear
     what you're referring to, and use the new term thereafter.
-:   See also [*slave*](https://developers.google.com/style/word-list#slave).
+:   See also [*slave*](https://developers.google.com/style/word-list.md.txt#slave).
 
-Material Design [](https://developers.google.com/style/word-list#material-design)
+Material Design [](https://developers.google.com/style/word-list.md.txt#material-design)
 :   Capitalize each word in *Material Design*.
 
-matrix [](https://developers.google.com/style/word-list#matrix)
+matrix [](https://developers.google.com/style/word-list.md.txt#matrix)
 :
     Use the plural *matrixes* unless there is a domain-specific reason
     (for example, a mathematical context) to use *matrices*.
 
-may [](https://developers.google.com/style/word-list#may)
+may [](https://developers.google.com/style/word-list.md.txt#may)
 :   In general, reserve for official policy or legal considerations.
 :
     To convey *possibility* , use *can* or *might*
@@ -2595,68 +2595,68 @@ may [](https://developers.google.com/style/word-list#may)
 :
     To convey *permission* , use *can* instead.
 :
-    See also [can](https://developers.google.com/style/word-list#can), [could](https://developers.google.com/style/word-list#could),
-    [might](https://developers.google.com/style/word-list#might), [must](https://developers.google.com/style/word-list#must),
-    [should](https://developers.google.com/style/word-list#should), and [would](https://developers.google.com/style/word-list#would).
+    See also [can](https://developers.google.com/style/word-list.md.txt#can), [could](https://developers.google.com/style/word-list.md.txt#could),
+    [might](https://developers.google.com/style/word-list.md.txt#might), [must](https://developers.google.com/style/word-list.md.txt#must),
+    [should](https://developers.google.com/style/word-list.md.txt#should), and [would](https://developers.google.com/style/word-list.md.txt#would).
 :
     For information about clarifying who's performing an action, see
-    [Active voice](https://developers.google.com/style/voice).
+    [Active voice](https://developers.google.com/style/voice.md.txt).
 
-MBps [](https://developers.google.com/style/word-list#megabytes-per-second)
+MBps [](https://developers.google.com/style/word-list.md.txt#megabytes-per-second)
 :
     Short for *megabytes per second*. By convention, we don't use
     *MB/s*. For more information, see
-    [Units of measurement](https://developers.google.com/style/units-of-measure).
+    [Units of measurement](https://developers.google.com/style/units-of-measure.md.txt).
 
-Mbps [](https://developers.google.com/style/word-list#mbps)
+Mbps [](https://developers.google.com/style/word-list.md.txt#mbps)
 :
     Short for *megabits per second*. By convention, we don't use
     *Mb/s*. For more information, see
-    [Units of measurement](https://developers.google.com/style/units-of-measure).
+    [Units of measurement](https://developers.google.com/style/units-of-measure.md.txt).
 
-media type [](https://developers.google.com/style/word-list#media-type)
+media type [](https://developers.google.com/style/word-list.md.txt#media-type)
 :
     In general, use the term [*media type*](https://www.iana.org/assignments/media-types/media-types.xhtml).
     In contexts where you need to refer to a *content type*---For example, if you mention
     the `Content-Type` HTTP header---it's okay to use *content type* instead, to avoid
     confusion. Don't use *MIME type*.
 
-meta\* [](https://developers.google.com/style/word-list#meta)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+meta\* [](https://developers.google.com/style/word-list.md.txt#meta)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-metafeed [](https://developers.google.com/style/word-list#metafeed)
+metafeed [](https://developers.google.com/style/word-list.md.txt#metafeed)
 :   Not *meta-feed*.
 
-metageneration [](https://developers.google.com/style/word-list#metageneration)
+metageneration [](https://developers.google.com/style/word-list.md.txt#metageneration)
 :   Not *meta-generation*.
 
-method [](https://developers.google.com/style/word-list#method)
+method [](https://developers.google.com/style/word-list.md.txt#method)
 :
     In programming contexts where *method* refers to a member of a class
     (as in Java), avoid also using the word generically to mean "approach" or
     "manner."
 
-metropolitan area (metro) [](https://developers.google.com/style/word-list#metro)
+metropolitan area (metro) [](https://developers.google.com/style/word-list.md.txt#metro)
 :
     In networking, a *metro* is a city where a colocation facility is
     located.
 
-microservices [](https://developers.google.com/style/word-list#microservices)
+microservices [](https://developers.google.com/style/word-list.md.txt#microservices)
 :   Not *Microservices* or *micro-services*.
 
-might [](https://developers.google.com/style/word-list#might)
+might [](https://developers.google.com/style/word-list.md.txt#might)
 :
     Use to convey possibility or an uncertain outcome (for example, "You
     might be prompted to enter your credentials").
 :
-    See also [can](https://developers.google.com/style/word-list#can), [could](https://developers.google.com/style/word-list#could),
-    [may](https://developers.google.com/style/word-list#may), [must](https://developers.google.com/style/word-list#must),
-    [should](https://developers.google.com/style/word-list#should), and [would](https://developers.google.com/style/word-list#would).
+    See also [can](https://developers.google.com/style/word-list.md.txt#can), [could](https://developers.google.com/style/word-list.md.txt#could),
+    [may](https://developers.google.com/style/word-list.md.txt#may), [must](https://developers.google.com/style/word-list.md.txt#must),
+    [should](https://developers.google.com/style/word-list.md.txt#should), and [would](https://developers.google.com/style/word-list.md.txt#would).
 :
     For information about clarifying who's performing an action, see
-    [Active voice](https://developers.google.com/style/voice).
+    [Active voice](https://developers.google.com/style/voice.md.txt).
 
-MIME type [](https://developers.google.com/style/word-list#mime-type)
+MIME type [](https://developers.google.com/style/word-list.md.txt#mime-type)
 :
     *MIME* stands for "Multipurpose Internet Mail Extensions," and was originally used to
     refer to email standards.
@@ -2664,49 +2664,49 @@ MIME type [](https://developers.google.com/style/word-list#mime-type)
     If you feel that might be ambiguous to an audience familiar with the term *MIME*,
     then you can write *media (MIME) type* for clarity.
 
-mobile [](https://developers.google.com/style/word-list#mobile)
+mobile [](https://developers.google.com/style/word-list.md.txt#mobile)
 :
     Don't use *mobile* as a standalone noun. Instead, specify
     *mobile phone*, or if you're talking about more than phones, then use
     *mobile device*.
 
-mobile data [](https://developers.google.com/style/word-list#mobile-data)
+mobile data [](https://developers.google.com/style/word-list.md.txt#mobile-data)
 :   Use instead of *cellular data*.
 
-mobile device [](https://developers.google.com/style/word-list#mobile-device)
+mobile device [](https://developers.google.com/style/word-list.md.txt#mobile-device)
 :
     Use *mobile device* when you're referring to more than phones (for
     example, tablets and phones). It's OK to use *phone* (without
     *mobile*) when the context is clear.
 
-mobile network [](https://developers.google.com/style/word-list#mobile-network)
+mobile network [](https://developers.google.com/style/word-list.md.txt#mobile-network)
 :   Use instead of *cellular network*.
 
-mobile phone [](https://developers.google.com/style/word-list#mobile-phone)
+mobile phone [](https://developers.google.com/style/word-list.md.txt#mobile-phone)
 :
     If you're talking about more than phones, then use *mobile device*.
     It's OK to use *phone* (without *mobile*) when the context is
     clear.
 
-mom test [](https://developers.google.com/style/word-list#mom-test)
+mom test [](https://developers.google.com/style/word-list.md.txt#mom-test)
 :
     Don't use *mom test*, *grandmother test*, *grandma test*,
     or *girlfriend test*. Instead, use terms like *beginner user test* or *novice user test*.
 
-monkey, monkey test [](https://developers.google.com/style/word-list#monkey)
+monkey, monkey test [](https://developers.google.com/style/word-list.md.txt#monkey)
 :
     Don't use *monkey* to refer to people. When referring to tests, refer
     to the specific function. For example: *automated, random tests*.
 
-multi\* [](https://developers.google.com/style/word-list#multi)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+multi\* [](https://developers.google.com/style/word-list.md.txt#multi)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-multi-cluster [](https://developers.google.com/style/word-list#multi-cluster)
+multi-cluster [](https://developers.google.com/style/word-list.md.txt#multi-cluster)
 :
     Hyphenate. We generally prefer to close prefixed words, but this is an
     exception because it's an established term.
 
-multi-region, multi-regional [](https://developers.google.com/style/word-list#multi-region)
+multi-region, multi-regional [](https://developers.google.com/style/word-list.md.txt#multi-region)
 :
     Hyphenate when referring to a Google Cloud location that consists of more
     than one region.
@@ -2716,43 +2716,43 @@ multi-region, multi-regional [](https://developers.google.com/style/word-list#mu
     an attributive noun instead, such as in "The dataset is in the EU
     multi-region location." Use *multiregional* in other contexts.
 
-multi-service [](https://developers.google.com/style/word-list#multi-service)
+multi-service [](https://developers.google.com/style/word-list.md.txt#multi-service)
 :
     Hyphenate. We generally prefer to close prefixed words, but this is
     an exception because it's an established term.
 
-multi-tenancy [](https://developers.google.com/style/word-list#multi-tenancy)
+multi-tenancy [](https://developers.google.com/style/word-list.md.txt#multi-tenancy)
 :
     Hyphenate. We generally prefer to close prefixed words, but this is
     an exception because it's an established term.
 
-must [](https://developers.google.com/style/word-list#must)
+must [](https://developers.google.com/style/word-list.md.txt#must)
 :
     Use to describe a required action or state (for example, "You must have
     the Editor role"). You can also write *you need* in order to convey a
     requirement.
 :
-    See also [can](https://developers.google.com/style/word-list#can), [could](https://developers.google.com/style/word-list#could),
-    [may](https://developers.google.com/style/word-list#may), [might](https://developers.google.com/style/word-list#might),
-    [should](https://developers.google.com/style/word-list#should), and [would](https://developers.google.com/style/word-list#would).
+    See also [can](https://developers.google.com/style/word-list.md.txt#can), [could](https://developers.google.com/style/word-list.md.txt#could),
+    [may](https://developers.google.com/style/word-list.md.txt#may), [might](https://developers.google.com/style/word-list.md.txt#might),
+    [should](https://developers.google.com/style/word-list.md.txt#should), and [would](https://developers.google.com/style/word-list.md.txt#would).
 :
     For information about clarifying who's performing an action, see
-    [Active voice](https://developers.google.com/style/voice).
+    [Active voice](https://developers.google.com/style/voice.md.txt).
 
 ### N
 
-N/A [](https://developers.google.com/style/word-list#na)
+N/A [](https://developers.google.com/style/word-list.md.txt#na)
 :
     Not *NA*. Spell out as *not available* or *not applicable*
     on first reference.
 
-name server [](https://developers.google.com/style/word-list#name-server)
+name server [](https://developers.google.com/style/word-list.md.txt#name-server)
 :   Not *nameserver*.
 
-namespace [](https://developers.google.com/style/word-list#namespace)
+namespace [](https://developers.google.com/style/word-list.md.txt#namespace)
 :   Not *name space*.
 
-native [](https://developers.google.com/style/word-list#native)
+native [](https://developers.google.com/style/word-list.md.txt#native)
 :   Avoid using *native* to refer to people.
 :
     When referring to software products, try to use a more precise
@@ -2768,20 +2768,20 @@ native [](https://developers.google.com/style/word-list#native)
     *modern cloud*, *born in the cloud*, *cloud first*, and
     *cloud-born*.
 
-navigation bar [](https://developers.google.com/style/word-list#navigation-bar)
+navigation bar [](https://developers.google.com/style/word-list.md.txt#navigation-bar)
 :
     Don't use to refer to a *navigation menu*. For more information, see
-    [Navigation menu](https://developers.google.com/style/ui-elements#term-navigation-menu).
+    [Navigation menu](https://developers.google.com/style/ui-elements.md.txt#term-navigation-menu).
 
-neither [](https://developers.google.com/style/word-list#neither)
+neither [](https://developers.google.com/style/word-list.md.txt#neither)
 :   Write *neither A nor B*, not *neither A or B*.
 
 
 network IP address
-[](https://developers.google.com/style/word-list#network-ip-address)
+[](https://developers.google.com/style/word-list.md.txt#network-ip-address)
 :   Don't use. Instead, use *internal IP address*.
 
-new, newer [](https://developers.google.com/style/word-list#new)
+new, newer [](https://developers.google.com/style/word-list.md.txt#new)
 :
     Avoid in timeless documentation because this word can become outdated.
 :
@@ -2792,12 +2792,12 @@ new, newer [](https://developers.google.com/style/word-list#new)
     example, a version number or release date.
 :
     Don't use *newer* to refer to a specific version of a product.
-    Instead, use [*later*](https://developers.google.com/style/word-list#later). Make sure that you provide
+    Instead, use [*later*](https://developers.google.com/style/word-list.md.txt#later). Make sure that you provide
     a version number or release date by which to understand *later*.
 
 
     In Android documentation, use
-    [*higher*](https://developers.google.com/style/word-list#higher) instead of *later*.
+    [*higher*](https://developers.google.com/style/word-list.md.txt#higher) instead of *later*.
 
 :
     Recommended: The service's network
@@ -2807,18 +2807,18 @@ new, newer [](https://developers.google.com/style/word-list#new)
     new feature in the service, reports on network health.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-ninja [](https://developers.google.com/style/word-list#ninja)
+ninja [](https://developers.google.com/style/word-list.md.txt#ninja)
 :
     Don't use to refer to a person. Instead, use a term such as *expert*.
     OK to use in reference to companies, tools, software packages, and other
     entities that use the term in their names.
 
-non\* [](https://developers.google.com/style/word-list#non)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+non\* [](https://developers.google.com/style/word-list.md.txt#non)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-nonce [](https://developers.google.com/style/word-list#nonce)
+nonce [](https://developers.google.com/style/word-list.md.txt#nonce)
 :
     Use with caution: this term has a secondary slang meaning that can cause
     confusion for global readers. Always define the term on first use, and
@@ -2828,10 +2828,10 @@ nonce [](https://developers.google.com/style/word-list#nonce)
     In end-user documentation and other contexts, use a more descriptive
     phrase, such as *a number that will be used only once*.
 
-non-key [](https://developers.google.com/style/word-list#non-key)
+non-key [](https://developers.google.com/style/word-list.md.txt#non-key)
 :   An exception to our usual preference for closed forms.
 
-NoOps [](https://developers.google.com/style/word-list#noops)
+NoOps [](https://developers.google.com/style/word-list.md.txt#noops)
 :
     Don't use. Instead, use *fully managed*. If you must include the
     term, define it at first use with language such as *fully managed* or
@@ -2842,16 +2842,16 @@ NoOps [](https://developers.google.com/style/word-list#noops)
     [*no-op*](https://wikipedia.org/wiki/NOP_(code)) or the
     specific instruction name for your context.
 
-NoSQL [](https://developers.google.com/style/word-list#nosql)
+NoSQL [](https://developers.google.com/style/word-list.md.txt#nosql)
 :   Not *No-SQL* or *No SQL*.
 
 
 notification drawer
-[](https://developers.google.com/style/word-list#notification-drawer)
+[](https://developers.google.com/style/word-list.md.txt#notification-drawer)
 :   In Android contexts, don't hyphenate. Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-now [](https://developers.google.com/style/word-list#now)
+now [](https://developers.google.com/style/word-list.md.txt#now)
 :
     Avoid when describing features of products or services because this word
     is implied.
@@ -2868,36 +2868,36 @@ now [](https://developers.google.com/style/word-list#now)
     you use combinations of user properties.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-nuke [](https://developers.google.com/style/word-list#nuke)
+nuke [](https://developers.google.com/style/word-list.md.txt#nuke)
 :
     Don't use. Instead use *remove* or *attack*. For example, a
     *denial-of-service attack*.
 
 ### O
 
-OAuth 2.0 [](https://developers.google.com/style/word-list#oauth-20)
+OAuth 2.0 [](https://developers.google.com/style/word-list.md.txt#oauth-20)
 :   Not *OAuth 2*, *OAuth2*, or *Oauth*.
 
 
 off-the-shelf, commercial off-the-shelf
 (COTS)
-[](https://developers.google.com/style/word-list#off-the-shelf)
+[](https://developers.google.com/style/word-list.md.txt#off-the-shelf)
 :
     Use more widely understood terms like *ready-made*, *prebuilt*,
     *standard*, or *default*.
 
-old, older [](https://developers.google.com/style/word-list#old)
+old, older [](https://developers.google.com/style/word-list.md.txt#old)
 :
     Don't use to refer to a previous version of a product. Instead, use
-    [*earlier*](https://developers.google.com/style/word-list#earlier).
+    [*earlier*](https://developers.google.com/style/word-list.md.txt#earlier).
 :
     Make sure that you provide a version number by which to understand
     *earlier*.
 :
     In Android documentation, use
-    [*lower*](https://developers.google.com/style/word-list#lower) instead of *earlier*.
+    [*lower*](https://developers.google.com/style/word-list.md.txt#lower) instead of *earlier*.
 :
     Recommended: This functionality
     doesn't work in versions earlier than 1.17.0.
@@ -2906,16 +2906,16 @@ old, older [](https://developers.google.com/style/word-list#old)
     doesn't work in older versions.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-omnibox [](https://developers.google.com/style/word-list#omnibox)
+omnibox [](https://developers.google.com/style/word-list.md.txt#omnibox)
 :   Don't use. Instead, use *address bar*.
 
-once [](https://developers.google.com/style/word-list#once)
+once [](https://developers.google.com/style/word-list.md.txt#once)
 :
     If you mean *after*, then use *after* instead of *once*.
 
-on-premises [](https://developers.google.com/style/word-list#on-premises)
+on-premises [](https://developers.google.com/style/word-list.md.txt#on-premises)
 :
     Not *on prem*, *on premise*, or *on-premise*. Hyphenate
     when used as any part of speech.
@@ -2935,10 +2935,10 @@ on-premises [](https://developers.google.com/style/word-list#on-premises)
     OK: Moving data from on-premises to
     Google Cloud.
 
-OS [](https://developers.google.com/style/word-list#os)
+OS [](https://developers.google.com/style/word-list.md.txt#os)
 :   OK to use as a shortening of "operating system."
 
-outpost [](https://developers.google.com/style/word-list#outpost)
+outpost [](https://developers.google.com/style/word-list.md.txt#outpost)
 :   Don't use. Instead, use *channel*.
 :
     Recommended: social media channels
@@ -2946,61 +2946,61 @@ outpost [](https://developers.google.com/style/word-list#outpost)
 
 outside the box, out of the box,
 out-of-the-box
-[](https://developers.google.com/style/word-list#out)
+[](https://developers.google.com/style/word-list.md.txt#out)
 :   Avoid using in a figurative way. OK to use literally.
 
 
 overview
 screen
-[](https://developers.google.com/style/word-list#overview-screen)
+[](https://developers.google.com/style/word-list.md.txt#overview-screen)
 :
     In Android documentation, don't use. Instead, use *recents screen*.
 
 ### P
 
-PaaS [](https://developers.google.com/style/word-list#paas)
+PaaS [](https://developers.google.com/style/word-list.md.txt#paas)
 :   Write out on first mention: *platform as a service (PaaS)*.
 
-page [](https://developers.google.com/style/word-list#page)
+page [](https://developers.google.com/style/word-list.md.txt#page)
 
 :   Use *page* to refer to the following:
 
     - A whole web page, which can include text, images, links, banners, navigational panes, and other features.
-    - A sub-page of a [console](https://developers.google.com/style/word-list#console) in particular.
+    - A sub-page of a [console](https://developers.google.com/style/word-list.md.txt#console) in particular.
 
     See also
-    [documentation or document or documents](https://developers.google.com/style/word-list#documentation).
+    [documentation or document or documents](https://developers.google.com/style/word-list.md.txt#documentation).
 :
     Recommended: To refresh the page, press <kbd>F5</kbd>.
 
-parameter [](https://developers.google.com/style/word-list#parameter)
+parameter [](https://developers.google.com/style/word-list.md.txt#parameter)
 :
     In our API documentation, *parameter* is usually short for *query parameter*; it's a `NAME=VALUE` pair
     that's appended to a URL in an HTTP `GET` request. In some
     contexts, however, the term can have other meanings.
 
-parent-child or parent/child [](https://developers.google.com/style/word-list#parent-child)
+parent-child or parent/child [](https://developers.google.com/style/word-list.md.txt#parent-child)
 :   Not *parent -- child* or *parent---child*.
 
-path [](https://developers.google.com/style/word-list#path)
+path [](https://developers.google.com/style/word-list.md.txt#path)
 :
     Avoid using *filepath*, *file path*, *pathname*, or *path name* if possible.
 
-peer gateway [](https://developers.google.com/style/word-list#peer-gateway)
+peer gateway [](https://developers.google.com/style/word-list.md.txt#peer-gateway)
 :
     Don't use *on-premises gateway* when you mean a *peer gateway*.
     A peer gateway can be an on-premises device or service or another cloud
     gateway.
 
-peer network [](https://developers.google.com/style/word-list#peer-network)
+peer network [](https://developers.google.com/style/word-list.md.txt#peer-network)
 :
     Don't use *on-premises network* when you mean a *peer network*.
     A peer network can be an on-premises network or another cloud network.
 
-peering zone [](https://developers.google.com/style/word-list#peering-zone)
+peering zone [](https://developers.google.com/style/word-list.md.txt#peering-zone)
 :   Not *peer zone*.
 
-per [](https://developers.google.com/style/word-list#per)
+per [](https://developers.google.com/style/word-list.md.txt#per)
 :
     To express a rate, use *per* instead of the division slash (/),
     unless space constraints require the use of the slash. For more
@@ -3028,7 +3028,7 @@ per [](https://developers.google.com/style/word-list#per)
 :
     Not recommended: as per your request
 
-performant [](https://developers.google.com/style/word-list#performant)
+performant [](https://developers.google.com/style/word-list.md.txt#performant)
 :   Avoid where possible. Instead, use a more precise term.
 :
     Recommended: an accurate machine
@@ -3037,10 +3037,10 @@ performant [](https://developers.google.com/style/word-list#performant)
     Not recommended: a performant machine
     learning model
 
-persist [](https://developers.google.com/style/word-list#persist)
+persist [](https://developers.google.com/style/word-list.md.txt#persist)
 :
     Don't use as a transitive verb. It's best to avoid using as a verb at all,
-    especially in [passive voice](https://developers.google.com/style/voice).
+    especially in [passive voice](https://developers.google.com/style/voice.md.txt).
 :
     Recommended: To make the token
     persistent ...
@@ -3053,11 +3053,11 @@ persist [](https://developers.google.com/style/word-list#persist)
     Not recommended: To persist the token
     ...
 
-persistent disk [](https://developers.google.com/style/word-list#persistent-disk)
+persistent disk [](https://developers.google.com/style/word-list.md.txt#persistent-disk)
 :   Not *PD*.
 :   Lowercase except at the start of a sentence.
 
-personally identifiable information (PII) [](https://developers.google.com/style/word-list#pii)
+personally identifiable information (PII) [](https://developers.google.com/style/word-list.md.txt#pii)
 :
     Some government agencies use the less common term *personally identifying information*; use this alternate term only in contexts
     where you're referring to a document that uses this term.
@@ -3065,19 +3065,19 @@ personally identifiable information (PII) [](https://developers.google.com/style
 
 pets versus cattle, pets vs. cattle, pets
 v. cattle
-[](https://developers.google.com/style/word-list#pets-versus-cattle)
+[](https://developers.google.com/style/word-list.md.txt#pets-versus-cattle)
 :
     Don't use. Instead, use more precise terms like *persistent versus dynamic* or *manually configured versus automated*. For more
     information, see
     [Avoid
     figurative language](https://developers.google.com/style/inclusive-documentation#figurative-language).
 
-plain text [](https://developers.google.com/style/word-list#plain-text)
+plain text [](https://developers.google.com/style/word-list.md.txt#plain-text)
 :
     In most contexts, use *plain text*, but use *plaintext* in a
     cryptography context.
 
-please [](https://developers.google.com/style/word-list#please)
+please [](https://developers.google.com/style/word-list.md.txt#please)
 :
     Don't use *please* in the normal course of explaining how to use a
     product, even if you're explaining a difficult task.
@@ -3091,19 +3091,19 @@ please [](https://developers.google.com/style/word-list#please)
     please contact your account representative.
 :
     For more information, see
-    [voice and tone](https://developers.google.com/style/tone#politeness).
+    [voice and tone](https://developers.google.com/style/tone.md.txt#politeness).
 
-plugin (noun), plug-in (adjective), plug in (verb) [](https://developers.google.com/style/word-list#plugin)
+plugin (noun), plug-in (adjective), plug in (verb) [](https://developers.google.com/style/word-list.md.txt#plugin)
 :
     Use the noun form *plugin* when referring to the software component. Use the adjective
     form *plug-in* when referring to the action of installing a software component. Use the
     verb form *plug in* when you're describing the process of installing a software
     component.
 
-PM [](https://developers.google.com/style/word-list#pm)
-:   See [AM, PM](https://developers.google.com/style/word-list#am-pm).
+PM [](https://developers.google.com/style/word-list.md.txt#pm)
+:   See [AM, PM](https://developers.google.com/style/word-list.md.txt#am-pm).
 
-point to [](https://developers.google.com/style/word-list#point-to)
+point to [](https://developers.google.com/style/word-list.md.txt#point-to)
 :
     Use to refer to the action of pointing the mouse pointer (focus). This
     action doesn't imply a length of time waiting for the UI to react to user
@@ -3114,12 +3114,12 @@ point to [](https://developers.google.com/style/word-list#point-to)
     phrase *hold the pointer over* if you want the user to wait for the
     UI to react.
 
-POJO [](https://developers.google.com/style/word-list#pojo)
+POJO [](https://developers.google.com/style/word-list.md.txt#pojo)
 :
     If you're not actually writing about a Plain Old Java Object for a Java
     audience, use *simple object*. You can write *a simple object, similar to a POJO in Java* if that helps your audience.
 
-PoP [](https://developers.google.com/style/word-list#pop)
+PoP [](https://developers.google.com/style/word-list.md.txt#pop)
 :   Acronym for *point of presence*.
 :
     Recommended: point of presence (PoP)
@@ -3127,16 +3127,16 @@ PoP [](https://developers.google.com/style/word-list#pop)
     Not recommended: point of presence
     (POP)
 
-pop-up, popup [](https://developers.google.com/style/word-list#pop-up)
+pop-up, popup [](https://developers.google.com/style/word-list.md.txt#pop-up)
 :   Don't use.
 :
     To describe a window that appears and asks for, or presents, additional
-    information, use [*dialog*](https://developers.google.com/style/word-list#dialog).
+    information, use [*dialog*](https://developers.google.com/style/word-list.md.txt#dialog).
 :
     To describe a menu that rises from an interface (such as a right-click
     context menu), use *menu*.
 
-populate [](https://developers.google.com/style/word-list#populate)
+populate [](https://developers.google.com/style/word-list.md.txt#populate)
 :
     OK to use if you're writing about a process populating a table or other
     entity. If you're writing about a person, use *fill in*.
@@ -3150,30 +3150,30 @@ populate [](https://developers.google.com/style/word-list#populate)
     Not recommended: When you have
     finished populating the form ...
 
-port [](https://developers.google.com/style/word-list#port)
+port [](https://developers.google.com/style/word-list.md.txt#port)
 :   Use *listen on* (not *to*).
 
-portal [](https://developers.google.com/style/word-list#portal)
+portal [](https://developers.google.com/style/word-list.md.txt#portal)
 :
     Don't use to refer to the Google Cloud console. For more information, see
-    [console](https://developers.google.com/style/word-list#console).
+    [console](https://developers.google.com/style/word-list.md.txt#console).
 
-possible [](https://developers.google.com/style/word-list#possible)
+possible [](https://developers.google.com/style/word-list.md.txt#possible)
 :
     Don't use *possible* or *impossible* to mean *you can* or
     *you can't*.
 
-PostgreSQL [](https://developers.google.com/style/word-list#postgresql)
+PostgreSQL [](https://developers.google.com/style/word-list.md.txt#postgresql)
 :
     If the UI uses the name *Postgres*, it's OK to match the UI. Don't
     use *PostgreSQL*.
 
-postmortem [](https://developers.google.com/style/word-list#postmortem)
+postmortem [](https://developers.google.com/style/word-list.md.txt#postmortem)
 :   Avoid in general usage. Instead, use *retrospective*.
 :
     In disaster recovery (DR) and DevOps contexts, use *blameless postmortem*.
 
-practitioner [](https://developers.google.com/style/word-list#practitioner)
+practitioner [](https://developers.google.com/style/word-list.md.txt#practitioner)
 :
     Avoid using without any supporting information to define the roles that
     you're referring to.
@@ -3185,40 +3185,40 @@ practitioner [](https://developers.google.com/style/word-list#practitioner)
     Not recommended: The framework
     describes best practices for cloud practitioners.
 
-pre\* [](https://developers.google.com/style/word-list#pre)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+pre\* [](https://developers.google.com/style/word-list.md.txt#pre)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-prebuilt [](https://developers.google.com/style/word-list#prebuilt)
+prebuilt [](https://developers.google.com/style/word-list.md.txt#prebuilt)
 :   Not *pre-built*.
 
-precapture [](https://developers.google.com/style/word-list#precapture)
+precapture [](https://developers.google.com/style/word-list.md.txt#precapture)
 :   Not *pre-capture*.
 
-preemptible [](https://developers.google.com/style/word-list#preemptible)
+preemptible [](https://developers.google.com/style/word-list.md.txt#preemptible)
 :   Not *pre-emptible* or *pre-emptive*.
 
-pre-existing [](https://developers.google.com/style/word-list#pre-existing)
+pre-existing [](https://developers.google.com/style/word-list.md.txt#pre-existing)
 :   Not *preexisting*.
 
 
 preferred pronouns
-[](https://developers.google.com/style/word-list#preferred-pronouns)
+[](https://developers.google.com/style/word-list.md.txt#preferred-pronouns)
 :   Don't use. Instead, use *pronouns*.
 
-prerecorded [](https://developers.google.com/style/word-list#prerecorded)
+prerecorded [](https://developers.google.com/style/word-list.md.txt#prerecorded)
 :   Not *pre-recorded*.
 
-pre-shared key [](https://developers.google.com/style/word-list#pre-shared-key)
+pre-shared key [](https://developers.google.com/style/word-list.md.txt#pre-shared-key)
 :   Not *preshared key*.
 
-presently, at present [](https://developers.google.com/style/word-list#presently)
+presently, at present [](https://developers.google.com/style/word-list.md.txt#presently)
 :
     Avoid because this word or phrase is implied. The word or phrase can also
     prematurely disclose product or feature strategy or inappropriately imply
     that a product or feature might change.
 :
-    See also [as of this writing](https://developers.google.com/style/word-list#as-of-this-writing) and
-    [currently](https://developers.google.com/style/word-list#currently).
+    See also [as of this writing](https://developers.google.com/style/word-list.md.txt#as-of-this-writing) and
+    [currently](https://developers.google.com/style/word-list.md.txt#currently).
 :
     Recommended: This setting is required.
 :
@@ -3226,9 +3226,9 @@ presently, at present [](https://developers.google.com/style/word-list#presently
     setting is required.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-press [](https://developers.google.com/style/word-list#press)
+press [](https://developers.google.com/style/word-list.md.txt#press)
 :
     Use when referring to pressing a key or a key combination to cause an
     action to occur. Also use for mechanical buttons.
@@ -3237,20 +3237,20 @@ press [](https://developers.google.com/style/word-list#press)
     Recommended: Press
     <kbd>Control+C</kbd> (or <kbd>Command+C</kbd> on macOS).
 
-presubmit [](https://developers.google.com/style/word-list#presubmit)
+presubmit [](https://developers.google.com/style/word-list.md.txt#presubmit)
 :   Not *pre-submit*.
 
-primitive [](https://developers.google.com/style/word-list#primitive)
+primitive [](https://developers.google.com/style/word-list.md.txt#primitive)
 :
     Use with caution. Don't use *primitive* in a disparaging sense.
 
-project [](https://developers.google.com/style/word-list#project)
+project [](https://developers.google.com/style/word-list.md.txt#project)
 :
     In Google Cloud documentation, use *Google Cloud project* on first
     mention and in any context in which there might be ambiguity about what
     kind of project you're referring to.
 
-proper, properly [](https://developers.google.com/style/word-list#proper)
+proper, properly [](https://developers.google.com/style/word-list.md.txt#proper)
 :
     Avoid *proper* and *properly*, which are vague and can imply subjective judgments of
     correctness or superiority. Instead, focus on describing the technical details. For more
@@ -3262,18 +3262,18 @@ proper, properly [](https://developers.google.com/style/word-list#proper)
 :
     Not recommended: Ensure the port is properly configured.
 
-pros [](https://developers.google.com/style/word-list#pros)
+pros [](https://developers.google.com/style/word-list.md.txt#pros)
 :
     Don't use. Instead, use a more precise term, such as *advantages*.
 
 ### Q
 
-quick, quickly [](https://developers.google.com/style/word-list#quick)
+quick, quickly [](https://developers.google.com/style/word-list.md.txt#quick)
 :
     What might be quick for you might not be quick for others. Try eliminating this word from the
-    sentence. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
+    sentence. For more information, see [Use precise, objective language](https://developers.google.com/style/inclusive-documentation.md.txt#subjective-language).
 
-quota [](https://developers.google.com/style/word-list#quota)
+quota [](https://developers.google.com/style/word-list.md.txt#quota)
 :
     In API contexts, often refers to API usage limits. Where possible, it's
     best to use a more specific term, such as *usage limit*; the word
@@ -3284,21 +3284,21 @@ quota [](https://developers.google.com/style/word-list#quota)
 
 ### R
 
-RDP [](https://developers.google.com/style/word-list#rdp)
+RDP [](https://developers.google.com/style/word-list.md.txt#rdp)
 :
     Don't use as a verb. Instead, use *connect using RDP*. If it's
     clear from context that they're using RDP, it's OK to use *connect*.
 
-re\* [](https://developers.google.com/style/word-list#re)
-:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens#prefixes).
+re\* [](https://developers.google.com/style/word-list.md.txt#re)
+:   See [guidance about hyphens with prefixes](https://developers.google.com/style/hyphens.md.txt#prefixes).
 
-read-only [](https://developers.google.com/style/word-list#read-only)
+read-only [](https://developers.google.com/style/word-list.md.txt#read-only)
 :   Not *read only*. Always hyphenate *read-only*.
 
-recents screen [](https://developers.google.com/style/word-list#recents-screen)
+recents screen [](https://developers.google.com/style/word-list.md.txt#recents-screen)
 :   In Android contexts, use instead of *overview screen*.
 
-redline [](https://developers.google.com/style/word-list#redline)
+redline [](https://developers.google.com/style/word-list.md.txt#redline)
 :
     Don't use as a verb. Instead, use precise terms appropriate to the
     context.
@@ -3309,10 +3309,10 @@ redline [](https://developers.google.com/style/word-list#redline)
     In the context of setting priorities and planning work, refer to those
     actions or to *priority lining*.
 
-regex [](https://developers.google.com/style/word-list#regex)
+regex [](https://developers.google.com/style/word-list.md.txt#regex)
 :   Don't use. Instead, use *regular expression*.
 
-rehost [](https://developers.google.com/style/word-list#lift-and-shift)
+rehost [](https://developers.google.com/style/word-list.md.txt#lift-and-shift)
 :
     Use to describe the migration of an app or workload with no changes or
     minimal changes to that app or workload. Also known as *lift and shift*. For more
@@ -3329,12 +3329,12 @@ rehost [](https://developers.google.com/style/word-list#lift-and-shift)
 :
     Don't use *the forklift approach*.
 
-repo [](https://developers.google.com/style/word-list#repo)
+repo [](https://developers.google.com/style/word-list.md.txt#repo)
 :   Don't use. Instead, use *repository*.
 
 
 Representational State Transfer
-[](https://developers.google.com/style/word-list#rest)
+[](https://developers.google.com/style/word-list.md.txt#rest)
 :
     Don't use. To people unfamiliar with REST, this acronym expansion is
     meaningless; it's better to refer to it as REST and not explain what it
@@ -3342,28 +3342,28 @@ Representational State Transfer
 
 
 reservation, off the
-[](https://developers.google.com/style/word-list#reservation)
+[](https://developers.google.com/style/word-list.md.txt#reservation)
 :   Don't use.
 
-resource record set [](https://developers.google.com/style/word-list#resource-record-set)
+resource record set [](https://developers.google.com/style/word-list.md.txt#resource-record-set)
 :   Not *resource recordset*.
 
-retarded [](https://developers.google.com/style/word-list#retarded)
+retarded [](https://developers.google.com/style/word-list.md.txt#retarded)
 :
     Don't use. If you are referring to a system or component being slowed,
     use the word *slowed*.
 
-retriable, triable [](https://developers.google.com/style/word-list#retriable)
+retriable, triable [](https://developers.google.com/style/word-list.md.txt#retriable)
 :
     Don't use *retriable* or *triable*, unless a code item uses that
     spelling. Outside of code font, write around the term.
 
-retryable, tryable [](https://developers.google.com/style/word-list#retryable)
+retryable, tryable [](https://developers.google.com/style/word-list.md.txt#retryable)
 :
     Where possible, write around *retryable* and *tryable*. For
     example, write out *you can try it again* or *can be tried again*.
 
-review [](https://developers.google.com/style/word-list#review)
+review [](https://developers.google.com/style/word-list.md.txt#review)
 :
     If you mean "read, potentially for the first time," then use *read*
     instead of *review*.
@@ -3373,26 +3373,26 @@ review [](https://developers.google.com/style/word-list#review)
     Avoid using phrasing like "If you've never heard of OAuth, then review the
     OAuth documentation."
 
-RFC [](https://developers.google.com/style/word-list#rfc)
+RFC [](https://developers.google.com/style/word-list.md.txt#rfc)
 :
     When referencing an RFC specification, use a space between *RFC* and
     the number (for example, *RFC 2318*).
 
-roll out [](https://developers.google.com/style/word-list#roll-out)
+roll out [](https://developers.google.com/style/word-list.md.txt#roll-out)
 :
     Don't use to mean a sudden or instantaneous launch. If you use *roll out*, define what you mean. When possible, use a more precise,
     non-figurative term like *gradual*, *in stages*, *phases*,
     or *progressive*.
 
-RTFM [](https://developers.google.com/style/word-list#rtfm)
+RTFM [](https://developers.google.com/style/word-list.md.txt#rtfm)
 :
     Don't use. Instead, use a more precise phrase like "For more information,
     see ...."
 
-runbook [](https://developers.google.com/style/word-list#runbook)
+runbook [](https://developers.google.com/style/word-list.md.txt#runbook)
 :   Not *run book*.
 
-runtime, run time [](https://developers.google.com/style/word-list#runtime)
+runtime, run time [](https://developers.google.com/style/word-list.md.txt#runtime)
 :
     Use the noun *runtime* when referring to the environment in which
     software runs, such as a Ruby or Java runtime.
@@ -3411,23 +3411,23 @@ runtime, run time [](https://developers.google.com/style/word-list#runtime)
 
 ### S
 
-SaaS [](https://developers.google.com/style/word-list#saas)
+SaaS [](https://developers.google.com/style/word-list.md.txt#saas)
 :   Write out on first mention: *software as a service (SaaS)*.
 
-sane [](https://developers.google.com/style/word-list#sane)
+sane [](https://developers.google.com/style/word-list.md.txt#sane)
 :   Don't use. Instead use a word like *valid* or *sensible*.
 
-sanity check [](https://developers.google.com/style/word-list#sanity-check)
+sanity check [](https://developers.google.com/style/word-list.md.txt#sanity-check)
 :
     Don't use. Instead, use a term like *quick check*, *confidence check*, *preliminary check* or *coherence check*.
 
-SAP [](https://developers.google.com/style/word-list#sap)
+SAP [](https://developers.google.com/style/word-list.md.txt#sap)
 :
     Pronounced as the individual letters *S*, *A*, *P*, so
     write *an SAP system*, not *a SAP system*. For more information, see
-    [Indefinite articles before abbreviations](https://developers.google.com/style/abbreviations#articles).
+    [Indefinite articles before abbreviations](https://developers.google.com/style/abbreviations.md.txt#articles).
 
-scale [](https://developers.google.com/style/word-list#scale)
+scale [](https://developers.google.com/style/word-list.md.txt#scale)
 :
     Don't use *scale* alone to say that something is large or increasing.
     Include supporting words to indicate magnitude or direction of change in
@@ -3447,34 +3447,34 @@ scale [](https://developers.google.com/style/word-list#scale)
     Not recommended: The system scales
     quickly.
 
-screenshot (noun) [](https://developers.google.com/style/word-list#screenshot)
+screenshot (noun) [](https://developers.google.com/style/word-list.md.txt#screenshot)
 :   Not *screen shot* or *screensnap*.
 :   Don't use as a verb; instead, use *take a screenshot*.
 
-scroll [](https://developers.google.com/style/word-list#scroll)
+scroll [](https://developers.google.com/style/word-list.md.txt#scroll)
 :
     OK to use *scroll* as a verb, but if possible, instead use a term
     that isn't specific to implementation. For example, write *go to the section*, instead of *scroll to the section*.
 :
     If you use *scroll*, don't use directional language
     like *scroll up*. For more information, see
-    [Accessibility](https://developers.google.com/style/accessibility#document-rendering).
+    [Accessibility](https://developers.google.com/style/accessibility.md.txt#document-rendering).
 
-Search (as part of product name) [](https://developers.google.com/style/word-list#search)
+Search (as part of product name) [](https://developers.google.com/style/word-list.md.txt#search)
 :
     Capitalize *Search* when referring to a product like Google Search.
 
-Search Console [](https://developers.google.com/style/word-list#search-console)
+Search Console [](https://developers.google.com/style/word-list.md.txt#search-console)
 :   Capitalize each word in *Search Console*.
 
-see [](https://developers.google.com/style/word-list#see)
+see [](https://developers.google.com/style/word-list.md.txt#see)
 :
     OK as a general term and when referring to links and cross-references. Our
     research indicates that language relating to sight is OK for a wide range
     of readers. For more information, see
-    [Cross-references and linking](https://developers.google.com/style/cross-references).
+    [Cross-references and linking](https://developers.google.com/style/cross-references.md.txt).
 
-select [](https://developers.google.com/style/word-list#select)
+select [](https://developers.google.com/style/word-list.md.txt#select)
 :
     Use to describe choosing an item from among multiple options, selecting
     text, or marking a checkbox.
@@ -3485,61 +3485,61 @@ select [](https://developers.google.com/style/word-list#select)
     Not recommended: Check
     **Automatically check for updates**.
 
-sensitive [](https://developers.google.com/style/word-list#sensitive)
+sensitive [](https://developers.google.com/style/word-list.md.txt#sensitive)
 :
     *Sensitive* data is data for which the release might be harmful. See
-    [confidential](https://developers.google.com/style/word-list#confidential).
+    [confidential](https://developers.google.com/style/word-list.md.txt#confidential).
 
-service [](https://developers.google.com/style/word-list#service)
+service [](https://developers.google.com/style/word-list.md.txt#service)
 :
     It's OK to refer to Google products, such as Google Kubernetes Engine or
     Compute Engine, as *services*. However, if the term *services*
     leads to ambiguity, then use the product names.
 
-service level agreement [](https://developers.google.com/style/word-list#service-level-agreement)
+service level agreement [](https://developers.google.com/style/word-list.md.txt#service-level-agreement)
 :   Lowercase when referring to service level agreements in general.
 :
     It's OK to use title case (*Service Level Agreement*) when referring
     to a specific document.
 :   OK to abbreviate as *SLA* after first use.
 
-service level indicator [](https://developers.google.com/style/word-list#service-level-indicator)
+service level indicator [](https://developers.google.com/style/word-list.md.txt#service-level-indicator)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 :   OK to abbreviate as *SLI* after first use.
 
-service level objective [](https://developers.google.com/style/word-list#service-level-objective)
+service level objective [](https://developers.google.com/style/word-list.md.txt#service-level-objective)
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 :   OK to abbreviate as *SLO* after first use.
 
-setup (noun or adjective), set up (verb) [](https://developers.google.com/style/word-list#setup)
-sexy [](https://developers.google.com/style/word-list#sexy)
+setup (noun or adjective), set up (verb) [](https://developers.google.com/style/word-list.md.txt#setup)
+sexy [](https://developers.google.com/style/word-list.md.txt#sexy)
 :
     Don't use. Instead, use precise, positive words, such as *fast*,
     *powerful*, or *elegant*.
 
-SHA-1 [](https://developers.google.com/style/word-list#sha-1)
+SHA-1 [](https://developers.google.com/style/word-list.md.txt#sha-1)
 :
     Not *SHA1*, except in string literals/enums and in hyphenated phrases
     such as *HSA-SHA1*.
 
-shall [](https://developers.google.com/style/word-list#shall)
+shall [](https://developers.google.com/style/word-list.md.txt#shall)
 :
     Avoid *shall* except under advice from a lawyer. For more
-    information, see [should](https://developers.google.com/style/word-list#should).
+    information, see [should](https://developers.google.com/style/word-list.md.txt#should).
 
-she, her, hers [](https://developers.google.com/style/word-list#she)
+she, her, hers [](https://developers.google.com/style/word-list.md.txt#she)
 :
     Don't use a gendered pronoun except for a specific individual of known
     gender. Use *they* and *their* for the general singular pronoun.
 
-sherpa [](https://developers.google.com/style/word-list#sherpa)
+sherpa [](https://developers.google.com/style/word-list.md.txt#sherpa)
 :
     If possible, use a more precise term. For example, if you mean
     *guide*, use that term.
 
-shift left [](https://developers.google.com/style/word-list#shift-left)
+shift left [](https://developers.google.com/style/word-list.md.txt#shift-left)
 :
     In general, avoid using this term to mean moving something earlier in
     time. Instead, use a less figurative phrase, such as *shift earlier*
@@ -3549,56 +3549,56 @@ shift left [](https://developers.google.com/style/word-list#shift-left)
     It's OK to use *shift left* and *shift right* in the context of
     binary multiplication and division.
 
-should, should be [](https://developers.google.com/style/word-list#should)
+should, should be [](https://developers.google.com/style/word-list.md.txt#should)
 :   Generally avoid.
 :
     Because *should* is ambiguous by definition, it can be problematic. For more information
     and alternatives, see
-    [Word choice for recommendations and requirements](https://developers.google.com/style/prescriptive-documentation#word-choice).
+    [Word choice for recommendations and requirements](https://developers.google.com/style/prescriptive-documentation.md.txt#word-choice).
 :
-    See also [can](https://developers.google.com/style/word-list#can), [could](https://developers.google.com/style/word-list#could),
-    [may](https://developers.google.com/style/word-list#may), [might](https://developers.google.com/style/word-list#might),
-    [must](https://developers.google.com/style/word-list#must), and [would](https://developers.google.com/style/word-list#would).
+    See also [can](https://developers.google.com/style/word-list.md.txt#can), [could](https://developers.google.com/style/word-list.md.txt#could),
+    [may](https://developers.google.com/style/word-list.md.txt#may), [might](https://developers.google.com/style/word-list.md.txt#might),
+    [must](https://developers.google.com/style/word-list.md.txt#must), and [would](https://developers.google.com/style/word-list.md.txt#would).
 
-sign-in (noun or adjective), sign in (verb) [](https://developers.google.com/style/word-list#sign-in)
+sign-in (noun or adjective), sign in (verb) [](https://developers.google.com/style/word-list.md.txt#sign-in)
 :   Not *log in* or *signin*.
 
-sign into [](https://developers.google.com/style/word-list#sign-into)
+sign into [](https://developers.google.com/style/word-list.md.txt#sign-into)
 :   Don't use. Instead, use *sign in to*.
 
-sign-on, sign on [](https://developers.google.com/style/word-list#sign-on)
+sign-on, sign on [](https://developers.google.com/style/word-list.md.txt#sign-on)
 :
     Don't use either form on its own. Use the hyphenated version as part of
     *single sign-on*.
 
-sign-out (noun or adjective), sign out (verb) [](https://developers.google.com/style/word-list#sign-out)
+sign-out (noun or adjective), sign out (verb) [](https://developers.google.com/style/word-list.md.txt#sign-out)
 :   Not *log out* or *signout*.
 
-simple, simply [](https://developers.google.com/style/word-list#simple)
+simple, simply [](https://developers.google.com/style/word-list.md.txt#simple)
 :
     What might be simple for you might not be simple for others. Try eliminating this word from
     the sentence because usually the same meaning can be conveyed without it. For more
     information, see [Use precise,
     objective language](https://developers.google.com/style/inclusive-documentation#subjective-language).
 
-since [](https://developers.google.com/style/word-list#since)
+since [](https://developers.google.com/style/word-list.md.txt#since)
 :
     If you mean *because*, then use *because* instead of
     *since*. *Since* is ambiguous; it can refer to the passage of
     time. *Because* refers to causation or the reason for something.
 
-single most [](https://developers.google.com/style/word-list#single-most)
+single most [](https://developers.google.com/style/word-list.md.txt#single-most)
 :   Not *singlemost*.
 
-single pane of glass [](https://developers.google.com/style/word-list#single-pane-of-glass)
+single pane of glass [](https://developers.google.com/style/word-list.md.txt#single-pane-of-glass)
 :
     Avoid. This term is used to favorably compare a centralized control and
     monitoring interface against the alternative of several disparate
     interfaces. It can almost always be replaced by *single interface* or
     *unified interface*.
 
-single sign-on (noun or adjective) [](https://developers.google.com/style/word-list#single-sign-on)
-slave [](https://developers.google.com/style/word-list#slave)
+single sign-on (noun or adjective) [](https://developers.google.com/style/word-list.md.txt#single-sign-on)
+slave [](https://developers.google.com/style/word-list.md.txt#slave)
 :
     Don't use. Instead, use alternative terms appropriate to your domain, such
     as *worker* or *replica*.
@@ -3613,13 +3613,13 @@ slave [](https://developers.google.com/style/word-list#slave)
 :
     If the command or code that you're documenting uses the literal word
     *slave*, then use this word only in direct reference to the code item
-    ([formatted as code](https://developers.google.com/style/code-in-text)), make it clear what
+    ([formatted as code](https://developers.google.com/style/code-in-text.md.txt)), make it clear what
     you're referring to, and use the new term thereafter. For example, "Invoke
     the secondary (`slave`) process directly when debugging issues
     between the primary and secondary processes."
-:   See also [master](https://developers.google.com/style/word-list#master).
+:   See also [master](https://developers.google.com/style/word-list.md.txt#master).
 
-slice and dice [](https://developers.google.com/style/word-list#slice)
+slice and dice [](https://developers.google.com/style/word-list.md.txt#slice)
 :
     Don't use the phrase *slice and dice*. Instead, use specific terms
     appropriate to the task that you're describing. Some possible options
@@ -3627,20 +3627,20 @@ slice and dice [](https://developers.google.com/style/word-list#slice)
 
 
 smartphone, smart phone
-[](https://developers.google.com/style/word-list#smartphone)
+[](https://developers.google.com/style/word-list.md.txt#smartphone)
 :
-    Don't use. Instead, use [*mobile phone*](https://developers.google.com/style/word-list#mobile) or
+    Don't use. Instead, use [*mobile phone*](https://developers.google.com/style/word-list.md.txt#mobile) or
     *phone*. If you're talking about more than phones, then use *mobile device*. It's OK to use *phone* (without *mobile*) when the
     context is clear.
 
-soon [](https://developers.google.com/style/word-list#soon)
+soon [](https://developers.google.com/style/word-list.md.txt#soon)
 :
     Avoid in timeless documentation because this word can become outdated. The
     word can also prematurely disclose product or feature strategy or
     inappropriately imply that a product or feature might change.
 :
-    See also [eventually](https://developers.google.com/style/word-list#eventually) and
-    [future](https://developers.google.com/style/word-list#future).
+    See also [eventually](https://developers.google.com/style/word-list.md.txt#eventually) and
+    [future](https://developers.google.com/style/word-list.md.txt#future).
 :
     Recommended: This setting is
     optional.
@@ -3650,20 +3650,20 @@ soon [](https://developers.google.com/style/word-list#soon)
     applications.
 :
     For more information, see
-    [Timeless documentation](https://developers.google.com/style/timeless-documentation).
+    [Timeless documentation](https://developers.google.com/style/timeless-documentation.md.txt).
 
-spin up [](https://developers.google.com/style/word-list#spin-up)
+spin up [](https://developers.google.com/style/word-list.md.txt#spin-up)
 :
     As in *spin up an instance*. Avoid using *spin up* unless you're
     referring to a hard disk; instead, use a less colloquial term like
     *create* or *start*.
 
-SQL [](https://developers.google.com/style/word-list#sql)
+SQL [](https://developers.google.com/style/word-list.md.txt#sql)
 :   Refer to *a SQL* (pronounced "a sequel"), not *an SQL*. For more
     information, see
-    [Indefinite articles before abbreviations](https://developers.google.com/style/abbreviations#articles).
+    [Indefinite articles before abbreviations](https://developers.google.com/style/abbreviations.md.txt#articles).
 
-ssh and SSH [](https://developers.google.com/style/word-list#ssh)
+ssh and SSH [](https://developers.google.com/style/word-list.md.txt#ssh)
 :
     Don't use `ssh` or SSH as a verb. SSH is a secure
     communications protocol; `ssh` is a utility.
@@ -3677,59 +3677,59 @@ ssh and SSH [](https://developers.google.com/style/word-list#ssh)
     Not recommended: `ssh` into
     your remote shell.
 
-ssh'ing [](https://developers.google.com/style/word-list#sshing)
-:   Don't use. See also [ssh and SSH](https://developers.google.com/style/word-list#ssh).
+ssh'ing [](https://developers.google.com/style/word-list.md.txt#sshing)
+:   Don't use. See also [ssh and SSH](https://developers.google.com/style/word-list.md.txt#ssh).
 :
     Recommended: When you use
     `ssh` to log in ...
 
-startup (noun or adjective), start up (verb) [](https://developers.google.com/style/word-list#startup)
-static external IP address [](https://developers.google.com/style/word-list#static-external-ip-address)
+startup (noun or adjective), start up (verb) [](https://developers.google.com/style/word-list.md.txt#startup)
+static external IP address [](https://developers.google.com/style/word-list.md.txt#static-external-ip-address)
 :
     Don't use *static IP address* or *external IP address* to refer
     to static external IP addresses.
 
-status bar [](https://developers.google.com/style/word-list#status-bar)
+status bar [](https://developers.google.com/style/word-list.md.txt#status-bar)
 :   Not *statusbar* or *status-bar*.
 :   Lowercase except at the beginning of a sentence,
     heading, or list item.
 
-STONITH, STOMITH [](https://developers.google.com/style/word-list#stonith)
+STONITH, STOMITH [](https://developers.google.com/style/word-list.md.txt#stonith)
 :
     Avoid using
     [graphic or
     metaphorical language](https://developers.google.com/style/inclusive-documentation#graphic-language). Instead, explain the relevant feature, such as
     *fence failed nodes*.
 
-style sheet [](https://developers.google.com/style/word-list#style-sheet)
+style sheet [](https://developers.google.com/style/word-list.md.txt#style-sheet)
 :
     *Style sheet* and *stylesheet* are both acceptable spellings. However, be consistent
     with your choice throughout a given document.
 
-sub-command [](https://developers.google.com/style/word-list#sub-command)
+sub-command [](https://developers.google.com/style/word-list.md.txt#sub-command)
 :   Not *subcommand*.
 
-subnet [](https://developers.google.com/style/word-list#subnet)
+subnet [](https://developers.google.com/style/word-list.md.txt#subnet)
 :
     OK to use as a shortening of *subnetwork*. Use the same term consistently throughout your
     document. For more
     information, see [Subnets vs. subnetworks](https://cloud.google.com/compute/docs/vpc/#subnets_vs_subnetworks).
 
-subtree [](https://developers.google.com/style/word-list#subtree)
+subtree [](https://developers.google.com/style/word-list.md.txt#subtree)
 :   Not *sub-tree*.
 
-subzone [](https://developers.google.com/style/word-list#subzone)
+subzone [](https://developers.google.com/style/word-list.md.txt#subzone)
 :   Not *sub-zone* or *sub zone*.
 
-such as [](https://developers.google.com/style/word-list#such-as)
+such as [](https://developers.google.com/style/word-list.md.txt#such-as)
 :
     Use *such as* to introduce examples or draw comparisons. Note that *such as*,
     *like*, and *include* introduce non-exhaustive lists, so it's redundant to combine
-    them with *etc.*, *so forth*, or *and more*. See also [etc.](https://developers.google.com/style/word-list#etc),
-    [like](https://developers.google.com/style/word-list#like). For more information, see [Format
+    them with *etc.*, *so forth*, or *and more*. See also [etc.](https://developers.google.com/style/word-list.md.txt#etc),
+    [like](https://developers.google.com/style/word-list.md.txt#like). For more information, see [Format
     examples](https://developers.google.com/style/format-examples).
 
-surface [](https://developers.google.com/style/word-list#surface)
+surface [](https://developers.google.com/style/word-list.md.txt#surface)
 :
     Avoid as a transitive verb; instead, use a more specific term, such as
     *make people aware of* or *expose*.
@@ -3742,23 +3742,23 @@ surface [](https://developers.google.com/style/word-list#surface)
 
 ### T
 
-tab [](https://developers.google.com/style/word-list#tab)
+tab [](https://developers.google.com/style/word-list.md.txt#tab)
 :
-    When referring to the sub-pages of a [console](https://developers.google.com/style/word-list#console), use
+    When referring to the sub-pages of a [console](https://developers.google.com/style/word-list.md.txt#console), use
     *page* instead of *tab*.
 
-table name [](https://developers.google.com/style/word-list#table-name)
+table name [](https://developers.google.com/style/word-list.md.txt#table-name)
 :   Two words. Set specific table names in code font.
 
-tablet [](https://developers.google.com/style/word-list#tablet)
+tablet [](https://developers.google.com/style/word-list.md.txt#tablet)
 :
     *Tablet* is OK. If you don't know whether it's a tablet or a phone,
     use *device*.
 
-tag [](https://developers.google.com/style/word-list#tag)
-:   See [element](https://developers.google.com/style/word-list#element).
+tag [](https://developers.google.com/style/word-list.md.txt#tag)
+:   See [element](https://developers.google.com/style/word-list.md.txt#element).
 
-tap [](https://developers.google.com/style/word-list#tap)
+tap [](https://developers.google.com/style/word-list.md.txt#tap)
 :
     In Android documentation, use for on-screen and soft (capacitive)
     buttons.
@@ -3767,20 +3767,20 @@ tap [](https://developers.google.com/style/word-list#tap)
     touch device.
 :
     Use instead of *touch*. However, *touch \& hold* (not *touch and hold*) is OK to use.
-:   For mechanical buttons, use [*press*](https://developers.google.com/style/word-list#press).
+:   For mechanical buttons, use [*press*](https://developers.google.com/style/word-list.md.txt#press).
 
 
 tap \&
 hold, tap and hold
-[](https://developers.google.com/style/word-list#tap-and-hold)
+[](https://developers.google.com/style/word-list.md.txt#tap-and-hold)
 :
     In Android documentation, don't use. Instead, use *touch \& hold*.
     (Not *touch and hold*.)
 
-tarball [](https://developers.google.com/style/word-list#tarball)
+tarball [](https://developers.google.com/style/word-list.md.txt#tarball)
 :   Don't use. Instead, use *tar file*.
 
-target [](https://developers.google.com/style/word-list#target)
+target [](https://developers.google.com/style/word-list.md.txt#target)
 :
     Avoid using as a verb when possible, especially in reference to people.
     For some readers, *target* has aggressive connotations. Instead of
@@ -3791,7 +3791,7 @@ target [](https://developers.google.com/style/word-list#target)
     include phrases such as *intended for*, *looking for*,
     *focused on*, and *interacting with*.
 
-terminate [](https://developers.google.com/style/word-list#terminate)
+terminate [](https://developers.google.com/style/word-list.md.txt#terminate)
 :
     Avoid using as a synonym for *stop*. Instead, use words like
     *stop*, *exit*, *cancel*, or *end*.
@@ -3805,10 +3805,10 @@ terminate [](https://developers.google.com/style/word-list#terminate)
     specific technical meanings that aren't synonyms for *stop*; in those
     contexts, you can use *terminate*.
 
-text box, textbox [](https://developers.google.com/style/word-list#textbox)
+text box, textbox [](https://developers.google.com/style/word-list.md.txt#textbox)
 :
     Don't use. Instead, use *box*. For more information, see
-    [Text box](https://developers.google.com/style/ui-elements#term-textbox).
+    [Text box](https://developers.google.com/style/ui-elements.md.txt#term-textbox).
 :
     In Google Cloud documentation, use
     *field* instead of *box*. For example, "In the **Instance**
@@ -3818,17 +3818,17 @@ text box, textbox [](https://developers.google.com/style/word-list#textbox)
     *field* instead of *box*. For example, "In the **Instance**
     field, specify a value less than 64 characters long."
 
-their (singular) [](https://developers.google.com/style/word-list#their)
-:   See [*they*](https://developers.google.com/style/word-list#they).
+their (singular) [](https://developers.google.com/style/word-list.md.txt#their)
+:   See [*they*](https://developers.google.com/style/word-list.md.txt#they).
 
-then [](https://developers.google.com/style/word-list#then)
+then [](https://developers.google.com/style/word-list.md.txt#then)
 :
     Although it is common in casual usage to omit the word *then* in *if...then*
     statements, you should include helper words like *then* in technical documentation. For
     more information, see
-    [Use clear, precise, and unambiguous language](https://developers.google.com/style/translation#clear-language).
+    [Use clear, precise, and unambiguous language](https://developers.google.com/style/translation.md.txt#clear-language).
 
-they (singular) [](https://developers.google.com/style/word-list#they)
+they (singular) [](https://developers.google.com/style/word-list.md.txt#they)
 :
     This is our preferred gender-neutral pronoun. Whether used as singular or plural, it always
     takes the plural verb.
@@ -3836,16 +3836,16 @@ they (singular) [](https://developers.google.com/style/word-list#they)
     Recommended: A user enters their password, and then they
     insert their security key.
 :
-    See also [gender-neutral he](https://developers.google.com/style/word-list#gender).
+    See also [gender-neutral he](https://developers.google.com/style/word-list.md.txt#gender).
 
-third party (noun), third-party (adjective) [](https://developers.google.com/style/word-list#third-party)
+third party (noun), third-party (adjective) [](https://developers.google.com/style/word-list.md.txt#third-party)
 :
     Spell as *third party* when used as a noun and as *third-party* when used as an
     adjective.
 :
-    Avoid abbreviating to *3rd party* or *3rd-party*. For more information, see [Ordinal numbers](https://developers.google.com/style/numbers#ordinal-numbers).
+    Avoid abbreviating to *3rd party* or *3rd-party*. For more information, see [Ordinal numbers](https://developers.google.com/style/numbers.md.txt#ordinal-numbers).
 
-this, that [](https://developers.google.com/style/word-list#this-that)
+this, that [](https://developers.google.com/style/word-list.md.txt#this-that)
 :
     Where possible, put a noun after *this* or *that* for clarity.
     If doing so results in clunky prose, then don't do it; but even then, try
@@ -3853,46 +3853,46 @@ this, that [](https://developers.google.com/style/word-list#this-that)
     *this* or *that* refers to, then consider rephrasing---otherwise, your reader
     probably won't know what noun you're referring to, either.
 
-timeframe [](https://developers.google.com/style/word-list#time-frame)
+timeframe [](https://developers.google.com/style/word-list.md.txt#time-frame)
 :
     Not *time frame*. Avoid where possible, or use an alternative such as
     *period*, *schedule*, *deadline*, or *when*. But if
     you do use it, then write it as one word.
 
-timeout (noun), time out (verb) [](https://developers.google.com/style/word-list#timeout)
-timestamp [](https://developers.google.com/style/word-list#time-stamp)
+timeout (noun), time out (verb) [](https://developers.google.com/style/word-list.md.txt#timeout)
+timestamp [](https://developers.google.com/style/word-list.md.txt#time-stamp)
 :   Not *time stamp*.
 
-time to live [](https://developers.google.com/style/word-list#ttl)
+time to live [](https://developers.google.com/style/word-list.md.txt#ttl)
 :   Not *time-to-live*. Abbreviate as *TTL* after first use.
 
-time zone (noun), time-zone (adjective) [](https://developers.google.com/style/word-list#time-zone)
+time zone (noun), time-zone (adjective) [](https://developers.google.com/style/word-list.md.txt#time-zone)
 :
     Spell as *time zone* when used as a noun and as *time-zone* when used as an
-    adjective. See also [wake lock (noun), wake-lock (adjective)](https://developers.google.com/style/word-list#wake-lock).
+    adjective. See also [wake lock (noun), wake-lock (adjective)](https://developers.google.com/style/word-list.md.txt#wake-lock).
 
-tl;dr [](https://developers.google.com/style/word-list#tldr)
+tl;dr [](https://developers.google.com/style/word-list.md.txt#tldr)
 :
     Don't use. Instead, use something like *To summarize*, or revise the
     sentence.
 
-toolkit [](https://developers.google.com/style/word-list#toolkit)
+toolkit [](https://developers.google.com/style/word-list.md.txt#toolkit)
 :   Not *tool-kit* or *tool kit*.
 
 
 touch
-[](https://developers.google.com/style/word-list#touch)
+[](https://developers.google.com/style/word-list.md.txt#touch)
 :
     In Android documentation, don't use. Instead, use *tap*. However,
     *touch \& hold* is OK to use.
 
-"touch \& hold" [](https://developers.google.com/style/word-list#touch-and-hold)
+"touch \& hold" [](https://developers.google.com/style/word-list.md.txt#touch-and-hold)
 :   Not *touch and hold*.
 
-touchscreen [](https://developers.google.com/style/word-list#touchscreen)
+touchscreen [](https://developers.google.com/style/word-list.md.txt#touchscreen)
 :   Not *touch screen*
 
-traditional [](https://developers.google.com/style/word-list#traditional)
+traditional [](https://developers.google.com/style/word-list.md.txt#traditional)
 :   If possible, use a more precise term.
 :
     Recommended: Conventionally, Python
@@ -3907,26 +3907,26 @@ traditional [](https://developers.google.com/style/word-list#traditional)
     Not recommended: This tutorial
     explains how to migrate from a traditional data warehouse to BigQuery.
 
-transpile [](https://developers.google.com/style/word-list#transpile)
+transpile [](https://developers.google.com/style/word-list.md.txt#transpile)
 :   Not *transcompile*.
 
 
 tribal knowledge, tribal wisdom
-[](https://developers.google.com/style/word-list#tribal-knowledge)
+[](https://developers.google.com/style/word-list.md.txt#tribal-knowledge)
 :
     Don't use. Instead, use a less figurative term to indicate knowledge held
     by a group of people.
 
-trojan [](https://developers.google.com/style/word-list#trojan)
+trojan [](https://developers.google.com/style/word-list.md.txt#trojan)
 :   Lowercase when referring to malware.
 
-turn on [](https://developers.google.com/style/word-list#turn-on)
+turn on [](https://developers.google.com/style/word-list.md.txt#turn-on)
 :
     In procedures, use the appropriate label and action for the
-    [UI element](https://developers.google.com/style/ui-elements) that the user interacts with.
+    [UI element](https://developers.google.com/style/ui-elements.md.txt) that the user interacts with.
 :
     For turning on or activating an option or feature, use *turn on* or
-    [enable](https://developers.google.com/style/word-list#enable) consistently. Use the same term consistently throughout your
+    [enable](https://developers.google.com/style/word-list.md.txt#enable) consistently. Use the same term consistently throughout your
     document.
 :
     Recommended: To turn on Magic Mode,
@@ -3935,16 +3935,16 @@ turn on [](https://developers.google.com/style/word-list#turn-on)
     Recommended: In **Settings** , click
     the **Magic mode** toggle to the on position.
 
-tutorial [](https://developers.google.com/style/word-list#tutorial)
-:   OK to use. See [documentation](https://developers.google.com/style/word-list#documentation).
+tutorial [](https://developers.google.com/style/word-list.md.txt#tutorial)
+:   OK to use. See [documentation](https://developers.google.com/style/word-list.md.txt#documentation).
 
-type [](https://developers.google.com/style/word-list#type)
+type [](https://developers.google.com/style/word-list.md.txt#type)
 :
-    In general, use [enter](https://developers.google.com/style/word-list#enter) instead of *type* because
+    In general, use [enter](https://developers.google.com/style/word-list.md.txt#enter) instead of *type* because
     there is typically more than one way to enter text than typing (such as
     pasting text or speaking).
 
-typically [](https://developers.google.com/style/word-list#typically)
+typically [](https://developers.google.com/style/word-list.md.txt#typically)
 :
     Use to describe what is usual or expected under normal circumstances.
 :
@@ -3953,11 +3953,11 @@ typically [](https://developers.google.com/style/word-list#typically)
 
 ### U
 
-UI [](https://developers.google.com/style/word-list#ui)
+UI [](https://developers.google.com/style/word-list.md.txt#ui)
 :
     Don't use generically to refer to a page or dashboard. Use a more specific
-    term like [*page*](https://developers.google.com/style/word-list#page) or
-    [*console*](https://developers.google.com/style/word-list#console). If a specific term is unavailable,
+    term like [*page*](https://developers.google.com/style/word-list.md.txt#page) or
+    [*console*](https://developers.google.com/style/word-list.md.txt#console). If a specific term is unavailable,
     use *web interface*.
 :
     Recommended: In the Google Cloud
@@ -3972,10 +3972,10 @@ UI [](https://developers.google.com/style/word-list#ui)
     Not recommended: In the **Cloud
     Tasks** UI
 
-unarchive [](https://developers.google.com/style/word-list#unarchive)
+unarchive [](https://developers.google.com/style/word-list.md.txt#unarchive)
 :   Don't use. Instead, use *extract*.
 
-uncheck [](https://developers.google.com/style/word-list#uncheck)
+uncheck [](https://developers.google.com/style/word-list.md.txt#uncheck)
 :
     Don't use to refer to clearing a check mark from a checkbox. Instead, use
     *clear*.
@@ -3989,13 +3989,13 @@ uncheck [](https://developers.google.com/style/word-list#uncheck)
     Not recommended: Deselect
     **Automatically check for updates**.
 
-uncompress [](https://developers.google.com/style/word-list#uncompress)
+uncompress [](https://developers.google.com/style/word-list.md.txt#uncompress)
 :   Don't use. Instead, use *extract*.
 
-under [](https://developers.google.com/style/word-list#under)
+under [](https://developers.google.com/style/word-list.md.txt#under)
 :
     Don't use for a range of version numbers. Instead,
-    use [*earlier*](https://developers.google.com/style/word-list#earlier).
+    use [*earlier*](https://developers.google.com/style/word-list.md.txt#earlier).
 :   Don't use to refer to a position in the UI.
 :
     Recommended: In the **Service account
@@ -4007,39 +4007,39 @@ under [](https://developers.google.com/style/word-list#under)
     Not recommended: Under **Service
     account ID**, enter a name.
 
-Unicode [](https://developers.google.com/style/word-list#unicode)
+Unicode [](https://developers.google.com/style/word-list.md.txt#unicode)
 :   Not *UNICODE*.
 
-Unix-like [](https://developers.google.com/style/word-list#unix-like)
+Unix-like [](https://developers.google.com/style/word-list.md.txt#unix-like)
 :   Not *Unixlike* or *Unix like*.
 
-Unix epoch time [](https://developers.google.com/style/word-list#unix-epoch-time)
+Unix epoch time [](https://developers.google.com/style/word-list.md.txt#unix-epoch-time)
 :
     Use instead of *Unix time* or *epoch time* to refer to a
     point in time represented as a number of seconds since the Unix epoch
     (00:00:00 UTC on January 1, 1970), ignoring leap seconds.
 
-unselect [](https://developers.google.com/style/word-list#unselect)
+unselect [](https://developers.google.com/style/word-list.md.txt#unselect)
 :
     Don't use. Instead, use *clear* for checkboxes, and *deselect*
     for other UI elements.
 :
 
-unsighted [](https://developers.google.com/style/word-list#unsighted)
-:   Don't use. See [blind](https://developers.google.com/style/word-list#blind).
+unsighted [](https://developers.google.com/style/word-list.md.txt#unsighted)
+:   Don't use. See [blind](https://developers.google.com/style/word-list.md.txt#blind).
 
-untar [](https://developers.google.com/style/word-list#untar)
+untar [](https://developers.google.com/style/word-list.md.txt#untar)
 :   Don't use. Instead, use *extract*.
 
-unzip [](https://developers.google.com/style/word-list#unzip)
+unzip [](https://developers.google.com/style/word-list.md.txt#unzip)
 :   Don't use. Instead, use *extract*.
 
-US [](https://developers.google.com/style/word-list#us)
+US [](https://developers.google.com/style/word-list.md.txt#us)
 :
     OK to use as an abbreviation for *United States*. Don't use
-    *U.S.* or *U.S.A.* For more information, see [Periods with abbreviations](https://developers.google.com/style/abbreviations#periods).
+    *U.S.* or *U.S.A.* For more information, see [Periods with abbreviations](https://developers.google.com/style/abbreviations.md.txt#periods).
 
-user [](https://developers.google.com/style/word-list#user)
+user [](https://developers.google.com/style/word-list.md.txt#user)
 :
     Use the word *user* only to refer to the user of the software that
     your reader is developing. Otherwise, address the reader as *you*
@@ -4047,13 +4047,13 @@ user [](https://developers.google.com/style/word-list#user)
     more information, see [Second person and first
     person](https://developers.google.com/style/person).
 
-user base [](https://developers.google.com/style/word-list#user-base)
+user base [](https://developers.google.com/style/word-list.md.txt#user-base)
 :   Not *userbase*.
 
-using [](https://developers.google.com/style/word-list#using)
+using [](https://developers.google.com/style/word-list.md.txt#using)
 :
-    Where *using* might have more than one interpretation, use *by using* or
-    *that use* instead to help clarify the logic of the sentence.
+    To avoid ambiguity, prefer *by using* or *that use* to help clarify the logic of the
+    sentence.
 :
     Recommended: Remove the Compute Engine VMs by using the
     test tag.
@@ -4064,18 +4064,18 @@ using [](https://developers.google.com/style/word-list#using)
     Not recommended: Filter the IAM roles using custom
     permissions.
 :
-    It's OK to use *using* (or *with*) when misinterpretation is unlikely.
+    In cases where misinterpretation is very unlikely, it's OK to use *using* (or *with*).
 :
     Recommended: You can connect to Cloud SQL using IAM
     database authentication.
 
-UTF [](https://developers.google.com/style/word-list#utf)
+UTF [](https://developers.google.com/style/word-list.md.txt#utf)
 :
     Include the hyphen in the names of Unicode encodings, such as
     *UTF-8*, *UTF-16*, and *UTF-32*.
 :
 
-utilize, utilization [](https://developers.google.com/style/word-list#utilize)
+utilize, utilization [](https://developers.google.com/style/word-list.md.txt#utilize)
 :
     Use with caution. Don't use *utilize* when you mean *use*. It's
     OK to use *utilize* or *utilization* when referring to the
@@ -4092,13 +4092,13 @@ utilize, utilization [](https://developers.google.com/style/word-list#utilize)
 
 ### V
 
-v (abbreviating *version*) [](https://developers.google.com/style/word-list#v)
+v (abbreviating *version*) [](https://developers.google.com/style/word-list.md.txt#v)
 :   Use lowercase.
 
-via [](https://developers.google.com/style/word-list#via)
+via [](https://developers.google.com/style/word-list.md.txt#via)
 :   Don't use.
 
-vice versa [](https://developers.google.com/style/word-list#vice-versa)
+vice versa [](https://developers.google.com/style/word-list.md.txt#vice-versa)
 :
     Don't use. Write out the relationship explicitly. To emphasize the
     reciprocal or contrasting relationship, you can use a more precise term
@@ -4114,7 +4114,7 @@ vice versa [](https://developers.google.com/style/word-list#vice-versa)
     files to the cloud. Conversely, you can download cloud files to your local
     environment.
 
-virtual machine (VM) instance [](https://developers.google.com/style/word-list#virtual-machine-instance)
+virtual machine (VM) instance [](https://developers.google.com/style/word-list.md.txt#virtual-machine-instance)
 :
     Use when first introducing virtual machines on a given page. For
     subsequent mentions, you can use *VM instance* or *VM*.
@@ -4124,58 +4124,58 @@ virtual machine (VM) instance [](https://developers.google.com/style/word-list#v
     throughout the rest of the document. If you need to indicate other types of
     VMs, use *VM*, *VM instance*, or *bare metal instance*.
 :
-    See also [GKE node](https://developers.google.com/style/word-list#gke-node).
+    See also [GKE node](https://developers.google.com/style/word-list.md.txt#gke-node).
 
 
 visually challenged
-[](https://developers.google.com/style/word-list#visually-challenged)
-:   See [blind](https://developers.google.com/style/word-list#blind).
+[](https://developers.google.com/style/word-list.md.txt#visually-challenged)
+:   See [blind](https://developers.google.com/style/word-list.md.txt#blind).
 
-VLAN attachment [](https://developers.google.com/style/word-list#vlan)
+VLAN attachment [](https://developers.google.com/style/word-list.md.txt#vlan)
 :
     Don't use the following: *interconnect attachment (VLAN)*,
     *Interconnect attachment*, *Cloud Interconnect attachment*, or
     any variation thereof. See also
-    [interconnectAttachment](https://developers.google.com/style/word-list#interconnect-attachment).
+    [interconnectAttachment](https://developers.google.com/style/word-list.md.txt#interconnect-attachment).
 
-voila [](https://developers.google.com/style/word-list#voila)
+voila [](https://developers.google.com/style/word-list.md.txt#voila)
 :   Don't use.
 
-voodoo [](https://developers.google.com/style/word-list#voodoo)
+voodoo [](https://developers.google.com/style/word-list.md.txt#voodoo)
 :
     Don't use. Instead, use a term like *mysterious*, *complicated*,
     or *nondeterministic*.
 
-vs. [](https://developers.google.com/style/word-list#vs)
+vs. [](https://developers.google.com/style/word-list.md.txt#vs)
 :
     Don't use *vs.* as an abbreviation for *versus*; instead, use
     the unabbreviated *versus*.
 
 ### W
 
-wake lock (noun), wake-lock (adjective) [](https://developers.google.com/style/word-list#wake-lock)
+wake lock (noun), wake-lock (adjective) [](https://developers.google.com/style/word-list.md.txt#wake-lock)
 :
     Spell as *wake lock* when used as a noun and as *wake-lock* when used as an
-    adjective. See also [time zone (noun), time-zone (adjective)](https://developers.google.com/style/word-list#time-zone).
+    adjective. See also [time zone (noun), time-zone (adjective)](https://developers.google.com/style/word-list.md.txt#time-zone).
 
-walkthrough [](https://developers.google.com/style/word-list#walkthrough)
+walkthrough [](https://developers.google.com/style/word-list.md.txt#walkthrough)
 :   Not *walk-through*.
 
 
 war room, warroom, war-room
-[](https://developers.google.com/style/word-list#war-room)
+[](https://developers.google.com/style/word-list.md.txt#war-room)
 :
     Don't use. Instead, use a more precise term to describe the activity or
     team. Depending on context, possible alternatives include *rapid response team*, *situation response team*, *situation room*,
     *incident-management team*, or *media monitoring room*.
 
-warm [](https://developers.google.com/style/word-list#warm)
+warm [](https://developers.google.com/style/word-list.md.txt#warm)
 :
-    When possible, avoid [jargon](https://developers.google.com/style/jargon) like *warm failover*, *warm standby*, and *warm spare*. If you use one
+    When possible, avoid [jargon](https://developers.google.com/style/jargon.md.txt) like *warm failover*, *warm standby*, and *warm spare*. If you use one
     of these phrases, define it on first use and use it consistently
     throughout the document.
 
-we [](https://developers.google.com/style/word-list#we)
+we [](https://developers.google.com/style/word-list.md.txt#we)
 :
     Don't use *we* (or other first-person plural pronouns such as
     *our* or *us*) to address the reader who is performing the
@@ -4184,38 +4184,38 @@ we [](https://developers.google.com/style/word-list#we)
     It's OK to use *we* to refer to the organization that's represented
     as the author of the document as long as the antecedent is clear. For more
     information, see
-    [Second person and first person](https://developers.google.com/style/person).
+    [Second person and first person](https://developers.google.com/style/person.md.txt).
 
-web (lowercase) [](https://developers.google.com/style/word-list#web)
-WebAssembly, Wasm [](https://developers.google.com/style/word-list#wasm)
+web (lowercase) [](https://developers.google.com/style/word-list.md.txt#web)
+WebAssembly, Wasm [](https://developers.google.com/style/word-list.md.txt#wasm)
 :   Use the capitalization established in the
     [WebAssembly specification](https://webassembly.github.io/spec/core/intro/introduction.html#introduction).
 
-web application firewall (lowercase) [](https://developers.google.com/style/word-list#web-application-firewall)
+web application firewall (lowercase) [](https://developers.google.com/style/word-list.md.txt#web-application-firewall)
 
 webmaster, web master
-[](https://developers.google.com/style/word-list#webmaster)
+[](https://developers.google.com/style/word-list.md.txt#webmaster)
 :
     Don't use. Instead, use a more precise term to describe the specific role,
     such as *website owner*, *website administrator*, *web content manager*, *owner of a site*.
 
-web server [](https://developers.google.com/style/word-list#web-server)
+web server [](https://developers.google.com/style/word-list.md.txt#web-server)
 :   Not *webserver*.
 
-whether [](https://developers.google.com/style/word-list#whether)
+whether [](https://developers.google.com/style/word-list.md.txt#whether)
 :
     - To decide whether it's more appropriate to use *if* or *whether*, see [Grammar Girl's
       discussion of *if* and *whether*](http://www.quickanddirtytips.com/education/grammar/if-versus-whether).
     - To decide whether you need to add *or not* when using *whether*, see [the New York
       Times's blog post about whether (or not)](http://afterdeadline.blogs.nytimes.com/2010/03/01/whether-or-not/).
 
-while [](https://developers.google.com/style/word-list#while)
+while [](https://developers.google.com/style/word-list.md.txt#while)
 :
     Don't use to indicate a contrast. Instead, use a more precise term, such
     as *although*.
 :   OK to use to refer to a period of time.
 
-white-box [](https://developers.google.com/style/word-list#white-box)
+white-box [](https://developers.google.com/style/word-list.md.txt#white-box)
 :
     Avoid using *white-box*, *whitebox*, or *white box* to
     describe monitoring and testing. Consider using a more precise term for
@@ -4226,62 +4226,62 @@ white-box [](https://developers.google.com/style/word-list#white-box)
 
 
 white glove, white-glove, whiteglove
-[](https://developers.google.com/style/word-list#white-glove)
+[](https://developers.google.com/style/word-list.md.txt#white-glove)
 :
     Avoid using. Instead use terms like *high-touch*, *premium*, or
     *platinum-level*.
 
 
 whitehat, white hat, white-hat
-[](https://developers.google.com/style/word-list#whitehat)
+[](https://developers.google.com/style/word-list.md.txt#whitehat)
 :
     Don't use. Instead, use precise terms for the kind of compliance, such as
     *legal*, *ethical*, or *following the rules*.
 
 
 white label, whitelabel, white-label
-[](https://developers.google.com/style/word-list#white-label)
+[](https://developers.google.com/style/word-list.md.txt#white-label)
 :
     Don't use. Instead, use a more precise term for your context, such as
     *unbranded*, *unlabeled*, or *blank label*.
 
 
 whitelist, white list, white-list
-[](https://developers.google.com/style/word-list#whitelist)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#whitelist)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
 
 whitelisted, white listed, white-listed
-[](https://developers.google.com/style/word-list#whitelisted)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#whitelisted)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
 
 whitelisting, white listing, white-listing
-[](https://developers.google.com/style/word-list#whitelisting)
-:   Don't use. See [blacklist](https://developers.google.com/style/word-list#blacklist).
+[](https://developers.google.com/style/word-list.md.txt#whitelisting)
+:   Don't use. See [blacklist](https://developers.google.com/style/word-list.md.txt#blacklist).
 
-whitepaper [](https://developers.google.com/style/word-list#whitepaper)
+whitepaper [](https://developers.google.com/style/word-list.md.txt#whitepaper)
 :   Not *white paper*.
 :   When possible, use a more precise term. The term *whitepaper* has a variety of
     meanings in various contexts. If you must use the term *whitepaper*, also use descriptive
     terms to provide context.
 
-whitespace [](https://developers.google.com/style/word-list#whitespace)
+whitespace [](https://developers.google.com/style/word-list.md.txt#whitespace)
 :   Not *white space*.
 
-wildcard [](https://developers.google.com/style/word-list#wildcard)
+wildcard [](https://developers.google.com/style/word-list.md.txt#wildcard)
 :   Not *wild card*.
 
-will [](https://developers.google.com/style/word-list#will)
+will [](https://developers.google.com/style/word-list.md.txt#will)
 :
     Avoid. Applies equally to its past tense, *would*. See also
-    [Present tense](https://developers.google.com/style/tense) and
-    [Documenting future features](https://developers.google.com/style/future).
+    [Present tense](https://developers.google.com/style/tense.md.txt) and
+    [Documenting future features](https://developers.google.com/style/future.md.txt).
 
-wish [](https://developers.google.com/style/word-list#wish)
+wish [](https://developers.google.com/style/word-list.md.txt#wish)
 :   Don't use. Instead, use a word like *want* or *need*.
 
-with [](https://developers.google.com/style/word-list#with)
+with [](https://developers.google.com/style/word-list.md.txt#with)
 :   Don't use *with* when expressing ownership:
 :
     Recommended: A handset that has 2 GB
@@ -4297,7 +4297,7 @@ with [](https://developers.google.com/style/word-list#with)
     Not recommended: Debug this tool with
     the debugging tool.
 
-workload [](https://developers.google.com/style/word-list#workload)
+workload [](https://developers.google.com/style/word-list.md.txt#workload)
 :
     The term *workload* might refer to software, like an app or
     a service; to app resources, like data and infrastructure; or to physical
@@ -4307,38 +4307,38 @@ workload [](https://developers.google.com/style/word-list#workload)
     use the term *workload*, define your meaning on first use as you
     normally would with jargon and other ambiguous terms.
 
-World Wide Web [](https://developers.google.com/style/word-list#world-wide-web)
+World Wide Web [](https://developers.google.com/style/word-list.md.txt#world-wide-web)
 :   Don't use. Instead, use *web*.
 
-would [](https://developers.google.com/style/word-list#would)
+would [](https://developers.google.com/style/word-list.md.txt#would)
 :   Avoid using. Instead, use *can* where possible.
 :
-    See also [can](https://developers.google.com/style/word-list#can), [could](https://developers.google.com/style/word-list#could),
-    [may](https://developers.google.com/style/word-list#may), [might](https://developers.google.com/style/word-list#might),
-    [must](https://developers.google.com/style/word-list#must), and [should](https://developers.google.com/style/word-list#should).
+    See also [can](https://developers.google.com/style/word-list.md.txt#can), [could](https://developers.google.com/style/word-list.md.txt#could),
+    [may](https://developers.google.com/style/word-list.md.txt#may), [might](https://developers.google.com/style/word-list.md.txt#might),
+    [must](https://developers.google.com/style/word-list.md.txt#must), and [should](https://developers.google.com/style/word-list.md.txt#should).
 :
     For information about clarifying who's performing an action, see
-    [Active voice](https://developers.google.com/style/voice).
+    [Active voice](https://developers.google.com/style/voice.md.txt).
 :
     For information about tenses, see [Present
     tense](https://developers.google.com/style/tense).
 
 ### Y
 
-ymmv [](https://developers.google.com/style/word-list#ymmv)
+ymmv [](https://developers.google.com/style/word-list.md.txt#ymmv)
 :
     Don't use. Instead, use something like *Your results might vary*.
 
-you [](https://developers.google.com/style/word-list#you)
+you [](https://developers.google.com/style/word-list.md.txt#you)
 :
-    Use *you* instead of [*user*](https://developers.google.com/style/word-list#user) to address the
+    Use *you* instead of [*user*](https://developers.google.com/style/word-list.md.txt#user) to address the
     reader of your document. For more information, see
-    [Second person and first person](https://developers.google.com/style/person).
+    [Second person and first person](https://developers.google.com/style/person.md.txt).
 
 ### Z
 
-zippy [](https://developers.google.com/style/word-list#zippy)
+zippy [](https://developers.google.com/style/word-list.md.txt#zippy)
 :
-    Don't use to refer to [expander arrows](https://developers.google.com/style/word-list#expander-arrow),
+    Don't use to refer to [expander arrows](https://developers.google.com/style/word-list.md.txt#expander-arrow),
     unless you're specifically referring to the [Zippy widget](https://google.github.io/closure-library/api/goog.ui.Zippy.html)
     in Closure.
